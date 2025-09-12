@@ -2,6 +2,9 @@
 node_modules/
 vendor/
 
+# Large theme directory (duplicate)
+theme/
+
 # Build files
 build/
 dist/
@@ -69,3 +72,14 @@ wp-content/wp-cache-config.php
 # Temporary files
 *.tmp
 *.temp
+
+# Large design files
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# Large archives
+*.zip
+*.rar
+*.7z
