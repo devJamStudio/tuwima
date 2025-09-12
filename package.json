@@ -12,17 +12,23 @@
     "tailwind:watch": "tailwindcss -i ./scss/tailwind-input.css -o ./build/css/theme/tailwind.css --watch"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.69.0",
-    "gulp-clean-css": "^4.3.0",
-    "browser-sync": "^3.0.2",
-    "gulp-connect-php": "^1.0.3",
-    "tailwindcss": "^3.4.0",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32"
+    "browser-sync": "^3.0.2",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-connect-php": "^0.0.2",
+    "gulp-sass": "^5.1.0",
+    "postcss": "^8.4.32",
+    "sass": "^1.69.0",
+    "tailwindcss": "^3.4.0"
   },
-  "keywords": ["wordpress", "theme", "sass", "gulp", "tailwindcss"],
+  "keywords": [
+    "wordpress",
+    "theme",
+    "sass",
+    "gulp",
+    "tailwindcss"
+  ],
   "author": "DevJam",
   "license": "GPL-2.0"
 }

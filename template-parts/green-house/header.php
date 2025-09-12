@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for Green House header section
+ * Template part for Green House header section - Pixel Perfect 1920px Design
  */
 
 // Prevent direct access
@@ -9,65 +9,142 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<header class="heder">
-    <div class="baner">
-        <div class="warstwa-47-holder">
-            <div class="heder-2">
-                <div class="row-5 group">
-                    <div class="col-14">
-                        <div class="logo">
-                            <img class="warstwa-0-kopia-2" src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_0_kopia_2.png" alt="" width="48" height="52">
-                        </div>
-                        <p class="text">Green House</p>
-                        <img class="tuwima" src="<?php echo get_template_directory_uri(); ?>/html/images/tuwima.png" alt="tuwima" width="118" height="20" title="tuwima">
+<!-- Pixel Perfect Header - 1920px Design -->
+<header class="relative w-full min-w-[1920px] bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/4_3.jpg');">
+    <!-- Overlay Layer with exact positioning -->
+    <div class="relative w-full pb-[95px] bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/warstwa_47.png');">
+        
+        <!-- Navigation Header - Exact 1882px width -->
+        <div class="mx-auto relative w-[1882px]">
+            <div class="min-h-[138px] px-[39px] pt-[10px] rounded-b-[11px] bg-white relative w-[1880px]">
+                
+                <!-- Logo Section - Exact positioning -->
+                <div class="float-left mt-[9px] relative w-[118px]">
+                    <div class="mx-auto pb-[1px] relative w-[57px] bg-cover bg-no-repeat" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/warstwa_0_kopia.png');">
+                        <img class="block relative left-[4.5px] mx-auto" src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_0_kopia_2.png" alt="" width="48" height="52">
                     </div>
-                    <div class="col-31">
-                        <div class="wrapper-25">
-                            <div class="layer"></div>
-                            <div class="layer-holder mobile-hidden">napisz do nas</div>
-                            <img class="warstwa-3 mobile-hidden" src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_3.jpg" alt="" width="1632" height="51">
-                            <img class="layer-2 mobile-hidden" src="<?php echo get_template_directory_uri(); ?>/html/images/666162.png" alt="" width="18" height="14">
-                            <p class="text-3 mobile-hidden">453 287 744</p>
-                            <p class="text-4 mobile-hidden">Mariusz Szyda</p>
-                            <p class="text-5 mobile-hidden">572 481 313</p>
-                            <p class="text-6 mobile-hidden">Rafał Banarski</p>
-                            <img class="warstwa-50 mobile-hidden" src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_50.png" alt="" width="41" height="41">
-                            <nav class="nav-2">
-                                <ul class="nav-list-2 group">
-                                    <li><p class="nav-item-1-2 text-item selected"><a href="#">O inwestycji</a></p></li>
-                                    <li><p class="nav-item-3 text-item"><a href="#">Lokalizacja</a></p></li>
-                                    <li><p class="nav-item-3-2 text-item"><a href="#">Mieszkania</a></p></li>
-                                    <li><p class="nav-item-3-3 text-item"><a href="#">Galeria</a></p></li>
-                                    <li><p class="nav-item-3-4 text-item"><a href="#">Finansowanie</a></p></li>
-                                    <li><p class="nav-item-3-5 text-item"><a href="#">kontakt</a></p></li>
-                                </ul>
-                            </nav>
+                    <p class="mt-[7px] text-[#00a906] font-montserrat text-[8.17485px] font-bold tracking-[0.5em] text-center uppercase">Green House</p>
+                    <img class="block mx-auto mt-[4px]" src="<?php echo get_template_directory_uri(); ?>/html/images/tuwima.png" alt="tuwima" width="118" height="20" title="tuwima">
+                </div>
+
+                <!-- Contact Info Section - Exact 1632px width -->
+                <div class="float-right relative w-[1632px]">
+                    <div class="h-[99px] relative w-[1632px]">
+                        
+                        <!-- Contact Button - Exact positioning -->
+                        <div class="absolute top-[1px] left-1/2 w-[177px] h-[42px] rounded-[11px] bg-[#00a906] ml-[569px]"></div>
+                        <div class="absolute top-[1px] left-1/2 min-h-[42px] w-[177px] rounded-[11px] bg-[#00a906] text-white text-[17px] font-bold tracking-[0.02em] leading-[42px] text-center uppercase ml-[601px]">
+                            <?php echo get_field('contact_button_text') ?: 'Kontakt'; ?>
                         </div>
-                        <div class="warstwa-46"></div>
+
+                        <!-- Phone Numbers - Exact positioning -->
+                        <div class="absolute top-[39px] left-1/2 ml-[-816px]">
+                            <div class="absolute top-[14px] left-1/2 ml-[592px]">
+                                <p class="absolute top-[18px] left-1/2 text-[#00a906] text-[21.40198px] font-black tracking-[0.02em] leading-[22px] ml-[354px]">
+                                    <?php echo get_field('phone_number_1') ?: '+48 32 123 45 67'; ?>
+                                </p>
+                                <p class="absolute top-0 left-1/2 text-[#010101] text-[13px] font-bold tracking-[0.02em] leading-[14px] ml-[355px]">
+                                    <?php echo get_field('phone_label_1') ?: 'Telefon'; ?>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email - Exact positioning -->
+                        <div class="absolute top-[18px] left-1/2 text-[#00a906] text-[21.40198px] font-black tracking-[0.02em] leading-[22px] ml-[141px]">
+                            <?php echo get_field('email') ?: 'kontakt@greenhouse.pl'; ?>
+                        </div>
+                        <div class="absolute top-[3px] left-1/2 text-[13px] font-bold tracking-[0.02em] leading-[13px] ml-[139px]">
+                            <?php echo get_field('email_label') ?: 'Email'; ?>
+                        </div>
+
+                        <!-- Logo Image - Exact positioning -->
+                        <div class="absolute top-0 left-1/2 ml-[306px]">
+                            <img src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_3.png" alt="Logo">
+                        </div>
                     </div>
                 </div>
-                <div class="baner-2 group">
-                    <p class="text-7"><?php echo get_field('hero_title') ?: 'Green House<br class="text-style"><strong class="text-style-2">tuwima</strong>'; ?></p>
-                    <p class="text-8"><?php echo get_field('hero_subtitle') ?: 'Najlepsza inwestycja w Twoją przyszłosć'; ?></p>
-                </div>
-                <div class="grupa-8">
-                    <?php echo get_field('hero_button_text') ?: 'Zobacz mieszkania'; ?>
-                </div>
-                <div class="grupa-7 group">
-                    <p class="text-10"><strong class="text-style-4"><?php echo get_field('stat_1_number') ?: '06.2026'; ?></strong><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_1_label') ?: 'Planowane<br>zakończenie'; ?></p>
-                    <div class="warstwa-48"></div>
-                    <p class="text-11"><strong class="text-style-4"><?php echo get_field('stat_2_number') ?: '14'; ?></strong><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_2_label') ?: 'Liczba<br>budynków'; ?></p>
-                    <div class="warstwa-48-kopia"></div>
-                    <p class="text-12"><span class="text-style-6"><?php echo get_field('stat_3_number') ?: '28'; ?></span><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_3_label') ?: 'Ilość<br>mieszkań'; ?></p>
-                    <div class="warstwa-48-kopia-2"></div>
-                    <p class="text-13"><span class="text-style-6"><?php echo get_field('stat_4_number') ?: '35-49m²'; ?></span><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_4_label') ?: 'Dostene<br>metraże'; ?></p>
-                    <div class="warstwa-48-kopia-3"></div>
-                    <p class="text-14"><span class="text-style-6"><?php echo get_field('stat_5_number') ?: '40'; ?></span><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_5_label') ?: 'Miejsca<br>parkingowe'; ?></p>
-                    <div class="warstwa-48-kopia-4"></div>
-                    <p class="text-15"><span class="text-style-6"><?php echo get_field('stat_6_number') ?: '9'; ?></span><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_6_label') ?: 'Liczba<br>ogóodków'; ?></p>
-                </div>
+
+                <!-- Navigation Menu - Exact positioning -->
+                <nav class="absolute top-[84px] left-1/2 w-[1237px] ml-[-459px]">
+                    <ul class="relative list-none">
+                        <li class="float-left mr-[56px]">
+                            <a href="#o-inwestycji" class="text-black text-[18px] font-black tracking-[0.02em] uppercase hover:text-[#00a906] transition-colors">
+                                <?php echo get_field('nav_item_1') ?: 'O inwestycji'; ?>
+                            </a>
+                        </li>
+                        <li class="float-left mr-[56px]">
+                            <a href="#lokalizacja" class="text-black text-[18px] font-black tracking-[0.02em] uppercase hover:text-[#00a906] transition-colors">
+                                <?php echo get_field('nav_item_2') ?: 'Lokalizacja'; ?>
+                            </a>
+                        </li>
+                        <li class="float-left mr-[56px]">
+                            <a href="#mieszkania" class="text-black text-[18px] font-black tracking-[0.02em] uppercase hover:text-[#00a906] transition-colors">
+                                <?php echo get_field('nav_item_3') ?: 'Mieszkania'; ?>
+                            </a>
+                        </li>
+                        <li class="float-left mr-[56px]">
+                            <a href="#galeria" class="text-black text-[18px] font-black tracking-[0.02em] uppercase hover:text-[#00a906] transition-colors">
+                                <?php echo get_field('nav_item_4') ?: 'Galeria'; ?>
+                            </a>
+                        </li>
+                        <li class="float-left mr-[56px]">
+                            <a href="#finansowanie" class="text-black text-[18px] font-black tracking-[0.02em] uppercase hover:text-[#00a906] transition-colors">
+                                <?php echo get_field('nav_item_5') ?: 'Finansowanie'; ?>
+                            </a>
+                        </li>
+                        <li class="float-left">
+                            <a href="#kontakt" class="text-black text-[18px] font-black tracking-[0.02em] uppercase hover:text-[#00a906] transition-colors">
+                                <?php echo get_field('nav_item_6') ?: 'Kontakt'; ?>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Green Accent Line - Exact positioning -->
+                <div class="h-[4px] mt-[25px] ml-[352px] w-[134px] bg-[#00a906] relative"></div>
+            </div>
+        </div>
+
+        <!-- Hero Content - Exact positioning -->
+        <div class="table mx-auto mt-[374px] relative">
+            <h1 class="text-[#00a906] font-montserrat text-[40px] font-medium tracking-[0.16em] text-center uppercase" style="text-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);">
+                <?php echo get_field('hero_title') ?: 'Green House'; ?>
+            </h1>
+            <h2 class="mt-[5px] text-white text-[30px] font-bold tracking-[0.02em] text-center" style="text-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);">
+                <?php echo get_field('hero_subtitle') ?: 'Tuwima'; ?>
+            </h2>
+        </div>
+
+        <!-- CTA Button - Exact positioning -->
+        <div class="mx-auto mt-[51px] min-h-[54px] px-[52px] relative right-[7.5px] w-[275px] bg-cover bg-no-repeat text-white text-[19px] font-bold leading-[54px] text-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_14.png');">
+            <?php echo get_field('cta_button_text') ?: 'Zobacz mieszkania'; ?>
+        </div>
+
+        <!-- Info Cards - Exact positioning and dimensions -->
+        <div class="mx-auto mt-[262px] min-h-[195px] px-[37px] relative right-[7px] w-[1412px] rounded-[11px] bg-[#00a906]" style="box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);">
+            <div class="float-left mt-[39px] w-[131px] text-white text-[15px] font-bold tracking-[0.02em] leading-[1.2] text-center">
+                <?php echo get_field('info_card_1') ?: '28 mieszkań'; ?>
+            </div>
+            <div class="float-left h-[195px] ml-[41px] w-px bg-white/55"></div>
+            <div class="float-left mt-[39px] ml-[66px] w-[84px] text-white text-[15px] font-bold tracking-[0.02em] leading-[1.2] text-center">
+                <?php echo get_field('info_card_2') ?: '14 domów'; ?>
+            </div>
+            <div class="float-left h-[195px] ml-[76px] w-px bg-white/55"></div>
+            <div class="float-left mt-[39px] ml-[82px] w-[76px] text-white font-montserrat text-[13px] font-bold tracking-[0.02em] leading-[1.2] text-center">
+                <?php echo get_field('info_card_3') ?: '2 piętra'; ?>
+            </div>
+            <div class="float-left h-[195px] ml-[85px] w-px bg-white/55"></div>
+            <div class="float-left mt-[40px] ml-[46px] w-[139px] text-white font-montserrat text-[13px] font-bold tracking-[0.02em] leading-[1.2] text-center">
+                <?php echo get_field('info_card_4') ?: 'Ogródki prywatne'; ?>
+            </div>
+            <div class="float-left h-[195px] ml-[57px] w-px bg-white/55"></div>
+            <div class="float-left mt-[35px] ml-[70px] w-[93px] text-white font-montserrat text-[13px] font-bold tracking-[0.02em] leading-[1.2] text-center">
+                <?php echo get_field('info_card_5') ?: 'Balkony'; ?>
+            </div>
+            <div class="float-left h-[195px] ml-[79px] w-px bg-white/55"></div>
+            <div class="float-left mt-[35px] ml-[82px] w-[85px] text-white font-montserrat text-[13px] font-bold tracking-[0.02em] leading-[1.2] text-center">
+                <?php echo get_field('info_card_6') ?: 'Parking'; ?>
             </div>
         </div>
     </div>
 </header>
-

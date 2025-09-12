@@ -2583,6 +2583,7 @@ a.text-item.selected {
 }
 .o-developerze {
   left: 8px;
+  margin: -535px auto 0;
   position: relative;
   width: 1432px;
 }
