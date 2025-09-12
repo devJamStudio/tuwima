@@ -12,12 +12,12 @@ if (!defined('ABSPATH')) {
 <!-- Location Section - Pixel Perfect 1920px Design -->
 <section id="lokalizacja" class="relative w-full bg-white">
     <div class="left-[26.5px] mt-[115px] mx-auto relative w-[1473px]">
-        
+
         <!-- Section Title -->
         <p class="mx-[588px] text-[#00a906] text-[40px] font-bold tracking-[0.02em]">
             <?php echo get_field('location_title') ?: 'Lokalizacja'; ?>
         </p>
-        
+
         <!-- Description -->
         <p class="mt-[51px] mx-auto relative right-[28.5px] w-[1416px] font-montserrat leading-[24px] text-center">
             <?php echo get_field('location_description') ?: '<strong class="text-style-8">Green House Tuwima </strong>łączy bliskość natury z komfortem miejskiego życia. W otoczeniu inwestycji znajdują się liczne tereny zielone, a jednocześnie możesz cieszyć<br>się szybkim dojazdem do centrum oraz wygodnym dostępem do szkół, sklepów i usług.'; ?>
@@ -25,10 +25,10 @@ if (!defined('ABSPATH')) {
 
         <!-- Location Content Row -->
         <div class="left-[21.5px] mt-[56px] mx-auto relative w-[1430px]">
-            
+
             <!-- Left Column - Location Info -->
             <div class="float-left mt-[65px] mr-[136px] relative w-[547px]">
-                
+
                 <!-- Row 1 - School and Supermarkets -->
                 <div class="relative">
                     <img class="float-left mt-[3px]" src="<?php echo get_template_directory_uri(); ?>/html/images/4615221.png" alt="School" width="56" height="46">

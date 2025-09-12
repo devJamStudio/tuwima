@@ -7,8 +7,6 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-
-// Don't load WordPress header/footer
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,18 +24,35 @@ if (!defined('ABSPATH')) {
     <!-- WordPress head - loads all enqueued styles and scripts -->
     <?php wp_head(); ?>
 
-    <!-- Additional Green House specific styles (keeping for compatibility) -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/html/style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/html/responsive.css">
-
-    <!-- Additional scripts -->
-    <script src="<?php echo get_template_directory_uri(); ?>/html/js/match-height.js"></script>
-    <script>
-        jQuery(document).ready(function($) {
-            $('.match-height-bootstrap-row > * > *').matchHeight();
-            $('.match-height > *').matchHeight();
-        });
-    </script>
+    <!-- Custom styles for pixel-perfect design -->
+    <style>
+        /* Ensure Montserrat font is loaded */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+        
+        /* Custom font classes */
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        
+        /* Ensure proper text rendering */
+        body { 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        /* Fix for exact pixel positioning */
+        .min-w-\[1920px\] { min-width: 1920px; }
+        
+        /* Ensure proper float clearing */
+        .group:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* Custom color classes */
+        .text-green-custom { color: #00a906; }
+        .bg-green-custom { background-color: #00a906; }
+    </style>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>

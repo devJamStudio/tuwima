@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for Green House about section - Pixel Perfect 1920px Design
+ * Template part for Green House about section
  */
 
 // Prevent direct access
@@ -9,15 +9,15 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<!-- About Section - Pixel Perfect 1920px Design -->
+<!-- About Section -->
 <section id="o-inwestycji" class="relative w-full bg-white">
     <div class="mx-auto mt-[159px] px-[83px] relative w-[1882px]">
-        <div class="mx-auto relative w-[1441px]">
+        <div class="mx-auto relative w-[1441px] group">
             
             <!-- Main Content Row -->
             <div class="float-left mr-[34px] relative w-[660px]">
                 <!-- Title -->
-                <p class="ml-[4px] text-[#00a906] text-[40px] font-bold tracking-[0.02em]">
+                <p class="ml-[4px] text-green-custom text-[40px] font-bold tracking-[0.02em]">
                     <?php echo get_field('about_title') ?: 'O inwestycji'; ?>
                 </p>
                 
@@ -28,11 +28,11 @@ if (!defined('ABSPATH')) {
                 
                 <!-- Description -->
                 <p class="mt-[42px] ml-[4px] w-[656px] leading-[24px] text-justify">
-                    <?php echo get_field('about_description') ?: 'Zapraszamy do nowoczesnej inwestycji mieszkaniowej w spokojnej części Sosnowca, zaledwie kilka minut od centrum. Osiedle składa się z 14 domów w zabudowie bliźniaczej – łącznie 28 mieszkań. To idealna propozycja dla osób ceniących komfort, prywatność i dogodną lokalizację.<br><span class="text-style-7">&nbsp;</span><br>W ofercie znajdują się mieszkania na parterze z prywatnymi ogródkami oraz mieszkania na piętrze z balkonami. Każde mieszkanie zostało zaprojektowane z myślą o funkcjonalności i komforcie użytkowania.'; ?>
+                    <?php echo get_field('about_description') ?: 'Zapraszamy do nowoczesnej inwestycji mieszkaniowej w spokojnej części Sosnowca, zaledwie kilka minut od centrum. Osiedle składa się z 14 domów w zabudowie bliźniaczej – łącznie 28 mieszkań. To idealna propozycja dla osób ceniących komfort, prywatność i dogodną lokalizację.<br><br>W ofercie znajdują się mieszkania na parterze z prywatnymi ogródkami oraz mieszkania na piętrze z balkonami. Każde mieszkanie zostało zaprojektowane z myślą o funkcjonalności i komforcie użytkowania.'; ?>
                 </p>
                 
                 <!-- CTA Button -->
-                <div class="mt-[47px] ml-[4px] min-h-[58px] px-[20px] py-[16px] relative w-[225px] bg-cover bg-no-repeat text-[#00a906] font-montserrat text-[17px] font-bold text-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_17.png');">
+                <div class="mt-[47px] ml-[4px] min-h-[58px] px-[20px] py-[16px] relative w-[225px] bg-cover bg-no-repeat text-green-custom font-montserrat text-[17px] font-bold text-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_17.png');">
                     <?php echo get_field('about_button_text') ?: 'Zobacz więcej'; ?>
                 </div>
             </div>
@@ -44,19 +44,19 @@ if (!defined('ABSPATH')) {
         </div>
 
         <!-- Benefits Section -->
-        <div class="mt-[144px] mx-auto relative w-[1416px]">
+        <div class="mt-[144px] mx-auto relative w-[1416px] group">
             <div class="float-left mr-[123px]">
                 <img src="<?php echo get_field('benefits_image') ?: get_template_directory_uri() . '/html/images/layer_4.png'; ?>" alt="Benefits" class="block">
             </div>
             
             <div class="float-left mt-[14px] relative w-[581px]">
                 <!-- Benefits Title -->
-                <p class="text-[#00a906] text-[29px] font-bold tracking-[0.02em] leading-[1.2]">
+                <p class="text-green-custom text-[29px] font-bold tracking-[0.02em] leading-[1.2]">
                     <?php echo get_field('benefits_title') ?: 'Dlaczego warto wybrać<br>Green House Tuwima?'; ?>
                 </p>
 
                 <!-- Benefits List -->
-                <div class="mt-[62px] mx-auto relative w-[567px]">
+                <div class="mt-[62px] mx-auto relative w-[567px] group">
                     
                     <!-- Benefit 1 -->
                     <div class="float-left relative w-[51px]">
@@ -111,7 +111,7 @@ if (!defined('ABSPATH')) {
                 </div>
 
                 <!-- Additional Benefits Row -->
-                <div class="mt-[66px] ml-[14px] relative w-[567px]">
+                <div class="mt-[66px] ml-[14px] relative w-[567px] group">
                     <img src="<?php echo get_template_directory_uri(); ?>/html/images/layer_7.png" alt="Additional" class="float-left">
                     <p class="float-left mt-[3px] ml-[13px] w-[99px] text-[15px] font-bold tracking-[0.02em] leading-[1.2]">
                         <?php echo get_field('benefit_7_text') ?: 'Monitoring<br>osiedla'; ?>
@@ -132,7 +132,7 @@ if (!defined('ABSPATH')) {
                 </p>
 
                 <!-- CTA Button -->
-                <div class="mt-[47px] ml-[13px] min-h-[58px] px-[8px] relative w-[225px] bg-cover bg-no-repeat text-[#00a906] font-montserrat text-[17px] font-bold leading-[58px] text-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_17.png');">
+                <div class="mt-[47px] ml-[13px] min-h-[58px] px-[8px] relative w-[225px] bg-cover bg-no-repeat text-green-custom font-montserrat text-[17px] font-bold leading-[58px] text-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_17.png');">
                     <?php echo get_field('benefits_button_text') ?: 'Dowiedz się więcej'; ?>
                 </div>
             </div>
