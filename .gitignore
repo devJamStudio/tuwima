@@ -2,9 +2,6 @@
 node_modules/
 vendor/
 
-# Large theme directory (duplicate)
-theme/
-
 # Build files
 build/
 dist/

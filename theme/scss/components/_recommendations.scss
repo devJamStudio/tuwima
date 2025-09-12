@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+
+
+.recommendations-pagination .swiper-pagination-bullet {
+	width:1rem!important;
+	height: 1rem!important;
+	background: $primary!important;
+	opacity: 1!important;
+	z-index: 99;
+
+}
+.recommendations-pagination .swiper-pagination-bullet-active {
+	opacity: var(--swiper-pagination-bullet-opacity, 1);
+	background: lightgrey!important;
+	width: 3rem!important;
+	height:1rem!important;;
+	border-radius: 8px!important;
+
+}
+
+
+.recommendations-swiper  .swiper-wrapper  .swiper-slide {
+	height: auto!important;
+}
+.recommendations-swiper  {
+	overflow: hidden;
+	padding: 8px;
+}

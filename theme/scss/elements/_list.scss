@@ -1,0 +1,18 @@
+.profit__list li, .start__list  li, .wp-block-list ul li  {
+	position: relative;
+	list-style-type: none;
+	padding-left:1rem;
+}
+
+.profit__list li:before, .start__list li:before, .wp-block-list ul li:before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: -2rem;
+	width:2.5rem;
+	height: 2.5rem;
+	background-image: url("../images/chevron.png");
+	background-size:contain;
+	background-position: center;
+	background-repeat:no-repeat;
+}

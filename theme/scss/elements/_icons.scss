@@ -1,0 +1,33 @@
+@mixin icon_style($pseudo, $image_path, $size, $position_top, $position_left, $z_index) {
+	&::#{$pseudo} {
+		position: absolute;
+		top: $position_top;
+		left: $position_left;
+		height: $size;
+		width: $size;
+		z-index: $z_index;
+		content: "";
+		background-image: url("#{$image_path}");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+// Icon Classes
+@media (max-width: 1440px ) {
+
+	.fa-phone-alt, .fa-phone-flip {
+		position: relative;
+	}
+
+
+}
+
+@media (min-width: 1440px ) {
+
+	.fa-phone-alt, .fa-phone-flip {
+		position: relative;
+	}
+
+
+}

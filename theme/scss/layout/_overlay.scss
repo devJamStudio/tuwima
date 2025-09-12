@@ -1,0 +1,213 @@
+#nav__bg--overlay {
+	background: rgba(0, 0, 0, 0.8);
+	opacity: 0;
+	transition-duration: 500ms;
+	transition-delay: 300ms;
+	visibility: hidden;
+	z-index: 88;
+	width:100%;
+	height:100%;
+
+}
+
+#nav__bg--overlay.active {
+	background: rgba(0, 0, 0, 0.8);
+	opacity: 1;
+	transition-delay: 300ms;
+
+	transition-duration: 500ms;
+	display: flex;
+	visibility: visible;
+	z-index: 88;
+
+}
+
+@mixin dots_overlay($position, $pseudo) {
+	&::#{$pseudo} {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -5;
+
+		background-repeat: no-repeat;
+		background-size: 600px 600px  ;
+		background-image: url("../images/kropki.png");
+		content: ""; // Required for pseudo-elements
+		background-position: $position;
+	}
+}
+@mixin dots_overlay__footer($position, $pseudo) {
+	&::#{$pseudo} {
+		position: absolute;
+		top: -150px;
+		left: calc((-100vw + 100%)/2);
+		height: 600px;
+		width: 600px;
+		z-index: -5;
+		background-size:contain;
+		background-repeat: no-repeat;
+		background-image: url("../images/kropki.png");
+		content: ""; // Required for pseudo-elements
+		background-position: $position;
+	}
+}
+@mixin dots_overlay__left_donation($position, $pseudo) {
+	&::#{$pseudo} {
+		position: absolute;
+		top: -150px;
+		left: calc((-100vw + 100%)/2);
+
+		height: 100%;
+		width:  100%;
+		z-index: -5;
+		background-size:600px 600px;
+		background-repeat: no-repeat;
+		background-image: url("../images/kropki.png");
+		content: ""; // Required for pseudo-elements
+		background-position: $position;
+	}
+}
+@mixin dots_overlay__right_donation($position, $pseudo) {
+	&::#{$pseudo} {
+		position: absolute;
+		top: -300px;
+		left: calc((100vw - 100%)/2);
+		height: 100%;
+		width:  100%;
+		z-index: -5;
+		background-size:600px 600px;
+		background-repeat: no-repeat;
+		background-image: url("../images/kropki.png");
+		content: ""; // Required for pseudo-elements
+		background-position: center left;
+		transform: rotate(180deg);
+
+	}
+}
+
+@mixin dots__overlay-right__start($position, $pseudo) {
+	&::#{$pseudo} {
+		position: absolute;
+		bottom: 0;
+		left: calc((100vw - 100%)/2);
+		height: 100%;
+		width: 100%;
+		z-index: -5;
+		transform:rotate(180deg);
+		background-repeat: no-repeat;
+		background-size: 600px 600px ;
+		background-image: url("../images/kropki.png");
+		content: ""; // Required for pseudo-elements
+		background-position:left;
+	}
+}
+// Overlay classes for different positions
+.dots__overlay-left__donation {
+	position: relative;
+	transform:translateX(-1);
+	@include dots_overlay__left_donation(top left, before);
+}
+.dots__overlay-right__donation {
+	position: relative;
+
+	@include dots_overlay__right_donation(top right, before);
+}
+.dots__overlay-footer {
+	position: relative;
+
+	@include dots_overlay__footer(top left, before);
+}
+.dots__overlay-left {
+	position: relative;
+
+	@include dots_overlay(top left, before);
+}
+.dots__overlay-left-top {
+	position: relative;
+	@include dots_overlay( left, before);
+	&:before {
+		top: -124px;
+	}
+}
+.dots__overlay-center {
+	position: relative;
+
+	@include dots_overlay(center, before);
+	&::#{before} {
+		position: absolute;
+		top: 14%;
+		left: 45%;
+		height: 600px;
+		width: 600px;
+	}
+}
+.dots__overlay-right__start {
+	position: relative;
+
+	@include dots__overlay-right__start(right, after);
+
+}
+.dots__overlay-right {
+	position: relative;
+
+	@include dots_overlay(right top, after);
+
+}
+.dots__overlay-right-bottom {
+	position: relative;
+	@include dots_overlay(bottom right , before);
+
+
+}
+
+.dots__overlay-right-bottom__donations {
+	position: relative;
+	&:after{
+		position: absolute ;
+		top: 200px;
+		right: 0;
+		height: 100%;
+		width: calc((100vw - 100%)/2);
+		z-index: -990;
+		background-repeat: no-repeat;
+		background-size:contain;
+		border:none;
+		background-image: url("../images/kropki.png");
+
+		content: ""; // Required for pseudo-elements
+		background-position: bottom  right  ;
+	}
+
+}
+
+// Profit overlay style
+
+.profit-overlay {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: 21px;
+		right: 0;
+		height: 91%;
+		width: 65%;
+		z-index: -1;
+		content: "";
+		background-repeat: no-repeat;
+		background-image: url(../images/profit-overlay.png);
+		background-position: right;
+		background-size: cover;
+		mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+		-webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+	}
+}
+@media (max-width: 1024px) {
+	.profit-overlay {
+		position: relative;
+
+		&:before {
+			width:100%;
+		}
+	}
+}
