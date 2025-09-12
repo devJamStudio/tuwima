@@ -1,0 +1,40 @@
+@mixin icon_style($pseudo, $image_path, $size, $position_top, $position_left, $z_index) {
+	&::#{$pseudo} {
+		position: absolute;
+		top: $position_top;
+		left: $position_left;
+		height: $size;
+		width: $size;
+		z-index: $z_index;
+		content: "";
+		background-image: url("#{$image_path}");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+// Icon Classes
+.icon-pig {
+	position: absolute;
+	@include icon_style(before, "../images/icon1.png", 100px, 5%, 18%, 1);
+}
+
+.icon-coins {
+	position: absolute;
+	@include icon_style(after, "../images/icon2.png", 100px, 25%, 3%, 2);
+}
+
+.icon-pln-hand {
+	position: absolute;
+	@include icon_style(before, "../images/icon3.png", 100px, 50%, 3%, 3);
+}
+
+.icon-moneybag {
+	position: absolute;
+	@include icon_style(after, "../images/icon4.png", 100px, 74%, 15%, 4);
+}
+.fa-phone-alt, .fa-phone-flip {
+	position: relative;
+}
+
+

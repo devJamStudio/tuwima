@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
+sub {
+	margin-bottom:2rem;
+}
+.fa-home-alt:before, .fa-home-lg-alt:before, .fa-home:before, .fa-house:before {
+	content:url("../images/home.png")!important;
+	object-fit: cover;
+	height: 28px;
+	position: absolute;
+	bottom: 0px;
+	left: -8px;
+	opacity: 1;
+
+
+}
+.current-menu-item .fa-home-alt:before,
+.current-menu-item .fa-home:before,
+.current-menu-item .fa-house:before,
+.current-menu-item .fa-home-lg-alt:before {
+	content: url("../images/home_hover.png") !important;
+	object-fit: cover;
+	height: 28px;
+	position: absolute;
+	bottom: -1px;
+	left: -5px;
+}
+
+.fa-phone-alt:before, .fa-phone-flip:before
+{
+	content:url("../images/phone.png")!important;
+	object-fit: cover;
+
+	position: relative;
+	top:0;
+	left:0;
+	opacity: 1;
+	&:hover {
+		opacity: 0.9;
+	}
+}
+.fa-paper-plane:before{
+	content:url("../images/envelope.png")!important;
+	object-fit: cover;
+
+	position: relative;
+	top:0;
+	left:0;
+	opacity: 1;
+	&:hover {
+		opacity: 0.9;
+	}
+}
+.fa-regular.fa-envelope {
+	height: 24px!important;
+}
+
+.fa-envelope:before {
+	content:url("../images/contact.png")!important;
+	object-fit: contain;
+	height: 26px;
+	position: relative;
+	top:0;
+	left:0;
+	opacity: 1;
+	&:hover {
+		opacity: 0.9;
+	}}

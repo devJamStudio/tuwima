@@ -1,0 +1,152 @@
+{
+    "key": "group_financing_section",
+    "title": "Financing Section",
+    "fields": [
+        {
+            "key": "field_financing_title",
+            "label": "Financing Title",
+            "name": "financing_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Title for the financing section",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Finansowanie",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_financing_partner_logo",
+            "label": "Financing Partner Logo",
+            "name": "financing_partner_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Logo of the financing partner",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_financing_content",
+            "label": "Financing Content",
+            "name": "financing_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Content for the financing section",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Proces zakupu domu może wydawać się bardzo skomplikowany, ale możecie Państwo liczyć na naszą pomoc. Oferujemy pełne wsparcie przy pozyskaniu kredytu hipotecznego, który pozwoli Wam na wprowadzenie się do nowego domu.<br><br>Wybór odpowiedniego finansowania nieruchomości jest równie ważny co wybór samego domu. Posiadamy wiedzę oraz doświadczenie kredytowe, które pozwoli na szybkie znalezienie dla Państwa najkorzystniejszego rozwiązania kredytowego.<br><br>Dodatkowo współpracujemy z dedykowanym biurem doradztwa kredytowego Silesia Capital – Eksperci Kredytowi, w którym to zespół doświadczonych Doradców Kredytowych chętnie udzieli odpowiedzi na Państwa pytania.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_financing_button_text",
+            "label": "Financing Button Text",
+            "name": "financing_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Skontaktuj się",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_financing_button_url",
+            "label": "Financing Button URL",
+            "name": "financing_button_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#kontakt",
+            "placeholder": ""
+        },
+        {
+            "key": "field_financing_image",
+            "label": "Financing Image",
+            "name": "financing_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Image for the financing section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-green-house-tuwima.php"
+            }
+        ]
+    ],
+    "menu_order": 6,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613483
+}

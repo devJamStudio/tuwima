@@ -1,0 +1,215 @@
+// Define media queries in your mixins
+
+@mixin for-size($size) {
+	@if $size == phone-only {
+		@media (max-width: 599px) { @content; }
+	} @else if $size == tablet-portrait-up {
+		@media (min-width: 600px) { @content; }
+	} @else if $size == tablet-landscape-up {
+		@media (min-width: 900px) { @content; }
+	} @else if $size == desktop-up {
+		@media (min-width: 1200px) { @content; }
+	} @else if $size == big-desktop-up {
+		@media (min-width: 1800px) { @content; }
+	} @else if $size == tablet-up {
+		@media (max-width: 767px) { @content; }
+	}
+}
+@mixin dotted_arrow($position, $pseudo, $rotate ,$flip , $top, $bottom, $left, $right ) {
+	&::#{$pseudo} {
+		position: absolute;
+		left: $left;
+		top: $top;
+		bottom: $bottom;
+		right:$right;
+		height: 206px;
+		width: 158px;
+		z-index: 0;
+		background-repeat: no-repeat;
+		content: "";
+		background-image: url("../images/arrow.png");
+		background-size: contain;
+		transform: rotate($rotate) scaleX($flip);
+
+	}
+}
+@mixin corner_arrow( $pseudo ) {
+	&::#{$pseudo} {
+		position: absolute;
+		bottom: -90px;
+		right:0px;
+		height: 50px;
+		width: 50px;
+		z-index: 1;
+		background-repeat: no-repeat;
+		content: "";
+		background-image: url("../images/corner-arrow.png");
+		background-size: contain;
+
+
+
+	}
+}
+
+@mixin click_arrow( $pseudo ) {
+	&::#{$pseudo} {
+		position: absolute;
+		bottom: 5px;
+		right: -60px;
+		height: 59px;
+		width: 58px;
+		z-index: 0;
+		background-repeat: no-repeat;
+		content: "";
+		background-image: url(../images/click-arrow.png);
+		background-size: contain;
+
+
+	}
+}
+.click-arrow {
+	@include click_arrow(after)
+}
+.bottom-corner-arrow {
+	position:relative;
+	@include corner_arrow(after)
+}
+// Classes for arrows pointing in different directions
+.dotted__arrow-top-right__offer,.dotted__arrow-top-right {
+	position: relative;
+	@include dotted_arrow(right top, before, 180deg, -1, 20px ,0px ,-190px, 0px  ); // Adjust angle if needed
+}
+
+.dotted__arrow-bottom-right {
+	position: absolute;
+
+	@include dotted_arrow(right bottom, before, 0deg, 1, 70px ,0px ,30px, 0px  );
+}
+
+.dotted_arrow-bottom-left {
+	position: relative;
+
+	@include dotted_arrow(right bottom, after, 0deg, -1, -25px ,10px , 100%, 0px  );
+}
+
+.dotted__arrow-top-left {
+	position: relative;
+
+	@include dotted_arrow(left top, before, 315deg, 1, -40px ,0px ,-120px, 0px  );
+}
+.pointed-block__dotted__arrow-bottom-right {
+	position: relative;
+
+	@include dotted_arrow(left top, before, 0deg, 1,-150px ,0px ,-200px, 0px  );
+}
+
+.pointed-block__dotted__arrow-bottom-left {
+	position: relative;
+
+	@include dotted_arrow(right bottom, after, 0deg, -1, -150px ,0px ,150px, 0px  );
+}
+.contact-block_dotted__arrow-bottom-right {
+	position: relative;
+
+	@include dotted_arrow(right bottom, before, 0deg, 1, -32px ,0px ,70px, 0px  );
+}
+.dotted__arrow-bottom-right__support {
+	position: absolute;
+	@include dotted_arrow(right bottom, before, 0deg, 1, 90px ,0px, 47%, 0px  );
+}
+.dotted_arrow-bottom-left__profit {
+	position: relative;
+
+	@include dotted_arrow(right bottom, after, 0deg, -1, -100px ,20px , 100%, 0px  );
+}
+// Mixins for arrows
+
+@mixin arrow($pseudo, $position: absolute, $z-index: 0, $top: null, $bottom: null, $left: null, $right: null, $height: 50px, $width: 50px, $background: null, $rotate: 0deg, $scaleX: 1) {
+	&::#{$pseudo} {
+		position: $position;
+		top: $top;
+		bottom: $bottom;
+		left: $left;
+		right: $right;
+		height: $height;
+		width: $width;
+		z-index: $z-index;
+		background-repeat: no-repeat;
+		background-image: url($background);
+		background-size: contain;
+		transform: rotate($rotate) scaleX($scaleX);
+		content: "";
+	}
+}
+
+// Dotted Arrow Mixin
+
+@mixin dotted_arrow($pseudo, $rotate, $flip, $top, $bottom, $left, $right, $height: 206px, $width: 158px) {
+	@include arrow($pseudo,
+	$top: $top,
+	$bottom: $bottom,
+	$left: $left,
+	$right: $right,
+	$height: $height,
+	$width: $width,
+	$background: "../images/arrow.png",
+	$rotate: $rotate,
+	$scaleX: $flip
+	);
+}
+
+// Media Query for Screen <= 767px (tablet-up)
+@media (max-width: 767px) {
+	.dotted__arrow-top-right,
+	.dotted__arrow-top-right__offer {
+		position: relative;
+		@include dotted_arrow(before, 180deg, -1, 20px, 0px, -190px, 0px, 150px, 120px); // Adjusted size for smaller screens
+	}
+
+	.dotted__arrow-bottom-right {
+		position: absolute;
+		@include dotted_arrow(before, 0deg, 1, 70px, 0px, 30px, 0px, 100px, 80px); // Adjusted size for smaller screens
+	}
+
+	.dotted_arrow-bottom-left {
+		position: relative;
+		@include dotted_arrow(after, 0deg, -1, -25px, 10px, 100%, 0px, 100px, 80px); // Adjusted size for smaller screens
+	}
+
+	.dotted__arrow-top-left {
+		position: relative;
+		@include dotted_arrow(before, 315deg, 1, -40px, 0px, -120px, 0px, 100px, 80px); // Adjusted size for smaller screens
+	}
+
+	.pointed-block__dotted__arrow-bottom-right {
+		position: relative;
+		@include dotted_arrow(before, 0deg, 1, -150px, 0px, -200px, 0px, 100px, 80px); // Adjusted size for smaller screens
+	}
+
+	.pointed-block__dotted__arrow-bottom-left {
+		position: relative;
+		@include dotted_arrow(after, 0deg, -1, -150px, 0px, 150px, 0px, 100px, 80px); // Adjusted size for smaller screens
+	}
+
+	.contact-block_dotted__arrow-bottom-right {
+		position: relative;
+		@include dotted_arrow(before, 0deg, 1, 0px, 0px, 70px, 0px, 100px, 80px); // Adjusted size for smaller screens
+	}
+	.dotted__arrow-bottom-right__support {
+		position: absolute;
+		@include dotted_arrow(before, 0deg, 1, 90px, 0px, 47%, 0px, 150px, 158px); // Default larger size for larger screens
+	}
+}
+
+// Media Query for screen >= 1024px (desktop or larger)
+@media (min-width: 1024px) {
+	.dotted__arrow-bottom-right__support {
+		position: absolute;
+		@include dotted_arrow(before, 0deg, 1, 90px, 0px, 47%, 0px, 206px, 158px); // Default larger size for larger screens
+	}
+
+	.contact-block_dotted__arrow-bottom-right {
+		position: relative;
+		@include dotted_arrow(before, 0deg, 1, 40px, 20px, 50px, 30px, 206px, 158px); // Adjusted size for smaller screens
+	}
+}

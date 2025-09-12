@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+body {
+	background:$background;
+}
+a:hover {
+	color:$primary;
+}
