@@ -1,0 +1,167 @@
+/* Location Section Styles */
+
+.lokalizacja {
+  left: 26.5px;
+  margin: 115px auto 0;
+  position: relative;
+  width: 1473px;
+}
+
+.lokalizacja-2 {
+  margin: 0 588px;
+  color: #00a906;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.text-37 {
+  margin: 51px auto 0;
+  position: relative;
+  right: 28.5px;
+  width: 1416px;
+  font-family: Montserrat, sans-serif;
+  line-height: 24px;
+  text-align: center;
+}
+
+.row-15 {
+  left: 21.5px;
+  margin: 56px auto 0;
+  position: relative;
+  width: 1430px;
+}
+
+.col-34 {
+  float: left;
+  margin: 65px 136px 0 0;
+  position: relative;
+  width: 547px;
+}
+
+.row-18 {
+  position: relative;
+}
+
+.layer-10 {
+  float: left;
+  margin: 3px 0 0;
+}
+
+.text-38 {
+  float: left;
+  margin: 1px 0 0 14px;
+  width: 147px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-39 {
+  float: right;
+  margin: 1px 0 0;
+  width: 109px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.layer-11 {
+  float: right;
+  margin: 0 19px 0 0;
+}
+
+.row-23 {
+  margin: 132px 0 0 13px;
+  position: relative;
+  width: 534px;
+}
+
+.layer-12 {
+  float: left;
+  margin: 15px 0 0;
+}
+
+.text-40 {
+  float: left;
+  margin: 6px 0 0 13px;
+  width: 177px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-41 {
+  float: right;
+  margin: 7px 25px 0 0;
+  width: 81px;
+  color: #00a906;
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.pngtree-park-line-icon-png-image_9118726 {
+  float: right;
+  margin: 0 14px 0 0;
+}
+
+.row-32 {
+  margin: 117px 0 0 10px;
+  position: relative;
+  width: 537px;
+}
+
+.layer-13 {
+  float: left;
+  margin: 3px 0 0;
+}
+
+.text-42 {
+  float: left;
+  margin: 0 0 0 21px;
+  width: 164px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-43 {
+  float: right;
+  margin: 3px 24px 0 0;
+  width: 81px;
+  color: #00a906;
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.pngtree-swimming-pool-line-icon-vector-png-image_6683063 {
+  float: right;
+  margin: 9px 19px 0 0;
+}
+
+.btn-kopia-2 {
+  margin: 98px 0 0 13px;
+  min-height: 58px;
+  padding: 0 22px;
+  position: relative;
+  width: 225px;
+  background: url('../src/images/prostok_t_zaokr_glony_17.png') no-repeat;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 58px;
+  text-align: center;
+}
+
+.warstwa-64 {
+  float: left;
+}

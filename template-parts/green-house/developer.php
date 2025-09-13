@@ -17,3 +17,6 @@ if (!defined('ABSPATH')) {
     <img class="layer-22" src="<?php echo get_field('developer_image')['url'] ?? get_template_directory_uri() . '/html/images/5.jpg'; ?>" alt="" width="747" height="686">
 </div>
 
+
+
+

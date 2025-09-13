@@ -1,11 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { defineConfig } from '@tailwindcss/vite'
+
+export default defineConfig({
   content: [
     './**/*.php',
     './template-parts/**/*.php',
     './inc/**/*.php',
     './js/**/*.js',
-    './javascript/**/*.js'
+    './javascript/**/*.js',
+    './src/**/*.{js,css}'
   ],
   theme: {
     extend: {
@@ -81,9 +83,4 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
-}
+})

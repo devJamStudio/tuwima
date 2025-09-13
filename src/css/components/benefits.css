@@ -1,0 +1,289 @@
+/* Benefits Section Styles */
+
+.row-36 {
+  margin: 144px auto 0;
+  position: relative;
+  width: 1416px;
+}
+
+.layer-4 {
+  float: left;
+  margin: 0 123px 0 0;
+}
+
+.col-27 {
+  float: left;
+  margin: 14px 0 0;
+  position: relative;
+  width: 581px;
+}
+
+.text-20 {
+  color: #00a906;
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.row-24 {
+  margin: 62px auto 0;
+  position: relative;
+  width: 567px;
+}
+
+.grupa-3-kopia-3 {
+  float: left;
+  position: relative;
+  width: 51px;
+}
+
+.pngtree-underfloor-heating-line-icon-vector-png-image_6684603 {
+  display: block;
+  margin: 0 auto;
+}
+
+.layer-5 {
+  display: block;
+  margin: 78px auto 0;
+}
+
+.layer-6 {
+  display: block;
+  margin: 87px auto 0;
+}
+
+.col-43 {
+  float: left;
+  margin: 9px 0 0 9px;
+  position: relative;
+  width: 96px;
+}
+
+.text-21 {
+  margin: 0 0 0 3px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-22 {
+  margin: 78px 0 0;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-23 {
+  margin: 79px 0 0;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.col-44 {
+  float: right;
+  margin: 6px 0 0;
+  position: relative;
+  width: 203px;
+}
+
+.row-29 {
+  position: relative;
+}
+
+.pngtree-garden-line-icon-png-image_9063065 {
+  float: left;
+  margin: 0 11px 0 0;
+}
+
+.text-24 {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.row-30 {
+  margin: 80px 10px 0;
+  position: relative;
+}
+
+.balcony-5 {
+  float: left;
+  margin: 3px 16px 0 0;
+}
+
+.text-25 {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.row-31 {
+  margin: 75px 0 0 11px;
+  position: relative;
+}
+
+.warstwa-65 {
+  float: left;
+  margin: 0 13px 0 0;
+}
+
+.text-26 {
+  margin: 5px 0 0;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.row-20 {
+  margin: 66px 0 0 14px;
+  position: relative;
+  width: 567px;
+}
+
+.layer-7 {
+  float: left;
+}
+
+.text-27 {
+  float: left;
+  margin: 3px 0 0 13px;
+  width: 99px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-28 {
+  float: right;
+  margin: 3px 28px 0 0;
+  width: 109px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.fi-xtluxx-times-thin-holder {
+  float: right;
+  margin: 0 7px 0 0;
+  padding: 9px 0 8px;
+  position: relative;
+  width: 44px;
+  background: url('../images/fi-xtluxx-times-thin.png') no-repeat;
+}
+
+.layer-8 {
+  display: block;
+  margin: 0 auto;
+}
+
+.text-29 {
+  margin: 56px 0 0;
+  text-align: center;
+}
+
+.btn-kopia {
+  margin: 47px 0 0 13px;
+  min-height: 58px;
+  padding: 0 0 0 8px;
+  position: relative;
+  width: 225px;
+  background: url('../images/prostok_t_zaokr_glony_17.png') no-repeat;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 58px;
+  text-align: center;
+}
+
+/* Missing benefits text classes */
+.text-20 {
+  color: #00a906;
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-21 {
+  margin: 0 0 0 3px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-22 {
+  margin: 78px 0 0;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-23 {
+  margin: 79px 0 0;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-24 {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.text-25 {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-26 {
+  margin: 5px 0 0;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-27 {
+  float: left;
+  margin: 3px 0 0 13px;
+  width: 99px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-28 {
+  float: right;
+  margin: 3px 28px 0 0;
+  width: 109px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.text-29 {
+  margin: 56px 0 0;
+  text-align: center;
+}

@@ -1,32 +1,29 @@
 {
   "name": "future-theme",
-  "version": "1.0.0",
-  "description": "Future WordPress theme build tools with Tailwind CSS",
-  "main": "gulpfile.js",
+  "version": "2.0.0",
+  "description": "Future WordPress theme with Vite + Tailwind CSS 4",
+  "type": "module",
   "scripts": {
-    "build": "gulp sass && npm run build:tailwind",
-    "build:tailwind": "tailwindcss -i ./scss/tailwind-input.css -o ./build/css/theme/tailwind.css --watch=false",
-    "watch": "gulp watch",
-    "dev": "gulp default",
-    "sass": "gulp sass",
-    "tailwind:watch": "tailwindcss -i ./scss/tailwind-input.css -o ./build/css/theme/tailwind.css --watch"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "setup": "node setup-proxy.js",
+    "sass:watch": "sass --watch scss:css --style=compressed",
+    "sass:build": "sass scss:css --style=compressed"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "browser-sync": "^3.0.2",
-    "gulp": "^5.0.1",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-connect-php": "^0.0.2",
-    "gulp-sass": "^5.1.0",
-    "postcss": "^8.4.32",
-    "sass": "^1.69.0",
-    "tailwindcss": "^3.4.0"
+    "@tailwindcss/vite": "^4.0.0-alpha.26",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "sass": "^1.80.0",
+    "tailwindcss": "^4.0.0-alpha.26",
+    "vite": "^5.4.8"
   },
   "keywords": [
     "wordpress",
     "theme",
     "sass",
-    "gulp",
+    "vite",
     "tailwindcss"
   ],
   "author": "DevJam",

@@ -1,0 +1,584 @@
+/* Apartments Section Styles */
+
+.mieszkania {
+  margin: 112px auto 0;
+  min-height: 939px;
+  padding: 0 15px 377px;
+  position: relative;
+  width: 1458px;
+  background: url('../images/warstwa_23.jpg') no-repeat center bottom;
+}
+
+.text-45 {
+  color: #00a906;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.text-46 {
+  left: 2.5px;
+  margin: 40px auto 0;
+  position: relative;
+  width: 1423px;
+  line-height: 24px;
+}
+
+.wrapper-6 {
+  height: 161px;
+  margin: 199px auto 0;
+  position: relative;
+  right: 12.5px;
+  width: 1207px;
+}
+
+.kulki {
+  left: 50%;
+  position: absolute;
+  top: 6px;
+  width: 1207px;
+  margin-left: -603.5px;
+}
+
+.row-2 {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+/* Individual apartment dots - first row */
+.elipsa-2 {
+  height: 14px;
+  margin: 14px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia {
+  height: 14px;
+  margin: 14px 0 0 28px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-2 {
+  height: 14px;
+  margin: 14px 0 0 28px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-3 {
+  height: 14px;
+  margin: 14px 0 0 30px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-4 {
+  height: 14px;
+  margin: 12px 0 0 58px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-5 {
+  height: 14px;
+  margin: 12px 0 0 28px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-6 {
+  height: 14px;
+  margin: 12px 0 0 30px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-7 {
+  height: 14px;
+  margin: 0 0 0 23px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-8 {
+  height: 14px;
+  margin: 12px 0 0 64px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-9 {
+  height: 14px;
+  margin: 14px 0 0 28px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-10 {
+  height: 14px;
+  margin: 12px 0 0 30px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-11 {
+  height: 14px;
+  margin: 14px 0 0 28px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-12 {
+  height: 14px;
+  margin: 13px 0 0 60px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-13 {
+  height: 14px;
+  margin: 13px 0 0 30px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-14 {
+  height: 14px;
+  margin: 14px 0 0 30px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-15 {
+  height: 14px;
+  margin: 12px 0 0 28px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-22 {
+  height: 14px;
+  margin: 12px 0 0 59px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-23 {
+  height: 14px;
+  margin: 13px 0 0 30px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-24 {
+  height: 14px;
+  margin: 12px 0 0 27px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-40 {
+  height: 14px;
+  margin: 12px 0 0 29px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.row-2 > * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Second row of apartment dots */
+.row-3 {
+  margin: 113px auto 0;
+  position: relative;
+}
+
+.elipsa-2-kopia-38 {
+  float: left;
+  height: 14px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-37 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 40px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-36 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 42px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-35 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 38px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-34 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 81px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-41 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 42px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-33 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 37px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-32 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 41px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-31 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 80px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-30 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 41px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-29 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 39px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-28 {
+  float: left;
+  height: 14px;
+  margin: 0 0 0 41px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-20 {
+  float: right;
+  height: 14px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-19 {
+  float: right;
+  height: 14px;
+  margin: 0 40px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-18 {
+  float: right;
+  height: 14px;
+  margin: 0 41px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-42 {
+  float: right;
+  height: 14px;
+  margin: 0 41px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-17 {
+  float: right;
+  height: 14px;
+  margin: 0 36px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-25 {
+  float: right;
+  height: 14px;
+  margin: 0 31px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-16 {
+  float: right;
+  height: 14px;
+  margin: 0 40px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-26 {
+  float: right;
+  height: 14px;
+  margin: 0 39px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+.elipsa-2-kopia-27 {
+  float: right;
+  height: 14px;
+  margin: 0 41px 0 0;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #00a906;
+}
+
+/* Apartment selection popup */
+.dymek {
+  left: 50%;
+  min-height: 153px;
+  padding: 19px 0;
+  position: absolute;
+  top: 0;
+  width: 237px;
+  background: url('../images/prostok_t_zaokr_glony_7_k.png') no-repeat;
+  margin-left: -302.5px;
+}
+
+.row-4 {
+  margin: 0 auto;
+  position: relative;
+  width: 203px;
+}
+
+.text-48 {
+  float: right;
+  margin: 2px 0 0;
+}
+
+.text-47 {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.wrapper-14 {
+  height: 53px;
+  margin: 19px auto 0;
+  position: relative;
+  width: 203px;
+}
+
+.nav {
+  left: 50%;
+  position: absolute;
+  top: 22px;
+  width: 180px;
+  margin-left: -80.5px;
+}
+
+.nav-list {
+  position: relative;
+  list-style: none;
+}
+
+.nav-list li {
+  float: left;
+  margin: 0 35.5px 0 0;
+}
+
+.nav-list li:last-child {
+  margin-right: 0;
+}
+
+.nav-item-1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nav-item-4 {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nav-item-8 {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.layer-14 {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  margin-left: -101.5px;
+}
+
+.layer-15 {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  margin-left: -28.5px;
+}
+
+.layer-16 {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  margin-left: 49.5px;
+}

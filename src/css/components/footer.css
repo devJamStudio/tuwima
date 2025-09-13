@@ -1,0 +1,232 @@
+/* Footer Section Styles */
+
+.stopka {
+  height: 1170px;
+  margin: 127px auto 0;
+  position: relative;
+  width: 100%; /* 1920px / 1920px = 100% */
+  background: url('../images/warstwa_60.png') no-repeat center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.layer-holder-2 {
+  left: 0;
+  padding: 827px 0 184px;
+  position: absolute;
+  top: 66px;
+  width: 100%; /* 1920px / 1920px = 100% */
+  background: url('../images/5_3.png') no-repeat center 0;
+  background-position: center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logo-kopia-3 {
+  margin: 0 auto;
+  position: relative;
+  width: 1882px;
+}
+
+.wrapper-15 {
+  margin: 0 auto;
+  padding: 0 0 1px;
+  position: relative;
+  width: 57px;
+  background: url('../images/warstwa_0_kopia_3.png') no-repeat;
+}
+
+.warstwa-0-kopia-2-2 {
+  display: block;
+  left: 4.5px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.text-150 {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-size: 8.17485px;
+  font-weight: bold;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tuwima-2 {
+  display: block;
+  margin: 4px auto 0;
+}
+
+.col-10 {
+  left: 50%;
+  min-height: 832px;
+  padding: 90px 157px;
+  position: absolute;
+  top: 0;
+  width: 1451px;
+  background: url('../images/warstwa_58.jpg') no-repeat;
+  margin-left: -729px;
+}
+
+.text-151 {
+  margin: 0 354px;
+  color: #00a906;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.row-35 {
+  margin: 81px 0 0;
+  position: relative;
+}
+
+.col-47 {
+  float: left;
+  margin: 0 74px 0 0;
+  position: relative;
+  width: 526px;
+}
+
+.warstwa-61-holder {
+  min-height: 79px;
+  padding: 0 30px;
+  position: relative;
+  width: 526px;
+  background: url('../images/warstwa_61.png') no-repeat;
+}
+
+.text-152 > * {
+  line-height: 79px;
+}
+
+.warstwa-61-kopia-holder {
+  margin: 32px 0 0;
+  min-height: 79px;
+  padding: 0 31px;
+  position: relative;
+  width: 526px;
+  background: url('../images/warstwa_61.png') no-repeat;
+}
+
+.email > * {
+  line-height: 79px;
+}
+
+.warstwa-61-kopia-2-holder {
+  margin: 32px 0 0;
+  min-height: 79px;
+  padding: 0 29px;
+  position: relative;
+  width: 526px;
+  background: url('../images/warstwa_61.png') no-repeat;
+}
+
+.telefon > * {
+  line-height: 79px;
+}
+
+.warstwa-61-kopia-3-holder {
+  float: left;
+  min-height: 301px;
+  padding: 30px 28px 254px;
+  width: 526px;
+  background: url('../images/warstwa_61_kopia_3.png') no-repeat;
+}
+
+.row-14 {
+  margin: 41px auto 0;
+  position: relative;
+  right: 20px;
+  width: 1051px;
+}
+
+.layer-24 {
+  float: left;
+  margin: 9px 0 0;
+}
+
+.text-154 {
+  float: left;
+  margin: 8px 0 0 7px;
+}
+
+.col-35 {
+  float: right;
+  position: relative;
+  width: 634px;
+}
+
+.row-25 {
+  left: 82.5px;
+  margin: 0 auto;
+  position: relative;
+  width: 469px;
+}
+
+.col-39 {
+  float: left;
+  position: relative;
+  width: 37px;
+}
+
+.layer-holder-3 {
+  padding: 11px 0;
+  position: relative;
+  width: 37px;
+  background: url('../images/prostok_t_zaokr_glony_6_k.png') no-repeat;
+}
+
+.ion-checkmark-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.layer-holder-4 {
+  margin: 13px 0 0;
+  padding: 9px 0 13px;
+  position: relative;
+  width: 37px;
+  background: url('../images/prostok_t_zaokr_glony_6_k.png') no-repeat;
+}
+
+.ion-checkmark-icon-kopia {
+  display: block;
+  margin: 0 auto;
+}
+
+.col-40 {
+  float: right;
+  margin: 6px 0 0;
+  position: relative;
+  width: 415px;
+}
+
+.text-155 {
+  font-size: 15px;
+}
+
+.text-156 {
+  margin: 23px 0 0 2px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.layer-holder-5 {
+  margin: 45px 0 0;
+  min-height: 54px;
+  padding: 0 54px;
+  position: relative;
+  width: 275px;
+  background: url('../images/prostok_t_zaokr_glony_14.png') no-repeat;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 54px;
+  text-align: center;
+}

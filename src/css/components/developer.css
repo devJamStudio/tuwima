@@ -1,0 +1,29 @@
+/* Developer Section Styles */
+
+.o-developerze {
+  left: 8px;
+  position: relative;
+  width: 1432px;
+}
+
+.col-9 {
+  float: left;
+  margin: 109px 48px 0 0;
+  position: relative;
+  width: 637px;
+}
+
+.text-140 {
+  display: block;
+  position: relative;
+}
+
+.text-141 {
+  margin: 92px 0 0;
+  width: 637px;
+  line-height: 23px;
+}
+
+.layer-22 {
+  float: left;
+}

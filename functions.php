@@ -145,22 +145,88 @@ add_action( 'widgets_init', 'future_widgets_init' );
  * Enqueue scripts and styles.
  */
 function future_scripts() {
-	// Tailwind CSS
-	wp_enqueue_style( 'tailwind-css', 'https://cdn.tailwindcss.com', array(), null );
-
 	// Google Fonts
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&display=swap', array(), null );
 
-	// Custom CSS
-	wp_enqueue_style( 'future-style', get_stylesheet_uri(), array('tailwind-css'), FUTURE_VERSION );
-	wp_enqueue_style( 'future-custom', get_template_directory_uri() . '/css/custom.css', array('tailwind-css'), FUTURE_VERSION );
+	// Check if we're in development mode (Vite dev server running)
+	$is_development = defined('WP_DEBUG') && WP_DEBUG && future_is_vite_dev_server_running();
 
-	// Custom JS
-	wp_enqueue_script( 'future-script', get_template_directory_uri() . '/theme/js/script.min.js', array('jquery'), FUTURE_VERSION, true );
+	if ( $is_development ) {
+		// Development mode - load from Vite dev server
+		wp_enqueue_script(
+			'vite-client',
+			'http://localhost:3000/@vite/client',
+			array(),
+			null,
+			false
+		);
+
+		wp_enqueue_script(
+			'future-vite-main',
+			'http://localhost:3000/src/main.js',
+			array(),
+			null,
+			true
+		);
+
+		// Add module type for Vite scripts
+		add_filter('script_loader_tag', function($tag, $handle) {
+			if (in_array($handle, ['vite-client', 'future-vite-main'])) {
+				return str_replace('<script ', '<script type="module" ', $tag);
+			}
+			return $tag;
+		}, 10, 2);
+
+	} else {
+		// Production mode - load built files
+		$css_file = get_template_directory() . '/dist/css/main.css';
+		$js_file = get_template_directory() . '/dist/js/main.js';
+
+		if ( file_exists( $css_file ) ) {
+			wp_enqueue_style(
+				'future-main',
+				get_template_directory_uri() . '/dist/css/main.css',
+				array(),
+				filemtime( $css_file )
+			);
+		}
+
+		if ( file_exists( $js_file ) ) {
+			wp_enqueue_script(
+				'future-main',
+				get_template_directory_uri() . '/dist/js/main.js',
+				array(),
+				filemtime( $js_file ),
+				true
+			);
+		}
+
+		// Fallback to original style.css if no built CSS exists
+		if ( ! file_exists( $css_file ) ) {
+			wp_enqueue_style( 'future-style', get_stylesheet_uri(), array(), FUTURE_VERSION );
+			wp_enqueue_style( 'future-custom', get_template_directory_uri() . '/css/custom.css', array(), FUTURE_VERSION );
+		}
+	}
+
+	// Legacy JS for compatibility
+	if ( file_exists( get_template_directory() . '/js/custom.js' ) ) {
+		wp_enqueue_script( 'future-legacy', get_template_directory_uri() . '/js/custom.js', array(), FUTURE_VERSION, true );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+}
+
+/**
+ * Check if Vite dev server is running
+ */
+function future_is_vite_dev_server_running() {
+	$response = wp_remote_get('http://localhost:3000', array(
+		'timeout' => 1,
+		'sslverify' => false
+	));
+	return !is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200;
 }
 add_action( 'wp_enqueue_scripts', 'future_scripts' );
 

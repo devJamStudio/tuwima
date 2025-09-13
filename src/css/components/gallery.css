@@ -1,0 +1,77 @@
+/* Gallery Section Styles */
+
+.galeria {
+  margin: 82px auto 0;
+  position: relative;
+  right: 10.5px;
+  width: 1439px;
+}
+
+.col-28 {
+  float: left;
+  position: relative;
+  width: 1120px;
+}
+
+.text-135 {
+  display: block;
+  left: 192px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.row-21 {
+  margin: 75px 0 0;
+  position: relative;
+}
+
+.layer-17 {
+  float: left;
+  margin: 0 9px 0 0;
+}
+
+.col-37 {
+  float: left;
+  margin: 15px 0 0;
+  position: relative;
+  width: 290px;
+}
+
+.layer-18 {
+  display: block;
+}
+
+.layer-19 {
+  display: block;
+  margin: 23px 0 0;
+}
+
+.col-32 {
+  float: right;
+  margin: 128px 0 0;
+  position: relative;
+  width: 293px;
+}
+
+.layer-20 {
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper-17 {
+  margin: 23px 0 0;
+  width: 293px;
+  background: url('../images/6.png') no-repeat;
+}
+
+.warstwa-51-holder {
+  max-width: 293px;
+  min-height: 210px;
+  padding: 87px 0 101px 7px;
+  width: 293px;
+  background: url('../images/warstwa_51.png') no-repeat;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}

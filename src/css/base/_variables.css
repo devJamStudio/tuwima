@@ -1,0 +1,9 @@
+/* CSS Custom Properties for Theme Colors */
+:root {
+  --color-primary-500: #00a906;
+  --color-primary-600: #00a906;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #64748b;
+  --container-max-width: 1200px;
+  --container-padding: 1rem;
+}

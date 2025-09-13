@@ -5,6 +5,7 @@ vendor/
 # Build files
 build/
 dist/
+.vite/
 
 # Logs
 *.log

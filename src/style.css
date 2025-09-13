@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* Main CSS entry point for Future Theme - Responsive & Optimized */
+@import "tailwindcss";
+
+/* Base Styles */
+@import "./css/base/_variables.css";
+@import "./css/base/_reset.css";
+@import "./css/base/_typography.css";
+@import "./css/base/_utilities.css";
+
+/* Component Styles */
+@import "./css/components/header.css";
+@import "./css/components/about.css";
+@import "./css/components/benefits.css";
+@import "./css/components/layout.css";
+@import "./css/components/location.css";
+@import "./css/components/apartments.css";
+@import "./css/components/apartments-table.css";
+@import "./css/components/gallery.css";
+@import "./css/components/financing.css";
+@import "./css/components/developer.css";
+@import "./css/components/contact.css";
+@import "./css/components/footer.css";

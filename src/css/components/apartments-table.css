@@ -1,0 +1,1147 @@
+/* Apartments Table Styles */
+
+.tabela {
+  display: table;
+  margin: 75px auto 0;
+  position: relative;
+}
+
+.grupa-5 {
+  min-height: 246px;
+  padding: 0 0 30px;
+  position: relative;
+  width: 1423px;
+  background: url('../images/warstwa_42_kopia.png') no-repeat center bottom;
+}
+
+.row {
+  min-height: 84px;
+  padding: 30px 18px 32px;
+  position: relative;
+  width: 1422px;
+  background: url('../images/prostok_t_zaokr_glony_13.png') no-repeat;
+}
+
+.numer {
+  float: left;
+  margin: 2px 0 0;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pokoje {
+  float: left;
+  margin: 0 0 0 109px;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pow {
+  float: left;
+  margin: 1px 0 0 110px;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-49 {
+  float: left;
+  margin: 2px 0 0 97px;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-50 {
+  float: left;
+  margin: 5px 0 0 115px;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cena {
+  float: left;
+  margin: 4px 0 0 155px;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.plan {
+  float: left;
+  margin: 4px 0 0 220px;
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.col-12 {
+  margin: 2px auto 0;
+  min-height: 130px;
+  padding: 29px 25px 0;
+  position: relative;
+  width: 1421px;
+  background: url('../images/warstwa_42.png') no-repeat;
+}
+
+.col-48 {
+  float: left;
+  margin: 4px 0 0;
+  position: relative;
+  width: 209px;
+}
+
+.row-37 {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  display: table;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.text-51 {
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-52 {
+  display: inline-block;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.row-38 {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  display: table;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  margin: 62px auto 0;
+  position: relative;
+}
+
+.text-53 {
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-54 {
+  display: inline-block;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.col-49 {
+  float: left;
+  margin: 5px 0 0 134px;
+  position: relative;
+  width: 52px;
+}
+
+.text-55 {
+  margin: 0 0 0 2px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  text-align: left;
+}
+
+.text-56 {
+  margin: 62px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.col-50 {
+  float: left;
+  margin: 5px 0 0 124px;
+  position: relative;
+  width: 61px;
+}
+
+.text-57 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-58 {
+  margin: 62px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.col-51 {
+  float: left;
+  margin: 6px 0 0 133px;
+  position: relative;
+  width: 144px;
+}
+
+.text-59 {
+  display: block;
+  margin: 0 auto;
+}
+
+.zarezerwowane {
+  margin: 61px 0 0;
+  color: #db6700;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.col-52 {
+  float: left;
+  margin: 4px 0 0 105px;
+  position: relative;
+  width: 128px;
+}
+
+.text-60 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rezerwacja {
+  margin: 61px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.col-21 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
+
+.text-61 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-62 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+/* Additional table groups */
+.grupa-5-2 {
+  height: 160px;
+  margin: 1px 0 0;
+  position: relative;
+  width: 1423px;
+}
+
+.warstwa-42 {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  margin-left: -709.5px;
+}
+
+.warstwa-42-kopia {
+  left: 50%;
+  position: absolute;
+  top: 80px;
+  margin-left: -711.5px;
+}
+
+.grupa-3 {
+  left: 50%;
+  position: absolute;
+  top: 29px;
+  width: 1334px;
+  margin-left: -680.5px;
+}
+
+.text-63 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-64 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-65 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-66 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-67 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-68 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.col-20 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
+
+.text-69 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-70 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.grupa-3-kopia {
+  left: 50%;
+  position: absolute;
+  top: 112px;
+  width: 1072px;
+  margin-left: -684.5px;
+}
+
+.text-71 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-72 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-73 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-74 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.zarezerwowane-2 {
+  float: left;
+  margin: 0 0 0 132px;
+  color: #db6700;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.rezerwacja-2 {
+  float: left;
+  margin: 0 0 0 114px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+/* Continue with other table groups - grupa-5-3 through grupa-5-7 */
+.grupa-5-3,
+.grupa-5-4,
+.grupa-5-5,
+.grupa-5-6,
+.grupa-5-7 {
+  height: 160px;
+  position: relative;
+  width: 1423px;
+}
+
+.warstwa-42-2,
+.warstwa-42-3,
+.warstwa-42-4,
+.warstwa-42-5,
+.warstwa-42-6 {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  margin-left: -709.5px;
+}
+
+.warstwa-42-kopia-2,
+.warstwa-42-kopia-3,
+.warstwa-42-kopia-4,
+.warstwa-42-kopia-5,
+.warstwa-42-kopia-6 {
+  left: 50%;
+  position: absolute;
+  top: 80px;
+  margin-left: -711.5px;
+}
+
+.grupa-3-2,
+.grupa-3-3,
+.grupa-3-4,
+.grupa-3-5,
+.grupa-3-6 {
+  left: 50%;
+  position: absolute;
+  top: 29px;
+  width: 1334px;
+  margin-left: -680.5px;
+}
+
+/* Common styles for table text elements */
+.text-75, .text-87, .text-99, .text-111, .text-123 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-76, .text-88, .text-100, .text-112, .text-124 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-77, .text-89, .text-101, .text-113, .text-125 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-78, .text-90, .text-102, .text-114, .text-126 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-79, .text-91, .text-103, .text-115, .text-127 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-80, .text-92, .text-104, .text-116, .text-128 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.col-19, .col-15, .col-16, .col-17, .col-18 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
+
+.text-81, .text-93, .text-105, .text-117, .text-129 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-82, .text-94, .text-106, .text-118, .text-130 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.grupa-3-kopia-2,
+.grupa-3-kopia-4,
+.grupa-3-kopia-5,
+.grupa-3-kopia-6,
+.grupa-3-kopia-7 {
+  left: 50%;
+  position: absolute;
+  top: 112px;
+  width: 1072px;
+  margin-left: -684.5px;
+}
+
+.text-83, .text-95, .text-107, .text-119, .text-131 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-84, .text-96, .text-108, .text-120, .text-132 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-85, .text-97, .text-109, .text-121, .text-133 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-86, .text-98, .text-110, .text-122, .text-134 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.zarezerwowane-3,
+.zarezerwowane-4,
+.zarezerwowane-5,
+.zarezerwowane-6,
+.zarezerwowane-7 {
+  float: left;
+  margin: 0 0 0 132px;
+  color: #db6700;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.rezerwacja-3,
+.rezerwacja-4,
+.rezerwacja-5,
+.rezerwacja-6,
+.rezerwacja-7 {
+  float: left;
+  margin: 0 0 0 114px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+/* Missing text classes from apartments table */
+.text-51 {
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-52 {
+  display: inline-block;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-53 {
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-54 {
+  display: inline-block;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-55 {
+  margin: 0 0 0 2px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  text-align: left;
+}
+
+.text-56 {
+  margin: 62px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-57 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-58 {
+  margin: 62px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-59 {
+  display: block;
+  margin: 0 auto;
+}
+
+.text-60 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.text-61 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-62 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+
+/* All remaining missing apartments table classes - Individual definitions */
+.text-63 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-64 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-65 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-66 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-67 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-68 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-69 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-70 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-71 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-72 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-73 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-74 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-75 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-76 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-77 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-78 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-79 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-80 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-81 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-82 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-83 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-84 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-85 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-86 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-87 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-88 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-89 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-90 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-91 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-92 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-93 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-94 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-95 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-96 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-97 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-98 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-99 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-100 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-101 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-102 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-103 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-104 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-105 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-106 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-107 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-108 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-109 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-110 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-111 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-112 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-113 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-114 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-115 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-116 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-117 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-118 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-119 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-120 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-121 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-122 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-123 {
+  float: left;
+  margin: 4px 0 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-124 {
+  float: left;
+  margin: 4px 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-125 {
+  float: left;
+  margin: 5px 0 0 135px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-126 {
+  float: left;
+  margin: 5px 0 0 123px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-127 {
+  float: left;
+  margin: 6px 0 0 156px;
+}
+
+.text-128 {
+  float: left;
+  margin: 4px 0 0 145px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-129 {
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-130 {
+  margin: 65px 0 0;
+  color: #00a906;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.text-131 {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-132 {
+  float: left;
+  margin: 0 0 0 147px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-133 {
+  float: left;
+  margin: 1px 0 0 137px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.text-134 {
+  float: left;
+  margin: 1px 0 0 125px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+
+.col-15 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
+
+.col-16 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
+
+.col-17 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
+
+.col-18 {
+  float: left;
+  margin: 0 0 0 138px;
+  position: relative;
+  width: 110px;
+}
