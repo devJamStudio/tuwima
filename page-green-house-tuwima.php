@@ -12,10 +12,10 @@ get_header(); ?>
 
 <body>
 
-<div class="global_container_">
+<div class="global_container_ ">
     <?php get_template_part('template-parts/green-house/header'); ?>
 
-    <div class="main-content-wrreapper">
+    <div class="main-content-wrapper">
         <?php get_template_part('template-parts/green-house/about'); ?>
 
         <?php get_template_part('template-parts/green-house/benefits'); ?>

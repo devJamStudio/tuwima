@@ -1,0 +1,127 @@
+{
+    "key": "group_garden_section",
+    "title": "Garden Section",
+    "fields": [
+        {
+            "key": "field_garden_title",
+            "label": "Garden Title",
+            "name": "garden_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Title for the garden section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Mieszkanie<br>z własnym ogródkiem",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_garden_description",
+            "label": "Garden Description",
+            "name": "garden_description",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Description for the garden section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><span class=\"text-style-7\">&nbsp;</span><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_garden_button_text",
+            "label": "Garden Button Text",
+            "name": "garden_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zobacz mieszkania",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_garden_button_url",
+            "label": "Garden Button URL",
+            "name": "garden_button_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#mieszkania",
+            "placeholder": ""
+        },
+        {
+            "key": "field_garden_image",
+            "label": "Garden Image",
+            "name": "garden_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Image for the garden section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-green-house-tuwima.php"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Garden section with apartment garden features",
+    "show_in_rest": false,
+    "modified": 1757613483
+}

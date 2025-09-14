@@ -142,36 +142,97 @@ function future_widgets_init() {
 add_action( 'widgets_init', 'future_widgets_init' );
 
 /**
+ * Get image URL for CSS variables
+ *
+ * @param string $filename Image filename
+ * @return string Complete image URL
+ */
+function future_get_image_url($filename) {
+	$hot_file = get_theme_file_path('/hot');
+	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
+
+	// In development, use Vite dev server for images
+	// In production, use theme's images directory (not dist)
+	$image_base_url = $is_development ? 'http://localhost:5173/src/images/' : get_template_directory_uri() . '/images/';
+
+	return $image_base_url . $filename;
+}
+
+/**
+ * Generate CSS variables for images
+ *
+ * @return string CSS variables string
+ */
+function future_generate_image_css_variables() {
+	$image_config = require get_template_directory() . '/src/css/image-config.php';
+	$css_variables = ":root {\n\t--image-base-url: '" . future_get_image_url('') . "';\n";
+
+	foreach ($image_config as $category => $images) {
+		foreach ($images as $key => $filename) {
+			$css_variables .= "\t--image-{$key}: url('" . future_get_image_url($filename) . "');\n";
+		}
+	}
+
+	$css_variables .= "}";
+
+	return $css_variables;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function future_scripts() {
 	// Google Fonts
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&display=swap', array(), null );
 
-	// Check if we're in development mode (Vite dev server running)
-	$is_development = defined('WP_DEBUG') && WP_DEBUG && future_is_vite_dev_server_running();
+	// Generate and add CSS variables for images
+	$css_variables = future_generate_image_css_variables();
+	wp_add_inline_style('google-fonts', $css_variables);
+
+	// Debug: Log CSS variables if WP_DEBUG is enabled
+	if (defined('WP_DEBUG') && WP_DEBUG) {
+		error_log('CSS Variables generated: ' . $css_variables);
+	}
+
+	// Check if we're in development mode
+	$hot_file = get_theme_file_path('/hot');
+	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
 
 	if ( $is_development ) {
-		// Development mode - load from Vite dev server
+		// Development: Load Vite assets
+		// Read dev server URL from hot file
+		$vite_dev_server = 'http://localhost:5173'; // Default
+		if (file_exists($hot_file)) {
+			$hot_content = file_get_contents($hot_file);
+			if ($hot_content) {
+				$vite_dev_server = trim($hot_content);
+			}
+		}
+
 		wp_enqueue_script(
 			'vite-client',
-			'http://localhost:3000/@vite/client',
+			$vite_dev_server . '/@vite/client',
 			array(),
 			null,
 			false
 		);
 
 		wp_enqueue_script(
-			'future-vite-main',
-			'http://localhost:3000/src/main.js',
+			'future-main',
+			$vite_dev_server . '/src/main.js',
 			array(),
 			null,
-			true
+			false
 		);
 
-		// Add module type for Vite scripts
+		// Debug info
+		if (defined('WP_DEBUG') && WP_DEBUG) {
+			error_log("🔥 Vite HMR active: " . $vite_dev_server);
+		}
+
+		// Make scripts ES6 modules
 		add_filter('script_loader_tag', function($tag, $handle) {
-			if (in_array($handle, ['vite-client', 'future-vite-main'])) {
+			if (in_array($handle, ['vite-client', 'future-main'])) {
 				return str_replace('<script ', '<script type="module" ', $tag);
 			}
 			return $tag;

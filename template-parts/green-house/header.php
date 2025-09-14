@@ -31,7 +31,7 @@ if (!defined('ABSPATH')) {
                             <p class="text-4 mobile-hidden">Mariusz Szyda</p>
                             <p class="text-5 mobile-hidden">572 481 313</p>
                             <p class="text-6 mobile-hidden">Rafał Banarski</p>
-                            <img class="warstwa-50 mobile-hidden" src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_50.png" alt="" width="41" height="41">
+                            <img class="warstwa-50 mobile-hidden" src="<?php echo get_template_directory_uri() ?>/html/images/warstwa_50.png" alt="" width="41" height="41">
                             <nav class="nav-2">
                                 <ul class="nav-list-2 group">
                                     <li><p class="nav-item-1-2 text-item selected"><a href="#">O inwestycji</a></p></li>

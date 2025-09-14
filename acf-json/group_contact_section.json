@@ -196,6 +196,166 @@
                     "parent_repeater": "field_contact_agents"
                 }
             ]
+        },
+        {
+            "key": "field_contact_form_title",
+            "label": "Contact Form Title",
+            "name": "contact_form_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Title for the contact form",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Skontaktuj się z Nami",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_form_name_label",
+            "label": "Form Name Label",
+            "name": "form_name_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Label for name field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Imię i nazwisko:",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_form_email_label",
+            "label": "Form Email Label",
+            "name": "form_email_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Label for email field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Email:",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_form_phone_label",
+            "label": "Form Phone Label",
+            "name": "form_phone_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Label for phone field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Telefon:",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_form_message_label",
+            "label": "Form Message Label",
+            "name": "form_message_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Label for message field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Napisz wiadomość:",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_consent_text_1",
+            "label": "Consent Text 1",
+            "name": "consent_text_1",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "First consent text",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Wyrażam zgodę na wysyłanie informacji handlowych",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_consent_text_2",
+            "label": "Consent Text 2",
+            "name": "consent_text_2",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Second consent text",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Wyrażam zgodę na przekazanie i przetwarzanie moich danych osobowych w celu odpowiedzi na przesłaną wiadomość",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_submit_button_text",
+            "label": "Submit Button Text",
+            "name": "submit_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text for submit button",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Wyślij wiadomość",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -207,7 +367,7 @@
             }
         ]
     ],
-    "menu_order": 5,
+    "menu_order": 7,
     "position": "normal",
     "style": "default",
     "label_placement": "top",

@@ -8,7 +8,7 @@
 .baner {
   position: relative;
   width: 100%; /* 1920px / 1920px = 100% */
-  background: url('../images/4_3.jpg') no-repeat center 0;
+  background: var(--image-banner) no-repeat center 0;
   background-position: center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -20,7 +20,7 @@
   padding: 0 0 95px;
   position: relative;
   width: 100%; /* 1920px / 1920px = 100% */
-  background: url('../images/warstwa_47.png') no-repeat center 0;
+  background: var(--image-warstwa-47) no-repeat center 0;
   background-position: center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -31,7 +31,6 @@
 .heder-2 {
   margin: 0 auto;
   position: relative;
-  width: 1882px;
 }
 
 .row-5 {
@@ -39,7 +38,6 @@
   min-height: 138px;
   padding: 10px 0 0 39px;
   position: relative;
-  width: 1880px;
   -webkit-border-radius: 0 0 11px 11px;
   -moz-border-radius: 0 0 11px 11px;
   border-radius: 0 0 11px 11px;
@@ -50,7 +48,8 @@
   float: left;
   margin: 9px 0 0;
   position: relative;
-  width: 118px;
+  max-width: 118px;
+	width:100%;
 }
 
 .logo {
@@ -58,7 +57,7 @@
   padding: 0 0 1px;
   position: relative;
   width: 57px;
-  background: url('../images/warstwa_0_kopia.png') no-repeat;
+  background: var(--image-logo) no-repeat;
 }
 
 .warstwa-0-kopia-2 {
@@ -87,14 +86,15 @@
 .col-31 {
   float: right;
   position: relative;
-  width: 1632px;
+  max-width: 1632px;
+	width:100%;
 }
 
 .wrapper-25 {
   height: 99px;
   position: relative;
-  width: 1632px;
-}
+  max-width: 1632px;
+	width:100%;}
 
 .layer {
   height: 42px;
@@ -286,7 +286,7 @@
   position: relative;
   right: 7.5px;
   width: 275px;
-  background: url('../images/prostok_t_zaokr_glony_14.png') no-repeat;
+  background: var(--image-button-14) no-repeat;
   color: #ffffff;
   font-size: 19px;
   font-weight: bold;
@@ -301,7 +301,7 @@
   padding: 0 37px;
   position: relative;
   right: 7px;
-  width: 1412px;
+	max-width:1413;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   border-radius: 11px;
@@ -432,7 +432,7 @@
   margin: 159px auto 0;
   padding: 0 83px;
   position: relative;
-  width: 1882px;
+  max--width: 1882px;
 }
 
 /* Missing header text classes */

@@ -1,25 +1,27 @@
 /* Location Section Styles */
 
 .lokalizacja {
-  left: 26.5px;
   margin: 115px auto 0;
   position: relative;
-  width: 1473px;
+  max-width: 1473px;
+  width:100%;
+
 }
 
 .lokalizacja-2 {
-  margin: 0 588px;
   color: #00a906;
   font-size: 40px;
   font-weight: bold;
   letter-spacing: 0.02em;
+	text-align: center;
 }
 
 .text-37 {
   margin: 51px auto 0;
   position: relative;
   right: 28.5px;
-  width: 1416px;
+  max-width: 1416px;
+  width:100%;
   font-family: Montserrat, sans-serif;
   line-height: 24px;
   text-align: center;
@@ -29,14 +31,16 @@
   left: 21.5px;
   margin: 56px auto 0;
   position: relative;
-  width: 1430px;
+  max-width: 1430px;
+  width:100%;
 }
 
 .col-34 {
   float: left;
-  margin: 65px 136px 0 0;
+  margin: 65px 0px 0 0;
   position: relative;
-  width: 547px;
+  max-width: 547px;
+  width:100%;
 }
 
 .row-18 {
@@ -76,7 +80,8 @@
 .row-23 {
   margin: 132px 0 0 13px;
   position: relative;
-  width: 534px;
+  max-width: 534px;
+  width:100%;
 }
 
 .layer-12 {
@@ -113,7 +118,8 @@
 .row-32 {
   margin: 117px 0 0 10px;
   position: relative;
-  width: 537px;
+  max-width: 537px;
+  width:100%;
 }
 
 .layer-13 {
@@ -150,18 +156,33 @@
 .btn-kopia-2 {
   margin: 98px 0 0 13px;
   min-height: 58px;
-  padding: 0 22px;
   position: relative;
   width: 225px;
-  background: url('../src/images/prostok_t_zaokr_glony_17.png') no-repeat;
+  background: var(--image-prostok-17) no-repeat;
   color: #00a906;
   font-family: Montserrat, sans-serif;
   font-size: 17px;
   font-weight: bold;
   line-height: 58px;
   text-align: center;
+	align-items: center;
+  display: flex;
+  justify-content: center;
+
 }
 
 .warstwa-64 {
   float: left;
+	width:100%;
+	height:100%;
+	max-height:686px;
+	max-width:747px;
+	object-fit: cover;
+}
+.warstwa-64 img {
+	width:100%;
+	height:100%;
+	max-height:686px;
+	max-width:747px;
+	object-fit: cover;
 }

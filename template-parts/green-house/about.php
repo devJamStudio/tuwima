@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="o-inwestycji group">
+<div class="o-inwestycji  flex flex-col lg:flex-row">
     <div class="col-5">
         <p class="text-16"><?php echo get_field('about_title') ?: 'O inwestycji'; ?></p>
         <p class="text-17"><?php echo get_field('about_subtitle') ?: 'Inwestycja w przyszłość<br>Twojej rodziny.'; ?></p>

@@ -1,0 +1,149 @@
+{
+    "key": "group_gallery_section",
+    "title": "Gallery Section",
+    "fields": [
+        {
+            "key": "field_gallery_title",
+            "label": "Gallery Title",
+            "name": "gallery_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Title for the gallery section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zobacz galerie",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_gallery_images",
+            "label": "Gallery Images",
+            "name": "gallery_images",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add gallery images (minimum 4 images required)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_gallery_image",
+            "min": 4,
+            "max": 4,
+            "layout": "table",
+            "button_label": "Add Gallery Image",
+            "sub_fields": [
+                {
+                    "key": "field_gallery_image",
+                    "label": "Gallery Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload gallery image",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gallery_image_alt",
+                    "label": "Image Alt Text",
+                    "name": "alt",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Alt text for accessibility",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Describe the image",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_gallery_button_text",
+            "label": "Gallery Button Text",
+            "name": "gallery_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text for the gallery button",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zobacz wszystkie",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_gallery_button_url",
+            "label": "Gallery Button URL",
+            "name": "gallery_button_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "URL for the gallery button (link to full gallery page)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#gallery",
+            "placeholder": "https://example.com/gallery"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-green-house-tuwima.php"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Gallery section with 4 images and call-to-action button",
+    "show_in_rest": false,
+    "modified": 1757613483
+}

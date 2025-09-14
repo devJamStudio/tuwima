@@ -3,19 +3,30 @@
 .row-36 {
   margin: 144px auto 0;
   position: relative;
-  width: 1416px;
+  max-width: 1416px;
+  width:100%;
 }
 
 .layer-4 {
   float: left;
-  margin: 0 123px 0 0;
+	width:100%;
+	max-width: 712px;
+	height: auto;
+	object-fit: cover;
 }
 
+.layer-4  img {
+	width:100%;
+	max-width: 712px;
+	height: auto;
+	object-fit: cover;
+}
 .col-27 {
   float: left;
   margin: 14px 0 0;
   position: relative;
-  width: 581px;
+  max-width: 581px;
+  width:100%;
 }
 
 .text-20 {
@@ -29,7 +40,8 @@
 .row-24 {
   margin: 62px auto 0;
   position: relative;
-  width: 567px;
+  max-width: 567px;
+  width:100%;
 }
 
 .grupa-3-kopia-3 {
@@ -88,8 +100,7 @@
   float: right;
   margin: 6px 0 0;
   position: relative;
-  width: 203px;
-}
+  width: 192px;}
 
 .row-29 {
   position: relative;
@@ -101,6 +112,7 @@
 }
 
 .text-24 {
+	display: flex;
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 0.02em;
@@ -146,7 +158,6 @@
 .row-20 {
   margin: 66px 0 0 14px;
   position: relative;
-  width: 567px;
 }
 
 .layer-7 {
@@ -179,7 +190,7 @@
   padding: 9px 0 8px;
   position: relative;
   width: 44px;
-  background: url('../images/fi-xtluxx-times-thin.png') no-repeat;
+  background: var(--image-fi-xtluxx) no-repeat;
 }
 
 .layer-8 {
@@ -195,16 +206,19 @@
 .btn-kopia {
   margin: 47px 0 0 13px;
   min-height: 58px;
-  padding: 0 0 0 8px;
   position: relative;
   width: 225px;
-  background: url('../images/prostok_t_zaokr_glony_17.png') no-repeat;
+  background: var(--image-prostok-17) no-repeat;
   color: #00a906;
   font-family: Montserrat, sans-serif;
   font-size: 17px;
   font-weight: bold;
   line-height: 58px;
   text-align: center;
+	align-items: center;
+  display: flex;
+  justify-content: center;
+
 }
 
 /* Missing benefits text classes */

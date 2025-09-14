@@ -5,8 +5,9 @@
   min-height: 939px;
   padding: 0 15px 377px;
   position: relative;
-  width: 1458px;
-  background: url('../images/warstwa_23.jpg') no-repeat center bottom;
+  max-width: 1458px;
+  width:100%;
+  background: var(--image-warstwa-23) no-repeat center bottom;
 }
 
 .text-45 {
@@ -19,7 +20,8 @@
   left: 2.5px;
   margin: 40px auto 0;
   position: relative;
-  width: 1423px;
+  max-width: 1423px;
+  width:100%;
   line-height: 24px;
 }
 
@@ -28,7 +30,8 @@
   margin: 199px auto 0;
   position: relative;
   right: 12.5px;
-  width: 1207px;
+  max-width: 1207px;
+  width:100%;
 }
 
 .kulki {
@@ -494,7 +497,7 @@
   position: absolute;
   top: 0;
   width: 237px;
-  background: url('../images/prostok_t_zaokr_glony_7_k.png') no-repeat;
+  background: var(--image-prostok-7-k) no-repeat;
   margin-left: -302.5px;
 }
 

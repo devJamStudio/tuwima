@@ -5,7 +5,7 @@
   margin: 127px auto 0;
   position: relative;
   width: 100%; /* 1920px / 1920px = 100% */
-  background: url('../images/warstwa_60.png') no-repeat center bottom;
+  background: var(--image-warstwa-60) no-repeat center bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,7 +18,7 @@
   position: absolute;
   top: 66px;
   width: 100%; /* 1920px / 1920px = 100% */
-  background: url('../images/5_3.png') no-repeat center 0;
+  background: var(--image-footer-5-3) no-repeat center 0;
   background-position: center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -37,7 +37,7 @@
   padding: 0 0 1px;
   position: relative;
   width: 57px;
-  background: url('../images/warstwa_0_kopia_3.png') no-repeat;
+  background: var(--image-logo-3) no-repeat;
 }
 
 .warstwa-0-kopia-2-2 {
@@ -70,7 +70,7 @@
   position: absolute;
   top: 0;
   width: 1451px;
-  background: url('../images/warstwa_58.jpg') no-repeat;
+  background: var(--image-warstwa-58) no-repeat;
   margin-left: -729px;
 }
 
@@ -98,7 +98,7 @@
   padding: 0 30px;
   position: relative;
   width: 526px;
-  background: url('../images/warstwa_61.png') no-repeat;
+  background: var(--image-warstwa-61) no-repeat;
 }
 
 .text-152 > * {
@@ -111,7 +111,7 @@
   padding: 0 31px;
   position: relative;
   width: 526px;
-  background: url('../images/warstwa_61.png') no-repeat;
+  background: var(--image-warstwa-61) no-repeat;
 }
 
 .email > * {
@@ -124,7 +124,7 @@
   padding: 0 29px;
   position: relative;
   width: 526px;
-  background: url('../images/warstwa_61.png') no-repeat;
+  background: var(--image-warstwa-61) no-repeat;
 }
 
 .telefon > * {
@@ -136,7 +136,7 @@
   min-height: 301px;
   padding: 30px 28px 254px;
   width: 526px;
-  background: url('../images/warstwa_61_kopia_3.png') no-repeat;
+  background: var(--image-warstwa-61-kopia) no-repeat;
 }
 
 .row-14 {
@@ -179,7 +179,7 @@
   padding: 11px 0;
   position: relative;
   width: 37px;
-  background: url('../images/prostok_t_zaokr_glony_6_k.png') no-repeat;
+  background: var(--image-button-6-k) no-repeat;
 }
 
 .ion-checkmark-icon {
@@ -192,7 +192,7 @@
   padding: 9px 0 13px;
   position: relative;
   width: 37px;
-  background: url('../images/prostok_t_zaokr_glony_6_k.png') no-repeat;
+  background: var(--image-button-6-k) no-repeat;
 }
 
 .ion-checkmark-icon-kopia {
@@ -223,7 +223,7 @@
   padding: 0 54px;
   position: relative;
   width: 275px;
-  background: url('../images/prostok_t_zaokr_glony_14.png') no-repeat;
+  background: var(--image-button-14) no-repeat;
   color: #ffffff;
   font-size: 19px;
   font-weight: bold;

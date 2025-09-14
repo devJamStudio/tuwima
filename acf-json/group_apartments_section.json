@@ -73,7 +73,7 @@
             "name": "apartments_table",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "List of available apartments",
+            "instructions": "List of available apartments. Add apartments with their details.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -81,7 +81,7 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "collapsed": "field_apartment_number",
             "min": 0,
             "max": 0,
             "layout": "table",
@@ -232,7 +232,7 @@
                     "name": "plan_link",
                     "aria-label": "",
                     "type": "url",
-                    "instructions": "",
+                    "instructions": "Link to apartment plan (PDF, image, or page)",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -240,8 +240,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
+                    "default_value": "#",
+                    "placeholder": "https://example.com/plan.pdf",
                     "parent_repeater": "field_apartments_table"
                 }
             ]

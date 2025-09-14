@@ -1,6 +1,25 @@
 // Main JavaScript entry point for Future Theme
 import './style.css'
-import '../css/style.css'
+
+// Import all modular CSS files for HMR
+import './css/base/_variables.css'
+import './css/base/_reset.css'
+import './css/base/_typography.css'
+import './css/base/_utilities.css'
+
+// Import component CSS files
+import './css/components/header.css'
+import './css/components/about.css'
+import './css/components/benefits.css'
+import './css/components/layout.css'
+import './css/components/location.css'
+import './css/components/apartments.css'
+import './css/components/apartments-table.css'
+import './css/components/gallery.css'
+import './css/components/financing.css'
+import './css/components/developer.css'
+import './css/components/contact.css'
+import './css/components/footer.css'
 
 // Import existing JavaScript functionality
 import '../js/script.min.js'

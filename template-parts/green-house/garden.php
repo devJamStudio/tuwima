@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="row-34 group">
+<div class="row-34   flex flex-col lg:flex-row  lg:gap-[51px] justify-between">
     <img class="layer-9" src="<?php echo get_field('garden_image')['url'] ?? get_template_directory_uri() . '/html/images/3.jpg'; ?>" alt="" width="747" height="686">
     <div class="col-46">
         <p class="text-34"><?php echo get_field('garden_title') ?: 'Mieszkanie<br>z własnym ogródkiem'; ?></p>

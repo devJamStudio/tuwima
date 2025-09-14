@@ -95,7 +95,7 @@
   position: absolute;
   top: 63px;
   width: 360px;
-  background: url('../images/warstwa_59.jpg') no-repeat;
+  background: var(--image-warstwa-59) no-repeat;
   margin-left: -93px;
 }
 
@@ -128,7 +128,7 @@
   position: absolute;
   top: 552px;
   width: 360px;
-  background: url('../images/warstwa_59_kopia.jpg') no-repeat;
+  background: var(--image-warstwa-59-kopia) no-repeat;
   margin-left: -269px;
 }
 

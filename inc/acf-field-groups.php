@@ -435,7 +435,10 @@ function future_register_acf_field_groups() {
                 'label' => 'Apartments Table',
                 'name' => 'apartments_table',
                 'type' => 'repeater',
-                'instructions' => 'List of available apartments',
+                'instructions' => 'List of available apartments. Add apartments with their details.',
+                'layout' => 'table',
+                'button_label' => 'Add Apartment',
+                'collapsed' => 'field_apartment_number',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_apartment_number',
@@ -482,6 +485,9 @@ function future_register_acf_field_groups() {
                         'label' => 'Plan Link',
                         'name' => 'plan_link',
                         'type' => 'url',
+                        'instructions' => 'Link to apartment plan (PDF, image, or page)',
+                        'default_value' => '#',
+                        'placeholder' => 'https://example.com/plan.pdf',
                     ),
                 ),
                 'default_value' => array(
@@ -492,6 +498,16 @@ function future_register_acf_field_groups() {
                         'garden_area' => 245,
                         'status' => 'available',
                         'price_action' => 'Zapytaj o cenę',
+                        'plan_link' => '#',
+                    ),
+                    array(
+                        'number' => 'A 1.2',
+                        'rooms' => 4,
+                        'area' => 55,
+                        'garden_area' => 245,
+                        'status' => 'reserved',
+                        'price_action' => 'Rezerwacja',
+                        'plan_link' => '#',
                     ),
                 ),
             ),
@@ -806,6 +822,69 @@ function future_register_acf_field_groups() {
                 ),
             ),
         ),
+    ));
+
+    // 8. GALLERY SECTION FIELD GROUP - Attached to Green House Tuwima page template
+    acf_add_local_field_group(array(
+        'key' => 'group_gallery_section',
+        'title' => 'Gallery Section',
+        'fields' => array(
+            array(
+                'key' => 'field_gallery_title',
+                'label' => 'Gallery Title',
+                'name' => 'gallery_title',
+                'type' => 'text',
+                'instructions' => 'Title for the gallery section',
+                'default_value' => 'Zobacz galerie',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_gallery_images',
+                'label' => 'Gallery Images',
+                'name' => 'gallery_images',
+                'type' => 'gallery',
+                'instructions' => 'Upload up to 5 images for the gallery. Images will be displayed in the gallery section.',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'insert' => 'append',
+                'library' => 'all',
+                'min' => 1,
+                'max' => 5,
+                'required' => 0,
+            ),
+            array(
+                'key' => 'field_gallery_button_text',
+                'label' => 'Gallery Button Text',
+                'name' => 'gallery_button_text',
+                'type' => 'text',
+                'instructions' => 'Text for the gallery button',
+                'default_value' => 'Zobacz wszystkie',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_gallery_button_url',
+                'label' => 'Gallery Button URL',
+                'name' => 'gallery_button_url',
+                'type' => 'url',
+                'instructions' => 'URL for the gallery button (can link to full gallery page)',
+                'default_value' => '#gallery',
+                'required' => 1,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-green-house-tuwima.php',
+                ),
+            ),
+        ),
+        'menu_order' => 8,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
     ));
 }
 

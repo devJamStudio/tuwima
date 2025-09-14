@@ -12,8 +12,9 @@ if (!defined('ABSPATH')) {
 <div class="lokalizacja group">
     <p class="lokalizacja-2"><?php echo get_field('location_title') ?: 'Lokalizacja'; ?></p>
     <p class="text-37"><?php echo get_field('location_description') ?: '<strong class="text-style-8">Green House Tuwima </strong>łączy bliskość natury z komfortem miejskiego życia.W otoczeniu inwestycji znajdują się liczne tereny zielone, a jednocześnie możesz cieszyć<br>się szybkim dojazdem do centrum oraz wygodnym dostępem do szkół, sklepów i usług.'; ?></p>
-    <div class="row-15 group">
+    <div class="row-15 flex flex-col lg:flex-row gap-10 2xl:gap-[136px]  justify-between">
         <div class="col-34">
+			<div class="lg:min-w-[420px]">
             <div class="row-18 group">
                 <img class="layer-10" src="<?php echo get_template_directory_uri(); ?>/html/images/4615221.png" alt="" width="56" height="46">
                 <p class="text-38"><span class="text-style-9"><?php echo get_field('location_1_time') ?: '5 min'; ?></span><br><?php echo get_field('location_1_name') ?: 'szkoła podstawowa'; ?></p>
@@ -35,6 +36,7 @@ if (!defined('ABSPATH')) {
             <div class="btn-kopia-2">
                 <?php echo get_field('location_button_text') ?: 'Zobacz mieszkania'; ?>
             </div>
+			</div>
         </div>
         <img class="warstwa-64" src="<?php echo get_field('location_map_image')['url'] ?? get_template_directory_uri() . '/html/images/warstwa_64.jpg'; ?>" alt="" width="747" height="686">
     </div>

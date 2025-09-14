@@ -61,7 +61,7 @@
 .wrapper-17 {
   margin: 23px 0 0;
   width: 293px;
-  background: url('../images/6.png') no-repeat;
+  background: var(--image-gallery-6) no-repeat;
 }
 
 .warstwa-51-holder {
@@ -69,7 +69,7 @@
   min-height: 210px;
   padding: 87px 0 101px 7px;
   width: 293px;
-  background: url('../images/warstwa_51.png') no-repeat;
+  background: var(--image-warstwa-51) no-repeat;
   color: #ffffff;
   font-size: 20px;
   font-weight: bold;
