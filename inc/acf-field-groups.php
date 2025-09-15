@@ -722,6 +722,24 @@ function future_register_acf_field_groups() {
                 'instructions' => 'Image for the about developer section',
                 'return_format' => 'array',
             ),
+            array(
+                'key' => 'field_developer_button_text',
+                'label' => 'Developer Button Text',
+                'name' => 'developer_button_text',
+                'type' => 'text',
+                'instructions' => 'Text for the developer button',
+                'default_value' => 'Skontaktuj się',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_developer_button_url',
+                'label' => 'Developer Button URL',
+                'name' => 'developer_button_url',
+                'type' => 'url',
+                'instructions' => 'URL for the developer button',
+                'default_value' => '#kontakt',
+                'required' => 1,
+            ),
         ),
         'location' => array(
             array(

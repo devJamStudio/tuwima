@@ -83,73 +83,7 @@ function get_status_text($status) {
 
 <!-- Apartments Table Section -->
 <style>
-.apartments-table {
-    width: 100%;
-    max-width: 1200px;
-    margin: 75px auto 0;
-    border-collapse: collapse;
-    font-family: Montserrat, sans-serif;
-}
 
-.apartments-table th {
-    background-color: #00a906;
-    color: #ffffff;
-    padding: 20px 15px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    font-family: Montserrat, sans-serif;
-    height: 80px;
-    vertical-align: middle;
-}
-
-.apartments-table td {
-    padding: 20px 15px;
-    border: none;
-    font-size: 14px;
-}
-
-.apartments-table tbody tr {
-    height: 80px;
-}
-
-.apartments-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.apartments-table tbody tr:nth-child(even) {
-    background-color: #f5f5f5;
-}
-
-.apartments-table .status-available {
-    color: #00a906;
-    font-weight: bold;
-}
-
-.apartments-table .status-reserved {
-    color: #ff6b35;
-    font-weight: bold;
-}
-
-.apartments-table .plan-link {
-    color: #00a906;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.apartments-table .plan-link:hover {
-    text-decoration: underline;
-}
-
-.apartments-table .number {
-    font-weight: bold;
-    color: #333;
-}
-
-.apartments-table .area {
-    color: #666;
-}
 </style>
 
 <div class="apartments-table-container">

@@ -7,6 +7,19 @@
 	width:100%;
 }
 
+/* Responsive margins for smaller screens */
+@media (max-width: 768px) {
+  .o-inwestycji {
+    margin: 60px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .o-inwestycji {
+    margin: 40px auto 0;
+  }
+}
+
 .col-5 {
   float: left;
   margin: 0 34px 0 0;

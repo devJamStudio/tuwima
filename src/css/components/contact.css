@@ -3,8 +3,21 @@
 .kontakt {
   margin: 86px auto 0;
   position: relative;
-  right: 88px;
-  width: 1022px;
+  max-width: 1022px;
+  width: 100%;
+}
+
+/* Responsive margins for smaller screens */
+@media (max-width: 768px) {
+  .kontakt {
+    margin: 60px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt {
+    margin: 40px auto 0;
+  }
 }
 
 .text-142 {
@@ -17,7 +30,8 @@
 .row-19 {
   margin: 38px auto 0;
   position: relative;
-  width: 994px;
+  max-width: 994px;
+  width: 100%;
 }
 
 .budraise_invest_wh {
@@ -29,7 +43,8 @@
   float: left;
   margin: 7px 0 0 152px;
   position: relative;
-  width: 194px;
+  max-width: 194px;
+  width: 100%;
 }
 
 .row-26 {
@@ -94,7 +109,8 @@
   padding: 29px 0 37px;
   position: absolute;
   top: 63px;
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   background: var(--image-warstwa-59) no-repeat;
   margin-left: -93px;
 }

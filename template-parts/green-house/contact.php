@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="kontakt group">
+<section class="kontakt group" id="kontakt">
     <p class="text-142"><?php echo get_field('contact_company_name') ?: 'Siedziba główna <span class="color000000">BUDRAISE INVEST</span>'; ?></p>
     <div class="row-19 group">
         <img class="budraise_invest_wh" src="<?php echo get_field('contact_logo')['url'] ?? get_template_directory_uri() . '/html/images/budraise_invest_wh.png'; ?>" alt="" width="374" height="87">
@@ -37,7 +37,7 @@ if (!defined('ABSPATH')) {
             <p class="text-149"><?php echo get_field('agent_2_phone') ?: '453 287 744'; ?></p>
         </div>
     </div>
-</div>
+</section>
 
 
 

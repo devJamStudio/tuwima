@@ -8,6 +8,19 @@
   width: 100%;
 }
 
+/* Responsive margins for smaller screens */
+@media (max-width: 768px) {
+  .finansowanie {
+    margin: 60px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .finansowanie {
+    margin: 40px auto 0;
+  }
+}
+
 .row-16 {
   position: relative;
 }
@@ -15,13 +28,23 @@
 .layer-21 {
   float: left;
 }
+.layer-23 img {
+	max-width:747px;
+	width:100%;
 
+}
 
 .col-29 {
   float: left;
   margin: 19px 0 0;
   position: relative;
-  width: 650px;
+  max-width: 650px;
+  width: 100%;
+	width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .finansowanie-2 {
@@ -41,14 +64,14 @@
   margin: 52px auto 0;
   position: relative;
   right: 7px;
-  width: 636px;
+  max-width: 636px;
+  width: 100%;
   line-height: 24px;
   text-align: justify;
 }
 
 .btn-kopia-2-2 {
-  left: 212.5px;
-  margin: 53px auto 0;
+  margin: 53px 0 0  0;
   min-height: 58px;
   position: relative;
   width: 225px;
@@ -62,30 +85,14 @@
 	align-items: center;
   display: flex;
   justify-content: center;
-
+	align-self: flex-end;
 }
 
-.btn-kopia-4 {
-  margin: 565px 0 0 22px;
-  min-height: 58px;
-  position: relative;
-  width: 225px;
-  background: var(--image-prostok-17) no-repeat;
-  color: #00a906;
-  font-family: Montserrat, sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 58px;
-  text-align: center;
-	align-items: center;
-  display: flex;
-  justify-content: center;
 
-}
 
 .layer-21 img {
   width: 100%;
-  height: 100%;
+	height:auto;
   max-height: 686px;
   max-width: 747px;
   object-fit: cover;

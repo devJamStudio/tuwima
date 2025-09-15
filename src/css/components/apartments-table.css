@@ -2,18 +2,34 @@
 
 .apartments-table-container {
     width: 100%;
-    max-width: 1200px;
-  margin: 0 auto ;
+		max-width: 1458px;
+		width: 100%;  margin: 0 auto ;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
 .apartments-table {
     width: 100%;
+		max-width: 1458px;
+		width: 100%;
+		margin: 75px auto 0;
     border-collapse: collapse;
-  font-family: Montserrat, sans-serif;
+  	font-family: Montserrat, sans-serif;
     background-color: #ffffff;
     overflow: hidden;
+}
+
+/* Responsive margins for smaller screens */
+@media (max-width: 768px) {
+  .apartments-table {
+    margin: 60px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .apartments-table {
+    margin: 40px auto 0;
+  }
 }
 
 .apartments-table th {

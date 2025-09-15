@@ -41,11 +41,9 @@ $financing_image = get_field('financing_image');
                 <?php echo wp_kses_post($financing_content); ?>
             </div>
 
-            <div class="btn-kopia-2-2">
-                <a href="<?php echo esc_url($financing_button_url); ?>" style="color: inherit; text-decoration: none;">
-                    <?php echo esc_html($financing_button_text); ?>
-                </a>
-            </div>
+            <button class="btn-kopia-2-2" onclick="window.location.href='<?php echo esc_url($financing_button_url); ?>'" aria-label="<?php echo esc_attr($financing_button_text); ?> - <?php echo esc_attr($financing_title); ?>">
+                <?php echo esc_html($financing_button_text); ?>
+            </button>
         </div>
     </div>
 </section>

@@ -7,6 +7,19 @@
   width: 1439px;
 }
 
+/* Responsive margins for smaller screens */
+@media (max-width: 768px) {
+  .galeria {
+    margin: 60px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    margin: 40px auto 0;
+  }
+}
+
 .col-28 {
   float: left;
   position: relative;

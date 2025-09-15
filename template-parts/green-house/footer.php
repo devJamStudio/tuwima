@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
             <img class="tuwima-2" src="<?php echo get_field('footer_tuwima_logo')['url'] ?? get_template_directory_uri() . '/html/images/tuwima_2.png'; ?>" alt="tuwima" width="118" height="20" title="tuwima">
         </div>
     </div>
-    <div class="col-10">
+    <div class="col-10 shadow-xl">
         <p class="text-151"><?php echo get_field('contact_form_title') ?: 'Skontaktuj się z Nami'; ?></p>
 
         <form id="contact-form" class="contact-form" method="post" action="">
@@ -27,26 +27,26 @@ if (!defined('ABSPATH')) {
 
             <div class="row-35 match-height group">
                 <div class="col-47">
-                    <div class="warstwa-61-holder" style="border: 1px solid #ddd; background: none;">
+                    <div class="warstwa-61-holder" style="border: 1px solid #000; background: none;">
                         <div class="text-152">
                             <p><?php echo get_field('form_name_label') ?: 'Imię i nazwisko:'; ?></p>
                         </div>
                         <input type="text" name="contact_name" id="contact_name" required style="width: 100%; padding: 8px 12px; border: none; font-size: 14px; background: transparent; display: block; box-sizing: border-box;" placeholder="Wprowadź imię i nazwisko">
                     </div>
-                    <div class="warstwa-61-kopia-holder" style="border: 1px solid #ddd; background: none;">
+                    <div class="warstwa-61-kopia-holder" style="border: 1px solid #000; background: none;">
                         <div class="email">
                             <p><?php echo get_field('form_email_label') ?: 'Email:'; ?></p>
                         </div>
                         <input type="email" name="contact_email" id="contact_email" required style="width: 100%; padding: 8px 12px; border: none; font-size: 14px; background: transparent; display: block; box-sizing: border-box;" placeholder="Wprowadź adres email">
                     </div>
-                    <div class="warstwa-61-kopia-2-holder" style="border: 1px solid #ddd; background: none;">
+                    <div class="warstwa-61-kopia-2-holder" style="border: 1px solid #000; background: none;">
                         <div class="telefon">
                             <p><?php echo get_field('form_phone_label') ?: 'Telefon:'; ?></p>
                         </div>
                         <input type="tel" name="contact_phone" id="contact_phone" style="width: 100%; padding: 8px 12px; border: none; font-size: 14px; background: transparent; display: block; box-sizing: border-box;" placeholder="Wprowadź numer telefonu">
                     </div>
                 </div>
-                <div class="warstwa-61-kopia-3-holder" style="border: 1px solid #ddd; background: none;">
+                <div class="warstwa-61-kopia-3-holder" style="border: 1px solid #000; background: none;">
                     <p><?php echo get_field('form_message_label') ?: 'Napisz wiadomość:'; ?></p>
                     <textarea name="contact_message" id="contact_message" required style="width: 100%; padding: 8px 12px; border: none; font-size: 14px; min-height: 120px; resize: vertical; background: transparent; display: block; box-sizing: border-box; font-family: inherit;" placeholder="Wprowadź treść wiadomości" rows="6"></textarea>
                 </div>

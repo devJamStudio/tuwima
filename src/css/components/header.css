@@ -430,11 +430,21 @@
 /* Main Content Wrapper */
 .main-content-wrapper {
   margin: 159px auto 0;
-  padding: 0 83px;
   position: relative;
   max--width: 1882px;
 }
+@media (max-width: 1440px) {
+	.main-content-wrapper {
+		padding: 0 12px;
 
+	}
+}
+@media (min-width: 1440px) {
+.main-content-wrapper {
+	padding: 0 83px;
+
+}
+}
 /* Missing header text classes */
 .text-10 {
   float: left;

@@ -10,6 +10,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+	background-position-y: 67px;
 }
 
 .layer-holder-2 {
@@ -29,7 +30,8 @@
 .logo-kopia-3 {
   margin: 0 auto;
   position: relative;
-  width: 1882px;
+  max-width: 1882px;
+  width: 100%;
 }
 
 .wrapper-15 {
@@ -65,13 +67,14 @@
 
 .col-10 {
   left: 50%;
-  min-height: 832px;
+  min-height: 707px;
   padding: 90px 157px;
   position: absolute;
   top: 0;
   width: 1451px;
-  background: var(--image-warstwa-58) no-repeat;
   margin-left: -729px;
+	background:white;
+  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
 }
 
 .text-151 {
@@ -97,8 +100,11 @@
   min-height: 79px;
   padding: 0 30px;
   position: relative;
-  width: 526px;
-  background: var(--image-warstwa-61) no-repeat;
+  max-width: 526px;
+  width: 100%;
+	border:1px solid black!improtant;
+	display:flex;
+	flex-direction: row;
 }
 
 .text-152 > * {
@@ -110,8 +116,11 @@
   min-height: 79px;
   padding: 0 31px;
   position: relative;
-  width: 526px;
-  background: var(--image-warstwa-61) no-repeat;
+  max-width: 526px;
+	width: 100%;
+	border:1px solid black;
+	display:flex;
+	flex-direction: row;
 }
 
 .email > * {
@@ -123,7 +132,11 @@
   min-height: 79px;
   padding: 0 29px;
   position: relative;
-  width: 526px;
+  max-width: 526px;
+	width: 100%;
+	border:1px solid black;
+	display:flex;
+	flex-direction: row;
   background: var(--image-warstwa-61) no-repeat;
 }
 
@@ -133,7 +146,7 @@
 
 .warstwa-61-kopia-3-holder {
   float: left;
-  min-height: 301px;
+  max-height: 307px;
   padding: 30px 28px 254px;
   width: 526px;
   background: var(--image-warstwa-61-kopia) no-repeat;
@@ -179,6 +192,8 @@
   padding: 11px 0;
   position: relative;
   width: 37px;
+	display: flex;
+	justify-content: center;
   background: var(--image-button-6-k) no-repeat;
 }
 
@@ -192,6 +207,8 @@
   padding: 9px 0 13px;
   position: relative;
   width: 37px;
+	display: flex;
+	justify-content: center;
   background: var(--image-button-6-k) no-repeat;
 }
 
@@ -229,4 +246,9 @@
   font-weight: bold;
   line-height: 54px;
   text-align: center;
+}
+
+
+#contact-form div {
+	min-width:fit-content
 }
