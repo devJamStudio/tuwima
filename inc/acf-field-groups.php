@@ -904,6 +904,63 @@ function future_register_acf_field_groups() {
         'label_placement' => 'top',
         'instruction_placement' => 'label',
     ));
+
+    // 9. FOOTER SECTION FIELD GROUP
+    acf_add_local_field_group(array(
+        'key' => 'group_footer_section',
+        'title' => 'Footer Section',
+        'fields' => array(
+            array(
+                'key' => 'field_footer_title',
+                'label' => 'Footer Title',
+                'name' => 'footer_title',
+                'type' => 'text',
+                'instructions' => 'Title for the footer section',
+                'default_value' => 'Green House',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_footer_tuwima_logo',
+                'label' => 'Footer Tuwima Logo',
+                'name' => 'footer_tuwima_logo',
+                'type' => 'image',
+                'instructions' => 'Tuwima logo for footer',
+                'return_format' => 'array',
+            ),
+            array(
+                'key' => 'field_contact_form_title',
+                'label' => 'Contact Form Title',
+                'name' => 'contact_form_title',
+                'type' => 'text',
+                'instructions' => 'Title for the contact form',
+                'default_value' => 'Skontaktuj się z Nami',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_privacy_policy_content',
+                'label' => 'Privacy Policy Content',
+                'name' => 'privacy_policy_content',
+                'type' => 'wysiwyg',
+                'instructions' => 'Content for the privacy policy modal',
+                'default_value' => '<h3>Polityka Prywatności</h3><p>Administratorem danych osobowych jest...</p><p>Dane osobowe przetwarzane są w celu...</p>',
+                'required' => 0,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-green-house-tuwima.php',
+                ),
+            ),
+        ),
+        'menu_order' => 9,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+    ));
 }
 
 // Hook the function to ACF init

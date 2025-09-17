@@ -14,7 +14,7 @@
 		width: 100%;
 		margin: 75px auto 0;
     border-collapse: collapse;
-  	font-family: Montserrat, sans-serif;
+  font-family: Montserrat, sans-serif;
     background-color: #ffffff;
     overflow: hidden;
 }
@@ -34,14 +34,14 @@
 
 .apartments-table th {
     background-color: #00a906;
-    color: #ffffff;
+  color: #ffffff;
     padding: 20px 15px;
     text-align: left;
-    font-weight: bold;
+  font-weight: bold;
     font-size: 16px;
     border: none;
-    position: relative;
-    font-family: Montserrat, sans-serif;
+  position: relative;
+  font-family: Montserrat, sans-serif;
     height: 80px;
     vertical-align: middle;
 }
@@ -72,19 +72,19 @@
 }
 
 .apartments-table .status-available {
-    color: #00a906;
-    font-weight: bold;
+  color: #00a906;
+  font-weight: bold;
 }
 
 .apartments-table .status-reserved {
     color: #ff6b35;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .apartments-table .plan-link {
-    color: #00a906;
+  color: #00a906;
     text-decoration: none;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .apartments-table .plan-link:hover {

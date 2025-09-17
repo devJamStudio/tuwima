@@ -13,10 +13,10 @@ if (!defined('ABSPATH')) {
     <div class="layer-holder-2">
         <div class="logo-kopia-3">
             <div class="wrapper-15">
-                <img class="warstwa-0-kopia-2-2" src="<?php echo get_template_directory_uri(); ?>/html/images/warstwa_0_kopia_2_2.png" alt="" width="48" height="52">
+                <img class="warstwa-0-kopia-2-2" src="<?php echo green_house_image_url('warstwa_0_kopia_2_2.png'); ?>" alt="" width="48" height="52">
             </div>
             <p class="text-150"><?php echo get_field('footer_title') ?: 'Green House'; ?></p>
-            <img class="tuwima-2" src="<?php echo get_field('footer_tuwima_logo')['url'] ?? get_template_directory_uri() . '/html/images/tuwima_2.png'; ?>" alt="tuwima" width="118" height="20" title="tuwima">
+            <img class="tuwima-2" src="<?php echo get_field('footer_tuwima_logo')['url'] ?? green_house_image_url('tuwima_2.png'); ?>" alt="tuwima" width="118" height="20" title="tuwima">
         </div>
     </div>
     <div class="col-10 shadow-xl">
@@ -53,21 +53,21 @@ if (!defined('ABSPATH')) {
             </div>
 
             <div class="row-14 group">
-                <img class="layer-24" src="<?php echo get_template_directory_uri(); ?>/html/images/kszta_t_1.png" alt="" width="7" height="11">
-                <img class="text-154" src="<?php echo get_field('privacy_policy_image')['url'] ?? get_template_directory_uri() . '/html/images/polityka_prywatno_ci.png'; ?>" alt="Polityka prywatności" width="141" height="16" title="Polityka prywatności">
+                <img class="layer-24" src="<?php echo green_house_image_url('kszta_t_1.png'); ?>" alt="" width="7" height="11">
+                <img class="text-154 privacy-policy-trigger" src="<?php echo get_field('privacy_policy_image')['url'] ?? green_house_image_url('polityka_prywatno_ci.png'); ?>" alt="Polityka prywatności" width="141" height="16" title="Polityka prywatności" style="cursor: pointer;">
                 <div class="col-35">
                     <div class="row-25 group">
                         <div class="col-39">
                             <div class="layer-holder-3">
                                 <input type="checkbox" name="consent_marketing" id="consent_marketing" style="display: none;">
                                 <label for="consent_marketing" class="checkbox-label" style="cursor: pointer; display: inline-block;">
-                                    <img class="ion-checkmark-icon" src="<?php echo get_template_directory_uri(); ?>/html/images/ion-checkmark-icon.png" alt="" width="19" height="15" style="opacity: 0.3; transition: opacity 0.3s;">
+                                    <img class="ion-checkmark-icon" src="<?php echo green_house_image_url('ion-checkmark-icon.png'); ?>" alt="" width="19" height="15" style="opacity: 0.3; transition: opacity 0.3s;">
                                 </label>
                             </div>
                             <div class="layer-holder-4">
                                 <input type="checkbox" name="consent_privacy" id="consent_privacy" required style="display: none;">
                                 <label for="consent_privacy" class="checkbox-label" style="cursor: pointer; display: inline-block;">
-                                    <img class="ion-checkmark-icon-kopia" src="<?php echo get_template_directory_uri(); ?>/html/images/ion-checkmark-icon.png" alt="" width="19" height="15" style="opacity: 0.3; transition: opacity 0.3s;">
+                                    <img class="ion-checkmark-icon-kopia" src="<?php echo green_house_image_url('ion-checkmark-icon.png'); ?>" alt="" width="19" height="15" style="opacity: 0.3; transition: opacity 0.3s;">
                                 </label>
                             </div>
                         </div>
@@ -149,7 +149,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Privacy Policy Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const privacyTrigger = document.querySelector('.privacy-policy-trigger');
+    const privacyModal = document.getElementById('privacy-modal');
+    const privacyClose = document.querySelector('.privacy-close');
+
+    if (privacyTrigger) {
+        privacyTrigger.addEventListener('click', function() {
+            if (privacyModal) {
+                privacyModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    if (privacyClose) {
+        privacyClose.addEventListener('click', function() {
+            if (privacyModal) {
+                privacyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // Close modal when clicking outside
+    if (privacyModal) {
+        privacyModal.addEventListener('click', function(e) {
+            if (e.target === privacyModal) {
+                privacyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
 </script>
+
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" class="privacy-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+    <div class="privacy-modal-content" style="background-color: #fefefe; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 800px; max-height: 80vh; overflow-y: auto; border-radius: 8px;">
+        <span class="privacy-close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1;">&times;</span>
+        <h2 style="color: #00a906; margin-top: 0;">Polityka Prywatności</h2>
+        <div class="privacy-content">
+            <?php
+            $privacy_content = get_field('privacy_policy_content');
+            if ($privacy_content) {
+                echo wp_kses_post($privacy_content);
+            } else {
+                echo '<p>Treść polityki prywatności zostanie dodana przez administratora.</p>';
+            }
+            ?>
+        </div>
+    </div>
+</div>
 
 
 

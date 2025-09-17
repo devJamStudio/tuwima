@@ -152,9 +152,24 @@ function future_get_image_url($filename) {
 	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
 
 	// In development, use Vite dev server for images
-	// In production, use theme's images directory (not dist)
-	$image_base_url = $is_development ? 'http://localhost:5173/src/images/' : get_template_directory_uri() . '/images/';
+	// In production, use dist folder for optimized images
+	$image_base_url = $is_development ? 'http://localhost:5173/src/images/' : get_template_directory_uri() . '/dist/images/';
 
+	return $image_base_url . $filename;
+}
+
+/**
+ * Get image URL for green-house template parts
+ * Uses dist folder for production, src for development
+ */
+function green_house_image_url($filename) {
+	$hot_file = get_theme_file_path('/hot');
+	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
+	
+	// In development, use Vite dev server for images
+	// In production, use dist folder for optimized images
+	$image_base_url = $is_development ? 'http://localhost:5173/src/images/' : get_template_directory_uri() . '/dist/images/';
+	
 	return $image_base_url . $filename;
 }
 

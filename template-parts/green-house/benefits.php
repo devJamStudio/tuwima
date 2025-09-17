@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
+<section class="benefits-section" id="benefits">
 <div class="row-36  flex flex-col lg:flex-row   gap-10 2xl:gap-[123px] justify-between">
     <img class="layer-4" src="<?php echo get_field('benefits_image')['url'] ?? get_template_directory_uri() . '/html/images/4.png'; ?>" alt="" width="712" height="651">
     <div class="col-27">
@@ -88,9 +89,10 @@ if (!defined('ABSPATH')) {
             </div>
         </div>
         <p class="text-29"><?php echo get_field('benefits_description') ?: 'Czasy dojazdu do Katowic, Jaworzna, Dąbrowy Górniczej czy centrum&nbsp;Sosnowca'; ?></p>
-        <div class="btn-kopia">
-            <?php echo get_field('benefits_button_text') ?: 'Zobacz mieszkania'; ?>
-        </div>
+        <button class="btn-kopia" onclick="window.location.href='<?php echo esc_url(get_field('benefits_button_url') ?: '#mieszkania'); ?>'" aria-label="<?php echo esc_attr(get_field('benefits_button_text') ?: 'Zobacz mieszkania'); ?> - <?php echo esc_attr(get_field('benefits_title') ?: 'Korzyściach z wyboru tych mieszkań'); ?>">
+            <?php echo esc_html(get_field('benefits_button_text') ?: 'Zobacz mieszkania'); ?>
+        </button>
     </div>
 </div>
+</section>
 

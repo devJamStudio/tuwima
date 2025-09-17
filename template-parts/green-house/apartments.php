@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="mieszkania group">
+<section class="mieszkania group" id="mieszkania">
     <p class="text-45"><?php echo get_field('apartments_title') ?: 'Wybierz swoje mieszkanie'; ?></p>
     <p class="text-46"><?php echo get_field('apartments_description') ?: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley printer took a galley ypesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a Lorem Ipsum is simply dummy text of the printing and <br><span class="text-style-7">&nbsp;</span><br>typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley printer took a galley ypesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a'; ?></p>
     <div class="wrapper-6">
@@ -79,5 +79,5 @@ if (!defined('ABSPATH')) {
             </div>
         </div>
     </div>
-</div>
+</section>
 
