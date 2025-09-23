@@ -6,6 +6,26 @@
   [class*="col-"] {
     max-width: 100% !important;
   }
+
+  .col-5 {
+    margin: 0;
+    width: 100%;
+  }
+
+  .layer-3 {
+    width: 100%;
+  }
+}
+
+/* Desktop layout for col-5 */
+@media (min-width: 1001px) {
+  .col-5 {
+    float: left;
+    margin: 0 34px 0 0;
+    position: relative;
+    max-width: 660px;
+    width: 100%;
+  }
 }
 
 .o-inwestycji {

@@ -33,6 +33,28 @@
   .col-32 {
     margin: 16px 0 0 !important;
   }
+
+  /* Hide layer-24 under 1000px */
+  .layer-24 {
+    display: none !important;
+  }
+}
+
+@media (max-width: 999px) {
+  .text-152, .email, .telefon {
+    margin: 0px;
+    font-weight: 600 !important;
+    color: #333 !important;
+    display: flex;
+  }
+
+  .text-152 > * {
+    line-height: 1.4 !important;
+    font-size: clamp(14px, 3vw, 16px) !important;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+  }
 }
 
 /* Consent form layout - display checkbox and text in flex row */
@@ -164,7 +186,6 @@
   position: relative;
   max-width: 526px;
   width: 100%;
-	border:1px solid black!improtant;
 	display:flex;
 	flex-direction: row;
 }

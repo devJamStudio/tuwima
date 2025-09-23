@@ -15,7 +15,7 @@
 
   /* Wrapper-11 responsive styles */
   .wrapper-11 {
-    width: 100% !important;
+    width: 400px !important;
     height: 456px !important;
   }
 
@@ -49,6 +49,12 @@
   position: relative;
   max-width: 1022px;
   width: 100%;
+}
+
+.contact-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Responsive margins for smaller screens */

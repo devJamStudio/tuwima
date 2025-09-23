@@ -974,3 +974,24 @@ html {
     justify-content: center;
   }
 }
+
+@media (max-width: 1000px) {
+  .mobile-menu-toggle {
+    display: block !important;
+    position: fixed;
+    top: 26px;
+    right: 20px;
+    background: #ffffff;
+    border: 2px solid #00a906;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1003;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  /* When header is sticky */
+  .header-sticky .mobile-menu-toggle {
+    top: 10px;
+  }
+}

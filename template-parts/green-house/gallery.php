@@ -7,11 +7,29 @@
 
 // Get gallery data from ACF or set defaults
 $gallery_title = get_field('gallery_title') ?: 'Zobacz galerie';
-$gallery_button_text = get_field('gallery_button_text') ?: 'Zobacz wszystkie';
+$gallery_button_text = get_field('gallery_button_text') ?: '';
 $gallery_button_url = get_field('gallery_button_url') ?: '#gallery';
 
 // Get ACF Gallery field
-$gallery_images = get_field('gallery_images');
+$acf_gallery = get_field('gallery_images');
+
+// Process ACF gallery images
+$gallery_images = [];
+if (!empty($acf_gallery) && is_array($acf_gallery)) {
+    foreach ($acf_gallery as $image) {
+        if (is_array($image) && isset($image['url'])) {
+            $gallery_images[] = [
+                'url' => $image['url'],
+                'alt' => $image['alt'] ?: $image['title'] ?: 'Gallery image'
+            ];
+        } elseif (is_object($image) && isset($image->url)) {
+            $gallery_images[] = [
+                'url' => $image->url,
+                'alt' => $image->alt ?: $image->title ?: 'Gallery image'
+            ];
+        }
+    }
+}
 
 // Fallback images if ACF gallery field is empty (max 5 images)
 if (empty($gallery_images)) {
@@ -211,10 +229,10 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_0_url = is_array($image_0) ? $image_0['url'] : $image_0;
                 $image_0_alt = is_array($image_0) ? $image_0['alt'] : 'Gallery image 1';
                 ?>
-                <div class="gallery-item">
-                    <img class="layer-17" src="<?php echo esc_url($image_0_url); ?>" alt="<?php echo esc_attr($image_0_alt); ?>" width="821" height="478" data-lightbox="gallery" data-src="<?php echo esc_url($image_0_url); ?>">
+                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_0_url); ?>">
+                    <img class="layer-17" src="<?php echo esc_url($image_0_url); ?>" alt="<?php echo esc_attr($image_0_alt); ?>" width="821" height="478">
                     <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Zobacz zdjęcie</div>
+                        <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
                 </div>
             <?php endif; ?>
@@ -226,10 +244,10 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                     $image_1_url = is_array($image_1) ? $image_1['url'] : $image_1;
                     $image_1_alt = is_array($image_1) ? $image_1['alt'] : 'Gallery image 2';
                     ?>
-                    <div class="gallery-item">
-                        <img class="layer-18" src="<?php echo esc_url($image_1_url); ?>" alt="<?php echo esc_attr($image_1_alt); ?>" width="290" height="210" data-lightbox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
+                    <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
+                        <img class="layer-18" src="<?php echo esc_url($image_1_url); ?>" alt="<?php echo esc_attr($image_1_alt); ?>" width="290" height="210">
                         <div class="gallery-overlay">
-                            <div class="gallery-overlay-text">Zobacz zdjęcie</div>
+                            <div class="gallery-overlay-text">Zobacz wszystkie</div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -240,10 +258,10 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                     $image_2_url = is_array($image_2) ? $image_2['url'] : $image_2;
                     $image_2_alt = is_array($image_2) ? $image_2['alt'] : 'Gallery image 3';
                     ?>
-                    <div class="gallery-item">
-                        <img class="layer-19" src="<?php echo esc_url($image_2_url); ?>" alt="<?php echo esc_attr($image_2_alt); ?>" width="290" height="210" data-lightbox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
+                    <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
+                        <img class="layer-19" src="<?php echo esc_url($image_2_url); ?>" alt="<?php echo esc_attr($image_2_alt); ?>" width="290" height="210">
                         <div class="gallery-overlay">
-                            <div class="gallery-overlay-text">Zobacz zdjęcie</div>
+                            <div class="gallery-overlay-text">Zobacz wszystkie</div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -258,19 +276,32 @@ $gallery_images = array_slice($gallery_images, 0, 5);
             $image_3_url = is_array($image_3) ? $image_3['url'] : $image_3;
             $image_3_alt = is_array($image_3) ? $image_3['alt'] : 'Gallery image 4';
             ?>
-            <div class="gallery-item">
-                <img class="layer-20" src="<?php echo esc_url($image_3_url); ?>" alt="<?php echo esc_attr($image_3_alt); ?>" width="290" height="210" data-lightbox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
+            <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
+                <img class="layer-20" src="<?php echo esc_url($image_3_url); ?>" alt="<?php echo esc_attr($image_3_alt); ?>" width="290" height="210">
                 <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Zobacz zdjęcie</div>
+                    <div class="gallery-overlay-text">Zobacz wszystkie</div>
                 </div>
             </div>
         <?php endif; ?>
 
         <div class="wrapper-17">
-            <div class="warstwa-51-holder">
-                <a href="<?php echo esc_url($gallery_button_url); ?>" style="color: inherit; text-decoration: none;">
-                    <?php echo esc_html($gallery_button_text); ?>
-                </a>
+            <?php
+            // Get the "See all" image from ACF field 'warstwa-52' or use fallback
+            $see_all_image = get_field('warstwa-52');
+            if ($see_all_image) {
+                $image_url = is_array($see_all_image) ? $see_all_image['url'] : $see_all_image;
+                $image_alt = is_array($see_all_image) ? ($see_all_image['alt'] ?: 'Zobacz wszystkie') : 'Zobacz wszystkie';
+            } else {
+                // Fallback to a default "see all" image or use the button text as background
+                $image_url = get_template_directory_uri() . '/html/images/see-all-placeholder.jpg';
+                $image_alt = 'Zobacz wszystkie';
+            }
+            ?>
+            <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_url); ?>">
+                <img class="layer-20-see-all" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="290" height="210">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Zobacz wszystkie</div>
+                </div>
             </div>
         </div>
     </div>
@@ -291,40 +322,51 @@ $gallery_images = array_slice($gallery_images, 0, 5);
 
 <!-- Lightbox JavaScript -->
 <script>
-(function() {
-    'use strict';
+console.log('Gallery lightbox script starting...');
 
-    let lightbox, lightboxImage, closeBtn, thumbnailsContainer;
-    let currentImageIndex = 0;
+// Simple lightbox implementation
+function initGalleryLightbox() {
+    console.log('Initializing gallery lightbox...');
+
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeBtn = document.querySelector('.gallery-lightbox-close');
+    const thumbnailsContainer = document.getElementById('gallery-thumbnails');
+
+    console.log('Lightbox elements:', {
+        lightbox: !!lightbox,
+        lightboxImage: !!lightboxImage,
+        closeBtn: !!closeBtn,
+        thumbnailsContainer: !!thumbnailsContainer
+    });
+
+    if (!lightbox || !lightboxImage) {
+        console.error('Required lightbox elements not found!');
+        return;
+    }
+
+    // Find all gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item[data-lightbox="gallery"]');
+    console.log('Found gallery items:', galleryItems.length);
+
+    if (galleryItems.length === 0) {
+        console.error('No gallery items found with data-lightbox="gallery"');
+        return;
+    }
+
+    let currentIndex = 0;
     let allImages = [];
 
-    function initLightbox() {
-        lightbox = document.getElementById('gallery-lightbox');
-        lightboxImage = document.getElementById('lightbox-image');
-        closeBtn = document.querySelector('.gallery-lightbox-close');
-        thumbnailsContainer = document.getElementById('gallery-thumbnails');
+    // Collect image data
+    galleryItems.forEach(function(item, index) {
+        const src = item.getAttribute('data-src');
+        const img = item.querySelector('img');
+        const alt = img ? img.getAttribute('alt') : 'Gallery image ' + (index + 1);
+        allImages.push({ src: src, alt: alt });
+        console.log('Image ' + index + ':', src);
+    });
 
-        if (!lightbox || !lightboxImage || !thumbnailsContainer) {
-            console.error('Lightbox elements not found');
-            return;
-        }
-
-        setupGalleryItems();
-        setupEventListeners();
-    }
-
-    function setupGalleryItems() {
-        const galleryItems = document.querySelectorAll('[data-lightbox="gallery"]');
-        console.log('Found gallery items:', galleryItems.length);
-
-        allImages = [];
-        galleryItems.forEach(function(item) {
-            const imageSrc = item.getAttribute('data-src') || item.src;
-            const imageAlt = item.getAttribute('alt') || 'Gallery image';
-            allImages.push({ src: imageSrc, alt: imageAlt });
-        });
-    }
-
+    // Create thumbnails
     function createThumbnails() {
         if (!thumbnailsContainer) return;
 
@@ -332,20 +374,21 @@ $gallery_images = array_slice($gallery_images, 0, 5);
         allImages.forEach(function(image, index) {
             const thumbnail = document.createElement('div');
             thumbnail.className = 'gallery-lightbox-thumbnail';
-            thumbnail.innerHTML = `<img src="${image.src}" alt="${image.alt}">`;
+            thumbnail.innerHTML = '<img src="' + image.src + '" alt="' + image.alt + '">';
 
-            thumbnail.addEventListener('click', function() {
+            thumbnail.onclick = function() {
                 showImage(index);
-            });
+            };
 
             thumbnailsContainer.appendChild(thumbnail);
         });
     }
 
+    // Show specific image
     function showImage(index) {
-        if (!lightboxImage || !allImages[index]) return;
+        if (!allImages[index]) return;
 
-        currentImageIndex = index;
+        currentIndex = index;
         const image = allImages[index];
 
         lightboxImage.src = image.src;
@@ -358,73 +401,76 @@ $gallery_images = array_slice($gallery_images, 0, 5);
         });
     }
 
+    // Open lightbox
     function openLightbox(index) {
-        if (!lightbox) return;
-
+        console.log('Opening lightbox for image:', index);
         createThumbnails();
         showImage(index);
         lightbox.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
 
+    // Close lightbox
     function closeLightbox() {
-        if (!lightbox) return;
-
+        console.log('Closing lightbox');
         lightbox.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 
-    function setupEventListeners() {
-        // Gallery item clicks
-        const galleryItems = document.querySelectorAll('[data-lightbox="gallery"]');
-        galleryItems.forEach(function(item, index) {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Gallery item clicked:', index);
-                openLightbox(index);
-            });
-        });
+    // Add click events to gallery items
+    galleryItems.forEach(function(item, index) {
+        console.log('Adding click event to gallery item:', index);
 
-        // Close button
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeLightbox);
-        }
+        // Remove any existing event listeners
+        item.onclick = null;
 
-        // Click outside to close
-        if (lightbox) {
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-        }
+        // Add new click event
+        item.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Gallery item clicked:', index);
+            openLightbox(index);
+        };
+    });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (!lightbox || lightbox.style.display !== 'block') return;
-
-            switch(e.key) {
-                case 'Escape':
-                    closeLightbox();
-                    break;
-                case 'ArrowLeft':
-                    const prevIndex = currentImageIndex > 0 ? currentImageIndex - 1 : allImages.length - 1;
-                    showImage(prevIndex);
-                    break;
-                case 'ArrowRight':
-                    const nextIndex = currentImageIndex < allImages.length - 1 ? currentImageIndex + 1 : 0;
-                    showImage(nextIndex);
-                    break;
-            }
-        });
+    // Close button
+    if (closeBtn) {
+        closeBtn.onclick = closeLightbox;
     }
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLightbox);
-    } else {
-        initLightbox();
-    }
-})();
+    // Click outside to close
+    lightbox.onclick = function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    };
+
+    // Keyboard navigation
+    document.onkeydown = function(e) {
+        if (lightbox.style.display !== 'block') return;
+
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                const prevIndex = currentIndex > 0 ? currentIndex - 1 : allImages.length - 1;
+                showImage(prevIndex);
+                break;
+            case 'ArrowRight':
+                const nextIndex = currentIndex < allImages.length - 1 ? currentIndex + 1 : 0;
+                showImage(nextIndex);
+                break;
+        }
+    };
+
+    console.log('Gallery lightbox initialized successfully!');
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGalleryLightbox);
+} else {
+    initGalleryLightbox();
+}
 </script>
