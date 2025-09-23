@@ -7,7 +7,6 @@
 get_header(); ?>
 
 <div class="global_container_">
-    <?php get_template_part('template-parts/green-house/header'); ?>
 
     <div class="main-content-wrapper">
         <?php get_template_part('template-parts/green-house/about'); ?>

@@ -1,5 +1,49 @@
 /* Contact Section Styles */
 
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  /* Wrapper-11 responsive styles */
+  .wrapper-11 {
+    width: 100% !important;
+    height: 456px !important;
+  }
+
+  /* Warstwa-56 responsive styles - Connected with col (first pair) */
+  .warstwa-56 {
+    right: 0px !important;
+    position: absolute !important;
+    top: 0px !important;
+    margin-left: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    height: auto !important;
+  }
+
+  /* Warstwa-57 responsive styles - Connected with col-2 (second pair) */
+  .warstwa-57 {
+    right: 0px !important;
+    position: absolute !important;
+    top: 325px !important;
+    margin-left: 0px !important;
+    left: 180px !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    height: auto !important;
+  }
+}
+
 .kontakt {
   margin: 86px auto 0;
   position: relative;

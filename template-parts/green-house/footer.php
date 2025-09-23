@@ -64,17 +64,17 @@ if (!defined('ABSPATH')) {
                                     <img class="ion-checkmark-icon" src="<?php echo green_house_image_url('ion-checkmark-icon.png'); ?>" alt="" width="19" height="15" style="opacity: 0.3; transition: opacity 0.3s;">
                                 </label>
                             </div>
+                            <p class="text-155">
+                                <label for="consent_marketing"><?php echo get_field('consent_text_1') ?: 'Wyrażam zgodę na wysyłanie informacji handlowych'; ?></label>
+                            </p>
+                        </div>
+                        <div class="col-40">
                             <div class="layer-holder-4">
                                 <input type="checkbox" name="consent_privacy" id="consent_privacy" required style="display: none;">
                                 <label for="consent_privacy" class="checkbox-label" style="cursor: pointer; display: inline-block;">
                                     <img class="ion-checkmark-icon-kopia" src="<?php echo green_house_image_url('ion-checkmark-icon.png'); ?>" alt="" width="19" height="15" style="opacity: 0.3; transition: opacity 0.3s;">
                                 </label>
                             </div>
-                        </div>
-                        <div class="col-40">
-                            <p class="text-155">
-                                <label for="consent_marketing"><?php echo get_field('consent_text_1') ?: 'Wyrażam zgodę na wysyłanie informacji handlowych'; ?></label>
-                            </p>
                             <p class="text-156">
                                 <label for="consent_privacy"><?php echo get_field('consent_text_2') ?: 'Wyrażam zgodę na przekazanie i przetwarzanie moich danych<br>osobowych w celu odpowiedzi na przesłaną wiadomość'; ?></label>
                             </p>
@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         checkbox.addEventListener('change', function() {
             if (this.checked) {
-                img.style.opacity = '1';
+                img.classList.add('checked');
             } else {
-                img.style.opacity = '0.3';
+                img.classList.remove('checked');
             }
         });
 

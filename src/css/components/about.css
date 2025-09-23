@@ -1,5 +1,13 @@
 /* About Section Styles */
 
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+}
+
 .o-inwestycji {
   margin: 0 auto;
   position: relative;

@@ -31,3 +31,4 @@ foreach ($files as $file) {
 
 echo "Image path update completed!\n";
 ?>
+

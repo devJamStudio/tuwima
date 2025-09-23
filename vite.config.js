@@ -11,6 +11,10 @@ export default defineConfig({
       handleHotUpdate({ file, server }) {
         if (file.endsWith('.php')) {
           console.log(`🔄 PHP file changed: ${file}`)
+          // For green-house template parts, do a full reload
+          if (file.includes('green-house') || file.includes('template-parts')) {
+            console.log(`🏠 Green House template part changed: ${file}`)
+          }
           server.ws.send({ type: 'full-reload' })
           return []
         }
@@ -21,7 +25,7 @@ export default defineConfig({
       configureServer(server) {
         // Create hot file when dev server starts
         const hotFile = './hot'
-        const port = server.config.server?.port || 5173
+        const port = server.config.server?.port || 5174
         const devServerUrl = `http://localhost:${port}`
 
         try {
@@ -43,7 +47,7 @@ export default defineConfig({
       buildStart() {
         // Create hot file when build starts (for dev mode)
         const hotFile = './hot'
-        const devServerUrl = 'http://localhost:5173'
+        const devServerUrl = 'http://localhost:5174'
         try {
           writeFileSync(hotFile, devServerUrl)
           console.log(`🔥 Hot file created on build start: ${devServerUrl}`)
@@ -64,13 +68,15 @@ export default defineConfig({
     {
       name: 'copy-images',
       buildStart() {
-        // Copy images from src/images to theme root /images/ during build
-        const srcImagesDir = './src/images'
+        // Copy images from html/images to both theme root /images/ and dist/images/ during build
+        const htmlImagesDir = './html/images'
         const themeImagesDir = './images'
+        const distImagesDir = './dist/images'
 
         try {
-          // Create theme/images directory if it doesn't exist
+          // Create directories if they don't exist
           mkdirSync(themeImagesDir, { recursive: true })
+          mkdirSync(distImagesDir, { recursive: true })
 
           // Copy all image files
           const copyImages = (srcDir, destDir) => {
@@ -90,8 +96,13 @@ export default defineConfig({
             }
           }
 
-          copyImages(srcImagesDir, themeImagesDir)
+          // Copy to theme root
+          copyImages(htmlImagesDir, themeImagesDir)
           console.log('✅ Images copied to /images/')
+
+          // Copy to dist folder
+          copyImages(htmlImagesDir, distImagesDir)
+          console.log('✅ Images copied to /dist/images/')
         } catch (e) {
           console.warn('Could not copy images:', e.message)
         }
@@ -101,7 +112,7 @@ export default defineConfig({
 
   server: {
     host: '0.0.0.0', // Bind to all interfaces
-    port: 5173,
+    port: 5174,
     cors: {
       origin: [
         'http://localhost:8888',
@@ -113,7 +124,8 @@ export default defineConfig({
     },
     hmr: {
       port: 24678,
-      host: 'localhost'
+      host: 'localhost',
+      overlay: true
     }
   },
 

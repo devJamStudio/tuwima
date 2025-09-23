@@ -1,5 +1,23 @@
 /* Apartments Section Styles */
 
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  .mieszkania {
+    margin: 16px auto 0;
+  }
+}
+
 .mieszkania {
   margin: 112px auto 0;
   min-height: 939px;

@@ -1,0 +1,1144 @@
+/* Hero Section Responsive Styles - Only for screens below 1000px */
+
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/* Apply responsive styles only below 1000px */
+@media (max-width: 999px) {
+  /* Hero Section Container */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  /* Hero Banner */
+  .baner-2 {
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  /* Hero Title - Responsive Font Scaling */
+  .text-7 {
+    color: #ffffff !important;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0;
+
+    /* Responsive font sizes using clamp() - scaled down */
+    font-size: clamp(18px, 4vw, 32px);
+  }
+
+  /* Hero Subtitle - Responsive Font Scaling */
+  .text-8 {
+    margin: 1rem 0 0;
+    color: #ffffff !important;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
+    line-height: 1.3;
+
+    /* Responsive font sizes using clamp() */
+    font-size: clamp(18px, 4vw, 30px);
+  }
+
+  /* Hero Button - Responsive */
+  .grupa-8 {
+    margin: 2rem auto 0;
+    min-height: 54px;
+    padding: 0 2rem;
+    position: relative;
+    width: auto;
+    min-width: 200px;
+    max-width: 275px;
+    background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    color: #ffffff !important;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 54px;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    /* Responsive font size */
+    font-size: clamp(14px, 2.5vw, 19px);
+  }
+
+  .grupa-8:hover {
+    transform: scale(1.05);
+  }
+
+  .grupa-8:active {
+    transform: scale(0.95);
+  }
+
+  /* Stats Section - Responsive */
+  .grupa-7 {
+    margin: 3rem auto 0;
+    min-height: auto;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    background: #00a906 !important; /* Keep green background */
+  }
+
+  /* Individual Stat Items */
+  .grupa-7 > p {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: none !important; /* Remove any green borders */
+  }
+
+  /* All Stat Text - Make Everything White */
+  .text-10,
+  .text-11,
+  .text-12,
+  .text-13,
+  .text-14,
+  .text-15 {
+    color: #ffffff !important;
+    font-size: clamp(12px, 2vw, 16px);
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Stat Numbers - All Strong and Span Elements */
+  .text-10 strong,
+  .text-11 strong,
+  .text-12 span,
+  .text-13 span,
+  .text-14 span,
+  .text-15 span {
+    display: block;
+    font-size: clamp(20px, 4vw, 29px);
+    font-weight: bold;
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Text Style Classes - Override Any Color Classes */
+  .text-style-4,
+  .text-style-6 {
+    color: #ffffff !important;
+  }
+
+  /* Override any green colors from original styles */
+  .grupa-7 * {
+    color: #ffffff !important;
+  }
+
+  /* Keep green background, remove borders */
+  .grupa-7 * {
+    border-color: transparent !important;
+  }
+
+  /* Text-142 responsive styles */
+  .text-142 {
+    margin: 0 !important; /* Remove left margin on small screens */
+    font-size: clamp(24px, 4vw, 40px); /* Responsive font size */
+    color: #00a906 !important;
+    font-weight: 700;
+  }
+
+  /* Text-style-2 responsive styles */
+  .text-style-2 {
+    font-size: clamp(40px, 8vw, 49.934px) !important; /* Responsive font size */
+    line-height: clamp(48px, 10vw, 60px) !important; /* Responsive line height */
+    color: #ffffff !important;
+    font-family: Lato, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.36em;
+  }
+
+  /* Main content wrapper responsive styles */
+  .main-content-wrapper {
+    margin: 0 !important; /* Remove all margins on small screens */
+    padding: 1rem !important; /* Add small padding instead */
+  }
+
+  /* Col-33 responsive styles */
+  .col-33 {
+    float: left;
+    margin: 0.25rem 0 0 0 !important; /* Very small top margin for mobile */
+    margin-right: 0 !important; /* No right margin */
+    margin-left: 0 !important; /* No left margin */
+    position: relative;
+    max-width: 100% !important; /* Full width on small screens */
+    width: 100%;
+  }
+
+  /* Col-46 responsive styles */
+  .col-46 {
+    margin-left: 0 !important; /* Remove left margin on small screens */
+    margin-right: 0 !important; /* Remove right margin on small screens */
+    padding: 0 1rem !important; /* Add small side padding instead */
+  }
+
+  /* Col-34 responsive styles */
+  .col-34 {
+    margin: 0.5rem 0 !important; /* Smaller margins on small screens */
+    padding: 0 1rem !important; /* Add small side padding */
+  }
+
+  /* Col-34 inner wrapper */
+  .col-34 .lg\:min-w-\[420px\] {
+    min-width: 100% !important; /* Full width on small screens */
+  }
+
+  /* Location rows - smaller margins */
+  .row-18,
+  .row-23,
+  .row-32 {
+    margin: 0.5rem 0 !important; /* Smaller margins between rows */
+    gap: 0.5rem !important; /* Smaller gap between elements */
+  }
+
+  /* Location icons - smaller on mobile */
+  .layer-10,
+  .layer-11,
+  .layer-12,
+  .layer-13,
+  .pngtree-park-line-icon-png-image_9118726,
+  .pngtree-swimming-pool-line-icon-vector-png-image_6683063 {
+    width: 32px !important; /* Smaller icons */
+    height: auto !important; /* Maintain aspect ratio */
+  }
+
+  /* Location text - smaller font sizes */
+  .text-38,
+  .text-39,
+  .text-40,
+  .text-41,
+  .text-42,
+  .text-43 {
+    font-size: clamp(12px, 2.5vw, 16px) !important; /* Responsive font size */
+    margin: 0.25rem 0 !important; /* Smaller margins */
+  }
+
+  /* Location time spans */
+  .text-style-9 {
+    font-size: clamp(14px, 3vw, 18px) !important; /* Responsive time font */
+    color: #00a906 !important;
+  }
+
+  /* Location labels */
+  .text-style-10 {
+    font-size: clamp(12px, 2.5vw, 15px) !important; /* Responsive label font */
+  }
+
+  /* Location button */
+  .btn-kopia-2 {
+    margin: 1rem 0 0 0 !important; /* Smaller top margin */
+    padding: 0.75rem 1.5rem !important; /* Smaller button padding */
+    font-size: clamp(12px, 2.5vw, 16px) !important; /* Responsive button font */
+  }
+
+  /* Apartments table - Complete mobile redesign */
+  .apartments-table {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin: 0.5rem 0 !important;
+    font-size: clamp(14px, 3vw, 16px) !important;
+  }
+
+  /* Hide table headers on mobile */
+  .apartments-table thead {
+    display: none !important;
+  }
+
+  /* Transform table rows into flexbox cards */
+  .apartments-table tbody tr {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    min-height: 351px !important;
+    gap: 7px !important;
+    margin-bottom: 1.5rem !important;
+    border: 2px solid #00a906 !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    background: #fff !important;
+    box-shadow: 0 4px 8px #0000001a !important;
+    position: relative !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
+  }
+
+  /* Add apartment number as header */
+  .apartments-table tbody tr:before {
+    content: attr(data-apartment);
+    position: absolute !important;
+    top: -12px !important;
+    left: 20px !important;
+    background: #00a906 !important;
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: clamp(14px, 3vw, 16px) !important;
+  }
+
+  /* Make each cell a flex item with better spacing */
+  .apartments-table tbody td {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 0 0 calc(50% - 3.5px) !important; /* Fixed width, no grow/shrink */
+    min-width: calc(50% - 3.5px) !important; /* Ensure minimum width */
+    max-width: calc(50% - 3.5px) !important; /* Ensure maximum width */
+    padding: 1rem !important; /* More padding */
+    border: 1px solid #e0e0e0 !important; /* Better border */
+    border-radius: 8px !important;
+    background: #fafafa !important;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    line-height: 1.4 !important;
+    position: relative !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important; /* Include padding in width calculation */
+    overflow: hidden !important; /* Prevent content overflow */
+  }
+
+  /* Special styling for number cell - make it stand out */
+  .apartments-table tbody td.number {
+    flex: 0 0 100% !important; /* Full width for apartment number */
+    min-width: 100% !important;
+    max-width: 100% !important;
+    background: rgba(0, 169, 6, 0.1) !important;
+    border-color: #00a906 !important;
+    font-weight: bold !important;
+    color: #00a906 !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0.5rem !important; /* Space after number cell */
+  }
+
+  /* Style labels as clean headers */
+  .apartments-table tbody td:before {
+    content: attr(data-label) ": ";
+    display: block !important;
+    position: relative !important; /* Relative positioning, not absolute */
+    font-weight: 600 !important;
+    color: #00a906 !important;
+    font-size: clamp(10px, 2vw, 12px) !important; /* Smaller labels */
+    margin-bottom: 0.5rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Content styling */
+  .apartments-table tbody td {
+    font-size: clamp(11px, 2.2vw, 13px) !important; /* Smaller content text */
+    color: #333 !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Special styling for status spans - More responsive */
+  .apartments-table .status-available {
+    background: #00a906 !important;
+    color: white !important;
+    padding: 0.3rem 0.6rem !important; /* Larger padding */
+    border-radius: 4px !important; /* More rounded */
+    font-size: clamp(9px, 1.8vw, 11px) !important; /* Larger text */
+    display: inline-block !important;
+    font-weight: 600 !important; /* Bolder text */
+    text-align: center !important;
+    min-width: 60px !important; /* Minimum width for consistency */
+  }
+
+  .apartments-table .status-reserved {
+    background: #ff6b35 !important;
+    color: white !important;
+    padding: 0.3rem 0.6rem !important; /* Larger padding */
+    border-radius: 4px !important; /* More rounded */
+    font-size: clamp(9px, 1.8vw, 11px) !important; /* Larger text */
+    display: inline-block !important;
+    font-weight: 600 !important; /* Bolder text */
+    text-align: center !important;
+    min-width: 60px !important; /* Minimum width for consistency */
+  }
+
+  /* Plan link styling - More responsive */
+  .apartments-table .plan-link {
+    background: #00a906 !important;
+    color: white !important;
+    padding: 0.4rem 0.8rem !important; /* Larger padding */
+    border-radius: 4px !important; /* More rounded */
+    text-decoration: none !important;
+    font-size: clamp(9px, 1.8vw, 11px) !important; /* Larger text */
+    display: inline-block !important;
+    font-weight: 600 !important; /* Bolder text */
+    text-align: center !important;
+    transition: background-color 0.3s ease !important; /* Smooth transition */
+  }
+
+  .apartments-table .plan-link:hover {
+    background: #008a05 !important;
+    transform: translateY(-1px) !important; /* Subtle lift effect */
+  }
+
+  /* Number cell special styling - More responsive */
+  .apartments-table .number {
+    font-weight: bold !important;
+    color: #00a906 !important;
+    font-size: clamp(11px, 2.2vw, 13px) !important; /* Larger text */
+    background: rgba(0, 169, 6, 0.1) !important; /* Light green background */
+    padding: 0.2rem 0.4rem !important; /* Add padding */
+    border-radius: 3px !important; /* Rounded corners */
+    display: inline-block !important;
+  }
+
+  /* Area cells styling - More responsive */
+  .apartments-table .area {
+    font-weight: 600 !important;
+    font-size: clamp(10px, 2vw, 12px) !important; /* Larger text */
+    color: #333 !important; /* Darker text for better readability */
+  }
+
+  /* Col-41 responsive styles */
+  .col-41 {
+    margin-left: 0 !important; /* Remove left margin on small screens */
+    margin-top: 0.25rem !important; /* Much smaller top margin */
+    max-width: 100% !important; /* Full width on small screens */
+    padding: 0.25rem !important; /* Smaller padding */
+  }
+
+  /* Text-145 responsive styles */
+  .text-145 {
+    margin-left: 0 !important; /* Remove left margin on small screens */
+    width: 100% !important; /* Full width on small screens */
+    font-size: clamp(10px, 2vw, 14px) !important; /* Much smaller font size */
+    line-height: clamp(14px, 3vw, 20px) !important; /* Much smaller line height */
+    padding: 0.25rem !important; /* Smaller padding */
+  }
+
+  /* Text-135 responsive styles */
+  .text-135 {
+    left: auto !important; /* Remove left positioning */
+    text-align: center !important; /* Center align text */
+    margin: 0 auto !important; /* Center the element */
+    position: relative !important;
+    display: block !important;
+    width: 100% !important; /* Full width for centering */
+  }
+
+  /* Row-27 responsive styles */
+  .row-27 {
+    margin-left: 0 !important; /* Remove left margin on small screens */
+    margin: 0.5rem 0 !important; /* Smaller margins */
+    padding: 0.5rem !important; /* Add padding */
+  }
+
+  /* Contact section responsive styles */
+  .wrapper-11 {
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically on mobile */
+    align-items: center !important;
+    gap: 2rem !important; /* More space between contact items */
+    margin: 0.5rem 0 !important;
+    padding: 0.5rem !important;
+  }
+
+  /* Contact images - Keep absolute positioning */
+  .warstwa-56,
+  .warstwa-57 {
+    width: clamp(200px, 40vw, 300px) !important; /* Responsive image size */
+    height: auto !important;
+    border-radius: 8px !important;
+    position: absolute !important; /* Keep absolute positioning */
+    left: 0 !important; /* Position on the left */
+    top: 0 !important;
+  }
+
+  /* Contact columns - Position next to image */
+  .col,
+  .col-2 {
+    text-align: left !important;
+    margin: 0 !important;
+    margin-left: 0 !important; /* Ensure no left margin */
+    padding: 0.5rem !important;
+    position: absolute !important; /* Keep absolute positioning */
+    left: 400px !important; /* Position at 400px from left */
+    top: 0 !important;
+  }
+
+  /* Contact names */
+  .text-146,
+  .text-148 {
+    font-size: clamp(14px, 3vw, 18px) !important;
+    font-weight: bold !important;
+    margin: 0.25rem 0 !important;
+    color: #00a906 !important;
+    text-align: center !important;
+  }
+
+  /* Contact phone numbers */
+  .text-147,
+  .text-149 {
+    font-size: clamp(12px, 2.5vw, 16px) !important;
+    margin: 0.25rem 0 !important;
+    text-align: center !important;
+  }
+
+  /* Contact phone links */
+  .text-147 a,
+  .text-149 a {
+    color: #00a906 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+
+  .text-147 a:hover,
+  .text-149 a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Footer contact form responsive styles */
+  .footer-contact-form,
+  .contact-form,
+  .wpcf7-form,
+  .form-container {
+    margin: 0.5rem 0 !important;
+    padding: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  /* Form fields - responsive */
+  .footer-contact-form input[type="text"],
+  .footer-contact-form input[type="email"],
+  .footer-contact-form input[type="tel"],
+  .footer-contact-form textarea,
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form textarea,
+  .wpcf7-form input[type="text"],
+  .wpcf7-form input[type="email"],
+  .wpcf7-form input[type="tel"],
+  .wpcf7-form textarea {
+    width: 100% !important;
+    padding: 0.75rem !important;
+    margin: 0.5rem 0 !important;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Form labels - responsive */
+  .footer-contact-form label,
+  .contact-form label,
+  .wpcf7-form label {
+    display: block !important;
+    margin: 0.5rem 0 0.25rem 0 !important;
+    font-size: clamp(11px, 2.2vw, 13px) !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+  }
+
+  /* Form buttons - responsive */
+  .footer-contact-form input[type="submit"],
+  .footer-contact-form button,
+  .contact-form input[type="submit"],
+  .contact-form button,
+  .wpcf7-form input[type="submit"],
+  .wpcf7-form button {
+    width: 100% !important;
+    padding: 0.75rem 1rem !important;
+    margin: 0.5rem 0 !important;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    background: #00a906 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+  }
+
+  .footer-contact-form input[type="submit"]:hover,
+  .footer-contact-form button:hover,
+  .contact-form input[type="submit"]:hover,
+  .contact-form button:hover,
+  .wpcf7-form input[type="submit"]:hover,
+  .wpcf7-form button:hover {
+    background: #008a05 !important;
+  }
+
+  /* Form validation messages */
+  .wpcf7-response-output,
+  .wpcf7-not-valid-tip,
+  .form-error,
+  .form-success {
+    font-size: clamp(10px, 2vw, 12px) !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.5rem !important;
+    border-radius: 4px !important;
+  }
+
+  .wpcf7-not-valid-tip,
+  .form-error {
+    color: #d32f2f !important;
+    background: #ffebee !important;
+  }
+
+  .form-success {
+    color: #00a906 !important;
+    background: #e8f5e8 !important;
+  }
+
+  /* Form field groups */
+  .form-group,
+  .wpcf7-form-control-wrap {
+    margin: 0.5rem 0 !important;
+    width: 100% !important;
+  }
+
+  /* Form row/column layouts */
+  .form-row,
+  .form-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Form spacing */
+  .form-spacing,
+  .form-margin {
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Col-28 responsive styles */
+  .col-28 {
+    width: 100% !important; /* Remove fixed width, use full width */
+    max-width: 100% !important; /* Full width on small screens */
+    margin: 0.5rem 0 !important; /* Smaller margins */
+    padding: 0.5rem !important; /* Add padding */
+  }
+
+  /* Contact Form Responsive Styles - Improved for Mobile */
+
+  /* Form container */
+  .row-35 {
+    margin: 1rem 0 0 !important; /* Smaller margin */
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically on mobile */
+    gap: 1.5rem !important; /* More space between sections */
+  }
+
+  /* Form columns */
+  .col-47 {
+    float: none !important; /* Remove float */
+    margin: 0 !important; /* Remove fixed margin */
+    width: 100% !important; /* Full width */
+    display: flex !important;
+    flex-direction: column !important; /* Stack form fields vertically */
+    gap: 1.5rem !important; /* More space between fields */
+  }
+
+  /* Form field holders */
+  .warstwa-61-holder,
+  .warstwa-61-kopia-holder,
+  .warstwa-61-kopia-2-holder {
+    min-height: auto !important; /* Remove fixed height */
+    padding: 1.5rem !important; /* More padding for better touch targets */
+    margin: 0 !important; /* Remove fixed margins */
+    width: 100% !important; /* Full width */
+    border: 2px solid #e0e0e0 !important; /* Better border */
+    border-radius: 8px !important; /* Rounded corners */
+    background: url('../../../../dist/images/warstwa_61.png') no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    transition: border-color 0.3s ease !important; /* Smooth transition */
+  }
+
+  .warstwa-61-holder:focus-within,
+  .warstwa-61-kopia-holder:focus-within,
+  .warstwa-61-kopia-2-holder:focus-within {
+    border-color: #00a906 !important; /* Green border on focus */
+    background: #fff !important; /* White background on focus */
+  }
+
+  /* Textarea holder */
+  .warstwa-61-kopia-3-holder {
+    float: none !important; /* Remove float */
+    min-height: auto !important; /* Remove fixed height */
+    padding: 1.5rem !important; /* More padding */
+    width: 100% !important; /* Full width */
+    border: 2px solid #e0e0e0 !important; /* Better border */
+    border-radius: 8px !important; /* Rounded corners */
+    background: url('../../../../dist/images/warstwa_61_kopia_3.png') no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    transition: border-color 0.3s ease !important; /* Smooth transition */
+  }
+
+  .warstwa-61-kopia-3-holder:focus-within {
+    border-color: #00a906 !important; /* Green border on focus */
+    background: #fff !important; /* White background on focus */
+  }
+
+  /* Form labels */
+  .text-152,
+  .email,
+  .telefon {
+    margin: 0 0 0.75rem 0 !important; /* More margin */
+    font-weight: 600 !important; /* Bolder labels */
+    color: #333 !important; /* Darker text */
+  }
+
+  .text-152 > * {
+    line-height: 1.4 !important; /* Remove fixed line height */
+    font-size: clamp(14px, 3vw, 16px) !important; /* Larger font size */
+  }
+
+  /* Form inputs */
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form textarea {
+    width: 100% !important;
+    padding: 1rem !important; /* Larger padding for better touch targets */
+    font-size: clamp(14px, 3vw, 16px) !important; /* Larger font size */
+    border: none !important; /* Remove border (handled by container) */
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    background: transparent !important; /* Transparent background */
+    outline: none !important; /* Remove outline */
+  }
+
+  .contact-form input[type="text"]:focus,
+  .contact-form input[type="email"]:focus,
+  .contact-form input[type="tel"]:focus,
+  .contact-form textarea:focus {
+    outline: none !important; /* Remove focus outline */
+  }
+
+  /* Form bottom section */
+  .row-14 {
+    margin: 2rem 0 0 !important; /* Responsive margin */
+    right: 0 !important; /* Remove fixed right positioning */
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically on mobile */
+    gap: 1rem !important;
+  }
+
+  /* Privacy policy section */
+  .layer-24,
+  .text-154 {
+    float: none !important; /* Remove float */
+    margin: 0 !important; /* Remove fixed margins */
+    display: inline-block !important;
+  }
+
+  .text-154 {
+    font-size: clamp(10px, 2vw, 12px) !important; /* Responsive font size */
+  }
+
+  /* Consent section */
+  .col-35 {
+    float: none !important; /* Remove float */
+    width: 100% !important; /* Full width */
+    margin: 0 !important; /* Remove margins */
+  }
+
+  .row-25 {
+    left: 0 !important; /* Remove fixed left positioning */
+    margin: 0 !important; /* Remove margins */
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically on mobile */
+    gap: 1rem !important;
+  }
+
+  /* Checkbox columns */
+  .col-39,
+  .col-40 {
+    float: none !important; /* Remove float */
+    width: 100% !important; /* Full width */
+    margin: 0 !important; /* Remove margins */
+  }
+
+  /* Checkbox holders */
+  .layer-holder-3,
+  .layer-holder-4 {
+    padding: 0.5rem 0 !important; /* Responsive padding */
+    width: auto !important; /* Remove fixed width */
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Consent text */
+  .text-155,
+  .text-156 {
+    font-size: clamp(11px, 2.2vw, 13px) !important; /* Responsive font size */
+    margin: 0.5rem 0 !important; /* Responsive margin */
+    line-height: 1.4 !important; /* Better line height */
+  }
+
+  /* Submit button holder */
+  .layer-holder-5 {
+    margin: 1rem 0 0 !important; /* Responsive margin */
+    min-height: auto !important; /* Remove fixed height */
+    padding: 0 !important; /* Remove padding */
+    width: 100% !important; /* Full width */
+  }
+
+  /* Submit button */
+  .submit-button {
+    width: 100% !important; /* Full width */
+    padding: 0.75rem 1rem !important; /* Responsive padding */
+    font-size: clamp(12px, 2.5vw, 14px) !important; /* Responsive font size */
+    background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+  }
+
+  .submit-button:hover {
+    background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    opacity: 0.9 !important;
+  }
+
+  /* Col-10 responsive styles - Make relative on smaller screens */
+  .col-10 {
+    position: relative !important; /* Make relative instead of absolute */
+    left: auto !important; /* Remove fixed left positioning */
+    min-height: auto !important; /* Remove fixed height */
+    padding: 1rem !important; /* Responsive padding */
+    width: 100% !important; /* Full width */
+    margin: 0 !important; /* Remove margins */
+  }
+
+  /* Text-151 responsive styles - Much smaller margins on small screens */
+  .text-151 {
+    margin: 0.5rem 0 !important; /* Much smaller margins */
+    font-size: clamp(20px, 4vw, 40px) !important; /* Responsive font size */
+    text-align: center !important; /* Center align for mobile */
+    padding: 0 1rem !important; /* Add small side padding */
+  }
+
+  /* Col-5 responsive styles - Remove margins under 1200px */
+  .col-5 {
+    margin: 0 !important; /* Remove all margins */
+  }
+
+  /* Row-27 responsive styles */
+  .row-27 {
+    margin-left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Col responsive styles - Connected with warstwa-56 (first pair) */
+  .col {
+    text-align: left !important;
+    margin: 0 !important;
+    margin-left: 0px !important;
+    padding: 0.5rem !important;
+    position: absolute !important;
+    left: 233px !important;
+    top: 33px !important;
+    align-content: center;
+    width: 100% !important;
+    max-width: 232px !important;
+    background-size: contain !important;
+    background-position: center !important;
+  }
+
+  /* Col-2 responsive styles - Connected with warstwa-57 (second pair) */
+  .col-2 {
+    text-align: left !important;
+    margin: 0 !important;
+    margin-left: 0px !important;
+    padding: 0.5rem !important;
+    position: absolute !important;
+    left: -26px !important;
+    top: 354px !important;
+    align-content: center;
+    width: 232px !important;
+    max-width: 221px !important;
+    background-size: contain !important;
+    background-position: center !important;
+  }
+
+  /* Row-5 responsive styles - Display flex */
+  .row-5 {
+    display: flex !important; /* Use flexbox layout */
+  }
+
+  /* Gallery responsive styles - Much more responsive */
+  .gallery-section,
+  .gallery,
+  .gallery-container {
+    margin: 0.25rem 0 !important; /* Much smaller margins */
+    padding: 0.25rem !important; /* Much smaller padding */
+  }
+
+  /* Gallery grid - more responsive columns */
+  .gallery-grid,
+  .gallery-items,
+  .gallery-row {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    gap: 0.25rem !important; /* Much smaller gaps */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Gallery items - more compact */
+  .gallery-item,
+  .gallery-image,
+  .gallery-img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 3px !important;
+  }
+
+  /* Gallery images - more compact */
+  .gallery-item img,
+  .gallery-image img,
+  .gallery-img img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 3px !important;
+  }
+
+  /* Gallery titles - more responsive */
+  .gallery-title,
+  .gallery-heading {
+    font-size: clamp(12px, 3vw, 18px) !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 0.25rem !important;
+    text-align: center !important;
+  }
+
+  /* Gallery descriptions - more responsive */
+  .gallery-description,
+  .gallery-text {
+    font-size: clamp(9px, 2vw, 12px) !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 0.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Gallery buttons - more responsive */
+  .gallery-button,
+  .gallery-btn {
+    margin: 0.25rem auto !important;
+    padding: 0.3rem 0.6rem !important;
+    font-size: clamp(9px, 2vw, 11px) !important;
+    width: auto !important;
+    max-width: 150px !important;
+  }
+
+  /* Swiper gallery adjustments - More responsive */
+  .swiper-gallery,
+  .gallery-swiper {
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
+  }
+
+  .swiper-gallery .swiper-slide,
+  .gallery-swiper .swiper-slide {
+    height: auto !important;
+    padding: 0.15rem !important;
+  }
+
+  /* Lightbox/gallery modal adjustments - More responsive */
+  .gallery-lightbox,
+  .gallery-modal {
+    padding: 0.25rem !important;
+  }
+
+  .gallery-lightbox img,
+  .gallery-modal img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Galeria responsive styles - Remove fixed width */
+  .galeria {
+    width: 100% !important; /* Remove fixed width */
+    max-width: 1439px !important; /* Use max-width instead of fixed width */
+    margin: 2rem auto 0 !important; /* Responsive margin */
+    right: 0 !important; /* Remove fixed right positioning */
+    position: relative !important;
+    padding: 0 1rem !important; /* Add side padding for mobile */
+  }
+
+  /* Text-37 responsive styles */
+  .text-37 {
+    margin-right: 0 !important; /* Remove right shift on small screens */
+    margin-top: 1rem !important; /* Reduce top margin on small screens */
+    padding: 0 1rem !important; /* Add small side padding instead */
+  }
+
+  /* Stat Dividers */
+  .warstwa-48,
+  .warstwa-48-kopia,
+  .warstwa-48-kopia-2,
+  .warstwa-48-kopia-3,
+  .warstwa-48-kopia-4 {
+    display: none; /* Hide dividers on mobile, show as spacing */
+  }
+
+  /* Tablet Styles - Within responsive block */
+  @media (min-width: 768px) and (max-width: 999px) {
+    .hero-section {
+      padding: 3rem 2rem;
+    }
+
+    .baner-2 {
+      margin: 2rem auto 0;
+    }
+
+    .grupa-7 {
+      margin: 4rem auto 0;
+      gap: 2rem;
+    }
+
+    .grupa-7 > p {
+      min-width: 180px;
+      max-width: 220px;
+    }
+
+    /* Show dividers on tablet and up */
+    .warstwa-48,
+    .warstwa-48-kopia,
+    .warstwa-48-kopia-2,
+    .warstwa-48-kopia-3,
+    .warstwa-48-kopia-4 {
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.3);
+      margin: 0 1rem;
+    }
+
+    /* Ensure all stat text remains white on tablet */
+    .text-10,
+    .text-11,
+    .text-12,
+    .text-13,
+    .text-14,
+    .text-15 {
+      color: #ffffff !important;
+    }
+
+    .text-10 strong,
+    .text-11 strong,
+    .text-12 span,
+    .text-13 span,
+    .text-14 span,
+    .text-15 span {
+      color: #ffffff !important;
+    }
+
+    .text-style-4,
+    .text-style-6 {
+      color: #ffffff !important;
+    }
+  }
+
+  /* Mobile Landscape - Within responsive block */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .hero-section {
+      min-height: 80vh;
+      padding: 1rem;
+    }
+
+    .baner-2 {
+      margin: 1rem auto 0;
+    }
+
+    .grupa-7 {
+      margin: 2rem auto 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .grupa-7 > p {
+      min-width: 120px;
+      max-width: 150px;
+      padding: 0.5rem;
+    }
+  }
+
+  /* Very Small Screens - Within responsive block */
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 1rem 0.5rem;
+    }
+
+    .grupa-7 {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .grupa-7 > p {
+      min-width: 100%;
+      max-width: 100%;
+      padding: 0.75rem;
+    }
+
+    .grupa-8 {
+      min-width: 180px;
+      padding: 0 1.5rem;
+    }
+  }
+}

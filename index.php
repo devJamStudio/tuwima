@@ -15,39 +15,26 @@
 get_header();
 ?>
 
-	<section id="primary">
-		<main id="main">
+	<div class="main-content-wrapper">
+		<?php get_template_part('template-parts/green-house/about'); ?>
 
-		<?php
-		if ( have_posts() ) {
+		<?php get_template_part('template-parts/green-house/benefits'); ?>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php single_post_title(); ?></h1>
-				</header><!-- .entry-header -->
-				<?php
-			endif;
+		<?php get_template_part('template-parts/green-house/layout'); ?>
+		<?php get_template_part('template-parts/green-house/garden'); ?>
 
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/content/content' );
-			}
+		<?php get_template_part('template-parts/green-house/location'); ?>
 
-			// Previous/next page navigation.
-			future_the_posts_navigation();
+		<?php get_template_part('template-parts/green-house/apartments'); ?>
 
-		} else {
+		<?php get_template_part('template-parts/green-house/gallery'); ?>
 
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
+		<?php get_template_part('template-parts/green-house/financing'); ?>
 
-		}
-		?>
+		<?php get_template_part('template-parts/green-house/developer'); ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		<?php get_template_part('template-parts/green-house/contact'); ?>
+	</div>
 
 <?php
 get_footer();

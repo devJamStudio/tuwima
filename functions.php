@@ -149,11 +149,11 @@ add_action( 'widgets_init', 'future_widgets_init' );
  */
 function future_get_image_url($filename) {
 	$hot_file = get_theme_file_path('/hot');
-	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
+	$is_development = file_exists($hot_file);
 
 	// In development, use Vite dev server for images
 	// In production, use dist folder for optimized images
-	$image_base_url = $is_development ? 'http://localhost:5173/src/images/' : get_template_directory_uri() . '/dist/images/';
+	$image_base_url = $is_development ? 'http://localhost:5174/src/images/' : get_template_directory_uri() . '/dist/images/';
 
 	return $image_base_url . $filename;
 }
@@ -164,12 +164,12 @@ function future_get_image_url($filename) {
  */
 function green_house_image_url($filename) {
 	$hot_file = get_theme_file_path('/hot');
-	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
-	
+	$is_development = file_exists($hot_file);
+
 	// In development, use Vite dev server for images
 	// In production, use dist folder for optimized images
-	$image_base_url = $is_development ? 'http://localhost:5173/src/images/' : get_template_directory_uri() . '/dist/images/';
-	
+	$image_base_url = $is_development ? 'http://localhost:5174/src/images/' : get_template_directory_uri() . '/dist/images/';
+
 	return $image_base_url . $filename;
 }
 
@@ -211,12 +211,12 @@ function future_scripts() {
 
 	// Check if we're in development mode
 	$hot_file = get_theme_file_path('/hot');
-	$is_development = defined('WP_DEBUG') && WP_DEBUG && file_exists($hot_file);
+	$is_development = file_exists($hot_file); // Always check for hot file, regardless of WP_DEBUG
 
 	if ( $is_development ) {
 		// Development: Load Vite assets
 		// Read dev server URL from hot file
-		$vite_dev_server = 'http://localhost:5173'; // Default
+		$vite_dev_server = 'http://localhost:5174'; // Default
 		if (file_exists($hot_file)) {
 			$hot_content = file_get_contents($hot_file);
 			if ($hot_content) {
@@ -240,10 +240,10 @@ function future_scripts() {
 			false
 		);
 
-		// Debug info
-		if (defined('WP_DEBUG') && WP_DEBUG) {
-			error_log("🔥 Vite HMR active: " . $vite_dev_server);
-		}
+		// Debug info - always log for troubleshooting
+		error_log("🔥 Vite HMR active: " . $vite_dev_server);
+		error_log("🔥 Hot file exists: " . (file_exists($hot_file) ? 'YES' : 'NO'));
+		error_log("🔥 Hot file content: " . (file_exists($hot_file) ? file_get_contents($hot_file) : 'N/A'));
 
 		// Make scripts ES6 modules
 		add_filter('script_loader_tag', function($tag, $handle) {

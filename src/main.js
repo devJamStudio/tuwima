@@ -1,6 +1,9 @@
 // Main JavaScript entry point for Future Theme
 import './style.css'
 
+// HMR Test for Green House Template
+import './hmr-test.js'
+
 // Import all modular CSS files for HMR
 import './css/base/_variables.css'
 import './css/base/_reset.css'
@@ -9,6 +12,8 @@ import './css/base/_utilities.css'
 
 // Import component CSS files
 import './css/components/header.css'
+import './css/components/responsive-nav.css'
+import './css/components/hero-responsive.css'
 import './css/components/about.css'
 import './css/components/benefits.css'
 import './css/components/layout.css'
@@ -45,18 +50,81 @@ class FutureTheme {
       // Smooth scrolling for anchor links
       this.initSmoothScrolling()
 
+      // Navbar scroll effect
+      this.initNavbarScroll()
+
       // Lazy loading for images
       this.initLazyLoading()
     })
   }
 
   initMobileMenu() {
-    const mobileMenuToggle = document.querySelector('[data-mobile-menu-toggle]')
-    const mobileMenu = document.querySelector('[data-mobile-menu]')
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle')
+    const navList = document.querySelector('.nav-list-2')
+    const navOverlay = document.querySelector('.nav-overlay')
 
-    if (mobileMenuToggle && mobileMenu) {
-      mobileMenuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden')
+    console.log('Mobile menu elements:', {
+      mobileMenuToggle: !!mobileMenuToggle,
+      navList: !!navList,
+      navOverlay: !!navOverlay,
+      mobileMenuToggleElement: mobileMenuToggle,
+      navListElement: navList
+    })
+
+    if (mobileMenuToggle && navList && navOverlay) {
+      const openMenu = () => {
+        mobileMenuToggle.classList.add('active')
+        navList.classList.add('active')
+        navOverlay.classList.add('active')
+        document.body.style.overflow = 'hidden' // Prevent background scrolling
+      }
+
+      const closeMenu = () => {
+        mobileMenuToggle.classList.remove('active')
+        navList.classList.remove('active')
+        navOverlay.classList.remove('active')
+        document.body.style.overflow = '' // Restore scrolling
+      }
+
+      // Toggle menu on button click
+      mobileMenuToggle.addEventListener('click', (e) => {
+        console.log('Hamburger clicked!', e)
+        if (navList.classList.contains('active')) {
+          console.log('Closing menu')
+          closeMenu()
+        } else {
+          console.log('Opening menu')
+          openMenu()
+        }
+      })
+
+      // Close menu when clicking on a link
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu)
+      })
+
+      // Close menu when clicking overlay
+      navOverlay.addEventListener('click', closeMenu)
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navList.classList.contains('active')) {
+          closeMenu()
+        }
+      })
+    }
+  }
+
+  initNavbarScroll() {
+    const navbar = document.querySelector('.row-5')
+
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled')
+        } else {
+          navbar.classList.remove('scrolled')
+        }
       })
     }
   }

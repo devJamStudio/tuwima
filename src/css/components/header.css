@@ -1,9 +1,14 @@
-/* Header Component Styles */
+/* Header Component Styles - HMR TEST VERSION 2.0 - RESPONSIVE */
 
 .heder {
   margin: 0 auto;
   position: relative;
   margin-top: 0; /* No gap when navigation is separate */
+}
+
+/* HMR Test - This should change when you edit this file */
+.hmr-test-border {
+  border: 3px solid #ff0000 !important;
 }
 
 /* Navigation Styles */
@@ -24,11 +29,81 @@ html {
   font-weight: bold;
 }
 
-/* Mobile responsive adjustments for navigation */
-@media (max-width: 768px) {
-  .navigation-header .mobile-hidden {
-    display: none;
+/* Mobile hamburger menu button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+/* Ensure mobile menu is hidden on desktop */
+@media (min-width: 1001px) {
+  .nav-list-2 {
+    position: relative !important;
+    right: auto !important;
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    box-shadow: none !important;
+    padding-top: 0 !important;
+    overflow-y: visible !important;
   }
+
+  .nav-overlay {
+    display: none !important;
+  }
+}
+
+/* Force show on mobile - higher specificity */
+@media (max-width: 1000px) {
+  .mobile-menu-toggle {
+    display: block !important;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    background: #ffffff;
+    border: 2px solid #00a906;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1003;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .mobile-menu-toggle span {
+    display: block !important;
+    width: 25px;
+    height: 3px;
+    background: #00a906;
+    margin: 4px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #00a906;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Phone number links styling */
@@ -75,20 +150,99 @@ html {
 .row-5 {
   margin: 0 auto;
   min-height: 138px;
-  padding: 10px 0 0 39px;
-  position: relative;
-  -webkit-border-radius: 0 0 11px 11px;
-  -moz-border-radius: 0 0 11px 11px;
-  border-radius: 0 0 11px 11px;
+  padding: 10px 0 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: #ffffff;
+  max-width: 1880px;
+  border-radius: 0 0 11px 11px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Scrolled state - smaller navbar */
+.row-5.scrolled {
+  min-height: 80px;
+  padding: 0px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+}
+
+.row-5.scrolled .col-31 {
+  height: 80px;
+}
+
+.row-5.scrolled .top-row {
+  height: 40px;
+}
+
+.row-5.scrolled .bottom-row {
+  height: 40px;
+}
+
+/* Logo shrinking on scroll */
+.row-5.scrolled .warstwa-0-kopia-2 {
+  width: 32px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.row-5.scrolled .text {
+  font-size: 6px;
+  transition: all 0.3s ease;
+}
+
+.row-5.scrolled .tuwima {
+  width: 80px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+/* Contact elements shrinking on scroll */
+.row-5.scrolled .contact-button {
+  height: 32px;
+  width: 140px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.row-5.scrolled .contact-person {
+  gap: 0.5rem;
+  min-width: 140px;
+  transition: all 0.3s ease;
+}
+
+.row-5.scrolled .contact-image {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.row-5.scrolled .contact-name {
+  font-size: 11px;
+  line-height: 12px;
+  transition: all 0.3s ease;
+}
+
+.row-5.scrolled .contact-phone {
+  font-size: 16px;
+  line-height: 18px;
+  transition: all 0.3s ease;
+}
+
+/* Navigation underline adjustment on scroll */
+.row-5.scrolled .nav-list-2 .text-item.selected::after {
+  bottom: -0.7rem;
+  transition: all 0.3s ease;
 }
 
 .col-14 {
-  float: left;
-  margin: 9px 0 0;
+  margin: 9px 0 0 20px;
   position: relative;
-  max-width: 118px;
-	width:100%;
+  width: 118px;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -104,6 +258,9 @@ html {
   left: 4.5px;
   margin: 0 auto;
   position: relative;
+  width: 48px;
+  height: 52px;
+  object-fit: contain;
 }
 
 .text {
@@ -123,139 +280,230 @@ html {
 }
 
 .col-31 {
-  float: right;
   position: relative;
-  max-width: 1632px;
-	width:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 138px;
+  flex: 1;
+  margin-right: 0;
 }
 
-.wrapper-25 {
-  height: 99px;
+.top-row {
   position: relative;
-  max-width: 1632px;
-	width:100%;}
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-.layer {
+.bottom-row {
+  position: relative;
+  height: 69px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Contact elements - relative positioning for all screen sizes */
+.text-3 {
+  position: relative;
+  color: #00a906;
+  font-size: 21.40198px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 22px;
+  margin: 0;
+}
+
+.text-4 {
+  position: relative;
+  color: #010101;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 14px;
+  margin: 0;
+}
+
+.text-5 {
+  position: relative;
+  color: #00a906;
+  font-size: 21.40198px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 22px;
+  margin: 0;
+}
+
+.text-6 {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 13px;
+  margin: 0;
+}
+
+.warstwa-50 {
+  position: relative;
+  margin: 0;
+}
+
+/* Contact person container - image left, details right */
+.contact-person {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  min-width: 160px;
+  padding-top: 2px; /* Align with original top positioning */
+}
+
+.contact-image {
+  width: 41px;
+  height: 41px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  padding-top: 0; /* Names start at top */
+}
+
+.contact-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #010101;
+  margin: 0;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+
+/* Second contact person name has slight offset like original */
+.contact-person:nth-child(3) .contact-name {
+  margin-top: 3px; /* Match original top: 3px for text-6 */
+}
+
+.contact-phone {
+  font-size: 21.40198px;
+  font-weight: 900;
+  color: #00a906;
+  margin: 0;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+
+.contact-phone a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-phone a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Button Styles - HMR TEST */
+.contact-button {
+  position: relative;
+  top: 1px;
   height: 42px;
-  left: 50%;
-  position: absolute;
-  top: 1px;
   width: 177px;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  background: #00a906;
-  margin-left: 569px;
-}
-
-.layer-holder {
-  left: 50%;
-  margin: 0 0 0 601px;
-  min-height: 42px;
-  position: absolute;
-  top: 1px;
-  width: 177px;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
+  border: none;
   border-radius: 11px;
   background: #00a906;
   color: #ffffff;
   font-size: 17px;
   font-weight: bold;
   letter-spacing: 0.02em;
-  line-height: 42px;
-  text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 169, 6, 0.3); /* HMR TEST: Added shadow */
 }
 
-.warstwa-3 {
-  left: 50%;
-  position: absolute;
-  top: 39px;
-  margin-left: -816px;
+.contact-button:hover {
+  background: #008a05;
 }
 
-.layer-2 {
-  left: 50%;
-  position: absolute;
-  top: 14px;
-  margin-left: 592px;
+.contact-button:active {
+  background: #007004;
 }
 
-.text-3 {
-  left: 50%;
-  position: absolute;
-  top: 18px;
-  color: #00a906;
-  font-size: 21.40198px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  line-height: 22px;
-  margin-left: 354px;
+.button-text {
+  line-height: 1;
 }
 
-.text-4 {
-  left: 50%;
-  position: absolute;
-  top: 0;
-  color: #010101;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 0.02em;
-  line-height: 14px;
-  margin-left: 355px;
+.button-icon {
+  width: 18px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
-.text-5 {
-  left: 50%;
-  position: absolute;
-  top: 18px;
-  color: #00a906;
-  font-size: 21.40198px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  line-height: 22px;
-  margin-left: 141px;
-}
+/* warstwa-3 removed - no longer needed */
 
-.text-6 {
-  left: 50%;
-  position: absolute;
-  top: 3px;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 0.02em;
-  line-height: 13px;
-  margin-left: 139px;
-}
+/* Text styles are now handled by absolute positioning above */
 
-.warstwa-50 {
-  left: 50%;
-  position: absolute;
-  top: 0;
-  margin-left: 306px;
-}
+/* warstwa-50 styles are handled by absolute positioning above */
 
 .nav-2 {
-  left: 50%;
-  position: absolute;
-  top: 84px;
-  width: 1237px;
-  margin-left: -459px;
+
+  width: 100%;
+  max-width: 1237px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0;
+	height:100%;
+  justify-content: flex-end;
 }
 
 .nav-list-2 {
-  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 56px;
+  list-style: none;
+  height: 100%;
+  padding-bottom: 0;
+	display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+/* warstwa-46 removed - no longer needed */
+
+.nav-list-2 li {
   list-style: none;
 }
 
-.nav-list-2 li {
-  float: left;
-  margin: 0 56px 0 0;
+/* Active menu item styling */
+.nav-list-2 .text-item.selected {
+  position: relative;
 }
 
-.nav-list-2 li:last-child {
-  margin-right: 0;
+.nav-list-2 .text-item.selected::after {
+  content: '';
+  position: absolute;
+  bottom: -1.7rem;
+  left: -1rem;
+  right: -1rem;
+  height: 3px;
+  background-color: #00a906;
+}
+
+.nav-list-2 .text-item.selected a {
+  color: #00a906;
 }
 
 .nav-item-1-2 {
@@ -284,16 +532,15 @@ html {
 
 .warstwa-46 {
   height: 4px;
-  margin: 25px 0 0 352px;
-  position: relative;
+  margin: 25px auto 0;
   width: 134px;
   background-color: #00a906; /*Layer's solid color*/
 }
 
-/* Hero Section */
+/* Hero Section - Base Styles (Responsive overrides in hero-responsive.css) */
 .baner-2 {
   display: table;
-  margin: 374px auto 0;
+  margin: 50px auto 0; /* Reduced from 374px since navbar is now separate */
   position: relative;
 }
 
@@ -325,7 +572,7 @@ html {
   position: relative;
   right: 7.5px;
   width: 275px;
-  background: url('../../../html/images/prostok_t_zaokr_glony_14.png') no-repeat;
+  background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat;
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -335,16 +582,17 @@ html {
   font-weight: bold;
   line-height: 54px;
   text-align: center;
+  /* Responsive overrides in hero-responsive.css */
 }
 
-/* Stats Section */
+/* Stats Section - Base Styles (Responsive overrides in hero-responsive.css) */
 .grupa-7 {
   margin: 262px auto 0;
   min-height: 195px;
   padding: 0 37px;
   position: relative;
   right: 7px;
-	max-width:1413;
+  width: 1412px;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   border-radius: 11px;
@@ -472,7 +720,7 @@ html {
 
 /* Main Content Wrapper */
 .main-content-wrapper {
-  margin: 159px auto 0;
+  margin: 50px auto 0; /* Reduced from 159px since navbar is now separate */
   position: relative;
   max-width: 1882px;
 }
@@ -569,4 +817,160 @@ html {
   letter-spacing: 0.02em;
   line-height: 1.2;
   text-align: center;
+}
+.top-row {
+	border-bottom: 1px solid rgb(199, 195, 193) !important;
+}
+
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  .grupa-7 {
+    right: 0;
+  }
+}
+
+/* Responsive styles for .col-46, .row-24, .row-17, .btn-kopia, .btn-kopia-2, .btn-kopia-3, .btn-developer, and .text-141 */
+@media (max-width: 1000px) {
+  .col-46 {
+    margin-top: 16px;
+  }
+
+  .row-24 {
+    margin-top: 16px;
+  }
+
+  .row-17 {
+    margin-top: 16px;
+  }
+
+  .btn-kopia {
+    margin: 0;
+  }
+
+  .btn-kopia-2 {
+    padding: 0;
+  }
+
+  .btn-kopia-3 {
+    right: 0px;
+    margin: 16px auto 0;
+  }
+
+  .btn-developer {
+    margin: 16px 0 0;
+  }
+
+  .text-141 {
+    margin-top: 16px;
+  }
+
+  .row-17 {
+    margin-top: 16px;
+  }
+}
+
+/* Additional responsive styles for smaller screens */
+@media (max-width: 750px) {
+  .col-14 {
+    width: 100px;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+  }
+}
+
+/* Checkbox icon opacity in footer section */
+.stopka .ion-checkmark-icon,
+.stopka .ion-checkmark-icon-kopia {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease;
+}
+
+.stopka .ion-checkmark-icon.checked,
+.stopka .ion-checkmark-icon-kopia.checked {
+  opacity: 1 !important;
+}
+
+/* Styles for screens over 1000px */
+@media (min-width: 1001px) {
+  .heder {
+    top: -13rem;
+  }
+
+  .hero-section {
+    padding-top: 13rem;
+  }
+
+  .nav-2 {
+    width: 100%;
+    max-width: 1237px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  .bottom-row {
+    position: relative;
+    height: 69px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .top-row {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+
+  .contact-button {
+    margin-right: 70px;
+    margin-left: 50px;
+  }
+
+  .nav-list-2 .text-item.selected::after {
+    content: '';
+    position: absolute;
+    bottom: -1.7rem;
+    left: -1rem;
+    right: -1rem;
+    height: 3px;
+    background-color: #00a906;
+  }
+
+  .text-style-10 {
+    color: #000000;
+    font-size: 15px;
+    top: -19px;
+    position: relative;
+  }
+
+  .btn-developer {
+    margin: 80px 0 0;
+    min-height: 58px;
+    position: relative;
+    width: 225px;
+    background: var(--image-prostok-17) no-repeat;
+    color: #00a906;
+    font-family: Montserrat, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 58px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 }

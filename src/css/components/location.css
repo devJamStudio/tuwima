@@ -1,5 +1,13 @@
 /* Location Section Styles */
 
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+}
+
 .lokalizacja {
   margin: 115px auto 0;
   position: relative;
@@ -185,4 +193,15 @@
 	max-height:686px;
 	max-width:747px;
 	object-fit: cover;
+}
+
+/* Responsive styles */
+@media (max-width: 1000px) {
+  .lokalizacja {
+    margin: 16px auto 0;
+  }
+
+  .row-15 {
+    left: 0px;
+  }
 }

@@ -36,7 +36,68 @@
 <div id="page">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'future' ); ?></a>
 
-	<?php get_template_part( 'template-parts/layout/header', 'content' ); ?>
+	<!-- Navigation Header - Separate from hero -->
+	<?php get_template_part( 'template-parts/green-house/navbar' ); ?>
+
+	<!-- Hero Section -->
+	<header class="heder">
+		<div class="baner">
+			<div class="warstwa-47-holder">
+				<div class="heder-2">
+					<?php get_template_part( 'template-parts/green-house/hero' ); ?>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// Smooth scrolling for anchor links
+		const anchorLinks = document.querySelectorAll('a[href^="#"]');
+		anchorLinks.forEach(function(link) {
+			link.addEventListener('click', function(e) {
+				const href = this.getAttribute('href');
+				if (href === '#') return;
+
+				const target = document.querySelector(href);
+				if (target) {
+					e.preventDefault();
+					const targetPosition = target.offsetTop - 20;
+
+					window.scrollTo({
+						top: targetPosition,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+
+		// Active navigation highlighting
+		const sections = document.querySelectorAll('section[id]');
+		const navLinks = document.querySelectorAll('.nav-list-2 a[href^="#"]');
+
+		function highlightNavigation() {
+			let current = '';
+			sections.forEach(function(section) {
+				const sectionTop = section.offsetTop;
+				const sectionHeight = section.clientHeight;
+				if (window.scrollY >= (sectionTop - 200)) {
+					current = section.getAttribute('id');
+				}
+			});
+
+			navLinks.forEach(function(link) {
+				link.parentElement.parentElement.classList.remove('selected');
+				if (link.getAttribute('href') === '#' + current) {
+					link.parentElement.parentElement.classList.add('selected');
+				}
+			});
+		}
+
+		window.addEventListener('scroll', highlightNavigation);
+		highlightNavigation(); // Call once on load
+	});
+	</script>
 
 	<div id="content">
 		<div id="loader" class="loader">

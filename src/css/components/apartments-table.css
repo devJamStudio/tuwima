@@ -1,5 +1,19 @@
 /* Apartments Table Styles - Clean Modern Design */
 
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+  
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
+
 .apartments-table-container {
     width: 100%;
 		max-width: 1458px;

@@ -1,0 +1,589 @@
+/* ========================================
+   RESPONSIVE NAVIGATION STYLES
+   ======================================== */
+
+/* Large Desktop (1920px+) */
+@media (min-width: 1920px) {
+  .row-5 {
+    padding: 0px;
+  }
+
+  .nav-list-2 {
+    gap: 56px;
+  }
+
+  .contact-button {
+    width: 177px;
+    font-size: 17px;
+  }
+}
+
+/* Desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .row-5 {
+    padding: 0px;
+  }
+
+  .nav-list-2 {
+    gap: 40px;
+  }
+
+  .contact-button {
+    width: 160px;
+    font-size: 16px;
+  }
+}
+
+/* Laptop (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .row-5 {
+    padding: 0px;
+  }
+
+  .nav-list-2 {
+    gap: 30px;
+  }
+
+  .contact-button {
+    width: 150px;
+    font-size: 15px;
+  }
+
+  .text-3, .text-5 {
+    font-size: 18px;
+  }
+
+  .text-4, .text-6 {
+    font-size: 12px;
+  }
+}
+
+/* Tablet Landscape (1001px - 1199px) */
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .row-5 {
+    padding: 0px;
+    min-height: 120px;
+  }
+
+  .nav-list-2 {
+    gap: 25px;
+  }
+
+  .contact-button {
+    width: 140px;
+    font-size: 14px;
+  }
+
+  .text-3, .text-5 {
+    font-size: 16px;
+  }
+
+  .text-4, .text-6 {
+    font-size: 11px;
+  }
+}
+
+/* Tablet Portrait (768px - 1000px) */
+@media (min-width: 768px) and (max-width: 1000px) {
+  .row-5 {
+    padding: 10px 0 0 12px;
+    min-height: 100px;
+  }
+
+  .col-31 {
+    width: 100%;
+    float: none;
+  }
+
+  .wrapper-25 {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .nav-2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .nav-list-2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-button {
+    width: 120px;
+    font-size: 12px;
+    height: 36px;
+  }
+
+  .text-3, .text-5 {
+    font-size: 14px;
+  }
+
+  .text-4, .text-6 {
+    font-size: 10px;
+  }
+}
+
+/* Mobile Landscape (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .row-5 {
+    padding: 5px 0 0 12px;
+    min-height: 60px;
+  }
+
+  .col-14 {
+    float: none;
+    width: 100%;
+    margin: 0 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .col-31 {
+    width: 100%;
+    float: none;
+  }
+
+  .wrapper-25 {
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+  }
+
+  .nav-2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .nav-list-2 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .contact-button {
+    width: 100px;
+    font-size: 10px;
+    height: 32px;
+  }
+
+  .text-3, .text-5 {
+    font-size: 12px;
+  }
+
+  .text-4, .text-6 {
+    font-size: 9px;
+  }
+
+  .logo {
+    width: 40px;
+  }
+
+  .warstwa-0-kopia-2 {
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .text {
+    font-size: 6px;
+  }
+
+  .tuwima {
+    width: 80px;
+    height: auto;
+  }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+  .row-5 {
+    padding: 5px 0 0 12px;
+    min-height: 50px;
+  }
+
+  .col-14 {
+    float: none;
+    width: 100%;
+    margin: 0 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .col-31 {
+    width: 100%;
+    float: none;
+  }
+
+  .wrapper-25 {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+  }
+
+  .nav-2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .nav-list-2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .contact-button {
+    width: 80px;
+    font-size: 8px;
+    height: 28px;
+  }
+
+  .text-3, .text-5 {
+    font-size: 10px;
+  }
+
+  .text-4, .text-6 {
+    font-size: 8px;
+  }
+
+  .logo {
+    width: 35px;
+  }
+
+  .warstwa-0-kopia-2 {
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .text {
+    font-size: 5px;
+  }
+
+  .tuwima {
+    width: 70px;
+    height: auto;
+  }
+
+  /* Hide some elements on very small screens */
+  .warstwa-50 {
+    display: none;
+  }
+}
+
+/* Global responsive rule for all columns under 1000px */
+@media (max-width: 1000px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/* Mobile Menu Toggle */
+@media (max-width: 1000px) {
+  /* Reduce navbar height on mobile */
+  .row-5 {
+    min-height: 60px;
+    padding: 5px 0 0 0;
+  }
+
+  .col-31 {
+    height: 60px;
+  }
+
+  .bottom-row {
+    height: 60px;
+  }
+
+  /* Logo improvements for mobile */
+  .col-14 {
+    padding-bottom: 8px;
+  }
+
+  .logo {
+    padding-bottom: 4px;
+  }
+
+  .warstwa-0-kopia-2 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+
+  /* Hide top row on mobile - show mobile menu instead */
+  .top-row {
+    display: none !important;
+  }
+
+  /* Reduce margin for row-36 on mobile */
+  .row-36 {
+    margin-top: 16px !important;
+  }
+
+  /* Reduce margin for row-17 on mobile */
+  .row-17 {
+    margin-top: 16px !important;
+  }
+
+  /* Reduce margin for row-34 on mobile */
+  .row-34 {
+    margin-top: 16px !important;
+  }
+
+  /* Set margin-top for col-46 on mobile */
+  .col-46 {
+    margin-top: 16px !important;
+  }
+
+  /* Set right positioning for text-37 on mobile */
+  .text-37 {
+    right: 0px !important;
+  }
+
+  /* Mobile menu toggle styles moved to header.css for better specificity */
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .nav-list-2 {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 300px !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2) !important;
+    transition: right 0.3s ease !important;
+    z-index: 1002 !important;
+    padding-top: 80px !important;
+    overflow-y: auto !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  .nav-list-2.active {
+    right: 0 !important;
+    z-index: 1002 !important;
+  }
+
+  .nav-list-2 li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-list-2 li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-list-2 .text-item {
+    padding: 20px 30px;
+    text-align: left;
+  }
+
+  .nav-list-2 .text-item a {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-list-2 .text-item a:hover {
+    color: #00a906;
+  }
+
+  .nav-list-2 .text-item.selected a {
+    color: #00a906;
+    font-weight: 600;
+  }
+
+  /* Active menu item border for mobile */
+  .nav-list-2 .text-item.selected::after {
+    content: '';
+    position: absolute;
+    bottom: 0rem;
+    left: -1rem;
+    right: -1rem;
+    height: 3px;
+    background-color: #00a906;
+  }
+
+  /* Overlay for sidecart */
+  .nav-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0,0,0,0.5) !important;
+    z-index: 999 !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: block !important;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Mobile Menu Toggle - Below 750px */
+@media (max-width: 750px) {
+  .row-5 {
+    min-height: 50px;
+  }
+
+  .col-31 {
+    height: 50px;
+  }
+
+  .bottom-row {
+    height: 50px;
+  }
+
+  .mobile-menu-toggle {
+    right: 10px;
+    padding: 6px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 22px;
+    height: 2px;
+  }
+
+  /* Logo adjustments for smaller screens */
+  .col-14 {
+    width: 100px;
+  }
+
+  .warstwa-0-kopia-2 {
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .text {
+    font-size: 6px;
+  }
+
+  .tuwima {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Mobile menu adjustments for smaller screens */
+  .nav-list-2 {
+    width: 280px;
+  }
+
+  .nav-list-2 .text-item {
+    padding: 15px 25px;
+  }
+
+  .nav-list-2 .text-item a {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Menu Toggle - Below 500px */
+@media (max-width: 500px) {
+  .row-5 {
+    min-height: 45px;
+  }
+
+  .col-31 {
+    height: 45px;
+  }
+
+  .bottom-row {
+    height: 45px;
+  }
+
+  .mobile-menu-toggle {
+    top: 20px;
+    right: 15px;
+    padding: 5px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 20px;
+    height: 2px;
+  }
+
+  /* Logo adjustments for very small screens */
+  .col-14 {
+    width: 80px;
+  }
+
+  .warstwa-0-kopia-2 {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .text {
+    font-size: 5px;
+  }
+
+  .tuwima {
+    width: 60px;
+    height: auto;
+  }
+
+  /* Mobile menu adjustments for very small screens */
+  .nav-list-2 {
+    width: 260px;
+  }
+
+  .nav-list-2 .text-item {
+    padding: 12px 20px;
+  }
+
+  .nav-list-2 .text-item a {
+    font-size: 14px;
+  }
+}
+
+
+.row-5 {
+	display:flex!important
+
+}
