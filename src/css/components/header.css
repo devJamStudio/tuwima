@@ -995,3 +995,24 @@ html {
     top: 10px;
   }
 }
+
+/* Top row hide on scroll - SIMPLE */
+.top-row {
+  transition: all 0.3s ease;
+}
+
+/* Simple hide when display is set to none */
+.top-row[style*="display: none"] {
+  display: none !important;
+}
+
+/* Bottom row full height when scrolled */
+.row-5.scrolled .bottom-row {
+  height: 100% !important;
+}
+
+/* Adjust selected nav item underline when scrolled */
+.row-5.scrolled .nav-list-2 .text-item.selected::after {
+  bottom: -1.93rem;
+  transition: all 0.3s ease;
+}

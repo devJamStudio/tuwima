@@ -284,6 +284,94 @@ function future_scripts() {
 		}
 	}
 
+	// AOS (Animate On Scroll) Library - Load in header to ensure it's available early
+	wp_enqueue_style( 'aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1' );
+	wp_enqueue_script( 'aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', false ); // Load in header
+
+	// Add AOS script directly in head for immediate availability
+	add_action( 'wp_head', function() {
+		echo '<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>';
+		echo '<script>
+		// Initialize AOS immediately
+		if (typeof AOS !== "undefined") {
+			AOS.init({
+				duration: 800,
+				easing: "ease-in-out",
+				once: true,
+				offset: 100,
+				disable: function() {
+					return window.innerWidth < 768;
+				}
+			});
+			console.log("AOS loaded and initialized");
+		} else {
+			console.warn("AOS library not loaded properly");
+		}
+		</script>';
+	}, 1 );
+
+	// Initialize AOS with proper error handling
+	wp_add_inline_script( 'aos-js', '
+		// Initialize AOS immediately when script loads
+		if (typeof AOS !== "undefined") {
+			AOS.init({
+				duration: 800,
+				easing: "ease-in-out",
+				once: true,
+				offset: 100,
+				disable: function() {
+					return window.innerWidth < 768;
+				}
+			});
+		} else {
+			console.warn("AOS library not loaded properly");
+		}
+
+		// Also initialize on DOM ready as backup
+		document.addEventListener("DOMContentLoaded", function() {
+			if (typeof AOS !== "undefined") {
+				AOS.refresh();
+			}
+		});
+	', 'after' );
+
+	// Fancybox Library
+	wp_enqueue_style( 'fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', array(), '5.0' );
+	wp_enqueue_script( 'fancybox-js', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', array(), '5.0', true );
+
+	// Initialize Fancybox
+	wp_add_inline_script( 'fancybox-js', '
+		document.addEventListener("DOMContentLoaded", function() {
+			if (typeof Fancybox !== "undefined") {
+				Fancybox.bind("[data-fancybox]", {
+					Toolbar: {
+						display: {
+							left: ["infobar"],
+							middle: [],
+							right: ["slideshow", "thumbs", "close"],
+						},
+					},
+					Thumbs: {
+						autoStart: false,
+					},
+					Images: {
+						zoom: true,
+					},
+				});
+
+				// Auto-add fancybox to all images in galleries
+				document.querySelectorAll(".gallery img, .gallery-item img").forEach(function(img) {
+					if (!img.closest("[data-fancybox]")) {
+						img.setAttribute("data-fancybox", "gallery");
+						img.setAttribute("data-src", img.src);
+					}
+				});
+			} else {
+				console.warn("Fancybox library not loaded properly");
+			}
+		});
+	', 'after' );
+
 	// Legacy JS for compatibility
 	if ( file_exists( get_template_directory() . '/js/custom.js' ) ) {
 		wp_enqueue_script( 'future-legacy', get_template_directory_uri() . '/js/custom.js', array(), FUTURE_VERSION, true );
@@ -352,4 +440,44 @@ require get_template_directory() . '/inc/template-functions.php';
  * ACF Field Groups for Green House Tuwima
  */
 require get_template_directory() . '/inc/acf-simple-working.php';
+
+/**
+ * Contact Form Handler
+ */
+require get_template_directory() . '/inc/contact-form-handler.php';
+
+/**
+ * Hide Top Row on Scroll - SIMPLE & DIRECT
+ */
+add_action( 'wp_head', function() {
+	echo '<script>
+	// Simple scroll hide function
+	function hideTopRow() {
+		window.addEventListener("scroll", function() {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			const topRow = document.querySelector(".top-row");
+			const header = document.querySelector(".row-5");
+
+			if (topRow && header) {
+				if (scrollTop > 50) {
+					// Hide top row and add scrolled class
+					topRow.style.display = "none";
+					header.classList.add("scrolled");
+				} else {
+					// Show top row and remove scrolled class
+					topRow.style.display = "flex";
+					header.classList.remove("scrolled");
+				}
+			}
+		});
+	}
+
+	// Run when page loads
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", hideTopRow);
+	} else {
+		hideTopRow();
+	}
+	</script>';
+} );
 
