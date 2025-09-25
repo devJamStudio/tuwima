@@ -76,13 +76,15 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
 
 <div class="row-5 group">
     <div class="col-14">
-        <div class="logo">
-            <?php
-            echo '<img class="warstwa-0-kopia-2" src="' . get_template_directory_uri() . '/images/logo.png" alt="' . get_bloginfo('name') . '" width="48" height="52" style="width: 48px; height: 52px; object-fit: contain;">';
-            ?>
-        </div>
-        <p class="text"><?php echo get_bloginfo('name') ?: 'Green House'; ?></p>
-        <img class="tuwima" src="<?php echo green_house_image_url('tuwima.png'); ?>" alt="tuwima" width="118" height="20" title="tuwima">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link" style="text-decoration: none; color: inherit; display: block;">
+            <div class="logo">
+                <?php
+                echo '<img class="warstwa-0-kopia-2" src="' . get_template_directory_uri() . '/images/logo.png" alt="' . get_bloginfo('name') . '" width="48" height="52" style="width: 48px; height: 52px; object-fit: contain;">';
+                ?>
+            </div>
+            <p class="text"><?php echo get_bloginfo('name') ?: 'Green House'; ?></p>
+            <img class="tuwima" src="<?php echo green_house_image_url('tuwima.png'); ?>" alt="tuwima" width="118" height="20" title="tuwima">
+        </a>
     </div>
     <div class="col-31">
         <!-- Top Row: Contact Info and Button -->
@@ -127,7 +129,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
                 } else {
                     // Fallback menu
                     echo '<ul class="nav-list-2 group">';
-                    echo '<li><p class="nav-item-1-2 text-item selected"><a href="#o-inwestycji">O inwestycji</a></p></li>';
+                    echo '<li><p class="nav-item-1-2 text-item"><a href="#o-inwestycji">O inwestycji</a></p></li>';
                     echo '<li><p class="nav-item-3 text-item"><a href="#lokalizacja">Lokalizacja</a></p></li>';
                     echo '<li><p class="nav-item-3-2 text-item"><a href="#mieszkania">Mieszkania</a></p></li>';
                     echo '<li><p class="nav-item-3-3 text-item"><a href="#galeria">Galeria</a></p></li>';

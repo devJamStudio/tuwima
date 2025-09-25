@@ -675,7 +675,7 @@ function render_benefits_block($block, $aos_attributes) {
     $benefits = $block['benefits_items'] ?? array();
 
     ?>
-    <section class="benefits-section" <?php echo $aos_attributes; ?>>
+    <section class="benefits-section" id="o-inwestycji" <?php echo $aos_attributes; ?>>
         <div class="container">
             <div class="benefits-content">
                 <div class="benefits-text" data-aos="fade-right" data-aos-delay="200">
@@ -954,7 +954,7 @@ function render_location_block($block, $aos_attributes) {
     $locations = $block['location_items'] ?? array();
 
     ?>
-    <section class="location-section" <?php echo $aos_attributes; ?>>
+    <section class="location-section" id="lokalizacja" <?php echo $aos_attributes; ?>>
         <div class="container">
             <div class="location-header" data-aos="fade-up" data-aos-delay="200">
                 <?php if ($title): ?>
@@ -1213,7 +1213,7 @@ function render_apartments_block($block, $aos_attributes) {
     $apartments = $block['apartments_list'] ?? array();
 
     ?>
-    <section class="apartments-section" <?php echo $aos_attributes; ?>>
+    <section class="apartments-section" id="mieszkania" <?php echo $aos_attributes; ?>>
         <div class="container">
             <?php if ($title): ?>
                 <h2 class="section-title"><?php echo esc_html($title); ?></h2>
@@ -1667,7 +1667,7 @@ function render_visualizations_block($block, $aos_attributes) {
     $images = $block['visualizations_images'] ?? array();
 
     ?>
-    <section class="visualizations-section" <?php echo $aos_attributes; ?>>
+    <section class="visualizations-section" id="galeria" <?php echo $aos_attributes; ?>>
         <div class="container">
             <?php if ($title): ?>
                 <div class="section-header" data-aos="fade-up" data-aos-delay="200">
@@ -2006,7 +2006,7 @@ function render_contact_block($block, $aos_attributes) {
     $agents = $block['contact_agents'] ?? array();
 
     ?>
-    <section class="contact-section" <?php echo $aos_attributes; ?>>
+    <section class="contact-section" id="kontakt" <?php echo $aos_attributes; ?>>
         <div class="container">
             <?php if ($title): ?>
                 <h2 class="section-title"><?php echo esc_html($title); ?></h2>

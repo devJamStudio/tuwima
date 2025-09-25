@@ -24,18 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Your custom options for a specific gallery
 	});
 
-	const mobileMenuToggle = document.getElementById('mobile-menu__toggle');
+	const mobileMenuToggle = document.getElementById('mobile-menu__toggle') || document.querySelector('.mobile-menu-toggle');
 	const mobileNavigation = document.getElementById('mobile-navigation');
 	const mobileMenuToggleClose = document.getElementById('mobile-menu__toggle-close');
 
-	const bgOverlay = document.getElementById('nav__bg--overlay');
+	const bgOverlay = document.getElementById('nav__bg--overlay') || document.querySelector('.nav-overlay');
 	if (scrollIcon) {
 		scrollIcon.addEventListener('click', function () {
 			const position = window.innerHeight - 116
 			window.scrollTo({top: position, behavior: 'smooth'});
 		});
 	}
-	mobileMenuToggle.addEventListener('click', function () {
+	if (mobileMenuToggle) {
+		mobileMenuToggle.addEventListener('click', function () {
 		// Toggle the 'active' class on the mobile navigation
 		mobileNavigation.classList.toggle('active');
 		const hamburger = document.querySelector('.hamburger-lines');
@@ -47,8 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		navbarContainer.classList.toggle('mobile__nav--open')
 		// Optionally, you can also toggle a class on the button for styling
 		this.classList.toggle('is-active');
-	});
-	mobileMenuToggleClose.addEventListener('click', function () {
+		});
+	}
+
+	if (mobileMenuToggleClose) {
+		mobileMenuToggleClose.addEventListener('click', function () {
 		// Toggle the 'active' class on the mobile navigation
 		mobileNavigation.classList.toggle('active');
 		const hamburger = document.querySelector('.hamburger-lines');
@@ -60,8 +64,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		navbarContainer.classList.toggle('mobile__nav--open')
 		// Optionally, you can also toggle a class on the button for styling
 		this.classList.toggle('is-active');
-	});
-	bgOverlay.addEventListener('click', function () {
+		});
+	}
+
+	if (bgOverlay) {
+		bgOverlay.addEventListener('click', function () {
 		// Toggle the 'active' class on the mobile navigation
 		mobileNavigation.classList.toggle('active');
 		const hamburger = document.querySelector('.hamburger-lines');
@@ -73,7 +80,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		navbarContainer.classList.toggle('mobile__nav--open')
 		// Optionally, you can also toggle a class on the button for styling
 		this.classList.toggle('is-active');
-	});
+		});
+	}
 	//lightbox.init()
 	new Swiper(".hero-swiper", {
 		loop: true,

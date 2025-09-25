@@ -86,6 +86,8 @@ $gallery_images = array_slice($gallery_images, 0, 5);
 .gallery-lightbox-main {
     text-align: center;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .gallery-lightbox img {
@@ -157,7 +159,6 @@ $gallery_images = array_slice($gallery_images, 0, 5);
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 12px;
     overflow: hidden;
     display: inline-block;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -274,11 +275,14 @@ $gallery_images = array_slice($gallery_images, 0, 5);
 }
 </style>
 
-<section class="galeria group" id="galeria">
-    <div class="col-28">
+<section class="galeria-new" id="galeria">
+    <div class="gallery-title">
         <img class="text-135" src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png" alt="<?php echo esc_attr($gallery_title); ?>" width="256" height="38" title="<?php echo esc_attr($gallery_title); ?>">
+    </div>
 
-        <div class="row-21 group">
+    <div class="gallery-container">
+        <!-- Left side - Main large image -->
+        <div class="gallery-main">
             <?php if (!empty($gallery_images[0])): ?>
                 <?php
                 $image_0 = $gallery_images[0];
@@ -286,79 +290,71 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_0_alt = is_array($image_0) ? $image_0['alt'] : 'Gallery image 1';
                 ?>
                 <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_0_url); ?>">
-                    <img class="layer-17" src="<?php echo esc_url($image_0_url); ?>" alt="<?php echo esc_attr($image_0_alt); ?>" width="821" height="478">
+                    <img src="<?php echo esc_url($image_0_url); ?>" alt="<?php echo esc_attr($image_0_alt); ?>">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Zobacz wszystkie</div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <!-- Right side - 2x2 grid -->
+        <div class="gallery-grid">
+            <?php if (!empty($gallery_images[1])): ?>
+                <?php
+                $image_1 = $gallery_images[1];
+                $image_1_url = is_array($image_1) ? $image_1['url'] : $image_1;
+                $image_1_alt = is_array($image_1) ? $image_1['alt'] : 'Gallery image 2';
+                ?>
+                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
+                    <img src="<?php echo esc_url($image_1_url); ?>" alt="<?php echo esc_attr($image_1_alt); ?>">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <div class="col-37">
-                <?php if (!empty($gallery_images[1])): ?>
-                    <?php
-                    $image_1 = $gallery_images[1];
-                    $image_1_url = is_array($image_1) ? $image_1['url'] : $image_1;
-                    $image_1_alt = is_array($image_1) ? $image_1['alt'] : 'Gallery image 2';
-                    ?>
-                    <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
-                        <img class="layer-18" src="<?php echo esc_url($image_1_url); ?>" alt="<?php echo esc_attr($image_1_alt); ?>" width="290" height="210">
-                        <div class="gallery-overlay">
-                            <div class="gallery-overlay-text">Zobacz wszystkie</div>
-                        </div>
+            <?php if (!empty($gallery_images[2])): ?>
+                <?php
+                $image_2 = $gallery_images[2];
+                $image_2_url = is_array($image_2) ? $image_2['url'] : $image_2;
+                $image_2_alt = is_array($image_2) ? $image_2['alt'] : 'Gallery image 3';
+                ?>
+                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
+                    <img src="<?php echo esc_url($image_2_url); ?>" alt="<?php echo esc_attr($image_2_alt); ?>">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
-                <?php endif; ?>
+                </div>
+            <?php endif; ?>
 
-                <?php if (!empty($gallery_images[2])): ?>
-                    <?php
-                    $image_2 = $gallery_images[2];
-                    $image_2_url = is_array($image_2) ? $image_2['url'] : $image_2;
-                    $image_2_alt = is_array($image_2) ? $image_2['alt'] : 'Gallery image 3';
-                    ?>
-                    <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
-                        <img class="layer-19" src="<?php echo esc_url($image_2_url); ?>" alt="<?php echo esc_attr($image_2_alt); ?>" width="290" height="210">
-                        <div class="gallery-overlay">
-                            <div class="gallery-overlay-text">Zobacz wszystkie</div>
-                        </div>
+            <?php if (!empty($gallery_images[3])): ?>
+                <?php
+                $image_3 = $gallery_images[3];
+                $image_3_url = is_array($image_3) ? $image_3['url'] : $image_3;
+                $image_3_alt = is_array($image_3) ? $image_3['alt'] : 'Gallery image 4';
+                ?>
+                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
+                    <img src="<?php echo esc_url($image_3_url); ?>" alt="<?php echo esc_attr($image_3_alt); ?>">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-32 group">
-        <?php if (!empty($gallery_images[3])): ?>
-            <?php
-            $image_3 = $gallery_images[3];
-            $image_3_url = is_array($image_3) ? $image_3['url'] : $image_3;
-            $image_3_alt = is_array($image_3) ? $image_3['alt'] : 'Gallery image 4';
-            ?>
-            <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
-                <img class="layer-20" src="<?php echo esc_url($image_3_url); ?>" alt="<?php echo esc_attr($image_3_alt); ?>" width="290" height="210">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Zobacz wszystkie</div>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
 
-        <div class="wrapper-17">
-            <?php
-            // Get the "See all" image from ACF field 'warstwa-52' or use fallback
-            $see_all_image = get_field('warstwa-52');
-            if ($see_all_image) {
-                $image_url = is_array($see_all_image) ? $see_all_image['url'] : $see_all_image;
-                $image_alt = is_array($see_all_image) ? ($see_all_image['alt'] ?: 'Zobacz wszystkie') : 'Zobacz wszystkie';
-            } else {
-                // Fallback to a default "see all" image or use the button text as background
-                $image_url = get_template_directory_uri() . '/html/images/see-all-placeholder.jpg';
-                $image_alt = 'Zobacz wszystkie';
-            }
-            ?>
-            <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_url); ?>">
-                <img class="layer-20-see-all" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="290" height="210">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Zobacz wszystkie</div>
+            <?php if (!empty($gallery_images[4])): ?>
+                <?php
+                $image_4 = $gallery_images[4];
+                $image_4_url = is_array($image_4) ? $image_4['url'] : $image_4;
+                $image_4_alt = is_array($image_4) ? $image_4['alt'] : 'Gallery image 5';
+                ?>
+                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_4_url); ?>">
+                    <img src="<?php echo esc_url($image_4_url); ?>" alt="<?php echo esc_attr($image_4_alt); ?>">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Zobacz wszystkie</div>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>

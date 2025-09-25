@@ -119,11 +119,24 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  align-self: flex-end;
 }
 
+@media screen and (max-width: 1000px)
+{
+	.btn-kopia-2-2 {
+		color: #00a906;
 
+		align-self: flex-start;
+	}
+}
+@media screen and (min-width: 1000px)
+{
+	.btn-kopia-2-2 {
+		color: #00a906;
 
+		align-self: flex-end;
+	}
+}
 .layer-21 img {
   width: 100%;
 	height:auto;

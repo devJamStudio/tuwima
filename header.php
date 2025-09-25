@@ -69,7 +69,10 @@
 				const target = document.querySelector(href);
 				if (target) {
 					e.preventDefault();
-					const targetPosition = target.offsetTop - 20;
+					// Calculate offset for sticky header
+					const header = document.querySelector('.row-5');
+					const headerHeight = header ? header.offsetHeight : 0;
+					const targetPosition = target.offsetTop - headerHeight - 20;
 
 					window.scrollTo({
 						top: targetPosition,
@@ -80,29 +83,57 @@
 		});
 
 		// Active navigation highlighting
-		const sections = document.querySelectorAll('section[id]');
 		const navLinks = document.querySelectorAll('.nav-list-2 a[href^="#"]');
+
+		// Define the sections we want to track (both section tags and divs with IDs)
+		const sectionSelectors = [
+			'#o-inwestycji',
+			'#lokalizacja',
+			'#mieszkania',
+			'#galeria',
+			'#finansowanie',
+			'#kontakt'
+		];
 
 		function highlightNavigation() {
 			let current = '';
-			sections.forEach(function(section) {
-				const sectionTop = section.offsetTop;
-				const sectionHeight = section.clientHeight;
-				if (window.scrollY >= (sectionTop - 200)) {
-					current = section.getAttribute('id');
+			const scrollPosition = window.scrollY + 200; // Offset for better UX
+
+			// Find the current section based on scroll position
+			sectionSelectors.forEach(function(selector) {
+				const element = document.querySelector(selector);
+				if (element) {
+					const elementTop = element.offsetTop;
+					const elementHeight = element.offsetHeight;
+
+					// Check if this section is currently in view
+					if (scrollPosition >= elementTop && scrollPosition < (elementTop + elementHeight)) {
+						current = element.getAttribute('id');
+					}
+					// Also check if we're past the top of this section but haven't reached the next one
+					else if (scrollPosition >= elementTop) {
+						current = element.getAttribute('id');
+					}
 				}
 			});
 
+			// Update navigation highlighting
 			navLinks.forEach(function(link) {
-				link.parentElement.parentElement.classList.remove('selected');
+				const textItem = link.parentElement;
+				textItem.classList.remove('selected');
 				if (link.getAttribute('href') === '#' + current) {
-					link.parentElement.parentElement.classList.add('selected');
+					textItem.classList.add('selected');
 				}
 			});
 		}
 
 		window.addEventListener('scroll', highlightNavigation);
-		highlightNavigation(); // Call once on load
+
+		// Initialize navigation highlighting on page load
+		highlightNavigation();
+
+		// Also initialize after a short delay to ensure all elements are loaded
+		setTimeout(highlightNavigation, 100);
 	});
 	</script>
 

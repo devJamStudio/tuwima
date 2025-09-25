@@ -22,13 +22,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Active navigation item styles */
-.nav-list-2 .text-item.selected a,
-.nav-list-2 .text-item.current-menu-item a {
-  color: #00a906;
-  font-weight: bold;
-}
-
 /* Navigation hover effects */
 .nav-list-2 .text-item a {
   position: relative;
@@ -40,6 +33,7 @@ html {
   color: #00a906;
 }
 
+/* Navigation underline for hover and active states */
 .nav-list-2 .text-item a::after {
   content: '';
   position: absolute;
@@ -51,12 +45,76 @@ html {
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.nav-list-2 .text-item a:hover::after,
+.nav-list-2 .text-item a:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Active navigation item styles */
+.nav-list-2 .text-item.selected a,
+.nav-list-2 .text-item.current-menu-item a {
+  color: #00a906;
+  font-weight: bold;
+}
+
 .nav-list-2 .text-item.selected a::after,
 .nav-list-2 .text-item.current-menu-item a::after {
-  transform: scaleX(1);
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Enhanced active state styling */
+.nav-list-2 .text-item.selected a {
+  color: #00a906 !important;
+  font-weight: bold !important;
+  position: relative;
+}
+
+/* Ensure active state underline is always visible and prominent */
+.nav-list-2 .text-item.selected a::after {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background-color: #00a906 !important;
+  height: 3px !important;
+  display: block !important;
+}
+
+/* Force active state styling with maximum specificity */
+.nav-list-2 li .text-item.selected a {
+  color: #00a906 !important;
+  font-weight: bold !important;
+}
+
+.nav-list-2 li .text-item.selected a::after {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Ensure active state works on mobile */
+@media (max-width: 1000px) {
+  .nav-list-2 .text-item.selected a {
+    color: #00a906 !important;
+    font-weight: 600 !important;
+    position: relative;
+  }
+
+  .nav-list-2 .text-item.selected a::after {
+    transform: scaleX(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    background-color: #00a906 !important;
+    height: 3px !important;
+  }
 }
 
 /* Mobile hamburger menu button */
@@ -223,14 +281,11 @@ html {
   margin-top: -1rem;
 }
 
-
-
 .row-5.scrolled .text {
   font-size: 6px;
   margin: 0;
   transition: all 0.3s ease;
 }
-
 
 /* Contact elements shrinking on scroll */
 .row-5.scrolled .contact-button {
@@ -265,9 +320,23 @@ html {
 }
 
 /* Navigation underline adjustment on scroll */
-.row-5.scrolled .nav-list-2 .text-item.selected::after {
+.row-5.scrolled .nav-list-2 .text-item.selected a::after {
   bottom: -0.7rem;
   transition: all 0.3s ease;
+}
+
+/* Mobile-specific scrolled state overrides */
+@media (max-width: 1000px) {
+  /* Logo stays original size on mobile scroll */
+  .row-5.scrolled .warstwa-0-kopia-2 {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+
+  .row-5.scrolled .logo {
+    margin-top: 0;
+  }
 }
 
 .col-14 {
@@ -276,6 +345,93 @@ html {
   width: 118px;
   flex-shrink: 0;
 }
+
+/* Scale down col-14 on scroll for desktop */
+@media (min-width: 1001px) {
+  .row-5.scrolled .col-14 {
+    margin: 9px 0 0 20px;
+    position: relative;
+    width: 118px;
+    flex-shrink: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+  }
+}
+
+/* Desktop scroll effects (1000px and above) - original approach */
+@media (min-width: 1001px) {
+  .row-5.scrolled {
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 0px !important;
+  }
+
+  .row-5.scrolled .col-31 {
+    height: 60px;
+    margin-top: 1rem;
+  }
+
+  .row-5.scrolled .logo img,
+  .row-5.scrolled .tuwima img,
+  .row-5.scrolled .col-14 {
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Bottom row full height when scrolled */
+.row-5.scrolled .bottom-row {
+  height: 100% !important;
+}
+
+/* Adjust selected nav item underline when scrolled */
+.row-5.scrolled .nav-list-2 .text-item.selected a::after {
+  bottom: -1.93rem;
+  transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 1000px) {
+  .row-5.scrolled {
+    margin: 0 auto;
+    min-height: 83px;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    max-width: 1880px;
+    border-radius: 0 0 11px 11px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .row-5.scrolled .logo img, .row-5.scrolled .tuwima img, .scrolled .col-14 {
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+  .logo-link.scrolled {
+    position: relative;
+    top: -1rem;
+  }
+}
+
+.col-14 {
+  margin: 9px 0 0 20px;
+  position: relative;
+  width: 118px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Scale down col-14 on scroll for desktop */
 
 .logo {
   margin: 0 auto;
@@ -298,7 +454,7 @@ html {
 }
 
 .text {
-  margin: 7px 0 0;
+  margin: 5px 0 0;
   color: #00a906;
   font-family: Montserrat, sans-serif;
   font-size: 8.17485px;
@@ -306,12 +462,13 @@ html {
   letter-spacing: 0.5em;
   text-align: center;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 /* Mobile responsive rule for .text class */
 @media (max-width: 1000px) {
   .text {
-    margin: -12px;
+    margin: 1px 0 0;
     color: #00a906;
     font-family: Montserrat, sans-serif;
     font-size: 8.17485px;
@@ -319,12 +476,22 @@ html {
     letter-spacing: 0.5em;
     text-align: center;
     text-transform: uppercase;
+    line-height: 1.2;
   }
 }
 
 .tuwima {
   display: block;
-  margin: 4px auto 0;
+  margin: 1px auto 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile spacing adjustments */
+@media (max-width: 1000px) {
+  .tuwima {
+    margin: 1px auto 0;
+  }
 }
 
 .col-31 {
@@ -541,24 +708,7 @@ html {
   list-style: none;
 }
 
-/* Active menu item styling */
-.nav-list-2 .text-item.selected {
-  position: relative;
-}
-
-.nav-list-2 .text-item.selected::after {
-  content: '';
-  position: absolute;
-  bottom: -1.7rem;
-  left: -1rem;
-  right: -1rem;
-  height: 3px;
-  background-color: #00a906;
-}
-
-.nav-list-2 .text-item.selected a {
-  color: #00a906;
-}
+/* Active menu item styling - consolidated with above rules */
 
 .nav-item-1-2 {
   line-height: unset;
@@ -893,13 +1043,17 @@ html {
     right: 0;
   }
 }
-
+.row-16 img {
+	width:100%
+}
 /* Responsive styles for .col-46, .row-24, .row-17, .btn-kopia, .btn-kopia-2, .btn-kopia-3, .btn-developer, and .text-141 */
 @media (max-width: 1000px) {
   .col-46 {
     margin-top: 16px;
   }
-
+	.row-24, .row-20  {
+		transform: scale(0.9);
+	}
   .row-24 {
     margin-top: 16px;
   }
@@ -941,6 +1095,7 @@ html {
     display: flex;
     flex-basis: auto;
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -994,15 +1149,7 @@ html {
     margin-left: 50px;
   }
 
-  .nav-list-2 .text-item.selected::after {
-    content: '';
-    position: absolute;
-    bottom: -1.7rem;
-    left: -1rem;
-    right: -1rem;
-    height: 3px;
-    background-color: #00a906;
-  }
+  /* Navigation selected state for desktop - consolidated with main rules */
 
   .text-style-10 {
     color: #000000;
@@ -1060,109 +1207,7 @@ html {
   display: none !important;
 }
 
-/* Bottom row full height when scrolled */
-.row-5.scrolled .bottom-row {
-  height: 100% !important;
-}
 
-/* Adjust selected nav item underline when scrolled */
-.row-5.scrolled .nav-list-2 .text-item.selected::after {
-  bottom: -1.93rem;
-  transition: all 0.3s ease;
-}
-
-/* Mobile header - prevent changes on scroll under 1000px */
-@media (max-width: 1000px) {
-  /* Disable all scroll effects on mobile */
-  .row-5.scrolled {
-    height: auto !important;
-    min-height: auto !important;
-  }
-
-  .row-5.scrolled .col-31 {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .row-5.scrolled .top-row {
-    display: flex !important;
-    height: auto !important;
-  }
-
-  .row-5.scrolled .bottom-row {
-    height: auto !important;
-    min-height: auto !important;
-  }
-
-  /* Keep logo original size on mobile */
-
-
-
-
-
-
-  /* Keep contact elements original size */
-  .row-5.scrolled .contact-button {
-    width: 225px !important;
-    min-height: 58px !important;
-  }
-
-  .row-5.scrolled .contact-person {
-    width: 100% !important;
-  }
-
-  .row-5.scrolled .contact-image {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .row-5.scrolled .contact-name {
-    font-size: 18px !important;
-  }
-
-  .row-5.scrolled .contact-phone {
-    font-size: 18px !important;
-  }
-
-  /* Keep navigation original size */
-  .row-5.scrolled .nav-list-2 .text-item.selected::after {
-    bottom: -1.93rem !important;
-  }
-
-  /* Disable navbar scroll effects on mobile but keep logo sticky */
-  .row-5 {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .row-5.scrolled {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    transform: none !important;
-    transition: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-
-  /* Keep logo sticky and prevent size changes */
-  .row-5 .warstwa-0-kopia-2,
-  .row-5.scrolled .warstwa-0-kopia-2 {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1001 !important;
-  }
-
-  .row-5 .logo,
-  .row-5.scrolled .logo {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1001 !important;
-  }
-}
 
 /* Desktop grupa-7 styles */
 @media screen and (min-width: 1000px) {
@@ -1203,3 +1248,4 @@ html {
 		/*drop shadow*/
   }
 }
+

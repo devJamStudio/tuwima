@@ -292,21 +292,27 @@ function future_scripts() {
 	add_action( 'wp_head', function() {
 		echo '<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>';
 		echo '<script>
-		// Initialize AOS immediately
-		if (typeof AOS !== "undefined") {
-			AOS.init({
-				duration: 800,
-				easing: "ease-in-out",
-				once: true,
-				offset: 100,
-				disable: function() {
-					return window.innerWidth < 768;
+		// Initialize AOS with proper error handling
+		document.addEventListener("DOMContentLoaded", function() {
+			if (typeof AOS !== "undefined") {
+				try {
+					AOS.init({
+						duration: 800,
+						easing: "ease-in-out",
+						once: true,
+						offset: 100,
+						disable: function() {
+							return window.innerWidth < 768;
+						}
+					});
+					console.log("AOS loaded and initialized");
+				} catch (error) {
+					console.warn("AOS initialization error:", error);
 				}
-			});
-			console.log("AOS loaded and initialized");
-		} else {
-			console.warn("AOS library not loaded properly");
-		}
+			} else {
+				console.warn("AOS library not loaded properly");
+			}
+		});
 		</script>';
 	}, 1 );
 
@@ -577,14 +583,18 @@ add_action('wp_head', function() {
     .row-5.scrolled {
         background: #fff !important;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        padding: 10px 0 !important;
     }
-	@media and (min-width: 1000px) {
+	@media screen and (min-width: 1000px) {
     .row-5.scrolled .logo img, .row-5.scrolled .tuwima img, .scrolled .col-14 {
         transform: scale(0.6);
         transition: transform 0.3s ease;
     }
-}
+	.row-5.scrolled {
+        background: #fff !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding:  0px!important;
+    }
+	}
     .row-5.scrolled .top-row {
         display: none !important;
     }
@@ -624,67 +634,11 @@ add_action( 'wp_head', function() {
 		});
 	}
 
-	// Menu active state handler
-	function handleMenuActiveState() {
-		const sections = [
-			{ id: "o-inwestycji", element: document.getElementById("o-inwestycji") },
-			{ id: "lokalizacja", element: document.getElementById("lokalizacja") },
-			{ id: "mieszkania", element: document.getElementById("mieszkania") },
-			{ id: "galeria", element: document.getElementById("galeria") },
-			{ id: "finansowanie", element: document.getElementById("finansowanie") },
-			{ id: "kontakt", element: document.getElementById("kontakt") }
-		];
-
-		const menuItems = document.querySelectorAll(".nav-list-2 .text-item");
-		const headerHeight = document.querySelector(".row-5")?.offsetHeight || 0;
-
-		function updateActiveMenuItem() {
-			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			let activeSection = "o-inwestycji"; // Default to "O inwestycji"
-
-			// Debug: Log section elements
-			console.log("Sections found:", sections.map(s => ({ id: s.id, found: !!s.element })));
-
-			// Find the section currently in view
-			for (let i = sections.length - 1; i >= 0; i--) {
-				const section = sections[i];
-				if (section.element) {
-					const sectionTop = section.element.offsetTop - headerHeight - 100;
-					console.log(`Section ${section.id}: top=${sectionTop}, scrollTop=${scrollTop}`);
-					if (scrollTop >= sectionTop) {
-						activeSection = section.id;
-						break;
-					}
-				}
-			}
-
-			console.log("Active section:", activeSection);
-
-			// Update menu items
-			menuItems.forEach(item => {
-				item.classList.remove("selected");
-				const link = item.querySelector("a");
-				if (link && link.getAttribute("href") === "#" + activeSection) {
-					item.classList.add("selected");
-					console.log("Selected menu item:", link.textContent);
-				}
-			});
-		}
-
-		// Run on scroll and page load
-		window.addEventListener("scroll", updateActiveMenuItem);
-		updateActiveMenuItem(); // Run once on load
-	}
-
 	// Run when page loads
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", function() {
-			hideTopRow();
-			handleMenuActiveState();
-		});
+		document.addEventListener("DOMContentLoaded", hideTopRow);
 	} else {
 		hideTopRow();
-		handleMenuActiveState();
 	}
 	</script>';
 } );

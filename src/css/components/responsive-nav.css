@@ -433,15 +433,11 @@
     font-weight: 600;
   }
 
-  /* Active menu item border for mobile */
-  .nav-list-2 .text-item.selected::after {
-    content: '';
-    position: absolute;
-    bottom: 0rem;
-    left: -1rem;
-    right: -1rem;
-    height: 3px;
-    background-color: #00a906;
+  /* Active menu item border for mobile - ensure underline is visible */
+  .nav-list-2 .text-item.selected a::after {
+    transform: scaleX(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   /* Overlay for sidecart */
