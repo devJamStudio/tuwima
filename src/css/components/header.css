@@ -264,14 +264,6 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Scale down col-14 on scroll for desktop */
-@media (min-width: 1001px) {
-  .row-5.scrolled .col-14 {
-    transform: scale(0.8);
-    transition: all 0.3s ease;
-  }
-}
-
 /* Navigation underline adjustment on scroll */
 .row-5.scrolled .nav-list-2 .text-item.selected::after {
   bottom: -0.7rem;
@@ -319,7 +311,7 @@ html {
 /* Mobile responsive rule for .text class */
 @media (max-width: 1000px) {
   .text {
-    margin: 0px;
+    margin: -12px;
     color: #00a906;
     font-family: Montserrat, sans-serif;
     font-size: 8.17485px;

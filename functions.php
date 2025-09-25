@@ -624,11 +624,67 @@ add_action( 'wp_head', function() {
 		});
 	}
 
+	// Menu active state handler
+	function handleMenuActiveState() {
+		const sections = [
+			{ id: "o-inwestycji", element: document.getElementById("o-inwestycji") },
+			{ id: "lokalizacja", element: document.getElementById("lokalizacja") },
+			{ id: "mieszkania", element: document.getElementById("mieszkania") },
+			{ id: "galeria", element: document.getElementById("galeria") },
+			{ id: "finansowanie", element: document.getElementById("finansowanie") },
+			{ id: "kontakt", element: document.getElementById("kontakt") }
+		];
+
+		const menuItems = document.querySelectorAll(".nav-list-2 .text-item");
+		const headerHeight = document.querySelector(".row-5")?.offsetHeight || 0;
+
+		function updateActiveMenuItem() {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			let activeSection = "o-inwestycji"; // Default to "O inwestycji"
+
+			// Debug: Log section elements
+			console.log("Sections found:", sections.map(s => ({ id: s.id, found: !!s.element })));
+
+			// Find the section currently in view
+			for (let i = sections.length - 1; i >= 0; i--) {
+				const section = sections[i];
+				if (section.element) {
+					const sectionTop = section.element.offsetTop - headerHeight - 100;
+					console.log(`Section ${section.id}: top=${sectionTop}, scrollTop=${scrollTop}`);
+					if (scrollTop >= sectionTop) {
+						activeSection = section.id;
+						break;
+					}
+				}
+			}
+
+			console.log("Active section:", activeSection);
+
+			// Update menu items
+			menuItems.forEach(item => {
+				item.classList.remove("selected");
+				const link = item.querySelector("a");
+				if (link && link.getAttribute("href") === "#" + activeSection) {
+					item.classList.add("selected");
+					console.log("Selected menu item:", link.textContent);
+				}
+			});
+		}
+
+		// Run on scroll and page load
+		window.addEventListener("scroll", updateActiveMenuItem);
+		updateActiveMenuItem(); // Run once on load
+	}
+
 	// Run when page loads
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", hideTopRow);
+		document.addEventListener("DOMContentLoaded", function() {
+			hideTopRow();
+			handleMenuActiveState();
+		});
 	} else {
 		hideTopRow();
+		handleMenuActiveState();
 	}
 	</script>';
 } );

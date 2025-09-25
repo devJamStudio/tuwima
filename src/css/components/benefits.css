@@ -24,25 +24,31 @@
 .layer-4 {
   float: left;
 	width:100%;
-	max-width: 712px;
 	height: auto;
 	object-fit: cover;
 }
 
 .layer-4  img {
 	width:100%;
-	max-width: 712px;
 	height: auto;
 	object-fit: cover;
 }
 .col-27 {
   float: left;
-  margin: 14px 0 0;
   position: relative;
-  max-width: 581px;
   width:100%;
 }
+@media (min-width: 1000px) {
+	.layer-4 img {
+		max-height:712px;
+		max-width:712px;
+	}
+	.col-27 {
+		max-width: 581px;
+		margin: 14px 0 0;
 
+	}
+}
 .text-20 {
   color: #00a906;
   font-size: 29px;
@@ -169,12 +175,22 @@
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+@media screen and (min-width: 1000px) {
+	.row-20 {
+		margin: 66px 0 0 14px;
+		position: relative;
+
+	}
+
+}
+@media screen and (max-width: 1000px) {
 
 .row-20 {
-  margin: 66px 0 0 14px;
+  margin: 66px auto 0px;
   position: relative;
+	max-width: 567px;
 }
-
+}
 .layer-7 {
   float: left;
 }
@@ -219,7 +235,7 @@
 }
 
 .btn-kopia {
-  margin: 47px 0 0 13px;
+  margin: 47px 0 0 0px;
   min-height: 58px;
   position: relative;
   width: 225px;
@@ -227,7 +243,17 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
-
+@media screen and (min-width: 1000px) {
+	.btn-kopia {
+		margin: 47px 0 0 13px;
+		min-height: 58px;
+		position: relative;
+		width: 225px;
+		background: var(--image-prostok-17) no-repeat;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+}
 .btn-kopia:hover {
   background: #00a906 !important;
   border: 2px solid #00a906 !important;

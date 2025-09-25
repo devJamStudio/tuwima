@@ -1171,11 +1171,6 @@
     display: none !important;
   }
 
-  /* Hide text-style-5 under 1000px */
-  .text-style-5 {
-    display: none !important;
-  }
-
   /* Mobile Landscape - Within responsive block */
   @media (max-width: 767px) and (orientation: landscape) {
     .hero-section {
