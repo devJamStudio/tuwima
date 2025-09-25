@@ -1,5 +1,17 @@
 /* Hero Section Responsive Styles - Only for screens below 1000px */
 
+/* Main Hero Section - Full Height */
+.hero-section {
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 /* Global responsive rule for all columns under 1000px */
 @media (max-width: 1000px) {
   /* Make all columns use max-width: 100% instead of fixed values */
@@ -95,11 +107,15 @@
   }
 
   .grupa-8:hover {
-    transform: scale(1.05);
+    background: #00a906 !important;
+    border: 2px solid #00a906 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 169, 6, 0.3);
   }
 
   .grupa-8:active {
-    transform: scale(0.95);
+    transform: translateY(0);
   }
 
   /* Stats Section - Responsive */
@@ -334,7 +350,7 @@
     line-height: 1.4 !important;
     position: relative !important;
     align-items: flex-start !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     box-sizing: border-box !important; /* Include padding in width calculation */
     overflow: hidden !important; /* Prevent content overflow */
   }
@@ -691,7 +707,7 @@
     width: 100% !important; /* Full width */
     border: 2px solid #e0e0e0 !important; /* Better border */
     border-radius: 8px !important; /* Rounded corners */
-    background: url('../../../../dist/images/warstwa_61.png') no-repeat !important;
+    background: url('../../images/warstwa_61.png') no-repeat !important;
     background-size: contain !important;
     background-position: center !important;
     transition: border-color 0.3s ease !important; /* Smooth transition */
@@ -712,7 +728,7 @@
     width: 100% !important; /* Full width */
     border: 2px solid #e0e0e0 !important; /* Better border */
     border-radius: 8px !important; /* Rounded corners */
-    background: url('../../../../dist/images/warstwa_61_kopia_3.png') no-repeat !important;
+    background: url('../../images/warstwa_61_kopia_3.png') no-repeat !important;
     background-size: contain !important;
     background-position: center !important;
     transition: border-color 0.3s ease !important; /* Smooth transition */
@@ -1057,18 +1073,7 @@
       max-width: 220px;
     }
 
-    /* Show dividers on tablet and up */
-    .warstwa-48,
-    .warstwa-48-kopia,
-    .warstwa-48-kopia-2,
-    .warstwa-48-kopia-3,
-    .warstwa-48-kopia-4 {
-      display: block;
-      width: 1px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.3);
-      margin: 0 1rem;
-    }
+
 
     /* Ensure all stat text remains white on tablet */
     .text-10,
@@ -1093,6 +1098,82 @@
     .text-style-6 {
       color: #ffffff !important;
     }
+  }
+
+  /* Mobile responsive rules for text classes under 1000px */
+  .text-10,
+  .text-11,
+  .text-12,
+  .text-13,
+  .text-14,
+  .text-15 {
+    max-width: 80% !important;
+  }
+
+  .text-10 br,
+  .text-11 br,
+  .text-12 br,
+  .text-13 br,
+  .text-14 br,
+  .text-15 br {
+    display: none !important;
+  }
+
+  .text-10::before,
+  .text-10::after,
+  .text-11::before,
+  .text-11::after,
+  .text-12::before,
+  .text-12::after,
+  .text-13::before,
+  .text-13::after,
+  .text-14::before,
+  .text-14::after,
+  .text-15::before,
+  .text-15::after {
+    display: none !important;
+  }
+
+  /* Mobile responsive rules for grupa-7 under 1000px */
+  .grupa-7 {
+    max-width: 80% !important;
+  }
+
+  .grupa-7 br {
+    display: none !important;
+  }
+
+  .grupa-7::before,
+  .grupa-7::after {
+    display: none !important;
+  }
+
+  .grupa-7 *::before,
+  .grupa-7 *::after {
+    display: none !important;
+  }
+
+  /* Hide empty span and p elements under 1000px */
+  .grupa-7 span:empty,
+  .grupa-7 p:empty,
+  .text-10 span:empty,
+  .text-11 span:empty,
+  .text-12 span:empty,
+  .text-13 span:empty,
+  .text-14 span:empty,
+  .text-15 span:empty,
+  .text-10 p:empty,
+  .text-11 p:empty,
+  .text-12 p:empty,
+  .text-13 p:empty,
+  .text-14 p:empty,
+  .text-15 p:empty {
+    display: none !important;
+  }
+
+  /* Hide text-style-5 under 1000px */
+  .text-style-5 {
+    display: none !important;
   }
 
   /* Mobile Landscape - Within responsive block */

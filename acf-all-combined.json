@@ -1,0 +1,2402 @@
+[
+  {
+    "key": "group_navigation_settings",
+    "title": "Navigation Settings",
+    "fields": [
+      {
+        "key": "field_logo",
+        "label": "Logo",
+        "name": "logo",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Main logo for the website",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_phone_number",
+        "label": "Phone Number",
+        "name": "phone_number",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Main phone number for contact",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "+48 32 123 45 67",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_whatsapp_number",
+        "label": "WhatsApp Number",
+        "name": "whatsapp_number",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "WhatsApp number for contact",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "+48 32 123 45 67",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_navigation_links",
+        "label": "Navigation Links",
+        "name": "navigation_links",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "Navigation menu links",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Link",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_nav_link_text",
+            "label": "Link Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_navigation_links"
+          },
+          {
+            "key": "field_nav_link_url",
+            "label": "Link URL",
+            "name": "url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "parent_repeater": "field_navigation_links"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "theme-general-settings"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613470
+  },
+  {
+    "key": "group_hero_section",
+    "title": "Hero Section",
+    "fields": [
+      {
+        "key": "field_hero_title",
+        "label": "Hero Title",
+        "name": "hero_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Main title for the hero section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Green House<br><strong>tuwima</strong>",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_hero_subtitle",
+        "label": "Hero Subtitle",
+        "name": "hero_subtitle",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Subtitle text below the main title",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Najlepsza inwestycja w Twoj\u0105 przysz\u0142os\u0107",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_hero_button_text",
+        "label": "Hero Button Text",
+        "name": "hero_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz mieszkania",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_hero_button_url",
+        "label": "Hero Button URL",
+        "name": "hero_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#mieszkania",
+        "placeholder": ""
+      },
+      {
+        "key": "field_hero_statistics",
+        "label": "Hero Statistics",
+        "name": "hero_statistics",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "Statistics displayed in the hero section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Statistic",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_stat_number",
+            "label": "Number",
+            "name": "number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_hero_statistics"
+          },
+          {
+            "key": "field_stat_label",
+            "label": "Label",
+            "name": "label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_hero_statistics"
+          }
+        ]
+      },
+      {
+        "key": "field_hero_background",
+        "label": "Hero Background Image",
+        "name": "hero_background",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Background image for the hero section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613534
+  },
+  {
+    "key": "group_contact_section",
+    "title": "Contact Section",
+    "fields": [
+      {
+        "key": "field_contact_title",
+        "label": "Contact Title",
+        "name": "contact_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the contact section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Siedziba g\u0142\u00f3wna BUDRAISE INVEST",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_contact_company_logo",
+        "label": "Company Logo",
+        "name": "contact_company_logo",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Company logo for contact section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_contact_address",
+        "label": "Address",
+        "name": "contact_address",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "ul. Wroc\u0142awska 54<br>40-217 Katowice",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_contact_email",
+        "label": "Email",
+        "name": "contact_email",
+        "aria-label": "",
+        "type": "email",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "biuro@budraise.pl",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_contact_company_details",
+        "label": "Company Details",
+        "name": "contact_company_details",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Krs: 0000912878<br>Nip: 6431775795<br>Regon: 389511621",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_contact_agents",
+        "label": "Contact Agents",
+        "name": "contact_agents",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "List of contact agents",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Agent",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_agent_photo",
+            "label": "Agent Photo",
+            "name": "photo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "parent_repeater": "field_contact_agents"
+          },
+          {
+            "key": "field_agent_name",
+            "label": "Agent Name",
+            "name": "name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_contact_agents"
+          },
+          {
+            "key": "field_agent_phone",
+            "label": "Agent Phone",
+            "name": "phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_contact_agents"
+          }
+        ]
+      },
+      {
+        "key": "field_contact_form_title",
+        "label": "Contact Form Title",
+        "name": "contact_form_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the contact form",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Skontaktuj si\u0119 z Nami",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_form_name_label",
+        "label": "Form Name Label",
+        "name": "form_name_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Label for name field",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Imi\u0119 i nazwisko:",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_form_email_label",
+        "label": "Form Email Label",
+        "name": "form_email_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Label for email field",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Email:",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_form_phone_label",
+        "label": "Form Phone Label",
+        "name": "form_phone_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Label for phone field",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Telefon:",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_form_message_label",
+        "label": "Form Message Label",
+        "name": "form_message_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Label for message field",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Napisz wiadomo\u015b\u0107:",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_consent_text_1",
+        "label": "Consent Text 1",
+        "name": "consent_text_1",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "First consent text",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Wyra\u017cam zgod\u0119 na wysy\u0142anie informacji handlowych",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_consent_text_2",
+        "label": "Consent Text 2",
+        "name": "consent_text_2",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Second consent text",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Wyra\u017cam zgod\u0119 na przekazanie i przetwarzanie moich danych osobowych w celu odpowiedzi na przes\u0142an\u0105 wiadomo\u015b\u0107",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_submit_button_text",
+        "label": "Submit Button Text",
+        "name": "submit_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Text for submit button",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Wy\u015blij wiadomo\u015b\u0107",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 7,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613488
+  },
+  {
+    "key": "group_benefits_section",
+    "title": "Benefits Section",
+    "fields": [
+      {
+        "key": "field_benefits_title",
+        "label": "Benefits Title",
+        "name": "benefits_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the benefits section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Korzy\u015bciach<br>z wyboru tych mieszka\u0144",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_benefits_list",
+        "label": "Benefits List",
+        "name": "benefits_list",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "List of benefits with icons",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Benefit",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_benefit_icon",
+            "label": "Benefit Icon",
+            "name": "icon",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "parent_repeater": "field_benefits_list"
+          },
+          {
+            "key": "field_benefit_text",
+            "label": "Benefit Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_benefits_list"
+          }
+        ]
+      },
+      {
+        "key": "field_benefits_description",
+        "label": "Benefits Description",
+        "name": "benefits_description",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Description text below benefits",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Czasy dojazdu do Katowic, Jaworzna, D\u0105browy G\u00f3rniczej czy centrum Sosnowca",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_benefits_button_text",
+        "label": "Benefits Button Text",
+        "name": "benefits_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz mieszkania",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_benefits_button_url",
+        "label": "Benefits Button URL",
+        "name": "benefits_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#mieszkania",
+        "placeholder": ""
+      },
+      {
+        "key": "field_benefits_image",
+        "label": "Benefits Image",
+        "name": "benefits_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image for the benefits section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_1_icon",
+        "label": "Benefit 1 Icon (Heating)",
+        "name": "benefit_1_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for underfloor heating",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_2_icon",
+        "label": "Benefit 2 Icon (Parking)",
+        "name": "benefit_2_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for parking spaces",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_3_icon",
+        "label": "Benefit 3 Icon (Security)",
+        "name": "benefit_3_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for safe neighborhood",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_4_icon",
+        "label": "Benefit 4 Icon (Garden)",
+        "name": "benefit_4_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for private gardens",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_5_icon",
+        "label": "Benefit 5 Icon (Windows)",
+        "name": "benefit_5_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for terrace windows",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_6_icon",
+        "label": "Benefit 6 Icon (Gated)",
+        "name": "benefit_6_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for gated community",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_7_icon",
+        "label": "Benefit 7 Icon (Triple Glass)",
+        "name": "benefit_7_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for triple glazed windows",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_benefit_8_icon",
+        "label": "Benefit 8 Icon (No Rent)",
+        "name": "benefit_8_icon",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Icon for rent-free apartments",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "thumbnail",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613523
+  },
+  {
+    "key": "group_financing_section",
+    "title": "Financing Section",
+    "fields": [
+      {
+        "key": "field_financing_title",
+        "label": "Financing Title",
+        "name": "financing_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the financing section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Finansowanie",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_financing_partner_logo",
+        "label": "Financing Partner Logo",
+        "name": "financing_partner_logo",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Logo of the financing partner",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_financing_content",
+        "label": "Financing Content",
+        "name": "financing_content",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Content for the financing section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Proces zakupu domu mo\u017ce wydawa\u0107 si\u0119 bardzo skomplikowany, ale mo\u017cecie Pa\u0144stwo liczy\u0107 na nasz\u0105 pomoc. Oferujemy pe\u0142ne wsparcie przy pozyskaniu kredytu hipotecznego, kt\u00f3ry pozwoli Wam na wprowadzenie si\u0119 do nowego domu.<br><br>Wyb\u00f3r odpowiedniego finansowania nieruchomo\u015bci jest r\u00f3wnie wa\u017cny co wyb\u00f3r samego domu. Posiadamy wiedz\u0119 oraz do\u015bwiadczenie kredytowe, kt\u00f3re pozwoli na szybkie znalezienie dla Pa\u0144stwa najkorzystniejszego rozwi\u0105zania kredytowego.<br><br>Dodatkowo wsp\u00f3\u0142pracujemy z dedykowanym biurem doradztwa kredytowego Silesia Capital \u2013 Eksperci Kredytowi, w kt\u00f3rym to zesp\u00f3\u0142 do\u015bwiadczonych Doradc\u00f3w Kredytowych ch\u0119tnie udzieli odpowiedzi na Pa\u0144stwa pytania.",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_financing_button_text",
+        "label": "Financing Button Text",
+        "name": "financing_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Skontaktuj si\u0119",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_financing_button_url",
+        "label": "Financing Button URL",
+        "name": "financing_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#kontakt",
+        "placeholder": ""
+      },
+      {
+        "key": "field_financing_image",
+        "label": "Financing Image",
+        "name": "financing_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image for the financing section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 6,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613483
+  },
+  {
+    "key": "group_gallery_section",
+    "title": "Gallery Section",
+    "fields": [
+      {
+        "key": "field_gallery_title",
+        "label": "Gallery Title",
+        "name": "gallery_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the gallery section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz galerie",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_gallery_images",
+        "label": "Gallery Images",
+        "name": "gallery_images",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "Add gallery images (minimum 4 images required)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "field_gallery_image",
+        "min": 4,
+        "max": 4,
+        "layout": "table",
+        "button_label": "Add Gallery Image",
+        "sub_fields": [
+          {
+            "key": "field_gallery_image",
+            "label": "Gallery Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload gallery image",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp"
+          },
+          {
+            "key": "field_gallery_image_alt",
+            "label": "Image Alt Text",
+            "name": "alt",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Alt text for accessibility",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Describe the image",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          }
+        ]
+      },
+      {
+        "key": "field_gallery_button_text",
+        "label": "Gallery Button Text",
+        "name": "gallery_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Text for the gallery button",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz wszystkie",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_gallery_button_url",
+        "label": "Gallery Button URL",
+        "name": "gallery_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "URL for the gallery button (link to full gallery page)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#gallery",
+        "placeholder": "https://example.com/gallery"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Gallery section with 4 images and call-to-action button",
+    "show_in_rest": false,
+    "modified": 1757613483
+  },
+  {
+    "key": "group_about_investment",
+    "title": "About Investment Section",
+    "fields": [
+      {
+        "key": "field_about_title",
+        "label": "Section Title",
+        "name": "about_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the about investment section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "O inwestycji",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_about_subtitle",
+        "label": "Section Subtitle",
+        "name": "about_subtitle",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Subtitle for the about investment section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Inwestycja w przysz\u0142o\u015b\u0107<br>Twojej rodziny.",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_about_content",
+        "label": "About Content",
+        "name": "about_content",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Main content for the about investment section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zapraszamy do nowoczesnej inwestycji mieszkaniowej w spokojnej cz\u0119\u015bci Sosnowca, zaledwie kilka minut od centrum. Osiedle sk\u0142ada si\u0119 z 14 dom\u00f3w w zabudowie bli\u017aniaczej \u2013 \u0142\u0105cznie 28 mieszka\u0144. To idealna propozycja dla os\u00f3b ceni\u0105cych komfort, prywatno\u015b\u0107 i dogodn\u0105 lokalizacj\u0119.<br><br>W ofercie znajduj\u0105 si\u0119 mieszkania na parterze z prywatnymi ogr\u00f3dkami oraz lokale na pi\u0119trze z przestronnymi balkonami. Ka\u017cde z mieszka\u0144 zosta\u0142o zaprojektowane z my\u015bl\u0105 o wygodzie mieszka\u0144c\u00f3w \u2013 nowoczesny uk\u0142ad, funkcjonalne rozwi\u0105zania i wysoki standard wyko\u0144czenia gwarantuj\u0105 komfort codziennego \u017cycia.<br><br>Osiedle znajduje si\u0119 w cichej, zielonej okolicy, a jednocze\u015bnie blisko szk\u00f3\u0142, sklep\u00f3w, parku i innych udogodnie\u0144. Doskona\u0142a komunikacja zapewnia szybki dojazd do centrum oraz innych dzielnic miasta. To alternatywa dla zat\u0142oczonych blokowisk \u2013 mniejsza liczba mieszka\u0144c\u00f3w, brak wysokiej zabudowy i spokojna atmosfera sprzyjaj\u0105 relaksowi i budowaniu dobrych relacji s\u0105siedzkich.",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_about_button_text",
+        "label": "About Button Text",
+        "name": "about_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz mieszkania",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_about_button_url",
+        "label": "About Button URL",
+        "name": "about_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#mieszkania",
+        "placeholder": ""
+      },
+      {
+        "key": "field_about_image",
+        "label": "About Image",
+        "name": "about_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image for the about investment section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613529
+  },
+  {
+    "key": "group_location_section",
+    "title": "Location Section",
+    "fields": [
+      {
+        "key": "field_location_title",
+        "label": "Location Title",
+        "name": "location_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the location section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Lokalizacja",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_location_description",
+        "label": "Location Description",
+        "name": "location_description",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Description for the location section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "<strong>Green House Tuwima </strong>\u0142\u0105czy blisko\u015b\u0107 natury z komfortem miejskiego \u017cycia. W otoczeniu inwestycji znajduj\u0105 si\u0119 liczne tereny zielone, a jednocze\u015bnie mo\u017cesz cieszy\u0107 si\u0119 szybkim dojazdem do centrum oraz wygodnym dost\u0119pem do szk\u00f3\u0142, sklep\u00f3w i us\u0142ug.",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_location_amenities",
+        "label": "Location Amenities",
+        "name": "location_amenities",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "List of nearby amenities",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Amenity",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_amenity_icon",
+            "label": "Amenity Icon",
+            "name": "icon",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "parent_repeater": "field_location_amenities"
+          },
+          {
+            "key": "field_amenity_time",
+            "label": "Time/Distance",
+            "name": "time",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_location_amenities"
+          },
+          {
+            "key": "field_amenity_name",
+            "label": "Amenity Name",
+            "name": "name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_location_amenities"
+          }
+        ]
+      },
+      {
+        "key": "field_location_button_text",
+        "label": "Location Button Text",
+        "name": "location_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz mieszkania",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_location_button_url",
+        "label": "Location Button URL",
+        "name": "location_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#mieszkania",
+        "placeholder": ""
+      },
+      {
+        "key": "field_location_map",
+        "label": "Location Map Image",
+        "name": "location_map",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Map image for the location section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613517
+  },
+  {
+    "key": "group_apartments_section",
+    "title": "Apartments Section",
+    "fields": [
+      {
+        "key": "field_apartments_title",
+        "label": "Apartments Title",
+        "name": "apartments_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the apartments section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Wybierz swoje mieszkanie",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_apartments_description",
+        "label": "Apartments Description",
+        "name": "apartments_description",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Description for the apartments section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley printer took a galley ypesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a Lorem Ipsum is simply dummy text of the printing and <br><br>typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley printer took a galley ypesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_apartments_selector",
+        "label": "Apartment Selector Image",
+        "name": "apartments_selector",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Interactive apartment selector image",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_apartments_table",
+        "label": "Apartments Table",
+        "name": "apartments_table",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "List of available apartments. Add apartments with their details.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "field_apartment_number",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Apartment",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_apartment_number",
+            "label": "Apartment Number",
+            "name": "number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_apartments_table"
+          },
+          {
+            "key": "field_apartment_rooms",
+            "label": "Number of Rooms",
+            "name": "rooms",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "parent_repeater": "field_apartments_table"
+          },
+          {
+            "key": "field_apartment_area",
+            "label": "Apartment Area (m\u00b2)",
+            "name": "area",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "parent_repeater": "field_apartments_table"
+          },
+          {
+            "key": "field_apartment_garden",
+            "label": "Garden Area (m\u00b2)",
+            "name": "garden_area",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "parent_repeater": "field_apartments_table"
+          },
+          {
+            "key": "field_apartment_status",
+            "label": "Status",
+            "name": "status",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "choices": {
+              "available": "Dost\u0119pne",
+              "reserved": "Zarezerwowane"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "parent_repeater": "field_apartments_table"
+          },
+          {
+            "key": "field_apartment_price",
+            "label": "Price/Action",
+            "name": "price_action",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "parent_repeater": "field_apartments_table"
+          },
+          {
+            "key": "field_apartment_plan",
+            "label": "Plan Link",
+            "name": "plan_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Link to apartment plan (PDF, image, or page)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "#",
+            "placeholder": "https://example.com/plan.pdf",
+            "parent_repeater": "field_apartments_table"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613501
+  },
+  {
+    "key": "group_garden_section",
+    "title": "Garden Section",
+    "fields": [
+      {
+        "key": "field_garden_title",
+        "label": "Garden Title",
+        "name": "garden_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the garden section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Mieszkanie<br>z w\u0142asnym ogr\u00f3dkiem",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_garden_description",
+        "label": "Garden Description",
+        "name": "garden_description",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Description for the garden section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><span class=\"text-style-7\">&nbsp;</span><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_garden_button_text",
+        "label": "Garden Button Text",
+        "name": "garden_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz mieszkania",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_garden_button_url",
+        "label": "Garden Button URL",
+        "name": "garden_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#mieszkania",
+        "placeholder": ""
+      },
+      {
+        "key": "field_garden_image",
+        "label": "Garden Image",
+        "name": "garden_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image for the garden section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Garden section with apartment garden features",
+    "show_in_rest": false,
+    "modified": 1757613483
+  },
+  {
+    "key": "group_layout_section",
+    "title": "Layout Section",
+    "fields": [
+      {
+        "key": "field_layout_title",
+        "label": "Layout Title",
+        "name": "layout_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the layout section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Przemy\u015blany<br>uk\u0142ad mieszka\u0144",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_layout_description",
+        "label": "Layout Description",
+        "name": "layout_description",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Description for the layout section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><span class=\"text-style-7\">&nbsp;</span><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_layout_button_text",
+        "label": "Layout Button Text",
+        "name": "layout_button_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Zobacz mieszkania",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_layout_button_url",
+        "label": "Layout Button URL",
+        "name": "layout_button_url",
+        "aria-label": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#mieszkania",
+        "placeholder": ""
+      },
+      {
+        "key": "field_layout_image",
+        "label": "Layout Image",
+        "name": "layout_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image for the layout section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Layout section with thoughtful apartment design",
+    "show_in_rest": false,
+    "modified": 1757613483
+  },
+  {
+    "key": "group_about_developer",
+    "title": "About Developer Section",
+    "fields": [
+      {
+        "key": "field_developer_title",
+        "label": "Developer Title",
+        "name": "developer_title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Title for the about developer section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "O developerze",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_developer_content",
+        "label": "Developer Content",
+        "name": "developer_content",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "Content for the about developer section",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Tworzymy nieruchomo\u015bci, kt\u00f3re spe\u0142niaj\u0105 oczekiwania wymagaj\u0105cych klient\u00f3w. Stawiamy na jako\u015b\u0107 naszych realizacji. Wsp\u00f3\u0142pracujemy z do\u015bwiadczonym biurem projektowym dzi\u0119ki czemu nasze nieruchomo\u015bci s\u0105 nowoczesne i praktyczne. <br><br>Realizacj\u0119 projekt\u00f3w powierzamy firmom budowlanym o ugruntowanej pozycji na rynku. Misj\u0105 naszej firmy jest to, aby oddawa\u0107 w r\u0119ce naszych klient\u00f3w nieruchomo\u015bci, kt\u00f3re daj\u0105 znacz\u0105cy komfort \u017cycia codziennego.",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_developer_image",
+        "label": "Developer Image",
+        "name": "developer_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image for the about developer section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-green-house-tuwima.php"
+        }
+      ]
+    ],
+    "menu_order": 8,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1757613476
+  }
+]

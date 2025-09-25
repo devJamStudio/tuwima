@@ -29,6 +29,36 @@ html {
   font-weight: bold;
 }
 
+/* Navigation hover effects */
+.nav-list-2 .text-item a {
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-list-2 .text-item a:hover {
+  color: #00a906;
+}
+
+.nav-list-2 .text-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -1.7rem;
+  left: -1rem;
+  right: -1rem;
+  height: 3px;
+  background-color: #00a906;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-list-2 .text-item a:hover::after,
+.nav-list-2 .text-item.selected a::after,
+.nav-list-2 .text-item.current-menu-item a::after {
+  transform: scaleX(1);
+}
+
 /* Mobile hamburger menu button */
 .mobile-menu-toggle {
   display: none;
@@ -150,7 +180,7 @@ html {
 .row-5 {
   margin: 0 auto;
   min-height: 138px;
-  padding: 10px 0 0 0;
+  padding: 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -165,21 +195,21 @@ html {
 
 /* Scrolled state - smaller navbar */
 .row-5.scrolled {
-  min-height: 80px;
+  min-height: 60px;
   padding: 0px;
   box-shadow: 0 2px 20px rgba(0,0,0,0.15);
 }
 
 .row-5.scrolled .col-31 {
-  height: 80px;
+  height: 60px;
 }
 
 .row-5.scrolled .top-row {
-  height: 40px;
+  height: 30px;
 }
 
 .row-5.scrolled .bottom-row {
-  height: 40px;
+  height: 30px;
 }
 
 /* Logo shrinking on scroll */
@@ -189,16 +219,18 @@ html {
   transition: all 0.3s ease;
 }
 
+.row-5.scrolled .logo {
+  margin-top: -1rem;
+}
+
+
+
 .row-5.scrolled .text {
   font-size: 6px;
+  margin: 0;
   transition: all 0.3s ease;
 }
 
-.row-5.scrolled .tuwima {
-  width: 80px;
-  height: auto;
-  transition: all 0.3s ease;
-}
 
 /* Contact elements shrinking on scroll */
 .row-5.scrolled .contact-button {
@@ -232,6 +264,14 @@ html {
   transition: all 0.3s ease;
 }
 
+/* Scale down col-14 on scroll for desktop */
+@media (min-width: 1001px) {
+  .row-5.scrolled .col-14 {
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+  }
+}
+
 /* Navigation underline adjustment on scroll */
 .row-5.scrolled .nav-list-2 .text-item.selected::after {
   bottom: -0.7rem;
@@ -247,19 +287,21 @@ html {
 
 .logo {
   margin: 0 auto;
-  padding: 0 0 1px;
+  padding: 0;
   position: relative;
   width: 57px;
-  background: var(--image-logo) no-repeat;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .warstwa-0-kopia-2 {
   display: block;
-  left: 4.5px;
   margin: 0 auto;
   position: relative;
-  width: 48px;
-  height: 52px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -272,6 +314,20 @@ html {
   letter-spacing: 0.5em;
   text-align: center;
   text-transform: uppercase;
+}
+
+/* Mobile responsive rule for .text class */
+@media (max-width: 1000px) {
+  .text {
+    margin: 0px;
+    color: #00a906;
+    font-family: Montserrat, sans-serif;
+    font-size: 8.17485px;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 .tuwima {
@@ -430,16 +486,22 @@ html {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 169, 6, 0.3); /* HMR TEST: Added shadow */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 169, 6, 0.3);
+  text-decoration: none;
 }
 
 .contact-button:hover {
   background: #008a05;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 169, 6, 0.4);
 }
 
 .contact-button:active {
   background: #007004;
+  transform: translateY(0);
 }
 
 .button-text {
@@ -1015,4 +1077,137 @@ html {
 .row-5.scrolled .nav-list-2 .text-item.selected::after {
   bottom: -1.93rem;
   transition: all 0.3s ease;
+}
+
+/* Mobile header - prevent changes on scroll under 1000px */
+@media (max-width: 1000px) {
+  /* Disable all scroll effects on mobile */
+  .row-5.scrolled {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .row-5.scrolled .col-31 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .row-5.scrolled .top-row {
+    display: flex !important;
+    height: auto !important;
+  }
+
+  .row-5.scrolled .bottom-row {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Keep logo original size on mobile */
+
+
+
+
+
+
+  /* Keep contact elements original size */
+  .row-5.scrolled .contact-button {
+    width: 225px !important;
+    min-height: 58px !important;
+  }
+
+  .row-5.scrolled .contact-person {
+    width: 100% !important;
+  }
+
+  .row-5.scrolled .contact-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .row-5.scrolled .contact-name {
+    font-size: 18px !important;
+  }
+
+  .row-5.scrolled .contact-phone {
+    font-size: 18px !important;
+  }
+
+  /* Keep navigation original size */
+  .row-5.scrolled .nav-list-2 .text-item.selected::after {
+    bottom: -1.93rem !important;
+  }
+
+  /* Disable navbar scroll effects on mobile but keep logo sticky */
+  .row-5 {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .row-5.scrolled {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    transform: none !important;
+    transition: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep logo sticky and prevent size changes */
+  .row-5 .warstwa-0-kopia-2,
+  .row-5.scrolled .warstwa-0-kopia-2 {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1001 !important;
+  }
+
+  .row-5 .logo,
+  .row-5.scrolled .logo {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1001 !important;
+  }
+}
+
+/* Desktop grupa-7 styles */
+@media screen and (min-width: 1000px) {
+  .grupa-7 {
+    margin: 100px 10px 0;
+    min-height: 195px;
+    padding: 0 37px;
+    position: relative;
+    right: 7px;
+    width: 1412px;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    background: #00a906;
+    -webkit-box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(0.7); /*drop shadow*/
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .grupa-7 {
+    margin: 262px auto 0;
+    min-height: 195px;
+    padding: 0 37px;
+    position: relative;
+    right: 7px;
+    width: 1412px;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    background: #00a906;
+    -webkit-box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.2);
+		transform: scale(1); /*drop shadow*/
+		/*drop shadow*/
+  }
 }

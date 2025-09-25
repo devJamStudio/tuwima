@@ -14,7 +14,7 @@ $financing_partner_logo = get_field('financing_partner_logo');
 $financing_image = get_field('financing_image');
 ?>
 
-<section class="finansowanie group">
+<section class="finansowanie group" id="finansowanie">
     <div class="row-16  flex flex-col lg:flex-row gap-[36px] justify-between">
         <?php if ($financing_image): ?>
             <?php

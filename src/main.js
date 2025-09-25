@@ -1,9 +1,6 @@
 // Main JavaScript entry point for Future Theme
 import './style.css'
 
-// HMR Test for Green House Template
-import './hmr-test.js'
-
 // Import all modular CSS files for HMR
 import './css/base/_variables.css'
 import './css/base/_reset.css'

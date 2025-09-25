@@ -360,6 +360,39 @@ if (function_exists('acf_add_local_field_group')) {
                             ),
                         ),
                     ),
+                    array(
+                        'key' => 'field_hero_number_counters',
+                        'label' => 'Number Counters',
+                        'name' => 'hero_number_counters',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'button_label' => 'Add Counter',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_counter_number',
+                                'label' => 'Number',
+                                'name' => 'counter_number',
+                                'type' => 'number',
+                                'default_value' => 0,
+                            ),
+                            array(
+                                'key' => 'field_counter_label',
+                                'label' => 'Label',
+                                'name' => 'counter_label',
+                                'type' => 'text',
+                                'default_value' => '',
+                            ),
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_block_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-slider',
+                                ),
+                            ),
+                        ),
+                    ),
                     // Text + Image Fields (Right)
                     array(
                         'key' => 'field_text_image_right_title',

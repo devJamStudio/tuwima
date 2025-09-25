@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
             </div>
             <div class="row-27 group">
                 <img class="layer-23" src="<?php echo get_template_directory_uri(); ?>/html/images/736212.png" alt="" width="20" height="18">
-                <p class="text-144"><a href="mailto:<?php echo get_field('contact_info')['email'] ?? 'biuro@budraise.pl'; ?>"><?php echo get_field('contact_info')['email'] ?? 'biuro@budraise.pl'; ?></a></p>
+                <p class="text-144"><a href="mailto:<?php echo get_field('contact_info')['email'] ?? 'biuro@budraise.pl'; ?>" class="contact-email-link"><?php echo get_field('contact_info')['email'] ?? 'biuro@budraise.pl'; ?></a></p>
             </div>
         </div>
         <p class="text-145"><?php echo get_field('contact_info')['company_details'] ?? '<strong class="fw700">Krs: </strong>0000912878<br><strong class="fw700">Nip:</strong> 6431775795<br><strong class="fw700">Regon: </strong>389511621'; ?></p>
@@ -33,24 +33,24 @@ if (!defined('ABSPATH')) {
                 $agent_1 = $contact_agents[0] ?? null;
                 $agent_2 = $contact_agents[1] ?? null;
             ?>
-            <img class="warstwa-56" src="<?php echo $agent_1['photo']['url'] ?? get_template_directory_uri() . '/html/images/warstwa_56.jpg'; ?>" alt="" width="463" height="463">
-            <div class="col">
+            <img class="warstwa-56" src="<?php echo $agent_1['photo']['url'] ?? get_template_directory_uri() . '/html/images/warstwa_56.jpg'; ?>" alt="" width="463" height="463" data-aos="fade-right" data-aos-delay="200" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border-radius: 12px;">
+            <div class="col" data-aos="fade-right" data-aos-delay="200">
                 <p class="text-146"><?php echo $agent_1['name'] ?? 'Rafał Banarski'; ?></p>
                 <p class="text-147"><a href="tel:<?php echo $agent_1['phone'] ?? '572481313'; ?>"><?php echo $agent_1['phone'] ?? '572 481 313'; ?></a></p>
             </div>
-            <img class="warstwa-57" src="<?php echo $agent_2['photo']['url'] ?? get_template_directory_uri() . '/html/images/warstwa_57.jpg'; ?>" alt="" width="463" height="463">
-            <div class="col-2">
+            <img class="warstwa-57" src="<?php echo $agent_2['photo']['url'] ?? get_template_directory_uri() . '/html/images/warstwa_57.jpg'; ?>" alt="" width="463" height="463" data-aos="fade-left" data-aos-delay="200" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border-radius: 12px;">
+            <div class="col-2" data-aos="fade-left" data-aos-delay="200">
                 <p class="text-148"><?php echo $agent_2['name'] ?? 'Mariusz Szyda'; ?></p>
                 <p class="text-149"><a href="tel:<?php echo $agent_2['phone'] ?? '453287744'; ?>"><?php echo $agent_2['phone'] ?? '453 287 744'; ?></a></p>
             </div>
             <?php } else { ?>
-            <img class="warstwa-56" src="<?php echo get_template_directory_uri() . '/html/images/warstwa_56.jpg'; ?>" alt="" width="463" height="463">
-            <div class="col">
+            <img class="warstwa-56" src="<?php echo get_template_directory_uri() . '/html/images/warstwa_56.jpg'; ?>" alt="" width="463" height="463" data-aos="fade-right" data-aos-delay="200" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border-radius: 12px;">
+            <div class="col" data-aos="fade-right" data-aos-delay="200">
                 <p class="text-146">Rafał Banarski</p>
                 <p class="text-147"><a href="tel:572481313">572 481 313</a></p>
             </div>
-            <img class="warstwa-57" src="<?php echo get_template_directory_uri() . '/html/images/warstwa_57.jpg'; ?>" alt="" width="463" height="463">
-            <div class="col-2">
+            <img class="warstwa-57" src="<?php echo get_template_directory_uri() . '/html/images/warstwa_57.jpg'; ?>" alt="" width="463" height="463" data-aos="fade-left" data-aos-delay="200" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border-radius: 12px;">
+            <div class="col-2" data-aos="fade-left" data-aos-delay="200">
                 <p class="text-148">Mariusz Szyda</p>
                 <p class="text-149"><a href="tel:453287744">453 287 744</a></p>
             </div>
@@ -58,6 +58,20 @@ if (!defined('ABSPATH')) {
         </div>
     </div>
 </section>
+
+<style>
+/* Contact email hover effect */
+.contact-email-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-email-link:hover {
+    color: #00a906 !important;
+    text-decoration: none;
+}
+</style>
 
 
 

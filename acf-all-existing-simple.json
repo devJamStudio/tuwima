@@ -1,0 +1,68 @@
+[
+  {
+    "key": "group_navigation_settings",
+    "title": "Navigation Settings",
+    "fields": [
+      {
+        "key": "field_logo",
+        "label": "Logo",
+        "name": "logo",
+        "type": "image",
+        "instructions": "Main logo for the website",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_phone_number",
+        "label": "Phone Number",
+        "name": "phone_number",
+        "type": "text",
+        "instructions": "Main phone number for contact",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "+48 32 123 45 67",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "theme-general-settings"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Navigation and header settings"
+  }
+]

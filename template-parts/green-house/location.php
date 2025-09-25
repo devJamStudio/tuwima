@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="lokalizacja group">
+<div class="lokalizacja group" id="lokalizacja">
     <p class="lokalizacja-2"><?php echo get_field('location_title') ?: 'Lokalizacja'; ?></p>
     <p class="text-37"><?php echo get_field('location_description') ?: '<strong class="text-style-8">Green House Tuwima </strong>łączy bliskość natury z komfortem miejskiego życia.W otoczeniu inwestycji znajdują się liczne tereny zielone, a jednocześnie możesz cieszyć<br>się szybkim dojazdem do centrum oraz wygodnym dostępem do szkół, sklepów i usług.'; ?></p>
     <div class="row-15 flex flex-col lg:flex-row gap-10 2xl:gap-[136px]  justify-between">
@@ -77,7 +77,18 @@ if (!defined('ABSPATH')) {
             </div>
 			</div>
         </div>
-        <img class="warstwa-64" src="<?php echo get_field('location_map_image')['url'] ?? get_template_directory_uri() . '/html/images/warstwa_64.jpg'; ?>" alt="" width="747" height="686">
+        <div class="warstwa-64">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.123456789!2d19.1234567!3d50.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA3JzI0LjQiTiAxOcKwMDcnMjQuNCJF!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl"
+                width="747"
+                height="686"
+                style="border:0; border-radius: 8px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa lokalizacji Green House Tuwima">
+            </iframe>
+        </div>
     </div>
 </div>
 

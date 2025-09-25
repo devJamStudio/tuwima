@@ -6,7 +6,7 @@
   [class*="col-"] {
     max-width: 100% !important;
   }
-  
+
   /* Reset right/left positioning for text elements under 1000px */
   [class*="text-"] {
     right: 0 !important;
@@ -51,15 +51,27 @@
   position: relative;
   width: 225px;
   background: var(--image-prostok-17) no-repeat;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-2:hover {
+  background: #00a906 !important;
+  border: 2px solid #00a906 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 169, 6, 0.3);
+}
+
+.btn-2 {
   color: #00a906;
   font-family: Montserrat, sans-serif;
   font-size: 17px;
   font-weight: bold;
-  text-align: center;
-	align-items: center;
+  text-align: left;
+  align-items: center;
   display: flex;
   justify-content: center;
-
 }
 
 .warstwa-63 {

@@ -157,32 +157,37 @@ $gallery_images = array_slice($gallery_images, 0, 5);
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 169, 6, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 169, 6, 0.8) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    z-index: 10 !important;
+    border-radius: 12px !important;
 }
 
 .gallery-overlay-text {
@@ -191,6 +196,53 @@ $gallery_images = array_slice($gallery_images, 0, 5);
     font-weight: bold;
     text-align: center;
     font-family: Montserrat, sans-serif;
+}
+
+/* Ensure gallery images are properly contained */
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* Specific sizing for different gallery images */
+.gallery-item .layer-17 {
+    width: 821px;
+    height: 478px;
+    object-fit: cover;
+}
+
+.gallery-item .layer-18,
+.gallery-item .layer-19,
+.gallery-item .layer-20,
+.gallery-item .layer-20-see-all {
+    width: 290px;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* Responsive styles for gallery */
+@media (max-width: 1000px) {
+    .gallery-item {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    .gallery-item .layer-17,
+    .gallery-item .layer-18,
+    .gallery-item .layer-19,
+    .gallery-item .layer-20,
+    .gallery-item .layer-20-see-all {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+
+    .gallery-overlay-text {
+        font-size: 16px;
+    }
 }
 
 /* Responsive lightbox */
@@ -215,10 +267,14 @@ $gallery_images = array_slice($gallery_images, 0, 5);
     .gallery-lightbox-thumbnail img {
         height: 80px;
     }
+
+    .gallery-overlay-text {
+        font-size: 14px;
+    }
 }
 </style>
 
-<section class="galeria group">
+<section class="galeria group" id="galeria">
     <div class="col-28">
         <img class="text-135" src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png" alt="<?php echo esc_attr($gallery_title); ?>" width="256" height="38" title="<?php echo esc_attr($gallery_title); ?>">
 

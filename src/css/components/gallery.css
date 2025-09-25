@@ -1,7 +1,7 @@
 /* Gallery Section Styles */
 
-/* Global responsive rule for all columns under 1000px */
-@media (max-width: 1000px) {
+/* Tablet responsive rules (768px - 1000px) */
+@media (max-width: 1000px) and (min-width: 769px) {
   /* Make all columns use max-width: 100% instead of fixed values */
   [class*="col-"] {
     max-width: 100% !important;
@@ -13,31 +13,12 @@
     left: 0 !important;
   }
 
-  /* Make gallery images full width under 1000px */
-  .galeria img,
-  .gallery img,
-  .gallery-item img,
-  .gallery-image img,
-  .gallery-img img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-  }
-
-  /* Make gallery columns full width under 1000px */
-  .galeria [class*="col-"],
-  .gallery [class*="col-"],
-  .gallery-item [class*="col-"],
-  .gallery-image [class*="col-"],
-  .gallery-img [class*="col-"] {
-    width: 100% !important;
-  }
-
-  /* Gallery layout responsive - stack vertically */
+  /* Gallery layout responsive - smaller tiles for tablets */
   .galeria {
     width: 100% !important;
     right: 0 !important;
     margin: 40px auto 0 !important;
+    padding: 0 20px;
   }
 
   .col-28, .col-32 {
@@ -48,30 +29,42 @@
 
   .row-21 {
     margin: 20px 0 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
   }
 
   .col-37 {
-    width: 100% !important;
-    margin: 10px 0 0 !important;
+    width: calc(50% - 7.5px) !important;
+    margin: 0 !important;
   }
 
-  .layer-17, .layer-18, .layer-19, .layer-20 {
+  .layer-17 {
     width: 100% !important;
-    margin: 10px 0 0 !important;
+    height: 250px !important;
+    margin: 0 0 15px 0 !important;
+  }
+
+  .layer-18, .layer-19, .layer-20 {
+    width: 100% !important;
+    height: 180px !important;
+    margin: 0 !important;
   }
 
   .wrapper-17 {
     width: 100% !important;
-    margin: 20px 0 0 !important;
+    margin: 0 !important;
   }
 
   .wrapper-17 .gallery-item {
     width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
   .wrapper-17 .layer-20-see-all {
     width: 100% !important;
-    height: 300px !important;
+    height: 180px !important;
     object-fit: cover !important;
   }
 
@@ -79,11 +72,131 @@
     width: 100% !important;
     max-width: 100% !important;
   }
+}
 
-  /* Row-21 responsive layout under 1000px */
+/* Tablet responsive rules (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Gallery layout responsive - 2 tiles per row on tablet */
+  .galeria {
+    width: 100% !important;
+    right: 0 !important;
+    margin: 40px auto 0 !important;
+    padding: 0 20px;
+  }
+
   .row-21 {
     margin: 20px 0 0 !important;
-    flex-direction: column;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+  }
+
+  .col-37 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .layer-17 {
+    width: 100% !important;
+    height: 180px !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .layer-18, .layer-19, .layer-20 {
+    width: 100% !important;
+    height: 100px !important;
+    margin: 0 !important;
+  }
+
+  .wrapper-17 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .wrapper-17 .gallery-item {
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .wrapper-17 .layer-20-see-all {
+    width: 100% !important;
+    height: 100px !important;
+    object-fit: cover !important;
+  }
+}
+
+/* Mobile responsive rules (up to 768px) */
+@media (max-width: 768px) {
+  /* Make all columns use max-width: 100% instead of fixed values */
+  [class*="col-"] {
+    max-width: 100% !important;
+  }
+
+  /* Reset right/left positioning for text elements under 1000px */
+  [class*="text-"] {
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  /* Gallery layout responsive - 3 tiles per row on mobile */
+  .galeria {
+    width: 100% !important;
+    right: 0 !important;
+    margin: 40px auto 0 !important;
+    padding: 0 15px;
+  }
+
+  .col-28, .col-32 {
+    float: none !important;
+    width: 100% !important;
+    margin: 20px 0 0 !important;
+  }
+
+  .row-21 {
+    margin: 20px 0 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .col-37 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .layer-17 {
+    width: 100% !important;
+    height: 150px !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .layer-18, .layer-19, .layer-20 {
+    width: 100% !important;
+    height: 90px !important;
+    margin: 0 !important;
+  }
+
+  .wrapper-17 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .wrapper-17 .gallery-item {
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .wrapper-17 .layer-20-see-all {
+    width: 100% !important;
+    height: 90px !important;
+    object-fit: cover !important;
+  }
+
+  .warstwa-51-holder {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -144,7 +257,7 @@
   .wrapper-17 {
     width: 290px !important;
     height: 210px !important;
-    margin: 0 9px 0 0 !important;
+    margin: 23px 0 0 !important;
   }
 
   .warstwa-51-holder {

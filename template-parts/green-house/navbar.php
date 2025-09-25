@@ -78,13 +78,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
     <div class="col-14">
         <div class="logo">
             <?php
-            $custom_logo_id = get_theme_mod('custom_logo');
-            if ($custom_logo_id) {
-                $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
-                echo '<img class="warstwa-0-kopia-2" src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '" width="48" height="52" style="width: 48px; height: 52px; object-fit: contain;">';
-            } else {
-                echo '<img class="warstwa-0-kopia-2" src="' . green_house_image_url('warstwa_0_kopia_2.png') . '" alt="' . get_bloginfo('name') . '" width="48" height="52">';
-            }
+            echo '<img class="warstwa-0-kopia-2" src="' . get_template_directory_uri() . '/images/logo.png" alt="' . get_bloginfo('name') . '" width="48" height="52" style="width: 48px; height: 52px; object-fit: contain;">';
             ?>
         </div>
         <p class="text"><?php echo get_bloginfo('name') ?: 'Green House'; ?></p>
@@ -93,10 +87,10 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
     <div class="col-31">
         <!-- Top Row: Contact Info and Button -->
         <div class="top-row">
-            <button class="contact-button" type="button">
+            <a href="mailto:biuro@budraise.pl" class="contact-button" type="button">
                 <img class="button-icon" src="<?php echo green_house_image_url('666162.png'); ?>" alt="" width="18" height="14">
                 <span class="button-text">napisz do nas</span>
-            </button>
+            </a>
 
             <!-- Contact Person 1 -->
             <div class="contact-person">

@@ -8,22 +8,27 @@
 
 }
 .btn--primary {
-	background:$primary;
+	background: #00a906;
 	min-width: 186px;
-	color:white;
+	color: white;
 	padding: 12px 12px;
 	font-weight: 600;
 	min-height: 55px;
 	border-radius: 8px;
+	border: 2px solid #00a906;
 	z-index: 1;
 	align-items: center;
 	display: flex;
 	justify-content: center;
 	text-align: center;
+	transition: all 0.3s ease;
+	cursor: pointer;
 	&:hover {
-		background:darken($primary,8%);
-		transition: all 0.3s ease;
-		color:white;
+		background: #008a05;
+		border-color: #008a05;
+		color: white;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 169, 6, 0.3);
 	}
 }
 .btn--secondary,.btn--secondary,  {
@@ -43,8 +48,12 @@
 	text-align: center;
 
 	&:hover {
-		border:1px solid $primary;
+		border: 2px solid #00a906;
+		background: #00a906;
+		color: white;
 		transition: all 0.3s ease;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 169, 6, 0.3);
 	}
 	&__flex {
 		width: auto;

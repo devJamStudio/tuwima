@@ -266,13 +266,15 @@
   display: flex;
   flex-direction: column;
   align-content: safe;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .col-39 {
   float: left;
   position: relative;
   width: 37px;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .layer-holder-3 {
@@ -309,6 +311,8 @@
   margin: 6px 0 0;
   position: relative;
   width: 415px;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .text-155 {
@@ -347,4 +351,29 @@
   display: flex;
   justify-content: center;
   background: var(--image-button-6-k) no-repeat;
+}
+
+/* Mobile checkbox alignment fixes */
+@media (max-width: 768px) {
+  .col-39, .col-40 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    float: none !important;
+    margin: 10px 0 !important;
+  }
+
+  .col-39 .layer-holder-3,
+  .col-40 .layer-holder-4 {
+    flex-shrink: 0 !important;
+    width: auto !important;
+  }
+
+  .col-39 .text-155,
+  .col-40 .text-156 {
+    flex: 1 !important;
+    margin: 0 !important;
+  }
 }

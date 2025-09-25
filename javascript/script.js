@@ -245,6 +245,37 @@ document.addEventListener("DOMContentLoaded", function() {
 	handleProjectHover();
 	window.addEventListener('load', handleProjectHover);
 	window.addEventListener('scroll', handleScroll);
+
+	// Smooth scrolling for anchor links
+	function handleSmoothScrolling() {
+		const links = document.querySelectorAll('a[href^="#"]');
+
+		links.forEach(link => {
+			link.addEventListener('click', function(e) {
+				const href = this.getAttribute('href');
+
+				// Skip if it's just "#" or empty
+				if (href === '#' || href === '') return;
+
+				const target = document.querySelector(href);
+				if (target) {
+					e.preventDefault();
+
+					// Calculate offset for fixed header
+					const headerHeight = document.querySelector('.navbar__container')?.offsetHeight || 0;
+					const targetPosition = target.offsetTop - headerHeight - 20;
+
+					window.scrollTo({
+						top: targetPosition,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+	}
+
+	// Initialize smooth scrolling
+	handleSmoothScrolling();
 	const inViewport = (elem) => {
 		let allElements = document.getElementsByClassName(elem);
 		let windowHeight = window.innerHeight * 0.95  ;

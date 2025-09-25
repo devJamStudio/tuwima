@@ -486,6 +486,156 @@ function future_register_complete_acf_fields() {
         ),
     ));
 
+    // 5.5. PRICE TABLE SECTION
+    acf_add_local_field_group(array(
+        'key' => 'group_price_table_section',
+        'title' => 'Price Table Section',
+        'fields' => array(
+            array(
+                'key' => 'field_price_table_title',
+                'label' => 'Price Table Title',
+                'name' => 'price_table_title',
+                'type' => 'text',
+                'instructions' => 'Title for the price table section',
+                'default_value' => 'Cennik mieszkań',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_price_table_subtitle',
+                'label' => 'Price Table Subtitle',
+                'name' => 'price_table_subtitle',
+                'type' => 'text',
+                'instructions' => 'Subtitle for the price table section',
+                'default_value' => 'Aktualne ceny i historia zmian',
+            ),
+            array(
+                'key' => 'field_price_table_apartments',
+                'label' => 'Price Table Apartments',
+                'name' => 'price_table_apartments',
+                'type' => 'repeater',
+                'instructions' => 'List of apartments with pricing information',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_price_apartment_number',
+                        'label' => 'Apartment Number',
+                        'name' => 'number',
+                        'type' => 'text',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_rooms',
+                        'label' => 'Number of Rooms',
+                        'name' => 'rooms',
+                        'type' => 'number',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_area',
+                        'label' => 'Apartment Area (m²)',
+                        'name' => 'area',
+                        'type' => 'number',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_garden',
+                        'label' => 'Garden Area (m²)',
+                        'name' => 'garden_area',
+                        'type' => 'number',
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_current_price',
+                        'label' => 'Current Price',
+                        'name' => 'current_price',
+                        'type' => 'text',
+                        'instructions' => 'e.g., 450 000 zł',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_price_per_m2',
+                        'label' => 'Price per m²',
+                        'name' => 'price_per_m2',
+                        'type' => 'text',
+                        'instructions' => 'e.g., 8 182 zł/m²',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_status',
+                        'label' => 'Status',
+                        'name' => 'status',
+                        'type' => 'select',
+                        'choices' => array(
+                            'available' => 'Dostępne',
+                            'reserved' => 'Zarezerwowane',
+                            'sold' => 'Sprzedane',
+                        ),
+                        'default_value' => 'available',
+                    ),
+                    array(
+                        'key' => 'field_price_apartment_history',
+                        'label' => 'Price History',
+                        'name' => 'price_history',
+                        'type' => 'repeater',
+                        'instructions' => 'Historical price changes',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_price_history_date',
+                                'label' => 'Date',
+                                'name' => 'date',
+                                'type' => 'date_picker',
+                                'required' => 1,
+                            ),
+                            array(
+                                'key' => 'field_price_history_price',
+                                'label' => 'Price',
+                                'name' => 'price',
+                                'type' => 'text',
+                                'instructions' => 'e.g., 420 000 zł',
+                                'required' => 1,
+                            ),
+                            array(
+                                'key' => 'field_price_history_change',
+                                'label' => 'Change',
+                                'name' => 'change',
+                                'type' => 'text',
+                                'instructions' => 'e.g., +7.1%',
+                                'required' => 1,
+                            ),
+                        ),
+                    ),
+                ),
+                'default_value' => array(
+                    array(
+                        'number' => 'A 1.1',
+                        'rooms' => 4,
+                        'area' => 55,
+                        'garden_area' => 245,
+                        'current_price' => '450 000 zł',
+                        'price_per_m2' => '8 182 zł/m²',
+                        'status' => 'available',
+                    ),
+                    array(
+                        'number' => 'A 1.2',
+                        'rooms' => 4,
+                        'area' => 55,
+                        'garden_area' => 245,
+                        'current_price' => '450 000 zł',
+                        'price_per_m2' => '8 182 zł/m²',
+                        'status' => 'reserved',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-green-house-tuwima.php',
+                ),
+            ),
+        ),
+    ));
+
     // 6. CONTACT SECTION
     acf_add_local_field_group(array(
         'key' => 'group_contact_section',

@@ -68,7 +68,7 @@ function scroll_logo_customize_register($wp_customize){
 function scroll_logo()
 {
 	// Get the custom logo URL from the theme customizer setting
-	$logo_url = get_theme_mod('scroll_logo');
+	$logo_url = get_theme_mod('scroll_logo') ?: get_template_directory_uri() . '/images/logo.png';
 	$site_name = get_bloginfo('name');
 	// If a logo has been set, use its URL; otherwise, use a fallback image
 
@@ -82,7 +82,7 @@ function scroll_logo()
 function alt_logo()
 {
 	// Get the custom logo URL from the theme customizer setting
-	$logo_url = get_theme_mod('scroll_logo');
+	$logo_url = get_theme_mod('scroll_logo') ?: get_template_directory_uri() . '/images/logo.png';
 	$site_name = get_bloginfo('name');
 	// If a logo has been set, use its URL; otherwise, use a fallback image
 

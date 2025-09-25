@@ -66,28 +66,60 @@ function render_hero_slider_block($block, $aos_attributes) {
     $button_text = $block['hero_button_text'] ?? '';
     $button_url = $block['hero_button_url'] ?? '';
     $images = $block['hero_slider_images'] ?? array();
+    $number_counters = $block['hero_number_counters'] ?? array();
 
     ?>
     <section class="hero-section" <?php echo $aos_attributes; ?>>
         <div class="hero-slider">
             <?php if (!empty($images)): ?>
-                <div class="slider-container">
-                    <?php foreach ($images as $image): ?>
-                        <div class="slide">
+                <div class="slider-container" id="hero-slider">
+                    <?php foreach ($images as $index => $image): ?>
+                        <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                            <div class="slide-overlay"></div>
                         </div>
                     <?php endforeach; ?>
+                </div>
+
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-prev" aria-label="Previous slide">&lt;</button>
+                    <div class="slider-dots">
+                        <?php foreach ($images as $index => $image): ?>
+                            <button class="slider-dot <?php echo $index === 0 ? 'active' : ''; ?>" data-slide="<?php echo $index; ?>"></button>
+                        <?php endforeach; ?>
+                    </div>
+                    <button class="slider-next" aria-label="Next slide">&gt;</button>
                 </div>
             <?php endif; ?>
 
             <div class="hero-content">
                 <div class="container">
-                    <h1 class="hero-title"><?php echo esc_html($title); ?></h1>
-                    <p class="hero-subtitle"><?php echo esc_html($subtitle); ?></p>
-                    <?php if ($button_text && $button_url): ?>
-                        <a href="<?php echo esc_url($button_url); ?>" class="hero-button btn btn-primary">
-                            <?php echo esc_html($button_text); ?>
-                        </a>
+                    <div class="hero-text-content" data-aos="fade-up" data-aos-delay="200">
+                        <?php if ($title): ?>
+                            <h1 class="hero-title"><?php echo esc_html($title); ?></h1>
+                        <?php endif; ?>
+
+                        <?php if ($subtitle): ?>
+                            <p class="hero-subtitle"><?php echo esc_html($subtitle); ?></p>
+                        <?php endif; ?>
+
+                        <?php if ($button_text && $button_url): ?>
+                            <a href="<?php echo esc_url($button_url); ?>" class="hero-button btn btn-primary">
+                                <?php echo esc_html($button_text); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php if (!empty($number_counters)): ?>
+                        <div class="hero-counters" data-aos="fade-up" data-aos-delay="400">
+                            <?php foreach ($number_counters as $counter): ?>
+                                <div class="counter-item">
+                                    <div class="counter-number" data-target="<?php echo esc_attr($counter['counter_number']); ?>">0</div>
+                                    <div class="counter-label"><?php echo esc_html($counter['counter_label']); ?></div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -95,18 +127,22 @@ function render_hero_slider_block($block, $aos_attributes) {
     </section>
 
     <style>
-    .hero-slider {
+    .hero-section {
         position: relative;
         height: 100vh;
         overflow: hidden;
     }
 
-    .slider-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    .hero-slider {
+        position: relative;
         height: 100%;
+        width: 100%;
+    }
+
+    .slider-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
     }
 
     .slide {
@@ -129,57 +165,292 @@ function render_hero_slider_block($block, $aos_attributes) {
         object-fit: cover;
     }
 
+    .slide-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(0, 169, 6, 0.3), rgba(0, 0, 0, 0.4));
+    }
+
     .hero-content {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .hero-text-content {
         text-align: center;
         color: white;
-        z-index: 2;
+        max-width: 800px;
+        padding: 0 20px;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
+        font-weight: bold;
         margin-bottom: 1rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .hero-subtitle {
         font-size: 1.5rem;
         margin-bottom: 2rem;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .hero-button {
+        display: inline-block;
         padding: 15px 30px;
-        font-size: 1.2rem;
+        background: #00a906;
+        color: white;
         text-decoration: none;
         border-radius: 5px;
+        font-weight: bold;
         transition: all 0.3s ease;
+        text-shadow: none;
+    }
+
+    .hero-button:hover {
+        background: #008a05;
+        transform: translateY(-2px);
+    }
+
+    .hero-counters {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .counter-item {
+        text-align: center;
+        color: white;
+    }
+
+    .counter-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #00a906;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 0.5rem;
+    }
+
+    .counter-label {
+        font-size: 1.1rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider-nav {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        z-index: 20;
+    }
+
+    .slider-prev,
+    .slider-next {
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    .slider-prev:hover,
+    .slider-next:hover {
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    .slider-dots {
+        display: flex;
+        gap: 10px;
+    }
+
+    .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .slider-dot.active {
+        background: #00a906;
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .hero-counters {
+            gap: 2rem;
+        }
+
+        .counter-number {
+            font-size: 2.5rem;
+        }
     }
     </style>
 
     <script>
+    // Hero Slider Functionality
     document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.slide');
+        const slider = document.getElementById('hero-slider');
+        if (!slider) return;
+
+        const slides = slider.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
         let currentSlide = 0;
+        let slideInterval;
 
-        function showSlide(index) {
+        // Initialize slider
+        function initSlider() {
+            if (slides.length === 0) return;
+
+            // Show first slide
+            slides[0].classList.add('active');
+            if (dots[0]) dots[0].classList.add('active');
+
+            // Start auto-slide
+            startAutoSlide();
+        }
+
+        // Start auto-slide
+        function startAutoSlide() {
+            slideInterval = setInterval(() => {
+                nextSlide();
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        // Stop auto-slide
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        // Go to specific slide
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0 || slideIndex >= slides.length) return;
+
+            // Remove active class from all slides and dots
             slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Add active class to current slide and dot
+            slides[slideIndex].classList.add('active');
+            if (dots[slideIndex]) dots[slideIndex].classList.add('active');
+
+            currentSlide = slideIndex;
         }
 
+        // Next slide
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+            const nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
         }
 
-        if (slides.length > 0) {
-            showSlide(0);
-            setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        // Previous slide
+        function prevSlide() {
+            const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
         }
+
+        // Event listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoSlide();
+                goToSlide(index);
+                startAutoSlide();
+            });
+        });
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', stopAutoSlide);
+        slider.addEventListener('mouseleave', startAutoSlide);
+
+        // Initialize
+        initSlider();
     });
+
+    // Number Counter Animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter-number');
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            // Start animation when element is in viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            observer.observe(counter);
+        });
+    }
+
+    // Initialize counter animation
+    document.addEventListener('DOMContentLoaded', animateCounters);
     </script>
     <?php
 }
@@ -194,42 +465,63 @@ function render_text_image_block($block, $image_position, $aos_attributes) {
     $button_url = $block['text_image_' . $image_position . '_button_url'] ?? '';
     $image = $block['text_image_' . $image_position . '_image'] ?? null;
 
-    $text_class = $image_position === 'right' ? 'col-md-6 order-md-1' : 'col-md-6 order-md-2';
-    $image_class = $image_position === 'right' ? 'col-md-6 order-md-2' : 'col-md-6 order-md-1';
-
     ?>
-    <section class="text-image-section" <?php echo $aos_attributes; ?>>
+    <section class="text-image-section text-image-<?php echo $image_position; ?>" <?php echo $aos_attributes; ?>>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="<?php echo $text_class; ?>">
-                    <div class="text-content">
-                        <?php if ($title): ?>
-                            <h2><?php echo esc_html($title); ?></h2>
-                        <?php endif; ?>
-
-                        <?php if ($content): ?>
-                            <div class="content">
-                                <?php echo wp_kses_post($content); ?>
+            <div class="text-image-content">
+                <?php if ($image_position === 'left'): ?>
+                    <div class="image-column" data-aos="fade-right" data-aos-delay="200">
+                        <?php if ($image): ?>
+                            <div class="image-wrapper">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="text-image-img" data-fancybox="text-image-gallery" data-src="<?php echo esc_url($image['url']); ?>">
+                                <div class="image-overlay">
+                                    <div class="zoom-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.5 7V14M7 10.5H14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         <?php endif; ?>
-
-                        <?php if ($button_text && $button_url): ?>
-                            <a href="<?php echo esc_url($button_url); ?>" class="btn btn-primary">
-                                <?php echo esc_html($button_text); ?>
-                            </a>
-                        <?php endif; ?>
                     </div>
-                </div>
+                <?php endif; ?>
 
-                <div class="<?php echo $image_class; ?>">
-                    <?php if ($image): ?>
-                        <div class="image-wrapper" data-fancybox="gallery">
-                            <img src="<?php echo esc_url($image['url']); ?>"
-                                 alt="<?php echo esc_attr($image['alt']); ?>"
-                                 class="img-fluid">
+                <div class="text-column" data-aos="fade-<?php echo $image_position === 'left' ? 'left' : 'right'; ?>" data-aos-delay="400">
+                    <?php if ($title): ?>
+                        <h2 class="section-title"><?php echo esc_html($title); ?></h2>
+                    <?php endif; ?>
+
+                    <?php if ($content): ?>
+                        <div class="section-content">
+                            <?php echo wp_kses_post($content); ?>
                         </div>
                     <?php endif; ?>
+
+                    <?php if ($button_text && $button_url): ?>
+                        <a href="<?php echo esc_url($button_url); ?>" class="btn btn-primary">
+                            <?php echo esc_html($button_text); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
+
+                <?php if ($image_position === 'right'): ?>
+                    <div class="image-column" data-aos="fade-left" data-aos-delay="200">
+                        <?php if ($image): ?>
+                            <div class="image-wrapper">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="text-image-img" data-fancybox="text-image-gallery" data-src="<?php echo esc_url($image['url']); ?>">
+                                <div class="image-overlay">
+                                    <div class="zoom-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.5 7V14M7 10.5H14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -237,33 +529,135 @@ function render_text_image_block($block, $image_position, $aos_attributes) {
     <style>
     .text-image-section {
         padding: 80px 0;
+        background: #f8f9fa;
     }
 
-    .text-content h2 {
-        margin-bottom: 1.5rem;
-        color: #333;
+    .text-image-content {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .text-content .content {
-        margin-bottom: 2rem;
-        line-height: 1.6;
+    .text-image-left .text-image-content {
+        flex-direction: row;
+    }
+
+    .text-image-right .text-image-content {
+        flex-direction: row-reverse;
+    }
+
+    .text-column {
+        flex: 1;
+        padding: 0 2rem;
+    }
+
+    .image-column {
+        flex: 1;
+        position: relative;
     }
 
     .image-wrapper {
         position: relative;
-        overflow: hidden;
         border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .image-wrapper img {
-        width: 100%;
-        height: auto;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
     }
 
-    .image-wrapper:hover img {
-        transform: scale(1.05);
+    .image-wrapper:hover {
+        transform: translateY(-5px);
+    }
+
+    .text-image-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 169, 6, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-wrapper:hover .image-overlay {
+        opacity: 1;
+    }
+
+    .zoom-icon {
+        color: white;
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .section-content {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .section-content p {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #00a906;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #008a05;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 169, 6, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .text-image-content {
+            flex-direction: column !important;
+            gap: 2rem;
+        }
+
+        .text-column,
+        .image-column {
+            flex: none;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-content {
+            font-size: 1rem;
+        }
     }
     </style>
     <?php
@@ -282,22 +676,15 @@ function render_benefits_block($block, $aos_attributes) {
 
     ?>
     <section class="benefits-section" <?php echo $aos_attributes; ?>>
-        <?php if ($background_image): ?>
-            <div class="benefits-background">
-                <img src="<?php echo esc_url($background_image['url']); ?>"
-                     alt="<?php echo esc_attr($background_image['alt']); ?>">
-            </div>
-        <?php endif; ?>
-
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
+            <div class="benefits-content">
+                <div class="benefits-text" data-aos="fade-right" data-aos-delay="200">
                     <?php if ($title): ?>
-                        <h2><?php echo esc_html($title); ?></h2>
+                        <h2 class="section-title"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
 
                     <?php if ($content): ?>
-                        <div class="content">
+                        <div class="section-content">
                             <?php echo wp_kses_post($content); ?>
                         </div>
                     <?php endif; ?>
@@ -309,78 +696,247 @@ function render_benefits_block($block, $aos_attributes) {
                     <?php endif; ?>
                 </div>
 
-                <div class="col-lg-6">
-                    <?php if (!empty($benefits)): ?>
-                        <div class="benefits-grid">
-                            <?php foreach ($benefits as $benefit): ?>
-                                <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
-                                    <?php if ($benefit['benefit_icon']): ?>
-                                        <div class="benefit-icon">
-                                            <img src="<?php echo esc_url($benefit['benefit_icon']['url']); ?>"
-                                                 alt="<?php echo esc_attr($benefit['benefit_icon']['alt']); ?>">
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <h4><?php echo esc_html($benefit['benefit_title']); ?></h4>
-                                    <p><?php echo esc_html($benefit['benefit_description']); ?></p>
+                <div class="benefits-visual" data-aos="fade-left" data-aos-delay="400">
+                    <?php if ($background_image): ?>
+                        <div class="benefits-image-wrapper">
+                            <img src="<?php echo esc_url($background_image['url']); ?>"
+                                 alt="<?php echo esc_attr($background_image['alt']); ?>"
+                                 class="benefits-image"
+                                 data-fancybox="benefits-gallery"
+                                 data-src="<?php echo esc_url($background_image['url']); ?>">
+                            <div class="image-overlay">
+                                <div class="zoom-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10.5 7V14M7 10.5H14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
                                 </div>
-                            <?php endforeach; ?>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </div>
             </div>
+
+            <?php if (!empty($benefits)): ?>
+                <div class="benefits-grid" data-aos="fade-up" data-aos-delay="600">
+                    <?php foreach ($benefits as $index => $benefit): ?>
+                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="<?php echo 800 + ($index * 100); ?>">
+                            <?php if ($benefit['benefit_icon']): ?>
+                                <div class="benefit-icon">
+                                    <img src="<?php echo esc_url($benefit['benefit_icon']['url']); ?>"
+                                         alt="<?php echo esc_attr($benefit['benefit_icon']['alt']); ?>">
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="benefit-content">
+                                <h4 class="benefit-title"><?php echo esc_html($benefit['benefit_title']); ?></h4>
+                                <p class="benefit-description"><?php echo esc_html($benefit['benefit_description']); ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 
     <style>
     .benefits-section {
         padding: 80px 0;
+        background: #ffffff;
+    }
+
+    .benefits-content {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .benefits-text {
+        flex: 1;
+        padding: 0 2rem;
+    }
+
+    .benefits-visual {
+        flex: 1;
         position: relative;
     }
 
-    .benefits-background {
+    .benefits-image-wrapper {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .benefits-image-wrapper:hover {
+        transform: translateY(-5px);
+    }
+
+    .benefits-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .image-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        background: rgba(0, 169, 6, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
-    .benefits-background img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.1;
+    .benefits-image-wrapper:hover .image-overlay {
+        opacity: 1;
+    }
+
+    .zoom-icon {
+        color: white;
+        font-size: 2rem;
     }
 
     .benefits-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
+        margin-top: 3rem;
     }
 
     .benefit-item {
-        text-align: center;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
         padding: 2rem;
-        background: white;
+        background: #f8f9fa;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border-left: 4px solid #00a906;
+    }
+
+    .benefit-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
     }
 
     .benefit-icon {
-        margin-bottom: 1rem;
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #00a906;
+        border-radius: 50%;
+        margin-top: 0.5rem;
     }
 
     .benefit-icon img {
-        width: 60px;
-        height: 60px;
-        object-fit: contain;
+        width: 30px;
+        height: 30px;
+        filter: brightness(0) invert(1);
     }
 
-    .benefit-item h4 {
+    .benefit-content {
+        flex: 1;
+    }
+
+    .benefit-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit-description {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .section-content {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .section-content p {
         margin-bottom: 1rem;
-        color: #00a906;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #00a906;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #008a05;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 169, 6, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .benefits-content {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .benefits-text,
+        .benefits-visual {
+            flex: none;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .benefit-icon {
+            align-self: center;
+            margin-top: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-content {
+            font-size: 1rem;
+        }
     }
     </style>
     <?php
@@ -392,36 +948,48 @@ function render_benefits_block($block, $aos_attributes) {
 function render_location_block($block, $aos_attributes) {
     $title = $block['location_title'] ?? '';
     $content = $block['location_content'] ?? '';
+    $button_text = $block['location_button_text'] ?? '';
+    $button_url = $block['location_button_url'] ?? '';
     $map_embed = $block['location_map_embed'] ?? '';
     $locations = $block['location_items'] ?? array();
 
     ?>
     <section class="location-section" <?php echo $aos_attributes; ?>>
         <div class="container">
-            <?php if ($title): ?>
-                <h2 class="section-title"><?php echo esc_html($title); ?></h2>
-            <?php endif; ?>
+            <div class="location-header" data-aos="fade-up" data-aos-delay="200">
+                <?php if ($title): ?>
+                    <h2 class="section-title"><?php echo esc_html($title); ?></h2>
+                <?php endif; ?>
 
-            <?php if ($content): ?>
-                <div class="section-content">
-                    <?php echo wp_kses_post($content); ?>
-                </div>
-            <?php endif; ?>
+                <?php if ($content): ?>
+                    <div class="section-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
 
-            <div class="row">
-                <div class="col-lg-6">
+                <?php if ($button_text && $button_url): ?>
+                    <a href="<?php echo esc_url($button_url); ?>" class="btn btn-primary">
+                        <?php echo esc_html($button_text); ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+
+            <div class="location-content">
+                <div class="location-map" data-aos="fade-right" data-aos-delay="400">
                     <?php if ($map_embed): ?>
                         <div class="map-container">
-                            <?php echo wp_kses_post($map_embed); ?>
+                            <div class="map-wrapper">
+                                <?php echo wp_kses_post($map_embed); ?>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="location-info" data-aos="fade-left" data-aos-delay="600">
                     <?php if (!empty($locations)): ?>
                         <div class="location-items">
-                            <?php foreach ($locations as $location): ?>
-                                <div class="location-item" data-aos="fade-left" data-aos-delay="200">
+                            <?php foreach ($locations as $index => $location): ?>
+                                <div class="location-item" data-aos="fade-up" data-aos-delay="<?php echo 800 + ($index * 100); ?>">
                                     <?php if ($location['location_icon']): ?>
                                         <div class="location-icon">
                                             <img src="<?php echo esc_url($location['location_icon']['url']); ?>"
@@ -429,9 +997,12 @@ function render_location_block($block, $aos_attributes) {
                                         </div>
                                     <?php endif; ?>
 
-                                    <div class="location-info">
-                                        <h4><?php echo esc_html($location['location_time']); ?></h4>
-                                        <p><?php echo esc_html($location['location_name']); ?></p>
+                                    <div class="location-details">
+                                        <h4 class="location-title"><?php echo esc_html($location['location_name']); ?></h4>
+                                        <p class="location-description"><?php echo esc_html($location['location_description']); ?></p>
+                                        <?php if ($location['location_time']): ?>
+                                            <span class="location-time"><?php echo esc_html($location['location_time']); ?></span>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -445,29 +1016,46 @@ function render_location_block($block, $aos_attributes) {
     <style>
     .location-section {
         padding: 80px 0;
+        background: #f8f9fa;
     }
 
-    .section-title {
+    .location-header {
         text-align: center;
-        margin-bottom: 2rem;
-        color: #333;
+        margin-bottom: 4rem;
     }
 
-    .section-content {
-        text-align: center;
-        margin-bottom: 3rem;
+    .location-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .location-map {
+        flex: 1;
+    }
+
+    .location-info {
+        flex: 1;
     }
 
     .map-container {
+        position: relative;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .map-container iframe {
+    .map-wrapper {
+        position: relative;
         width: 100%;
         height: 400px;
+    }
+
+    .map-wrapper iframe {
+        width: 100%;
+        height: 100%;
         border: none;
+        border-radius: 10px;
     }
 
     .location-items {
@@ -478,29 +1066,138 @@ function render_location_block($block, $aos_attributes) {
 
     .location-item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
         padding: 1.5rem;
         background: white;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-left: 4px solid #00a906;
+    }
+
+    .location-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .location-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #00a906;
+        border-radius: 50%;
+        margin-top: 0.5rem;
     }
 
     .location-icon img {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
+        width: 25px;
+        height: 25px;
+        filter: brightness(0) invert(1);
     }
 
-    .location-info h4 {
-        margin: 0 0 0.5rem 0;
-        color: #00a906;
+    .location-details {
+        flex: 1;
+    }
+
+    .location-title {
         font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
     }
 
-    .location-info p {
-        margin: 0;
+    .location-description {
         color: #666;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+
+    .location-time {
+        display: inline-block;
+        background: #e9ecef;
+        color: #495057;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .section-content {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .section-content p {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #00a906;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #008a05;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 169, 6, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .location-content {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .location-map,
+        .location-info {
+            flex: none;
+            width: 100%;
+        }
+
+        .map-wrapper {
+            height: 300px;
+        }
+
+        .location-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .location-icon {
+            align-self: center;
+            margin-top: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-content {
+            font-size: 1rem;
+        }
     }
     </style>
     <?php
@@ -532,21 +1229,21 @@ function render_apartments_block($block, $aos_attributes) {
             <div class="interactive-floor-plan" data-aos="fade-up" data-aos-delay="200">
                 <div class="floor-plan-container">
                     <!-- Base image with dots (kropki.jpg) -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/plansza/kropki.jpg" 
-                         alt="Plan piętra z oznaczeniami" 
-                         class="floor-plan-image" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/plansza/kropki.jpg"
+                         alt="Plan piętra z oznaczeniami"
+                         class="floor-plan-image"
                          id="floor-plan-image">
-                    
+
                     <!-- Hover overlay image (lokale.jpg) - hidden by default -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/plansza/lokale.jpg" 
-                         alt="Plan piętra - podgląd" 
-                         class="floor-plan-hover-image" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/plansza/lokale.jpg"
+                         alt="Plan piętra - podgląd"
+                         class="floor-plan-hover-image"
                          id="floor-plan-hover-image">
-                    
+
                     <!-- Interactive dots overlay - positioned over the actual dots in kropki.jpg -->
                     <div class="apartment-dots-overlay">
                         <?php if (!empty($apartments)): ?>
-                            <?php 
+                            <?php
                             // Define actual dot positions based on kropki.jpg layout
                             $dot_positions = array(
                                 array('left' => '25%', 'top' => '35%'),   // Apartment 1
@@ -558,10 +1255,10 @@ function render_apartments_block($block, $aos_attributes) {
                             );
                             ?>
                             <?php foreach ($apartments as $index => $apartment): ?>
-                                <?php 
+                                <?php
                                 $position = isset($dot_positions[$index]) ? $dot_positions[$index] : $dot_positions[0];
                                 ?>
-                                <div class="apartment-dot" 
+                                <div class="apartment-dot"
                                      data-apartment="<?php echo esc_attr($apartment['apartment_number']); ?>"
                                      data-rooms="<?php echo esc_attr($apartment['apartment_rooms']); ?>"
                                      data-area="<?php echo esc_attr($apartment['apartment_area']); ?>"
@@ -973,24 +1670,53 @@ function render_visualizations_block($block, $aos_attributes) {
     <section class="visualizations-section" <?php echo $aos_attributes; ?>>
         <div class="container">
             <?php if ($title): ?>
-                <h2 class="section-title"><?php echo esc_html($title); ?></h2>
+                <div class="section-header" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="section-title"><?php echo esc_html($title); ?></h2>
+                </div>
             <?php endif; ?>
 
             <?php if (!empty($images)): ?>
-                <div class="visualizations-slider">
-                    <div class="slider-container">
-                        <?php foreach ($images as $index => $image): ?>
-                            <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
-                                <img src="<?php echo esc_url($image['url']); ?>"
-                                     alt="<?php echo esc_attr($image['alt']); ?>"
-                                     data-fancybox="visualizations">
-                            </div>
-                        <?php endforeach; ?>
+                <div class="visualizations-container" data-aos="fade-up" data-aos-delay="400">
+                    <div class="visualizations-slider" id="visualizations-slider">
+                        <div class="slider-container">
+                            <?php foreach ($images as $index => $image): ?>
+                                <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                                    <div class="slide-wrapper">
+                                        <img src="<?php echo esc_url($image['url']); ?>"
+                                             alt="<?php echo esc_attr($image['alt']); ?>"
+                                             data-fancybox="visualizations"
+                                             data-src="<?php echo esc_url($image['url']); ?>">
+                                        <div class="slide-overlay">
+                                            <div class="zoom-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M10.5 7V14M7 10.5H14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
 
                     <div class="slider-controls">
-                        <button class="prev-btn">‹</button>
-                        <button class="next-btn">›</button>
+                        <button class="prev-btn" aria-label="Previous image">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="next-btn" aria-label="Next image">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="slider-dots">
+                        <?php foreach ($images as $index => $image): ?>
+                            <button class="slider-dot <?php echo $index === 0 ? 'active' : ''; ?>" data-slide="<?php echo $index; ?>"></button>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             <?php endif; ?>
@@ -1000,33 +1726,94 @@ function render_visualizations_block($block, $aos_attributes) {
     <style>
     .visualizations-section {
         padding: 80px 0;
+        background: #ffffff;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .visualizations-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .visualizations-slider {
         position: relative;
-        max-width: 800px;
-        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
     .slider-container {
         position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        width: 100%;
+        height: 500px;
     }
 
     .slide {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
     }
 
     .slide.active {
-        display: block;
+        opacity: 1;
+    }
+
+    .slide-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
     }
 
     .slide img {
         width: 100%;
-        height: auto;
-        cursor: pointer;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .slide-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 169, 6, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slide-wrapper:hover .slide-overlay {
+        opacity: 1;
+    }
+
+    .slide-wrapper:hover .slide img {
+        transform: scale(1.05);
+    }
+
+    .zoom-icon {
+        color: white;
+        font-size: 2rem;
     }
 
     .slider-controls {
@@ -1038,12 +1825,13 @@ function render_visualizations_block($block, $aos_attributes) {
         display: flex;
         justify-content: space-between;
         padding: 0 1rem;
+        pointer-events: none;
     }
 
     .prev-btn,
     .next-btn {
-        background: rgba(0, 169, 6, 0.8);
-        color: white;
+        background: rgba(255, 255, 255, 0.9);
+        color: #00a906;
         border: none;
         width: 50px;
         height: 50px;
@@ -1051,44 +1839,155 @@ function render_visualizations_block($block, $aos_attributes) {
         font-size: 1.5rem;
         cursor: pointer;
         transition: all 0.3s ease;
+        pointer-events: all;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .prev-btn:hover,
     .next-btn:hover {
         background: #00a906;
+        color: white;
         transform: scale(1.1);
+    }
+
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 2rem;
+    }
+
+    .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(0, 169, 6, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .slider-dot.active {
+        background: #00a906;
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .slider-container {
+            height: 300px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .prev-btn,
+        .next-btn {
+            width: 40px;
+            height: 40px;
+        }
     }
     </style>
 
     <script>
+    // Visualizations Slider Functionality
     document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.visualizations-slider .slide');
+        const slider = document.getElementById('visualizations-slider');
+        if (!slider) return;
+
+        const slides = slider.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         let currentSlide = 0;
+        let slideInterval;
 
-        function showSlide(index) {
+        // Initialize slider
+        function initSlider() {
+            if (slides.length === 0) return;
+
+            // Show first slide
+            slides[0].classList.add('active');
+            if (dots[0]) dots[0].classList.add('active');
+
+            // Start auto-slide
+            startAutoSlide();
+        }
+
+        // Start auto-slide
+        function startAutoSlide() {
+            slideInterval = setInterval(() => {
+                nextSlide();
+            }, 4000); // Change slide every 4 seconds
+        }
+
+        // Stop auto-slide
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        // Go to specific slide
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0 || slideIndex >= slides.length) return;
+
+            // Remove active class from all slides and dots
             slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Add active class to current slide and dot
+            slides[slideIndex].classList.add('active');
+            if (dots[slideIndex]) dots[slideIndex].classList.add('active');
+
+            currentSlide = slideIndex;
         }
 
+        // Next slide
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+            const nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
         }
 
+        // Previous slide
         function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+            const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
         }
 
-        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-
-        // Auto-advance slides
-        if (slides.length > 1) {
-            setInterval(nextSlide, 5000);
+        // Event listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
         }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoSlide();
+                goToSlide(index);
+                startAutoSlide();
+            });
+        });
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', stopAutoSlide);
+        slider.addEventListener('mouseleave', startAutoSlide);
+
+        // Initialize
+        initSlider();
     });
     </script>
     <?php
