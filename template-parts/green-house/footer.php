@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     <div class="layer-holder-2">
         <div class="logo-kopia-3">
             <div class="wrapper-15">
-                <img class="warstwa-0-kopia-2-2" src="<?php echo get_template_directory_uri() . '/images/logo.png'; ?>" alt="" width="48" height="52">
+                <p class="warstwa-0-kopia-2-2 w-[48px] h-[52px]" >
             </div>
             <p class="text-150"><?php echo get_field('footer_title') ?: 'Green House'; ?></p>
             <img class="tuwima-2" src="<?php echo get_field('footer_tuwima_logo')['url'] ?? green_house_image_url('tuwima_2.png'); ?>" alt="tuwima" width="118" height="20" title="tuwima">

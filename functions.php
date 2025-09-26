@@ -288,62 +288,144 @@ function future_scripts() {
 	wp_enqueue_style( 'aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1' );
 	wp_enqueue_script( 'aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', false ); // Load in header
 
-	// Add AOS script directly in head for immediate availability
+	// Add AOS script with improved error handling
 	add_action( 'wp_head', function() {
 		echo '<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>';
 		echo '<script>
-		// Initialize AOS with proper error handling
-		document.addEventListener("DOMContentLoaded", function() {
-			if (typeof AOS !== "undefined") {
-				try {
-					AOS.init({
-						duration: 800,
-						easing: "ease-in-out",
-						once: true,
-						offset: 100,
-						disable: function() {
-							return window.innerWidth < 768;
-						}
-					});
-					console.log("AOS loaded and initialized");
-				} catch (error) {
-					console.warn("AOS initialization error:", error);
+		// Initialize AOS with comprehensive error handling
+		function safeAOSInit() {
+			try {
+				if (typeof AOS !== "undefined") {
+					// Check if DOM is ready
+					if (document.readyState === "loading") {
+						document.addEventListener("DOMContentLoaded", function() {
+							initAOS();
+						});
+					} else {
+						initAOS();
+					}
+				} else {
+					console.warn("AOS library not loaded properly");
+					// Remove AOS attributes to prevent errors
+					setTimeout(function() {
+						document.querySelectorAll("[data-aos]").forEach(function(el) {
+							el.removeAttribute("data-aos");
+							el.removeAttribute("data-aos-delay");
+							el.removeAttribute("data-aos-duration");
+						});
+					}, 100);
 				}
-			} else {
-				console.warn("AOS library not loaded properly");
+			} catch (error) {
+				console.warn("AOS initialization error:", error);
 			}
-		});
+		}
+
+		function initAOS() {
+			try {
+				AOS.init({
+					duration: 800,
+					easing: "ease-in-out",
+					once: true,
+					offset: 100,
+					disable: function() {
+						return window.innerWidth < 768;
+					}
+				});
+				console.log("AOS initialized successfully");
+			} catch (error) {
+				console.warn("AOS init error:", error);
+			}
+		}
+
+		// Start initialization
+		safeAOSInit();
+
+		// Handle loader with comprehensive error checking and multiple triggers
+		function hideLoader() {
+			try {
+				const loader = document.getElementById("loader");
+				if (loader && !loader.classList.contains("hidden")) {
+					loader.classList.add("hidden");
+					console.log("Loader hidden successfully");
+				}
+			} catch (error) {
+				console.warn("Loader hiding error:", error);
+			}
+		}
+
+		// Multiple ways to hide loader to ensure it works
+		function initLoaderHandling() {
+			// Hide loader after DOM is ready (extended to 1.5 seconds)
+			setTimeout(hideLoader, 1500);
+
+			// Hide loader when window is fully loaded (extended to 1 second)
+			window.addEventListener("load", function() {
+				setTimeout(hideLoader, 1000);
+			});
+
+			// Fallback: hide loader after 5 seconds regardless
+			setTimeout(hideLoader, 5000);
+		}
+
+		// Initialize loader handling
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", initLoaderHandling);
+		} else {
+			initLoaderHandling();
+		}
 		</script>';
 	}, 1 );
 
-	// Initialize AOS with proper error handling
-	wp_add_inline_script( 'aos-js', '
-		// Initialize AOS immediately when script loads
-		if (typeof AOS !== "undefined") {
-			AOS.init({
-				duration: 800,
-				easing: "ease-in-out",
-				once: true,
-				offset: 100,
-				disable: function() {
-					return window.innerWidth < 768;
-				}
-			});
-		} else {
-			console.warn("AOS library not loaded properly");
-		}
-
-		// Also initialize on DOM ready as backup
-		document.addEventListener("DOMContentLoaded", function() {
-			if (typeof AOS !== "undefined") {
-				AOS.refresh();
-			}
-		});
-	', 'after' );
+	// Remove duplicate AOS initialization to prevent conflicts
 
 	// Fancybox Library
 	wp_enqueue_style( 'fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', array(), '5.0' );
 	wp_enqueue_script( 'fancybox-js', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', array(), '5.0', true );
+
+	// Debug script to check Fancybox loading
+	wp_add_inline_script( 'fancybox-js', '
+		console.log("Fancybox script loaded");
+		window.addEventListener("load", function() {
+			console.log("Window loaded, Fancybox available:", typeof Fancybox !== "undefined");
+			if (typeof Fancybox !== "undefined") {
+				console.log("Fancybox version:", Fancybox.version || "unknown");
+			}
+		});
+	', 'after' );
+
+	// Initialize Fancybox for all images
+	wp_add_inline_script( 'fancybox-js', '
+		document.addEventListener("DOMContentLoaded", function() {
+			// Initialize Fancybox for all image galleries
+			if (typeof Fancybox !== "undefined") {
+				Fancybox.bind("[data-fancybox]", {
+					// Global options for all galleries
+					Toolbar: {
+						display: {
+							left: ["infobar"],
+							middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW", "flipX", "flipY"],
+							right: ["slideshow", "thumbs", "close"]
+						}
+					},
+					Thumbs: {
+						autoStart: false
+					},
+					Images: {
+						zoom: true
+					},
+					// Custom styling
+					backdropClick: "close",
+					keyboard: true,
+					closeButton: "top",
+					// Animation settings
+					showClass: "f-fadeIn",
+					hideClass: "f-fadeOut"
+				});
+
+				console.log("Fancybox initialized for all images");
+			}
+		});
+	', 'after' );
 
 	// Initialize Fancybox
 	wp_add_inline_script( 'fancybox-js', '
@@ -365,11 +447,72 @@ function future_scripts() {
 					},
 				});
 
-				// Auto-add fancybox to all images in galleries
-				document.querySelectorAll(".gallery img, .gallery-item img").forEach(function(img) {
-					if (!img.closest("[data-fancybox]")) {
-						img.setAttribute("data-fancybox", "gallery");
-						img.setAttribute("data-src", img.src);
+				// Auto-add fancybox to ALL images that don\'t already have it
+				function addFancyboxToImages() {
+					document.querySelectorAll("img").forEach(function(img) {
+						// Skip if already has fancybox or is in navigation/header
+						if (!img.hasAttribute("data-fancybox") &&
+							!img.closest("nav") &&
+							!img.closest(".navbar") &&
+							!img.closest(".logo") &&
+							!img.closest(".contact-button") &&
+							!img.closest(".mobile-menu") &&
+							!img.closest(".hamburger") &&
+							img.src &&
+							!img.src.includes("data:image") &&
+							img.offsetWidth > 30 &&
+							img.offsetHeight > 30) {
+
+							// Determine gallery group based on context
+							var galleryGroup = "general-gallery";
+							if (img.closest(".benefits-section")) galleryGroup = "benefits-gallery";
+							else if (img.closest(".location-section")) galleryGroup = "location-gallery";
+							else if (img.closest(".contact-section")) galleryGroup = "contact-gallery";
+							else if (img.closest(".developer-section")) galleryGroup = "developer-gallery";
+							else if (img.closest(".gallery-section, .galeria-new")) galleryGroup = "gallery";
+							else if (img.closest(".apartments-section")) galleryGroup = "apartments-gallery";
+							else if (img.closest(".hero-section")) galleryGroup = "hero-gallery";
+							else if (img.closest(".text-image-section")) galleryGroup = "text-image-gallery";
+							else if (img.closest(".visualizations-section")) galleryGroup = "visualizations";
+							else if (img.closest(".floor-plan-section")) galleryGroup = "floor-plans";
+
+							img.setAttribute("data-fancybox", galleryGroup);
+							img.setAttribute("data-src", img.src);
+							img.style.cursor = "pointer";
+							console.log("Added Fancybox to image:", img.src, "Group:", galleryGroup);
+						}
+					});
+				}
+
+				// Run immediately
+				addFancyboxToImages();
+
+				// Run again after a delay to catch dynamically loaded images
+				setTimeout(addFancyboxToImages, 1000);
+				setTimeout(addFancyboxToImages, 3000);
+
+				// Add direct click handlers as backup
+				document.addEventListener("click", function(e) {
+					if (e.target.tagName === "IMG" &&
+						!e.target.closest("nav") &&
+						!e.target.closest(".navbar") &&
+						!e.target.closest(".logo") &&
+						!e.target.closest(".contact-button") &&
+						e.target.src &&
+						!e.target.src.includes("data:image") &&
+						e.target.offsetWidth > 50 &&
+						e.target.offsetHeight > 50) {
+
+						e.preventDefault();
+						e.stopPropagation();
+
+						// Open image in Fancybox
+						if (typeof Fancybox !== "undefined") {
+							Fancybox.show([{
+								src: e.target.src,
+								type: "image"
+							}]);
+						}
 					}
 				});
 			} else {
@@ -478,98 +621,8 @@ add_action('admin_enqueue_scripts', function() {
 }, 100);
 
 /**
- * PAGE LOADER - Like certekspert.pl with rotating circle
+ * PAGE LOADER - Removed duplicate loader, using the one in header.php
  */
-add_action('wp_head', function() {
-    $loader_logo = get_field('loader_logo', 'option');
-    $loader_logo_url = $loader_logo ? $loader_logo['url'] : get_template_directory_uri() . '/images/logo.png';
-    ?>
-    <style>
-    .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #fff;
-        z-index: 9999;
-        transition: opacity 0.5s ease-out;
-    }
-
-    .loader.hide {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .loader .logo {
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        padding: 8px;
-        transform: translate(-50%, -50%);
-    }
-
-    .loader .logo:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-image: conic-gradient(#00a906, transparent 240deg);
-        animation: rotate 1s linear infinite;
-    }
-
-    .loader .logo:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 94%;
-        height: 94%;
-        background: #fff;
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    .loader .logo img {
-        width: 100%;
-        height: 100%;
-        padding: 20%;
-        object-fit: contain;
-        object-position: center;
-        position: relative;
-        z-index: 2;
-    }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(360deg);
-        }
-        to {
-            transform: rotate(0);
-        }
-    }
-    </style>
-    <div class="loader" id="page-loader">
-        <div class="logo">
-            <img src="<?php echo esc_url($loader_logo_url); ?>" alt="Loading..." onerror="console.log('Loader image failed to load: <?php echo esc_js($loader_logo_url); ?>')">
-        </div>
-    </div>
-    <script>
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            document.getElementById('page-loader').classList.add('hide');
-        }, 1500);
-    });
-    </script>
-    <?php
-});
 
 /**
  * STICKY HEADER - Smaller logo, white background, contacts disappear
@@ -586,7 +639,7 @@ add_action('wp_head', function() {
     }
 	@media screen and (min-width: 1000px) {
     .row-5.scrolled .logo img, .row-5.scrolled .tuwima img, .scrolled .col-14 {
-        transform: scale(0.6);
+        transform: scale(0.8);
         transition: transform 0.3s ease;
     }
 	.row-5.scrolled {

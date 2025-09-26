@@ -94,18 +94,18 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
                 <span class="button-text">napisz do nas</span>
             </a>
 
-            <!-- Contact Person 1 -->
+            <!-- Contact Person 1 - Mariusz Szyda -->
             <div class="contact-person">
-                <img class="contact-image" src="<?php echo green_house_image_url('warstwa_50.png'); ?>" alt="" width="41" height="41">
+                <img class="contact-image" src="<?php echo get_template_directory_uri(); ?>/images/mariusz-szyda-B7e-_Z7k.png" alt="Mariusz Szyda" width="41" height="41">
                 <div class="contact-details">
                     <p class="contact-name"><?php echo get_field('contact_name_1') ?: 'Mariusz Szyda'; ?></p>
                     <p class="contact-phone"><a href="tel:<?php echo get_field('contact_phone_1') ?: '453287744'; ?>"><?php echo get_field('contact_phone_1') ?: '453 287 744'; ?></a></p>
                 </div>
             </div>
 
-            <!-- Contact Person 2 -->
+            <!-- Contact Person 2 - Rafał Banarski -->
             <div class="contact-person">
-                <img class="contact-image" src="<?php echo green_house_image_url('warstwa_50.png'); ?>" alt="" width="41" height="41">
+                <img class="contact-image" src="<?php echo get_template_directory_uri(); ?>/images/rafal-banarski-BEQQXTHw.png" alt="Rafał Banarski" width="41" height="41">
                 <div class="contact-details">
                     <p class="contact-name"><?php echo get_field('contact_name_2') ?: 'Rafał Banarski'; ?></p>
                     <p class="contact-phone"><a href="tel:<?php echo get_field('contact_phone_2') ?: '572481313'; ?>"><?php echo get_field('contact_phone_2') ?: '572 481 313'; ?></a></p>

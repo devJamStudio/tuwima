@@ -104,3 +104,8 @@ a.text-item.selected {
 .text-style-5 {
   line-height: 22px;
 }
+@media (max-width: 1000px) {
+	.text-style-5 {
+		display: none!important
+	}
+	}

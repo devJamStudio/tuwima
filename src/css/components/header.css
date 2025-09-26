@@ -117,6 +117,290 @@ html {
   }
 }
 
+/* AOS Animation Enhancements for Alternating Columns */
+[data-aos="fade-left"] {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+[data-aos="fade-left"].aos-animate,
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Enhanced column animations */
+.benefit-item,
+.location-item,
+.agent-card {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.benefit-item:hover,
+.location-item:hover,
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Image Shadow Effect - Based on shadow.png values (excluding title images, row-24, and row-20) */
+.benefits-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.location-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.contact-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.developer-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.gallery-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.apartments-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.hero-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.text-image-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.visualizations-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.floor-plan-section img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.galeria-new img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-3 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-4 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-9 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-17 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-18 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-19 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-20 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.layer-21 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.warstwa-63 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.warstwa-64 img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.benefits-image:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.company-logo img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.agent-photo img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.floor-plan-image:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.floor-plan-hover-image:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.gallery-item img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.gallery-image img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.gallery-img img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.visualizations-slider img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.hero-slider img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img),
+.text-image-img:not(.text-135):not([class*="title"]):not([class*="heading"]):not(.row-24 img):not(.row-20 img) {
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.2));
+}
+
+/* Image Zoom Hover Effect - Like Gostyniec website */
+.layer-3,
+.layer-4,
+.layer-9,
+.layer-21,
+.warstwa-63,
+.warstwa-64 {
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.layer-3 img,
+.layer-4 img,
+.layer-9 img,
+.layer-21 img,
+.warstwa-63 img,
+.warstwa-64 img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.layer-3:hover img,
+.layer-4:hover img,
+.layer-9:hover img,
+.layer-21:hover img,
+.warstwa-63:hover img,
+.warstwa-64:hover img {
+  transform: scale(1.1);
+}
+
+/* Gallery images zoom effect */
+.layer-17,
+.layer-18,
+.layer-19,
+.layer-20 {
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.layer-17 img,
+.layer-18 img,
+.layer-19 img,
+.layer-20 img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.layer-17:hover img,
+.layer-18:hover img,
+.layer-19:hover img,
+.layer-20:hover img {
+  transform: scale(1.1);
+}
+
+/* Text-image blocks zoom effect */
+.text-image-img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-wrapper:hover .text-image-img {
+  transform: scale(1.1);
+}
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Benefits image zoom effect */
+.benefits-image {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.benefits-image-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.benefits-image-wrapper:hover .benefits-image {
+  transform: scale(1.1);
+}
+
+/* Additional image zoom effects for page builder blocks */
+.gallery-item img,
+.gallery-image img,
+.gallery-img img,
+.floor-plan-image,
+.floor-plan-hover-image,
+.agent-photo img,
+.company-logo img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img,
+.gallery-image:hover img,
+.gallery-img:hover img,
+.agent-photo:hover img,
+.company-logo:hover img {
+  transform: scale(1.1);
+}
+
+/* Ensure proper overflow handling for zoom effects */
+.gallery-item,
+.gallery-image,
+.gallery-img,
+.agent-photo,
+.company-logo {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Contact agent photos zoom effect */
+.warstwa-56,
+.warstwa-57 {
+  overflow: hidden;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.warstwa-56 img,
+.warstwa-57 img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.warstwa-56:hover img,
+.warstwa-57:hover img {
+  transform: scale(1.1);
+}
+
+/* Make all images clickable with lightbox */
+img[data-fancybox] {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+img[data-fancybox]:hover {
+  opacity: 0.9;
+}
+
+/* Add zoom icon overlay for clickable images */
+.image-wrapper,
+.benefits-image-wrapper,
+.company-logo,
+.agent-photo,
+.floor-plan-container {
+  position: relative;
+}
+
+.image-wrapper::after,
+.benefits-image-wrapper::after,
+.company-logo::after,
+.agent-photo::after,
+.floor-plan-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.image-wrapper::before,
+.benefits-image-wrapper::before,
+.company-logo::before,
+.agent-photo::before,
+.floor-plan-container::before {
+  content: '🔍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.image-wrapper:hover::after,
+.benefits-image-wrapper:hover::after,
+.company-logo:hover::after,
+.agent-photo:hover::after,
+.floor-plan-container:hover::after,
+.image-wrapper:hover::before,
+.benefits-image-wrapper:hover::before,
+.company-logo:hover::before,
+.agent-photo:hover::before,
+.floor-plan-container:hover::before {
+  opacity: 1;
+}
+
 /* Mobile hamburger menu button */
 .mobile-menu-toggle {
   display: none;
@@ -356,7 +640,7 @@ html {
     transform: scale(0.8);
     transition: all 0.3s ease;
   }
-}
+  }
 
 /* Desktop scroll effects (1000px and above) - original approach */
 @media (min-width: 1001px) {
@@ -418,6 +702,18 @@ html {
   .logo-link.scrolled {
     position: relative;
     top: -1rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .row-5.scrolled .logo img, .row-5.scrolled .tuwima img, .scrolled .col-14 {
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+  }
+
+  .row-5.scrolled .nav-list-2 .text-item.selected a::after {
+    bottom: -1.6rem;
+    transition: all 0.3s ease;
   }
 }
 
@@ -1046,6 +1342,10 @@ html {
 .row-16 img {
 	width:100%
 }
+.btn-kopia-2 {
+	border-radius: 12px !important;
+
+}
 /* Responsive styles for .col-46, .row-24, .row-17, .btn-kopia, .btn-kopia-2, .btn-kopia-3, .btn-developer, and .text-141 */
 @media (max-width: 1000px) {
   .col-46 {
@@ -1249,3 +1549,8 @@ html {
   }
 }
 
+@media (max-width: 1000px) {
+	.grupa-7 {
+		max-width:  60%;
+  }
+}

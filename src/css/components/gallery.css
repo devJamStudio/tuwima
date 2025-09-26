@@ -613,6 +613,8 @@
     display: flex;
     justify-content: center;
     align-self: flex-start;
+		border-radius: 12px !important;
+
   }
 }
 

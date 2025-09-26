@@ -27,6 +27,10 @@ if ($hero_background && !empty($hero_background['url'])) {
     <button class="grupa-8" onclick="window.location.href='<?php echo esc_url($hero_button['url']); ?>'" aria-label="<?php echo esc_attr($hero_button['text']); ?> - <?php echo esc_attr(get_field('hero_title') ?: 'Green House'); ?>">
         <?php echo esc_html($hero_button['text']); ?>
     </button>
+    <?php else : ?>
+    <button class="grupa-8" onclick="window.location.href='#mieszkania'" aria-label="Zobacz mieszkania - Green House">
+        Zobacz mieszkania
+    </button>
     <?php endif; ?>
     <div class="grupa-7 group">
         <p class="text-10"><strong class="text-style-4"><?php echo get_field('stat_1_number') ?: '06.2026'; ?></strong><br class="text-style-3">&nbsp;<span class="text-style-5">&nbsp;</span><br><?php echo get_field('stat_1_label') ?: 'Planowane <br>zakończenie'; ?></p>

@@ -105,7 +105,7 @@ function get_price_table_status_text($status) {
 ?>
 
 <!-- Price Table Section -->
-<section class="price-table-section" data-aos="fade-up">
+<section class="price-table-section" >
     <div class="container">
         <div class="price-table-header">
             <h2 class="price-table-title"><?php echo esc_html($price_table_title); ?></h2>

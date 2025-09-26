@@ -277,7 +277,7 @@ $gallery_images = array_slice($gallery_images, 0, 5);
 
 <section class="galeria-new" id="galeria">
     <div class="gallery-title">
-        <img class="text-135" src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png" alt="<?php echo esc_attr($gallery_title); ?>" width="256" height="38" title="<?php echo esc_attr($gallery_title); ?>">
+        <img class="text-135" src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png" alt="<?php echo esc_attr($gallery_title); ?>" width="256" height="38" title="<?php echo esc_attr($gallery_title); ?>" data-fancybox="gallery-title" data-src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png">
     </div>
 
     <div class="gallery-container">
@@ -289,8 +289,8 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_0_url = is_array($image_0) ? $image_0['url'] : $image_0;
                 $image_0_alt = is_array($image_0) ? $image_0['alt'] : 'Gallery image 1';
                 ?>
-                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_0_url); ?>">
-                    <img src="<?php echo esc_url($image_0_url); ?>" alt="<?php echo esc_attr($image_0_alt); ?>">
+                <div class="gallery-item" data-fancybox="gallery" data-src="<?php echo esc_url($image_0_url); ?>">
+                    <img src="<?php echo esc_url($image_0_url); ?>" alt="<?php echo esc_attr($image_0_alt); ?>" data-fancybox="gallery" data-src="<?php echo esc_url($image_0_url); ?>">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
@@ -306,8 +306,8 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_1_url = is_array($image_1) ? $image_1['url'] : $image_1;
                 $image_1_alt = is_array($image_1) ? $image_1['alt'] : 'Gallery image 2';
                 ?>
-                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
-                    <img src="<?php echo esc_url($image_1_url); ?>" alt="<?php echo esc_attr($image_1_alt); ?>">
+                <div class="gallery-item" data-fancybox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
+                    <img src="<?php echo esc_url($image_1_url); ?>" alt="<?php echo esc_attr($image_1_alt); ?>" data-fancybox="gallery" data-src="<?php echo esc_url($image_1_url); ?>">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
@@ -320,8 +320,8 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_2_url = is_array($image_2) ? $image_2['url'] : $image_2;
                 $image_2_alt = is_array($image_2) ? $image_2['alt'] : 'Gallery image 3';
                 ?>
-                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
-                    <img src="<?php echo esc_url($image_2_url); ?>" alt="<?php echo esc_attr($image_2_alt); ?>">
+                <div class="gallery-item" data-fancybox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
+                    <img src="<?php echo esc_url($image_2_url); ?>" alt="<?php echo esc_attr($image_2_alt); ?>" data-fancybox="gallery" data-src="<?php echo esc_url($image_2_url); ?>">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
@@ -334,8 +334,8 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_3_url = is_array($image_3) ? $image_3['url'] : $image_3;
                 $image_3_alt = is_array($image_3) ? $image_3['alt'] : 'Gallery image 4';
                 ?>
-                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
-                    <img src="<?php echo esc_url($image_3_url); ?>" alt="<?php echo esc_attr($image_3_alt); ?>">
+                <div class="gallery-item" data-fancybox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
+                    <img src="<?php echo esc_url($image_3_url); ?>" alt="<?php echo esc_attr($image_3_alt); ?>" data-fancybox="gallery" data-src="<?php echo esc_url($image_3_url); ?>">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
@@ -348,8 +348,8 @@ $gallery_images = array_slice($gallery_images, 0, 5);
                 $image_4_url = is_array($image_4) ? $image_4['url'] : $image_4;
                 $image_4_alt = is_array($image_4) ? $image_4['alt'] : 'Gallery image 5';
                 ?>
-                <div class="gallery-item" data-lightbox="gallery" data-src="<?php echo esc_url($image_4_url); ?>">
-                    <img src="<?php echo esc_url($image_4_url); ?>" alt="<?php echo esc_attr($image_4_alt); ?>">
+                <div class="gallery-item" data-fancybox="gallery" data-src="<?php echo esc_url($image_4_url); ?>">
+                    <img src="<?php echo esc_url($image_4_url); ?>" alt="<?php echo esc_attr($image_4_alt); ?>" data-fancybox="gallery" data-src="<?php echo esc_url($image_4_url); ?>">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-text">Zobacz wszystkie</div>
                     </div>
@@ -398,11 +398,11 @@ function initGalleryLightbox() {
     }
 
     // Find all gallery items
-    const galleryItems = document.querySelectorAll('.gallery-item[data-lightbox="gallery"]');
+    const galleryItems = document.querySelectorAll('.gallery-item[data-fancybox="gallery"]');
     console.log('Found gallery items:', galleryItems.length);
 
     if (galleryItems.length === 0) {
-        console.error('No gallery items found with data-lightbox="gallery"');
+        console.error('No gallery items found with data-fancybox="gallery"');
         return;
     }
 

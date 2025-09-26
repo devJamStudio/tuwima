@@ -351,6 +351,7 @@
   display: flex;
   justify-content: center;
   background: var(--image-button-6-k) no-repeat;
+	background-position: center;
 }
 
 /* Mobile checkbox alignment fixes */

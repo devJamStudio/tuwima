@@ -9,6 +9,18 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * Generate alternating AOS animation attributes for columns
+ * @param int $column_index - The index of the column (0, 1, 2, etc.)
+ * @param int $base_delay - Base delay in milliseconds
+ * @return string - AOS attributes string
+ */
+function get_alternating_column_aos($column_index, $base_delay = 200) {
+    $direction = ($column_index % 2 === 0) ? 'fade-left' : 'fade-right';
+    $delay = $base_delay + ($column_index * 100);
+    return 'data-aos="' . $direction . '" data-aos-delay="' . $delay . '"';
+}
+
 // Get page builder blocks
 $blocks = get_field('page_builder_blocks');
 
@@ -75,7 +87,10 @@ function render_hero_slider_block($block, $aos_attributes) {
                 <div class="slider-container" id="hero-slider">
                     <?php foreach ($images as $index => $image): ?>
                         <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                            <img src="<?php echo esc_url($image['url']); ?>"
+                                 alt="<?php echo esc_attr($image['alt']); ?>"
+                                 data-fancybox="hero-gallery"
+                                 data-src="<?php echo esc_url($image['url']); ?>">
                             <div class="slide-overlay"></div>
                         </div>
                     <?php endforeach; ?>
@@ -720,11 +735,13 @@ function render_benefits_block($block, $aos_attributes) {
             <?php if (!empty($benefits)): ?>
                 <div class="benefits-grid" data-aos="fade-up" data-aos-delay="600">
                     <?php foreach ($benefits as $index => $benefit): ?>
-                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="<?php echo 800 + ($index * 100); ?>">
+                        <div class="benefit-item" <?php echo get_alternating_column_aos($index, 800); ?>>
                             <?php if ($benefit['benefit_icon']): ?>
                                 <div class="benefit-icon">
                                     <img src="<?php echo esc_url($benefit['benefit_icon']['url']); ?>"
-                                         alt="<?php echo esc_attr($benefit['benefit_icon']['alt']); ?>">
+                                         alt="<?php echo esc_attr($benefit['benefit_icon']['alt']); ?>"
+                                         data-fancybox="benefit-icons"
+                                         data-src="<?php echo esc_url($benefit['benefit_icon']['url']); ?>">
                                 </div>
                             <?php endif; ?>
 
@@ -989,11 +1006,13 @@ function render_location_block($block, $aos_attributes) {
                     <?php if (!empty($locations)): ?>
                         <div class="location-items">
                             <?php foreach ($locations as $index => $location): ?>
-                                <div class="location-item" data-aos="fade-up" data-aos-delay="<?php echo 800 + ($index * 100); ?>">
+                                <div class="location-item" <?php echo get_alternating_column_aos($index, 800); ?>>
                                     <?php if ($location['location_icon']): ?>
                                         <div class="location-icon">
                                             <img src="<?php echo esc_url($location['location_icon']['url']); ?>"
-                                                 alt="<?php echo esc_attr($location['location_icon']['alt']); ?>">
+                                                 alt="<?php echo esc_attr($location['location_icon']['alt']); ?>"
+                                                 data-fancybox="location-icons"
+                                                 data-src="<?php echo esc_url($location['location_icon']['url']); ?>">
                                         </div>
                                     <?php endif; ?>
 
@@ -1232,12 +1251,16 @@ function render_apartments_block($block, $aos_attributes) {
                     <img src="<?php echo get_template_directory_uri(); ?>/plansza/kropki.jpg"
                          alt="Plan piętra z oznaczeniami"
                          class="floor-plan-image"
+                         data-fancybox="floor-plans"
+                         data-src="<?php echo get_template_directory_uri(); ?>/plansza/kropki.jpg"
                          id="floor-plan-image">
 
                     <!-- Hover overlay image (lokale.jpg) - hidden by default -->
                     <img src="<?php echo get_template_directory_uri(); ?>/plansza/lokale.jpg"
                          alt="Plan piętra - podgląd"
                          class="floor-plan-hover-image"
+                         data-fancybox="floor-plans"
+                         data-src="<?php echo get_template_directory_uri(); ?>/plansza/lokale.jpg"
                          id="floor-plan-hover-image">
 
                     <!-- Interactive dots overlay - positioned over the actual dots in kropki.jpg -->
@@ -2018,7 +2041,9 @@ function render_contact_block($block, $aos_attributes) {
                         <?php if ($company_logo): ?>
                             <div class="company-logo" data-aos="fade-up" data-aos-delay="200">
                                 <img src="<?php echo esc_url($company_logo['url']); ?>"
-                                     alt="<?php echo esc_attr($company_logo['alt']); ?>">
+                                     alt="<?php echo esc_attr($company_logo['alt']); ?>"
+                                     data-fancybox="company-gallery"
+                                     data-src="<?php echo esc_url($company_logo['url']); ?>">
                             </div>
                         <?php endif; ?>
 
@@ -2064,11 +2089,13 @@ function render_contact_block($block, $aos_attributes) {
                     <?php if (!empty($agents)): ?>
                         <div class="contact-agents">
                             <?php foreach ($agents as $index => $agent): ?>
-                                <div class="agent-card" data-aos="fade-up" data-aos-delay="<?php echo 700 + ($index * 100); ?>">
+                                <div class="agent-card" <?php echo get_alternating_column_aos($index, 700); ?>>
                                     <?php if ($agent['agent_photo']): ?>
                                         <div class="agent-photo">
                                             <img src="<?php echo esc_url($agent['agent_photo']['url']); ?>"
-                                                 alt="<?php echo esc_attr($agent['agent_photo']['alt']); ?>">
+                                                 alt="<?php echo esc_attr($agent['agent_photo']['alt']); ?>"
+                                                 data-fancybox="agents-gallery"
+                                                 data-src="<?php echo esc_url($agent['agent_photo']['url']); ?>">
                                         </div>
                                     <?php endif; ?>
 
@@ -2721,37 +2748,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <?php
-// Add AOS fallback script at the end
-?>
-<script>
-// AOS Fallback - ensure AOS is initialized even if there were loading issues
-(function() {
-    function initAOS() {
-        if (typeof AOS !== 'undefined') {
-            AOS.refresh();
-            console.log('AOS initialized successfully');
-        } else {
-            console.warn('AOS not available, removing data-aos attributes');
-            // If AOS still not available, remove data-aos attributes to prevent errors
-            document.querySelectorAll('[data-aos]').forEach(function(element) {
-                element.removeAttribute('data-aos');
-                element.removeAttribute('data-aos-delay');
-                element.removeAttribute('data-aos-duration');
-            });
-        }
-    }
-
-    // Try to initialize immediately
-    initAOS();
-
-    // Also try on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAOS);
-    }
-
-    // And as a final fallback, try after a delay
-    setTimeout(initAOS, 2000);
-})();
-</script>
-<?php
+// AOS is now handled in functions.php with proper error handling
 ?>

@@ -65,6 +65,8 @@
   width: 225px;
   transition: all 0.3s ease;
   cursor: pointer;
+	border-radius: 12px !important;
+
 }
 
 .btn-kopia-3:hover {

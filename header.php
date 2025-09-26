@@ -135,11 +135,222 @@
 		// Also initialize after a short delay to ensure all elements are loaded
 		setTimeout(highlightNavigation, 100);
 	});
+
+	// Aggressive loader removal - force hide loader if it's still visible
+	(function() {
+		function forceHideLoader() {
+			const loader = document.getElementById('loader');
+			if (loader && !loader.classList.contains('hidden')) {
+				loader.style.display = 'none';
+				loader.classList.add('hidden');
+				console.log('Loader force-hidden after timeout');
+			}
+		}
+
+		// Try multiple times to hide loader (extended timing)
+		setTimeout(forceHideLoader, 2000);
+		setTimeout(forceHideLoader, 3500);
+		setTimeout(forceHideLoader, 6000);
+
+		// Also hide on window load (extended timing)
+		window.addEventListener('load', function() {
+			setTimeout(forceHideLoader, 1500);
+		});
+	})();
+
+	// Ensure Fancybox works for all images
+	document.addEventListener('DOMContentLoaded', function() {
+		// Wait for Fancybox to load
+		function initFancyboxForAllImages() {
+			if (typeof Fancybox !== 'undefined') {
+				// Simple Fancybox initialization
+				Fancybox.bind("[data-fancybox]", {
+					Toolbar: {
+						display: {
+							left: ["infobar"],
+							middle: ["zoomIn", "zoomOut"],
+							right: ["slideshow", "close"]
+						}
+					},
+					Images: {
+						zoom: true
+					}
+				});
+
+				// Make ALL images clickable if they don't have data-fancybox
+				document.querySelectorAll('img').forEach(function(img) {
+					if (!img.hasAttribute('data-fancybox') &&
+						!img.closest('nav') &&
+						!img.closest('.navbar') &&
+						!img.closest('.logo') &&
+						!img.closest('.contact-button') &&
+						img.src &&
+						!img.src.includes('data:image') &&
+						img.offsetWidth > 50 &&
+						img.offsetHeight > 50) {
+
+						img.setAttribute('data-fancybox', 'all-images');
+						img.setAttribute('data-src', img.src);
+						img.style.cursor = 'pointer';
+					}
+				});
+
+				console.log('Fancybox initialized for all images');
+			} else {
+				console.log('Fancybox not loaded yet, retrying...');
+				setTimeout(initFancyboxForAllImages, 500);
+			}
+		}
+
+		// Initialize immediately and with delays
+		initFancyboxForAllImages();
+		setTimeout(initFancyboxForAllImages, 1000);
+		setTimeout(initFancyboxForAllImages, 3000);
+	});
+
+	// Fallback lightbox if Fancybox fails
+	document.addEventListener('click', function(e) {
+		if (e.target.tagName === 'IMG' &&
+			!e.target.closest('nav') &&
+			!e.target.closest('.navbar') &&
+			!e.target.closest('.logo') &&
+			!e.target.closest('.contact-button') &&
+			e.target.src &&
+			!e.target.src.includes('data:image') &&
+			e.target.offsetWidth > 50 &&
+			e.target.offsetHeight > 50) {
+
+			// Check if Fancybox is working
+			if (typeof Fancybox === 'undefined' || !e.target.hasAttribute('data-fancybox')) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				// Create simple lightbox
+				var lightbox = document.createElement('div');
+				lightbox.style.cssText = `
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.9);
+					z-index: 9999;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					cursor: pointer;
+				`;
+
+				var img = document.createElement('img');
+				img.src = e.target.src;
+				img.style.cssText = `
+					max-width: 90%;
+					max-height: 90%;
+					object-fit: contain;
+				`;
+
+				lightbox.appendChild(img);
+				document.body.appendChild(lightbox);
+
+				// Close on click
+				lightbox.addEventListener('click', function() {
+					document.body.removeChild(lightbox);
+				});
+
+				// Close on ESC
+				document.addEventListener('keydown', function escHandler(event) {
+					if (event.key === 'Escape') {
+						document.body.removeChild(lightbox);
+						document.removeEventListener('keydown', escHandler);
+					}
+				});
+			}
+		}
+	});
 	</script>
+
+	<style>
+	.loader {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: #fff;
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.5s ease-out;
+	}
+
+	.loader.hidden {
+		opacity: 0;
+		pointer-events: none;
+		display: none !important;
+	}
+
+	.loader .logo {
+		width: 200px;
+		height: 200px;
+		position: relative;
+		padding: 8px;
+	}
+
+	.loader .logo:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background-image: conic-gradient(#00a906, transparent 240deg);
+		animation: rotate 1s linear infinite;
+	}
+
+	.loader .logo:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 94%;
+		height: 94%;
+		background: #fff;
+		border-radius: 50%;
+		z-index: 1;
+	}
+
+	.loader .logo img {
+		width: 100%;
+		height: 100%;
+		padding: 20%;
+		object-fit: contain;
+		object-position: center;
+		position: relative;
+		z-index: 2;
+	}
+
+	@keyframes rotate {
+		from {
+			transform: rotate(360deg);
+		}
+		to {
+			transform: rotate(0);
+		}
+	}
+	</style>
 
 	<div id="content">
 		<div id="loader" class="loader">
 			<div class="logo">
-				<img src="<?php echo  esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) );;?>"/>
+				<?php
+				$custom_logo = wp_get_attachment_url( get_theme_mod( 'custom_logo' ) );
+				$fallback_logo = get_template_directory_uri() . '/images/logo.png';
+				$logo_url = $custom_logo ? $custom_logo : $fallback_logo;
+				?>
+				<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo get_bloginfo('name'); ?>" width="48" height="52" onerror="console.log('Loader image failed to load: <?php echo esc_js($logo_url); ?>')"/>
 			</div>
 		</div>

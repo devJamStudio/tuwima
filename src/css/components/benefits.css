@@ -242,6 +242,8 @@
   background: var(--image-prostok-17) no-repeat;
   transition: all 0.3s ease;
   cursor: pointer;
+	border-radius: 12px !important;
+
 }
 @media screen and (min-width: 1000px) {
 	.btn-kopia {
@@ -252,6 +254,7 @@
 		background: var(--image-prostok-17) no-repeat;
 		transition: all 0.3s ease;
 		cursor: pointer;
+
 	}
 }
 .btn-kopia:hover {
