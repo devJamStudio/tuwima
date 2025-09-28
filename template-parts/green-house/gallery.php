@@ -277,7 +277,7 @@ $gallery_images = array_slice($gallery_images, 0, 5);
 
 <section class="galeria-new" id="galeria">
     <div class="gallery-title">
-        <img class="text-135" src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png" alt="<?php echo esc_attr($gallery_title); ?>" width="256" height="38" title="<?php echo esc_attr($gallery_title); ?>" data-fancybox="gallery-title" data-src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png">
+        <img class="text-135" src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png" alt="<?php echo esc_attr($gallery_title); ?>" width="256" height="38" title="<?php echo esc_attr($gallery_title); ?>" data-fancybox="single-image" data-src="<?php echo get_template_directory_uri(); ?>/html/images/zobacz_galerie.png">
     </div>
 
     <div class="gallery-container">

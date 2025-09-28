@@ -23,6 +23,213 @@ if (function_exists('acf_add_local_field_group')) {
         ));
     }
 
+    // Site Customization Fields
+    acf_add_local_field_group(array(
+        'key' => 'group_site_customization',
+        'title' => 'Site Customization',
+        'fields' => array(
+            array(
+                'key' => 'field_login_logo',
+                'label' => 'Login Page Logo',
+                'name' => 'login_logo',
+                'type' => 'image',
+                'instructions' => 'Upload logo for the login page',
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+            ),
+            array(
+                'key' => 'field_primary_color',
+                'label' => 'Primary Color',
+                'name' => 'primary_color',
+                'type' => 'color_picker',
+                'default_value' => '#00a906',
+                'instructions' => 'Main green color used throughout the site',
+            ),
+            array(
+                'key' => 'field_secondary_color',
+                'label' => 'Secondary Color',
+                'name' => 'secondary_color',
+                'type' => 'color_picker',
+                'default_value' => '#ffffff',
+                'instructions' => 'Secondary color for backgrounds and text',
+            ),
+            array(
+                'key' => 'field_accent_color',
+                'label' => 'Accent Color',
+                'name' => 'accent_color',
+                'type' => 'color_picker',
+                'default_value' => '#f8f9fa',
+                'instructions' => 'Accent color for highlights and borders',
+            ),
+            array(
+                'key' => 'field_text_color',
+                'label' => 'Text Color',
+                'name' => 'text_color',
+                'type' => 'color_picker',
+                'default_value' => '#333333',
+                'instructions' => 'Main text color',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'theme-options',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+    ));
+
+    // Interactive Apartments Table Fields
+    acf_add_local_field_group(array(
+        'key' => 'group_apartments_table',
+        'title' => 'Interactive Apartments Table',
+        'fields' => array(
+            array(
+                'key' => 'field_apartments_table_title',
+                'label' => 'Table Title',
+                'name' => 'apartments_table_title',
+                'type' => 'text',
+                'default_value' => 'Dostępne mieszkania',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'field_apartments_list',
+                'label' => 'Apartments List',
+                'name' => 'apartments_list',
+                'type' => 'repeater',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_apartment_number',
+                        'label' => 'Apartment Number',
+                        'name' => 'number',
+                        'type' => 'text',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_apartment_rooms',
+                        'label' => 'Number of Rooms',
+                        'name' => 'rooms',
+                        'type' => 'number',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_apartment_area',
+                        'label' => 'Area (m²)',
+                        'name' => 'area',
+                        'type' => 'number',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_apartment_garden_area',
+                        'label' => 'Garden Area (m²)',
+                        'name' => 'garden_area',
+                        'type' => 'number',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_apartment_status',
+                        'label' => 'Status',
+                        'name' => 'status',
+                        'type' => 'select',
+                        'choices' => array(
+                            'available' => 'Available',
+                            'reserved' => 'Reserved',
+                            'sold' => 'Sold',
+                        ),
+                        'default_value' => 'available',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'field_apartment_current_price',
+                        'label' => 'Current Price',
+                        'name' => 'current_price',
+                        'type' => 'text',
+                        'default_value' => '450 000 PLN',
+                    ),
+                    array(
+                        'key' => 'field_apartment_price_per_sqm',
+                        'label' => 'Price per m²',
+                        'name' => 'price_per_sqm',
+                        'type' => 'text',
+                        'default_value' => '8 182 PLN/m²',
+                    ),
+                    array(
+                        'key' => 'field_apartment_price_history',
+                        'label' => 'Price History',
+                        'name' => 'price_history',
+                        'type' => 'repeater',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_price_date',
+                                'label' => 'Date',
+                                'name' => 'date',
+                                'type' => 'date_picker',
+                                'required' => 1,
+                            ),
+                            array(
+                                'key' => 'field_price_amount',
+                                'label' => 'Price',
+                                'name' => 'price',
+                                'type' => 'text',
+                                'required' => 1,
+                            ),
+                            array(
+                                'key' => 'field_price_per_sqm_history',
+                                'label' => 'Price per m²',
+                                'name' => 'price_per_sqm',
+                                'type' => 'text',
+                                'required' => 1,
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_apartment_plan_image',
+                        'label' => 'Plan Image',
+                        'name' => 'plan_image',
+                        'type' => 'image',
+                        'return_format' => 'url',
+                    ),
+                    array(
+                        'key' => 'field_apartment_plan_pdf',
+                        'label' => 'Plan PDF',
+                        'name' => 'plan_pdf',
+                        'type' => 'file',
+                        'return_format' => 'url',
+                        'mime_types' => 'pdf',
+                    ),
+                    array(
+                        'key' => 'field_apartment_contact_email',
+                        'label' => 'Contact Email',
+                        'name' => 'contact_email',
+                        'type' => 'email',
+                        'default_value' => 'biuro@budraise.pl',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+    ));
+
     // Hero Section Fields
     acf_add_local_field_group(array(
         'key' => 'group_hero_simple',

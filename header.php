@@ -189,7 +189,7 @@
 						img.offsetWidth > 50 &&
 						img.offsetHeight > 50) {
 
-						img.setAttribute('data-fancybox', 'all-images');
+						img.setAttribute('data-fancybox', 'single-image');
 						img.setAttribute('data-src', img.src);
 						img.style.cursor = 'pointer';
 					}

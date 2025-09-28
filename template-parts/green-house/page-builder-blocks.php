@@ -21,6 +21,18 @@ function get_alternating_column_aos($column_index, $base_delay = 200) {
     return 'data-aos="' . $direction . '" data-aos-delay="' . $delay . '"';
 }
 
+/**
+ * Generate alternating AOS animation attributes for sections
+ * @param int $section_index - The index of the section (0, 1, 2, etc.)
+ * @param int $base_delay - Base delay in milliseconds
+ * @return string - AOS attributes string
+ */
+function get_alternating_section_aos($section_index, $base_delay = 200) {
+    $direction = ($section_index % 2 === 0) ? 'fade-right' : 'fade-left';
+    $delay = $base_delay + ($section_index * 200);
+    return 'data-aos="' . $direction . '" data-aos-delay="' . $delay . '"';
+}
+
 // Get page builder blocks
 $blocks = get_field('page_builder_blocks');
 
@@ -31,8 +43,8 @@ if (!$blocks || !is_array($blocks)) {
 foreach ($blocks as $index => $block) {
     $block_type = $block['block_type'] ?? '';
 
-    // Add AOS animation attributes with fallback
-    $aos_attributes = 'data-aos="fade-up" data-aos-delay="' . ($index * 100) . '"';
+    // Add alternating AOS animation attributes for sections
+    $aos_attributes = get_alternating_section_aos($index, 200);
 
     switch ($block_type) {
         case 'hero-slider':
@@ -89,7 +101,7 @@ function render_hero_slider_block($block, $aos_attributes) {
                         <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
                             <img src="<?php echo esc_url($image['url']); ?>"
                                  alt="<?php echo esc_attr($image['alt']); ?>"
-                                 data-fancybox="hero-gallery"
+                                 data-fancybox="single-image"
                                  data-src="<?php echo esc_url($image['url']); ?>">
                             <div class="slide-overlay"></div>
                         </div>
@@ -485,10 +497,10 @@ function render_text_image_block($block, $image_position, $aos_attributes) {
         <div class="container">
             <div class="text-image-content">
                 <?php if ($image_position === 'left'): ?>
-                    <div class="image-column" data-aos="fade-right" data-aos-delay="200">
+                    <div class="image-column" data-aos="fade-right" data-aos-delay="300">
                         <?php if ($image): ?>
                             <div class="image-wrapper">
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="text-image-img" data-fancybox="text-image-gallery" data-src="<?php echo esc_url($image['url']); ?>">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="text-image-img" data-fancybox="single-image" data-src="<?php echo esc_url($image['url']); ?>">
                                 <div class="image-overlay">
                                     <div class="zoom-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -502,7 +514,7 @@ function render_text_image_block($block, $image_position, $aos_attributes) {
                     </div>
                 <?php endif; ?>
 
-                <div class="text-column" data-aos="fade-<?php echo $image_position === 'left' ? 'left' : 'right'; ?>" data-aos-delay="400">
+                <div class="text-column" data-aos="fade-<?php echo $image_position === 'left' ? 'left' : 'right'; ?>" data-aos-delay="500">
                     <?php if ($title): ?>
                         <h2 class="section-title"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
@@ -521,10 +533,10 @@ function render_text_image_block($block, $image_position, $aos_attributes) {
                 </div>
 
                 <?php if ($image_position === 'right'): ?>
-                    <div class="image-column" data-aos="fade-left" data-aos-delay="200">
+                    <div class="image-column" data-aos="fade-left" data-aos-delay="300">
                         <?php if ($image): ?>
                             <div class="image-wrapper">
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="text-image-img" data-fancybox="text-image-gallery" data-src="<?php echo esc_url($image['url']); ?>">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="text-image-img" data-fancybox="single-image" data-src="<?php echo esc_url($image['url']); ?>">
                                 <div class="image-overlay">
                                     <div class="zoom-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -693,7 +705,7 @@ function render_benefits_block($block, $aos_attributes) {
     <section class="benefits-section" id="o-inwestycji" <?php echo $aos_attributes; ?>>
         <div class="container">
             <div class="benefits-content">
-                <div class="benefits-text" data-aos="fade-right" data-aos-delay="200">
+                <div class="benefits-text" data-aos="fade-right" data-aos-delay="300">
                     <?php if ($title): ?>
                         <h2 class="section-title"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
@@ -711,13 +723,13 @@ function render_benefits_block($block, $aos_attributes) {
                     <?php endif; ?>
                 </div>
 
-                <div class="benefits-visual" data-aos="fade-left" data-aos-delay="400">
+                <div class="benefits-visual" data-aos="fade-left" data-aos-delay="500">
                     <?php if ($background_image): ?>
                         <div class="benefits-image-wrapper">
                             <img src="<?php echo esc_url($background_image['url']); ?>"
                                  alt="<?php echo esc_attr($background_image['alt']); ?>"
                                  class="benefits-image"
-                                 data-fancybox="benefits-gallery"
+                                 data-fancybox="single-image"
                                  data-src="<?php echo esc_url($background_image['url']); ?>">
                             <div class="image-overlay">
                                 <div class="zoom-icon">
@@ -740,7 +752,7 @@ function render_benefits_block($block, $aos_attributes) {
                                 <div class="benefit-icon">
                                     <img src="<?php echo esc_url($benefit['benefit_icon']['url']); ?>"
                                          alt="<?php echo esc_attr($benefit['benefit_icon']['alt']); ?>"
-                                         data-fancybox="benefit-icons"
+                                         data-fancybox="single-image"
                                          data-src="<?php echo esc_url($benefit['benefit_icon']['url']); ?>">
                                 </div>
                             <?php endif; ?>
@@ -992,7 +1004,7 @@ function render_location_block($block, $aos_attributes) {
             </div>
 
             <div class="location-content">
-                <div class="location-map" data-aos="fade-right" data-aos-delay="400">
+                <div class="location-map" data-aos="fade-right" data-aos-delay="300">
                     <?php if ($map_embed): ?>
                         <div class="map-container">
                             <div class="map-wrapper">
@@ -1002,16 +1014,16 @@ function render_location_block($block, $aos_attributes) {
                     <?php endif; ?>
                 </div>
 
-                <div class="location-info" data-aos="fade-left" data-aos-delay="600">
+                <div class="location-info" data-aos="fade-left" data-aos-delay="500">
                     <?php if (!empty($locations)): ?>
                         <div class="location-items">
                             <?php foreach ($locations as $index => $location): ?>
-                                <div class="location-item" <?php echo get_alternating_column_aos($index, 800); ?>>
+                                <div class="location-item" <?php echo get_alternating_column_aos($index, 700); ?>>
                                     <?php if ($location['location_icon']): ?>
                                         <div class="location-icon">
                                             <img src="<?php echo esc_url($location['location_icon']['url']); ?>"
                                                  alt="<?php echo esc_attr($location['location_icon']['alt']); ?>"
-                                                 data-fancybox="location-icons"
+                                                 data-fancybox="single-image"
                                                  data-src="<?php echo esc_url($location['location_icon']['url']); ?>">
                                         </div>
                                     <?php endif; ?>
@@ -1251,7 +1263,7 @@ function render_apartments_block($block, $aos_attributes) {
                     <img src="<?php echo get_template_directory_uri(); ?>/plansza/kropki.jpg"
                          alt="Plan piętra z oznaczeniami"
                          class="floor-plan-image"
-                         data-fancybox="floor-plans"
+                         data-fancybox="single-image"
                          data-src="<?php echo get_template_directory_uri(); ?>/plansza/kropki.jpg"
                          id="floor-plan-image">
 
@@ -1259,7 +1271,7 @@ function render_apartments_block($block, $aos_attributes) {
                     <img src="<?php echo get_template_directory_uri(); ?>/plansza/lokale.jpg"
                          alt="Plan piętra - podgląd"
                          class="floor-plan-hover-image"
-                         data-fancybox="floor-plans"
+                         data-fancybox="single-image"
                          data-src="<?php echo get_template_directory_uri(); ?>/plansza/lokale.jpg"
                          id="floor-plan-hover-image">
 
@@ -1707,7 +1719,7 @@ function render_visualizations_block($block, $aos_attributes) {
                                     <div class="slide-wrapper">
                                         <img src="<?php echo esc_url($image['url']); ?>"
                                              alt="<?php echo esc_attr($image['alt']); ?>"
-                                             data-fancybox="visualizations"
+                                             data-fancybox="single-image"
                                              data-src="<?php echo esc_url($image['url']); ?>">
                                         <div class="slide-overlay">
                                             <div class="zoom-icon">
@@ -2037,18 +2049,18 @@ function render_contact_block($block, $aos_attributes) {
 
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="contact-info">
+                    <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
                         <?php if ($company_logo): ?>
-                            <div class="company-logo" data-aos="fade-up" data-aos-delay="200">
+                            <div class="company-logo">
                                 <img src="<?php echo esc_url($company_logo['url']); ?>"
                                      alt="<?php echo esc_attr($company_logo['alt']); ?>"
-                                     data-fancybox="company-gallery"
+                                     data-fancybox="single-image"
                                      data-src="<?php echo esc_url($company_logo['url']); ?>">
                             </div>
                         <?php endif; ?>
 
                         <?php if ($address): ?>
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-item">
                                 <h4>Adres</h4>
                                 <div class="contact-content">
                                     <?php echo wp_kses_post($address); ?>
@@ -2057,7 +2069,7 @@ function render_contact_block($block, $aos_attributes) {
                         <?php endif; ?>
 
                         <?php if ($email): ?>
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="contact-item">
                                 <h4>Email</h4>
                                 <div class="contact-content">
                                     <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
@@ -2066,7 +2078,7 @@ function render_contact_block($block, $aos_attributes) {
                         <?php endif; ?>
 
                         <?php if ($phone): ?>
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="contact-item">
                                 <h4>Telefon</h4>
                                 <div class="contact-content">
                                     <a href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_html($phone); ?></a>
@@ -2075,7 +2087,7 @@ function render_contact_block($block, $aos_attributes) {
                         <?php endif; ?>
 
                         <?php if ($company_details): ?>
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="600">
+                            <div class="contact-item">
                                 <h4>Dane firmy</h4>
                                 <div class="contact-content">
                                     <?php echo wp_kses_post($company_details); ?>
@@ -2087,14 +2099,14 @@ function render_contact_block($block, $aos_attributes) {
 
                 <div class="col-lg-6">
                     <?php if (!empty($agents)): ?>
-                        <div class="contact-agents">
+                        <div class="contact-agents" data-aos="fade-left" data-aos-delay="500">
                             <?php foreach ($agents as $index => $agent): ?>
                                 <div class="agent-card" <?php echo get_alternating_column_aos($index, 700); ?>>
                                     <?php if ($agent['agent_photo']): ?>
                                         <div class="agent-photo">
                                             <img src="<?php echo esc_url($agent['agent_photo']['url']); ?>"
                                                  alt="<?php echo esc_attr($agent['agent_photo']['alt']); ?>"
-                                                 data-fancybox="agents-gallery"
+                                                 data-fancybox="single-image"
                                                  data-src="<?php echo esc_url($agent['agent_photo']['url']); ?>">
                                         </div>
                                     <?php endif; ?>
@@ -2113,7 +2125,7 @@ function render_contact_block($block, $aos_attributes) {
                     <?php endif; ?>
 
                     <!-- Contact Form -->
-                    <div class="contact-form-container" data-aos="fade-up" data-aos-delay="800">
+                    <div class="contact-form-container" data-aos="fade-left" data-aos-delay="700">
                         <?php future_display_contact_messages(); ?>
 
                         <form id="contact-form" class="contact-form" method="post" action="">

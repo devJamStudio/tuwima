@@ -16,7 +16,7 @@ get_header(); ?>
                     <h1 class="text-9xl font-bold text-primary mb-4">404</h1>
                     <div class="w-24 h-1 bg-primary mx-auto"></div>
                 </div>
-                
+
                 <!-- Error Message -->
                 <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="text-3xl font-semibold text-gray-800 mb-4">
@@ -26,7 +26,7 @@ get_header(); ?>
                         <?php echo get_field('404_description', 'option') ?: 'Przepraszamy, ale strona której szukasz nie istnieje lub została przeniesiona.'; ?>
                     </p>
                 </div>
-                
+
                 <!-- Search Form -->
                 <div class="mb-8" data-aos="fade-up" data-aos-delay="400">
                     <form role="search" method="get" class="search-form max-w-md mx-auto" action="<?php echo esc_url(home_url('/')); ?>">
@@ -40,7 +40,7 @@ get_header(); ?>
                         </div>
                     </form>
                 </div>
-                
+
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="btn btn-primary">
@@ -50,7 +50,7 @@ get_header(); ?>
                         <?php echo get_field('404_contact_button', 'option') ?: 'Kontakt'; ?>
                     </a>
                 </div>
-                
+
                 <!-- Additional Content -->
                 <?php if (get_field('404_additional_content', 'option')): ?>
                 <div class="mt-12" data-aos="fade-up" data-aos-delay="800">

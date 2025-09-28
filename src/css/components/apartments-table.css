@@ -15,18 +15,20 @@
 }
 
 @media (max-width: 999px) {
-  .apartments-table tbody tr::before {
-    content: attr(data-apartment);
-    position: absolute !important;
-    top: -12px !important;
-    left: 20px !important;
-    background: #00a906 !important;
-    color: white !important;
-    padding: 0.5rem 1rem !important;
-    border-radius: 20px !important;
-    font-weight: bold !important;
-    font-size: clamp(14px, 3vw, 16px) !important;
-    display: none;
+  .apartments-table tbody tr {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    min-height: 367px !important;
+    gap: 7px !important;
+    margin-bottom: 1.5rem !important;
+    border: 2px solid #00a906 !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    background: #fff !important;
+    box-shadow: 0 4px 8px #0000001a !important;
+    position: relative !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
   }
 }
 

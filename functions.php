@@ -382,6 +382,39 @@ function future_scripts() {
 	wp_enqueue_style( 'fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', array(), '5.0' );
 	wp_enqueue_script( 'fancybox-js', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', array(), '5.0', true );
 
+	// Add custom CSS variables for site customization
+	$primary_color = get_field('primary_color', 'option') ?: '#00a906';
+	$secondary_color = get_field('secondary_color', 'option') ?: '#ffffff';
+	$accent_color = get_field('accent_color', 'option') ?: '#f8f9fa';
+	$text_color = get_field('text_color', 'option') ?: '#333333';
+
+	$custom_css = "
+	:root {
+		--primary-color: {$primary_color};
+		--secondary-color: {$secondary_color};
+		--accent-color: {$accent_color};
+		--text-color: {$text_color};
+	}
+	";
+
+	wp_add_inline_style('future-main', $custom_css);
+
+	// Add login page logo customization
+	$login_logo = get_field('login_logo', 'option');
+	if ($login_logo) {
+		$login_css = "
+		.login h1 a {
+			background-image: url('{$login_logo}') !important;
+			background-size: contain !important;
+			background-repeat: no-repeat !important;
+			background-position: center !important;
+			width: 200px !important;
+			height: 100px !important;
+		}
+		";
+		wp_add_inline_style('future-main', $login_css);
+	}
+
 	// Debug script to check Fancybox loading
 	wp_add_inline_script( 'fancybox-js', '
 		console.log("Fancybox script loaded");
@@ -464,17 +497,8 @@ function future_scripts() {
 							img.offsetHeight > 30) {
 
 							// Determine gallery group based on context
-							var galleryGroup = "general-gallery";
-							if (img.closest(".benefits-section")) galleryGroup = "benefits-gallery";
-							else if (img.closest(".location-section")) galleryGroup = "location-gallery";
-							else if (img.closest(".contact-section")) galleryGroup = "contact-gallery";
-							else if (img.closest(".developer-section")) galleryGroup = "developer-gallery";
-							else if (img.closest(".gallery-section, .galeria-new")) galleryGroup = "gallery";
-							else if (img.closest(".apartments-section")) galleryGroup = "apartments-gallery";
-							else if (img.closest(".hero-section")) galleryGroup = "hero-gallery";
-							else if (img.closest(".text-image-section")) galleryGroup = "text-image-gallery";
-							else if (img.closest(".visualizations-section")) galleryGroup = "visualizations";
-							else if (img.closest(".floor-plan-section")) galleryGroup = "floor-plans";
+							var galleryGroup = "single-image";
+							if (img.closest(".gallery-section, .galeria-new")) galleryGroup = "gallery";
 
 							img.setAttribute("data-fancybox", galleryGroup);
 							img.setAttribute("data-src", img.src);
