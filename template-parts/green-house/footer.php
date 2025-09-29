@@ -184,6 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Refresh AOS after page load to ensure all animations work
+if (typeof AOS !== 'undefined') {
+    AOS.refresh();
+    console.log('AOS refreshed');
+}
 </script>
 
 <!-- Privacy Policy Modal -->

@@ -8,6 +8,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Get AOS attributes from global
+$aos_direction = $GLOBALS['current_section_aos']['direction'] ?? 'fade-up';
+$aos_delay = $GLOBALS['current_section_aos']['delay'] ?? 200;
+
 // Get apartments data from ACF fields
 $apartments_data = get_field('apartments_list');
 $table_title = get_field('apartments_table_title') ?: 'Dostępne mieszkania';
@@ -229,10 +233,8 @@ function get_status_text($status) {
 }
 </style>
 
+<section class="apartments-table-section" data-aos="<?php echo $aos_direction; ?>" data-aos-delay="<?php echo $aos_delay; ?>">
 <div class="apartments-table-container">
-    <?php if ($table_title): ?>
-        <h3 class="apartments-table-title"><?php echo esc_html($table_title); ?></h3>
-    <?php endif; ?>
     <table class="apartments-table">
         <thead>
             <tr>
@@ -424,3 +426,4 @@ document.addEventListener('keydown', function(event) {
     }
 });
 </script>
+</section>

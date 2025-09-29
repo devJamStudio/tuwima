@@ -498,7 +498,7 @@ function future_scripts() {
 
 							// Determine gallery group based on context
 							var galleryGroup = "single-image";
-							if (img.closest(".gallery-section, .galeria-new")) galleryGroup = "gallery";
+							if (img.closest(".gallery-section, .galeria-new, .gallery-item")) galleryGroup = "gallery";
 
 							img.setAttribute("data-fancybox", galleryGroup);
 							img.setAttribute("data-src", img.src);

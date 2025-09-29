@@ -7,16 +7,20 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+// Get AOS attributes from global
+$aos_direction = $GLOBALS['current_section_aos']['direction'] ?? 'fade-up';
+$aos_delay = $GLOBALS['current_section_aos']['delay'] ?? 200;
 ?>
 
-<section class="o-inwestycji flex flex-col lg:flex-row" id="o-inwestycji">
+<section class="o-inwestycji group" id="o-inwestycji" data-aos="<?php echo $aos_direction; ?>" data-aos-delay="<?php echo $aos_delay; ?>">
     <div class="col-5">
         <p class="text-16"><?php echo get_field('about_title') ?: 'O inwestycji'; ?></p>
         <p class="text-17"><?php echo get_field('about_subtitle') ?: 'Inwestycja w przyszłość<br>Twojej rodziny.'; ?></p>
         <p class="text-18"><?php echo get_field('about_content') ?: 'Zapraszamy do nowoczesnej inwestycji mieszkaniowej w spokojnej części Sosnowca, zaledwie kilka minut od centrum. Osiedle składa się z 14 domów w zabudowie bliźniaczej – łącznie 28 mieszkań. To idealna propozycja dla osób ceniących komfort, prywatność i dogodną lokalizację.<br><span class="text-style-7">&nbsp;</span><br>W ofercie znajdują się mieszkania na parterze z prywatnymi ogródkami oraz lokale na piętrze z przestronnymi balkonami. Każde z mieszkań zostało zaprojektowane z myślą o wygodzie mieszkańców – nowoczesny układ, funkcjonalne rozwiązania i wysoki standard wykończenia gwarantują komfort codziennego życia.<br><span class="text-style-7">&nbsp;</span><br>Osiedle znajduje się w cichej, zielonej okolicy, a jednocześnie blisko szkół, sklepów, parku i innych udogodnień. Doskonała komunikacja zapewnia szybki dojazd do centrum oraz innych dzielnic miasta. To alternatywa dla zatłoczonych blokowisk – mniejsza liczba mieszkańców, brak wysokiej zabudowy i spokojna atmosfera sprzyjają relaksowi i budowaniu dobrych relacji sąsiedzkich.'; ?></p>
-        <button class="btn" onclick="window.location.href='<?php echo esc_url(get_field('about_button')['url'] ?? '#mieszkania'); ?>'" aria-label="<?php echo esc_attr(get_field('about_button')['text'] ?? 'Zobacz mieszkania'); ?> - <?php echo esc_attr(get_field('about_title') ?: 'O inwestycji'); ?>">
+        <div class="btn">
             <?php echo esc_html(get_field('about_button')['text'] ?? 'Zobacz mieszkania'); ?>
-        </button>
+        </div>
     </div>
     <img class="layer-3" src="<?php echo get_field('about_image')['url'] ?? get_template_directory_uri() . '/html/images/5.jpg'; ?>" alt="" width="747" height="686">
 </section>

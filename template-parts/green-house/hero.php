@@ -24,11 +24,11 @@ if ($hero_background && !empty($hero_background['url'])) {
     <?php
     $hero_button = get_field('hero_button');
     if (!empty($hero_button['text']) && !empty($hero_button['url']) && $hero_button['url'] !== '#') : ?>
-    <button class="grupa-8" onclick="window.location.href='<?php echo esc_url($hero_button['url']); ?>'" aria-label="<?php echo esc_attr($hero_button['text']); ?> - <?php echo esc_attr(get_field('hero_title') ?: 'Green House'); ?>">
+    <button class="grupa-8" onclick="window.location.href='<?php echo esc_url($hero_button['url']); ?>'" aria-label="<?php echo esc_attr($hero_button['text']); ?> - <?php echo esc_attr(get_field('hero_title') ?: 'Green House'); ?>" style="background: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_14.png') no-repeat; background-size: 100% 100%; background-position: center;">
         <?php echo esc_html($hero_button['text']); ?>
     </button>
     <?php else : ?>
-    <button class="grupa-8" onclick="window.location.href='#mieszkania'" aria-label="Zobacz mieszkania - Green House">
+    <button class="grupa-8" onclick="window.location.href='#mieszkania'" aria-label="Zobacz mieszkania - Green House" style="background: url('<?php echo get_template_directory_uri(); ?>/html/images/prostok_t_zaokr_glony_14.png') no-repeat; background-size: 100% 100%; background-position: center;">
         Zobacz mieszkania
     </button>
     <?php endif; ?>

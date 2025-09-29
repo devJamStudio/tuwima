@@ -307,7 +307,7 @@ html {
 .agent-photo,
 .company-logo {
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 /* Contact agent photos zoom effect */
@@ -605,7 +605,7 @@ img[data-fancybox]:hover {
 
 /* Navigation underline adjustment on scroll */
 .row-5.scrolled .nav-list-2 .text-item.selected a::after {
-  bottom: -1.5rem;
+  bottom: -1.6rem;
   transition: all 0.3s ease;
 }
 
@@ -670,7 +670,7 @@ img[data-fancybox]:hover {
 
 /* Adjust selected nav item underline when scrolled */
 .row-5.scrolled .nav-list-2 .text-item.selected a::after {
-  bottom: -1.5rem;
+  bottom: -1.6rem;
   transition: all 0.3s ease;
 }
 
@@ -712,7 +712,7 @@ img[data-fancybox]:hover {
   }
 
   .row-5.scrolled .nav-list-2 .text-item.selected a::after {
-    bottom: -1.5rem;
+    bottom: -1.6rem;
     transition: all 0.3s ease;
   }
 }
@@ -1072,7 +1072,7 @@ img[data-fancybox]:hover {
   position: relative;
   right: 7.5px;
   width: 275px;
-  background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat;
+  background: url('../../../html/images/prostok_t_zaokr_glony_14.png') no-repeat;
   color: #ffffff;
   border: none;
   cursor: pointer;

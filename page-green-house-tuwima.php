@@ -24,19 +24,34 @@ get_header(); ?>
             // Use dynamic page builder blocks
             get_template_part('template-parts/green-house/page-builder-blocks');
         } else {
-            // Fallback to static template parts
-            get_template_part('template-parts/green-house/about');
-            get_template_part('template-parts/green-house/benefits');
-            get_template_part('template-parts/green-house/layout');
-            get_template_part('template-parts/green-house/garden');
-            get_template_part('template-parts/green-house/location');
-            get_template_part('template-parts/green-house/apartments');
-            get_template_part('template-parts/green-house/apartments-table');
-            get_template_part('template-parts/green-house/price-table');
-            get_template_part('template-parts/green-house/gallery');
-            get_template_part('template-parts/green-house/financing');
-            get_template_part('template-parts/green-house/developer');
-            get_template_part('template-parts/green-house/contact');
+            // Fallback to static template parts with alternating AOS animations
+            $static_sections = [
+                'about',
+                'benefits',
+                'layout',
+                'garden',
+                'location',
+                'apartments',
+                'apartments-table',
+                'gallery',
+                'financing',
+                'developer',
+                'contact'
+            ];
+
+            foreach ($static_sections as $index => $section) {
+                // Add alternating AOS animation attributes
+                $direction = ($index % 2 === 0) ? 'fade-right' : 'fade-left';
+                $delay = 100 + ($index * 100);
+
+                // Set global AOS attributes for this section
+                $GLOBALS['current_section_aos'] = [
+                    'direction' => $direction,
+                    'delay' => $delay
+                ];
+
+                get_template_part('template-parts/green-house/' . $section);
+            }
         }
         ?>
     </div>

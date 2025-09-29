@@ -27,9 +27,9 @@ function get_alternating_column_aos($column_index, $base_delay = 200) {
  * @param int $base_delay - Base delay in milliseconds
  * @return string - AOS attributes string
  */
-function get_alternating_section_aos($section_index, $base_delay = 200) {
+function get_alternating_section_aos($section_index, $base_delay = 100) {
     $direction = ($section_index % 2 === 0) ? 'fade-right' : 'fade-left';
-    $delay = $base_delay + ($section_index * 200);
+    $delay = $base_delay + ($section_index * 100);
     return 'data-aos="' . $direction . '" data-aos-delay="' . $delay . '"';
 }
 
@@ -44,7 +44,7 @@ foreach ($blocks as $index => $block) {
     $block_type = $block['block_type'] ?? '';
 
     // Add alternating AOS animation attributes for sections
-    $aos_attributes = get_alternating_section_aos($index, 200);
+    $aos_attributes = get_alternating_section_aos($index, 100);
 
     switch ($block_type) {
         case 'hero-slider':

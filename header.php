@@ -189,7 +189,11 @@
 						img.offsetWidth > 50 &&
 						img.offsetHeight > 50) {
 
-						img.setAttribute('data-fancybox', 'single-image');
+						// Determine gallery group based on context
+						var galleryGroup = "single-image";
+						if (img.closest(".gallery-section, .galeria-new, .gallery-item")) galleryGroup = "gallery";
+
+						img.setAttribute('data-fancybox', galleryGroup);
 						img.setAttribute('data-src', img.src);
 						img.style.cursor = 'pointer';
 					}

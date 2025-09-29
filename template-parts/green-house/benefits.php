@@ -7,9 +7,13 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+// Get AOS attributes from global
+$aos_direction = $GLOBALS['current_section_aos']['direction'] ?? 'fade-up';
+$aos_delay = $GLOBALS['current_section_aos']['delay'] ?? 200;
 ?>
 
-<section class="benefits-section" id="benefits">
+<section class="benefits-section" id="benefits" data-aos="<?php echo $aos_direction; ?>" data-aos-delay="<?php echo $aos_delay; ?>">
 <div class="row-36  flex flex-col lg:flex-row   gap-10 2xl:gap-[123px] justify-between">
     <img class="layer-4" src="<?php echo get_field('benefits_image')['url'] ?? get_template_directory_uri() . '/html/images/4.png'; ?>" alt="" width="712" height="651">
     <div class="col-27">

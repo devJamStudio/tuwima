@@ -89,8 +89,8 @@
     width: auto;
     min-width: 200px;
     max-width: 275px;
-    background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat !important;
-    background-size: contain !important;
+    background: url('../../../html/images/prostok_t_zaokr_glony_14.png') no-repeat !important;
+    background-size: 100% 100% !important;
     background-position: center !important;
     color: #ffffff !important;
     border: none;
@@ -850,7 +850,7 @@
     width: 100% !important; /* Full width */
     padding: 0.75rem 1rem !important; /* Responsive padding */
     font-size: clamp(12px, 2.5vw, 14px) !important; /* Responsive font size */
-    background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat !important;
+    background: url('../../../html/images/prostok_t_zaokr_glony_14.png') no-repeat !important;
     background-size: contain !important;
     background-position: center !important;
     color: white !important;
@@ -861,7 +861,7 @@
   }
 
   .submit-button:hover {
-    background: url('../../images/prostok_t_zaokr_glony_14.png') no-repeat !important;
+    background: url('../../../html/images/prostok_t_zaokr_glony_14.png') no-repeat !important;
     background-size: contain !important;
     background-position: center !important;
     opacity: 0.9 !important;

@@ -188,7 +188,7 @@ $gallery_images = array_slice($gallery_images, 0, 5);
     visibility: hidden !important;
     transition: all 0.3s ease !important;
     z-index: 10 !important;
-    border-radius: 12px !important;
+    border-radius: 0px !important;
 }
 
 .gallery-overlay-text {
@@ -205,7 +205,7 @@ $gallery_images = array_slice($gallery_images, 0, 5);
     width: 100%;
     height: auto;
     max-width: 100%;
-    border-radius: 12px;
+    border-radius: 0px;
 }
 
 /* Specific sizing for different gallery images */
