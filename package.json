@@ -21,7 +21,7 @@
     "autoprefixer": "^10.4.20",
     "chokidar": "^4.0.3",
     "laravel-vite-plugin": "^2.0.1",
-    "postcss": "^8.4.47",
+    "postcss": "^8.5.26",
     "sass": "^1.80.0",
     "tailwindcss": "^4.0.0-alpha.26",
     "vite": "^7.1.5"
